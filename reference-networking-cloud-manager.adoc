@@ -1,0 +1,390 @@
+---
+sidebar: sidebar 
+permalink: reference-networking-cloud-manager.html 
+keywords: networking, network, requirements, connection, connections, vpc, security group, security groups, subnets, proxy server, vpn, outbound, inbound, connections, jump host, URL, URLs, endpoints, endpoint, ports 
+summary: Connector가 공용 클라우드 환경 내에서 리소스와 프로세스를 관리할 수 있도록 네트워킹을 설정합니다. 가장 중요한 단계는 다양한 엔드포인트에 대한 아웃바운드 인터넷 액세스를 보장하는 것입니다. 
+---
+= 커넥터에 대한 네트워킹을 설정합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Connector가 공용 클라우드 환경 내에서 리소스 및 프로세스를 관리할 수 있도록 네트워킹을 설정합니다. 가장 중요한 단계는 다양한 엔드포인트에 대한 아웃바운드 인터넷 액세스를 보장하는 것입니다.
+
+이 페이지의 정보는 커넥터가 아웃바운드 인터넷 액세스를 가지고 있는 일반적인 배포를 위한 것입니다.
+
+
+TIP: 네트워크에서 인터넷에 대한 모든 통신에 프록시 서버를 사용하는 경우 설정 페이지에서 프록시 서버를 지정할 수 있습니다. 을 참조하십시오 link:task-configuring-proxy.html["프록시 서버를 사용하도록 Connector 구성"].
+
+
+
+== 대상 네트워크에 연결
+
+Connector를 사용하려면 만들고 있는 작업 환경의 유형과 활성화할 서비스에 대한 네트워크 연결이 필요합니다.
+
+예를 들어 회사 네트워크에 커넥터를 설치하는 경우 Cloud Volumes ONTAP를 실행하는 VPC 또는 VNET에 대한 VPN 연결을 설정해야 합니다.
+
+
+
+== 172 범위의 IP 주소와 충돌할 수 있습니다
+
+Cloud Manager는 172.17.0.0/16 및 172.18.0.0/16 범위의 IP 주소를 가진 두 개의 인터페이스로 커넥터를 배포합니다.
+
+네트워크에 이러한 범위 중 하나로 구성된 서브넷이 있는 경우 Cloud Manager에서 연결 장애가 발생할 수 있습니다. 예를 들어, Cloud Manager에서 온프레미스 ONTAP 클러스터를 검색하지 못할 수 있습니다.
+
+해결 방법은 커넥터 인터페이스의 IP 주소를 변경하는 것입니다. NetApp 지원에 문의하여 도움을 받으십시오.
+
+
+
+== 아웃바운드 인터넷 액세스
+
+커넥터에서 아웃바운드 인터넷 액세스가 필요합니다.
+
+
+
+=== 엔드포인트에서 퍼블릭 클라우드 환경의 리소스를 관리합니다
+
+Connector를 사용하려면 공용 클라우드 환경 내의 리소스와 프로세스를 관리하기 위한 아웃바운드 인터넷 액세스가 필요합니다.
+
+[cols="2*"]
+|===
+| 엔드포인트 | 목적 
+
+
+| https://support.netapp.com 으로 문의하십시오 | 라이센스 정보를 얻고 AutoSupport 메시지를 NetApp 지원 팀에 전송합니다. 
+
+
+| https://*.cloudmanager.cloud.netapp.com 으로 문의하십시오 | Cloud Manager 내에서 SaaS 기능 및 서비스를 제공합니다. 
+
+
+| https://cloudmanagerinfraprod.azurecr.io \https://*.blob.core.windows.net 으로 문의하십시오 | Connector 및 해당 Docker 구성 요소를 업그레이드합니다. 
+|===
+
+
+=== Linux 호스트에 커넥터를 설치하기 위한 엔드포인트
+
+자신의 Linux 호스트에 Connector 소프트웨어를 수동으로 설치할 수 있습니다. 이렇게 하면 설치 프로세스 중에 Connector의 설치 관리자가 다음 URL에 액세스해야 합니다.
+
+* https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm 으로 문의하십시오
+* https://s3.amazonaws.com/aws-cli/awscli-bundle.zip 으로 문의하십시오
+* https://*.blob.core.windows.net 또는 \https://hub.docker.com 으로 문의하십시오
+
+
+설치 중에 호스트가 운영 체제 패키지를 업데이트하려고 할 수 있습니다. 호스트는 이러한 OS 패키지의 서로 다른 미러링 사이트에 연결할 수 있습니다.
+
+
+
+== 포트 및 보안 그룹
+
+커넥터 를 시작하지 않으면 커넥터로 들어오는 트래픽이 없습니다. HTTP 및 HTTPS는 에 대한 액세스를 제공합니다 link:concept-connectors.html#the-local-user-interface["로컬 UI"]이는 드문 경우지만 사용할 수 있습니다. SSH는 문제 해결을 위해 호스트에 연결해야 하는 경우에만 필요합니다.
+
+
+
+=== AWS의 커넥터 규칙
+
+Connector의 보안 그룹에는 인바운드 및 아웃바운드 규칙이 모두 필요합니다.
+
+
+
+==== 인바운드 규칙
+
+[cols="10,10,80"]
+|===
+| 프로토콜 | 포트 | 목적 
+
+
+| SSH를 클릭합니다 | 22 | 커넥터 호스트에 대한 SSH 액세스를 제공합니다 
+
+
+| HTTP | 80 | 클라이언트 웹 브라우저에서 로컬 사용자 인터페이스로 HTTP 액세스를 제공하고 Cloud Data Sense에서 연결을 제공합니다 
+
+
+| HTTPS | 443 | 클라이언트 웹 브라우저에서 로컬 사용자 인터페이스로 HTTPS 액세스를 제공합니다 
+
+
+| TCP | 3128 | AWS 네트워크에서 NAT 또는 프록시를 사용하지 않는 경우 인터넷 액세스가 가능한 클라우드 데이터 감지 인스턴스를 제공합니다 
+
+
+| TCP | 9060 | Cloud Data Sense를 활성화하고 사용할 수 있는 기능 제공(GovCloud 구축에만 필요) 
+|===
+
+
+==== 아웃바운드 규칙
+
+Connector에 대해 미리 정의된 보안 그룹은 모든 아웃바운드 트래픽을 엽니다. 허용 가능한 경우 기본 아웃바운드 규칙을 따릅니다. 더 엄격한 규칙이 필요한 경우 고급 아웃바운드 규칙을 사용합니다.
+
+
+
+===== 기본 아웃바운드 규칙
+
+Connector에 대해 미리 정의된 보안 그룹에는 다음과 같은 아웃바운드 규칙이 포함됩니다.
+
+[cols="20,20,60"]
+|===
+| 프로토콜 | 포트 | 목적 
+
+
+| 모든 TCP | 모두 | 모든 아웃바운드 트래픽 
+
+
+| 모든 UDP | 모두 | 모든 아웃바운드 트래픽 
+|===
+
+
+===== 고급 아웃바운드 규칙
+
+아웃바운드 트래픽에 대해 엄격한 규칙이 필요한 경우 다음 정보를 사용하여 Connector의 아웃바운드 통신에 필요한 포트만 열 수 있습니다.
+
+
+NOTE: 소스 IP 주소는 커넥터 호스트입니다.
+
+[cols="5*"]
+|===
+| 서비스 | 프로토콜 | 포트 | 목적지 | 목적 
+
+
+.9+| Active Directory를 클릭합니다 | TCP | 88 | Active Directory 포리스트입니다 | Kerberos V 인증 
+
+
+| TCP | 139 | Active Directory 포리스트입니다 | NetBIOS 서비스 세션입니다 
+
+
+| TCP | 389 | Active Directory 포리스트입니다 | LDAP를 지원합니다 
+
+
+| TCP | 445 | Active Directory 포리스트입니다 | Microsoft SMB/CIFS over TCP 및 NetBIOS 프레임 
+
+
+| TCP | 464 | Active Directory 포리스트입니다 | Kerberos V 변경 및 암호 설정(set_change) 
+
+
+| TCP | 749 | Active Directory 포리스트입니다 | Active Directory Kerberos V 변경 및 암호 설정(RPCSEC_GSS) 
+
+
+| UDP입니다 | 137 | Active Directory 포리스트입니다 | NetBIOS 이름 서비스입니다 
+
+
+| UDP입니다 | 138 | Active Directory 포리스트입니다 | NetBIOS 데이터그램 서비스 
+
+
+| UDP입니다 | 464 | Active Directory 포리스트입니다 | Kerberos 키 관리 
+
+
+| API 호출 및 AutoSupport | HTTPS | 443 | 아웃바운드 인터넷 및 ONTAP 클러스터 관리 LIF | API는 AWS 및 ONTAP를 호출하고 AutoSupport 메시지를 NetApp에 보냅니다 
+
+
+.2+| API 호출 | TCP | 3000입니다 | ONTAP HA 중재자 | ONTAP HA 중재인과의 커뮤니케이션 
+
+
+| TCP | 8088 | S3로 백업 | API에서 S3로 백업을 호출합니다 
+
+
+| DNS | UDP입니다 | 53 | DNS | Cloud Manager에서 DNS Resolve에 사용됩니다 
+
+
+| 클라우드 데이터 감지 | HTTP | 80 | 클라우드 데이터 감지 인스턴스 | Cloud Volumes ONTAP에 대한 클라우드 데이터 감지 
+|===
+
+
+=== Azure의 커넥터 규칙
+
+Connector의 보안 그룹에는 인바운드 및 아웃바운드 규칙이 모두 필요합니다.
+
+
+
+==== 인바운드 규칙
+
+[cols="3*"]
+|===
+| 포트 | 프로토콜 | 목적 
+
+
+| 22 | SSH를 클릭합니다 | 커넥터 호스트에 대한 SSH 액세스를 제공합니다 
+
+
+| 80 | HTTP | 클라이언트 웹 브라우저에서 로컬 사용자 인터페이스로 HTTP 액세스를 제공합니다 
+
+
+| 443 | HTTPS | 클라이언트 웹 브라우저에서 로컬 사용자 인터페이스로 HTTPS 액세스를 제공합니다 
+|===
+
+
+==== 아웃바운드 규칙
+
+Connector에 대해 미리 정의된 보안 그룹은 모든 아웃바운드 트래픽을 엽니다. 허용 가능한 경우 기본 아웃바운드 규칙을 따릅니다. 더 엄격한 규칙이 필요한 경우 고급 아웃바운드 규칙을 사용합니다.
+
+
+
+===== 기본 아웃바운드 규칙
+
+Connector에 대해 미리 정의된 보안 그룹에는 다음과 같은 아웃바운드 규칙이 포함됩니다.
+
+[cols="3*"]
+|===
+| 포트 | 프로토콜 | 목적 
+
+
+| 모두 | 모든 TCP | 모든 아웃바운드 트래픽 
+
+
+| 모두 | 모든 UDP | 모든 아웃바운드 트래픽 
+|===
+
+
+===== 고급 아웃바운드 규칙
+
+아웃바운드 트래픽에 대해 엄격한 규칙이 필요한 경우 다음 정보를 사용하여 Connector의 아웃바운드 통신에 필요한 포트만 열 수 있습니다.
+
+
+NOTE: 소스 IP 주소는 커넥터 호스트입니다.
+
+[cols="5*"]
+|===
+| 서비스 | 포트 | 프로토콜 | 목적지 | 목적 
+
+
+.9+| Active Directory를 클릭합니다 | 88 | TCP | Active Directory 포리스트입니다 | Kerberos V 인증 
+
+
+| 139 | TCP | Active Directory 포리스트입니다 | NetBIOS 서비스 세션입니다 
+
+
+| 389 | TCP | Active Directory 포리스트입니다 | LDAP를 지원합니다 
+
+
+| 445 | TCP | Active Directory 포리스트입니다 | Microsoft SMB/CIFS over TCP 및 NetBIOS 프레임 
+
+
+| 464 | TCP | Active Directory 포리스트입니다 | Kerberos V 변경 및 암호 설정(set_change) 
+
+
+| 749 | TCP | Active Directory 포리스트입니다 | Active Directory Kerberos V 변경 및 암호 설정(RPCSEC_GSS) 
+
+
+| 137 | UDP입니다 | Active Directory 포리스트입니다 | NetBIOS 이름 서비스입니다 
+
+
+| 138 | UDP입니다 | Active Directory 포리스트입니다 | NetBIOS 데이터그램 서비스 
+
+
+| 464 | UDP입니다 | Active Directory 포리스트입니다 | Kerberos 키 관리 
+
+
+| API 호출 및 AutoSupport | 443 | HTTPS | 아웃바운드 인터넷 및 ONTAP 클러스터 관리 LIF | API는 AWS 및 ONTAP를 호출하고 AutoSupport 메시지를 NetApp에 보냅니다 
+
+
+| DNS | 53 | UDP입니다 | DNS | Cloud Manager에서 DNS Resolve에 사용됩니다 
+|===
+
+
+=== GCP의 Connector에 대한 규칙입니다
+
+Connector의 방화벽 규칙에는 인바운드 및 아웃바운드 규칙이 모두 필요합니다.
+
+
+
+==== 인바운드 규칙
+
+[cols="10,10,80"]
+|===
+| 프로토콜 | 포트 | 목적 
+
+
+| SSH를 클릭합니다 | 22 | 커넥터 호스트에 대한 SSH 액세스를 제공합니다 
+
+
+| HTTP | 80 | 클라이언트 웹 브라우저에서 로컬 사용자 인터페이스로 HTTP 액세스를 제공합니다 
+
+
+| HTTPS | 443 | 클라이언트 웹 브라우저에서 로컬 사용자 인터페이스로 HTTPS 액세스를 제공합니다 
+|===
+
+
+==== 아웃바운드 규칙
+
+Connector에 대해 미리 정의된 방화벽 규칙은 모든 아웃바운드 트래픽을 엽니다. 허용 가능한 경우 기본 아웃바운드 규칙을 따릅니다. 더 엄격한 규칙이 필요한 경우 고급 아웃바운드 규칙을 사용합니다.
+
+
+
+===== 기본 아웃바운드 규칙
+
+Connector에 대해 미리 정의된 방화벽 규칙에는 다음과 같은 아웃바운드 규칙이 포함됩니다.
+
+[cols="20,20,60"]
+|===
+| 프로토콜 | 포트 | 목적 
+
+
+| 모든 TCP | 모두 | 모든 아웃바운드 트래픽 
+
+
+| 모든 UDP | 모두 | 모든 아웃바운드 트래픽 
+|===
+
+
+===== 고급 아웃바운드 규칙
+
+아웃바운드 트래픽에 대해 엄격한 규칙이 필요한 경우 다음 정보를 사용하여 Connector의 아웃바운드 통신에 필요한 포트만 열 수 있습니다.
+
+
+NOTE: 소스 IP 주소는 커넥터 호스트입니다.
+
+[cols="5*"]
+|===
+| 서비스 | 프로토콜 | 포트 | 목적지 | 목적 
+
+
+.9+| Active Directory를 클릭합니다 | TCP | 88 | Active Directory 포리스트입니다 | Kerberos V 인증 
+
+
+| TCP | 139 | Active Directory 포리스트입니다 | NetBIOS 서비스 세션입니다 
+
+
+| TCP | 389 | Active Directory 포리스트입니다 | LDAP를 지원합니다 
+
+
+| TCP | 445 | Active Directory 포리스트입니다 | Microsoft SMB/CIFS over TCP 및 NetBIOS 프레임 
+
+
+| TCP | 464 | Active Directory 포리스트입니다 | Kerberos V 변경 및 암호 설정(set_change) 
+
+
+| TCP | 749 | Active Directory 포리스트입니다 | Active Directory Kerberos V 변경 및 암호 설정(RPCSEC_GSS) 
+
+
+| UDP입니다 | 137 | Active Directory 포리스트입니다 | NetBIOS 이름 서비스입니다 
+
+
+| UDP입니다 | 138 | Active Directory 포리스트입니다 | NetBIOS 데이터그램 서비스 
+
+
+| UDP입니다 | 464 | Active Directory 포리스트입니다 | Kerberos 키 관리 
+
+
+| API 호출 및 AutoSupport | HTTPS | 443 | 아웃바운드 인터넷 및 ONTAP 클러스터 관리 LIF | API는 GCP 및 ONTAP를 호출하고 AutoSupport 메시지를 NetApp에 보냅니다 
+
+
+| DNS | UDP입니다 | 53 | DNS | Cloud Manager에서 DNS Resolve에 사용됩니다 
+|===
+
+
+=== 사내 커넥터용 포트
+
+Connector는 온-프레미스 Linux 호스트에 수동으로 설치할 때 다음과 같은 _inbound_ports를 사용합니다.
+
+이러한 인바운드 규칙은 인터넷 액세스 또는 인터넷 액세스 없이 설치된 온프레미스 커넥터의 두 배포 모델에 모두 적용됩니다.
+
+[cols="10,10,80"]
+|===
+| 프로토콜 | 포트 | 목적 
+
+
+| HTTP | 80 | 클라이언트 웹 브라우저에서 로컬 사용자 인터페이스로 HTTP 액세스를 제공합니다 
+
+
+| HTTPS | 443 | 클라이언트 웹 브라우저에서 로컬 사용자 인터페이스로 HTTPS 액세스를 제공합니다 
+|===

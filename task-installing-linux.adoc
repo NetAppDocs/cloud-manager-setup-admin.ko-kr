@@ -1,0 +1,153 @@
+---
+sidebar: sidebar 
+permalink: task-installing-linux.html 
+keywords: install connector, manually install connector, install connector software, installation, installing, linux, installer, software, on prem, on-prem, silent, configurations, ec2, vm, ports, ram, operating system, os, host, requirement, requirements, hypervisor, disk, space, mysql, centos, rhel, red hat, cpu, disk space 
+summary: Connector를 생성하는 가장 일반적인 방법은 Cloud Manager 또는 클라우드 공급자의 마켓플레이스에서 직접 생성하는 것입니다. 그러나 네트워크 또는 클라우드의 기존 Linux 호스트에 Connector 소프트웨어를 다운로드하여 설치할 수 있습니다. 
+---
+= 인터넷에 액세스할 수 있는 기존 Linux 호스트에 커넥터를 설치합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Connector를 생성하는 가장 일반적인 방법은 Cloud Manager 또는 클라우드 공급자의 마켓플레이스에서 직접 생성하는 것입니다. 그러나 네트워크 또는 클라우드의 기존 Linux 호스트에 Connector 소프트웨어를 다운로드하여 설치할 수 있습니다. 이 단계는 인터넷 액세스가 있는 호스트에만 적용됩니다.
+
+link:concept-connectors.html["커넥터를 배포하는 다른 방법에 대해 알아봅니다"].
+
+
+NOTE: Google Cloud에서 Cloud Volumes ONTAP 시스템을 만들려면 Google Cloud에서도 실행되는 커넥터가 있어야 합니다. AWS, Azure 또는 온프레미스에서 실행되는 Connector를 사용할 수 없습니다.
+
+
+
+== 호스트 요구 사항을 확인합니다
+
+Connector 소프트웨어는 특정 운영 체제 요구 사항, RAM 요구 사항, 포트 요구 사항 등을 충족하는 호스트에서 실행되어야 합니다.
+
+전용 호스트가 필요합니다:: 다른 애플리케이션과 공유되는 호스트에서는 Connector가 지원되지 않습니다. 호스트는 전용 호스트여야 합니다.
+CPU:: 코어 4개 또는 vCPU 4개
+RAM:: 16GB
+AWS EC2 인스턴스 유형:: 위의 CPU 및 RAM 요구 사항을 충족하는 인스턴스 유형입니다. T3.xLarge를 사용하고 Cloud Manager에서 직접 Connector를 배포할 때 해당 인스턴스 유형을 사용하는 것이 좋습니다.
+Azure VM 크기입니다:: 위의 CPU 및 RAM 요구 사항을 충족하는 인스턴스 유형입니다. Connector를 Cloud Manager에서 직접 배포할 때는 DS3 v2를 사용하고 해당 VM 크기를 사용하는 것이 좋습니다.
+GCP 시스템 유형입니다:: 위의 CPU 및 RAM 요구 사항을 충족하는 인스턴스 유형입니다. n1-standard-4를 사용하고 Cloud Manager에서 직접 Connector를 구축할 때는 해당 시스템 유형을 사용하는 것이 좋습니다.
+지원되는 운영 체제::
++
+--
+* CentOS 7.6
+* CentOS 7.7
+* CentOS 7.8
+* CentOS 7.9
+* Red Hat Enterprise Linux 7.6
+* Red Hat Enterprise Linux 7.7
+* Red Hat Enterprise Linux 7.8
+* Red Hat Enterprise Linux 7.9
++
+Red Hat Enterprise Linux 시스템은 Red Hat 서브스크립션 관리 에 등록되어 있어야 합니다. 등록되지 않은 경우 시스템은 Connector 설치 중에 필요한 타사 소프트웨어를 업데이트하기 위해 리포지토리에 액세스할 수 없습니다.
+
++
+Connector는 이러한 운영 체제의 영어 버전에서 지원됩니다.
+
+
+
+--
+하이퍼바이저:: CentOS 또는 Red Hat Enterprise Linux 실행 인증을 받은 베어 메탈 또는 호스팅된 하이퍼바이저https://access.redhat.com/certified-hypervisors["Red Hat 솔루션: Red Hat Enterprise Linux 실행 인증을 받은 하이퍼바이저는 무엇입니까?"^]
+/opt의 디스크 공간입니다:: 100GiB의 공간을 사용할 수 있어야 합니다
+/var의 디스크 공간입니다:: 20GiB의 공간을 사용할 수 있어야 합니다
+아웃바운드 인터넷 액세스:: Connector를 설치하고 Connector가 퍼블릭 클라우드 환경 내의 리소스 및 프로세스를 관리하려면 아웃바운드 인터넷 액세스가 필요합니다. 끝점 목록은 을 참조하십시오 link:reference-networking-cloud-manager.html["커넥터에 대한 네트워킹 요구 사항"].
+
+
+
+
+== 커넥터를 설치합니다
+
+지원되는 Linux 호스트가 있는지 확인한 후 Connector 소프트웨어를 받은 다음 설치할 수 있습니다.
+
+커넥터를 설치하려면 루트 권한이 필요합니다.
+
+.이 작업에 대해
+* 설치를 통해 AWS 명령줄 툴(awscli)을 설치하여 NetApp 지원으로부터 복구 절차를 수행할 수 있습니다.
++
+awscli 설치에 실패했다는 메시지가 표시되면 메시지를 무시해도 됩니다. 도구 없이 커넥터가 제대로 작동할 수 있습니다.
+
+* NetApp Support 사이트에서 제공되는 설치 프로그램은 이전 버전일 수 있습니다. 새 버전이 있는 경우 설치 후 커넥터가 자동으로 업데이트됩니다.
+
+
+.단계
+. 에서 Cloud Manager 소프트웨어를 다운로드합니다 https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab["NetApp Support 사이트"^]를 선택한 다음 Linux 호스트에 복사합니다.
++
+AWS에서 EC2 인스턴스에 파일을 연결하고 복사하는 방법은 를 참조하십시오 http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html["AWS 설명서: SSH를 사용하여 Linux 인스턴스에 연결"^].
+
+. 스크립트를 실행할 권한을 할당합니다.
++
+[source, cli]
+----
+chmod +x OnCommandCloudManager-V3.9.14.sh
+----
+. 설치 스크립트를 실행합니다.
++
+프록시 서버가 있는 경우 아래와 같이 명령 매개 변수를 입력해야 합니다. 설치 프로그램에서 프록시에 대한 정보를 제공하라는 메시지를 표시하지 않습니다.
+
++
+[source, cli]
+----
+ ./OnCommandCloudManager-V3.9.14.sh [silent] [proxy=ipaddress] [proxyport=port] [proxyuser=user_name] [proxypwd=password]
+----
++
+_silent_는 정보를 묻지 않고 설치를 실행합니다.
+
++
+호스트가 프록시 서버 뒤에 있으면 _proxy_가 필요합니다.
+
++
+_proxyPort_는 프록시 서버의 포트입니다.
+
++
+_proxyuser_는 기본 인증이 필요한 경우 프록시 서버의 사용자 이름입니다.
+
++
+_proxypwd_는 지정한 사용자 이름의 암호입니다.
+
+. 자동 매개변수를 지정하지 않은 경우 * Y * 를 입력하여 설치를 계속합니다.
++
+이제 Cloud Manager가 설치되었습니다. 설치가 끝나면 프록시 서버를 지정한 경우 occm(Cloud Manager) 서비스가 두 번 다시 시작됩니다.
+
+. 웹 브라우저를 열고 다음 URL을 입력합니다.
++
+https://_ipaddress_[]
+
++
+_ipaddress_는 호스트 구성에 따라 localhost, 개인 IP 주소 또는 공용 IP 주소일 수 있습니다. 예를 들어, Connector가 공용 IP 주소가 없는 공용 클라우드에 있는 경우 Connector 호스트에 대한 연결이 있는 호스트의 전용 IP 주소를 입력해야 합니다.
+
+. NetApp Cloud Central에 등록 하거나 로그인 하십시오.
+. Google Cloud에 Connector를 설치한 경우 Cloud Manager가 프로젝트에서 Cloud Volumes ONTAP 시스템을 만들고 관리하는 데 필요한 권한이 있는 서비스 계정을 설정합니다.
++
+.. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["GCP에서 역할을 생성합니다"^] 여기에는 에 정의된 권한이 포함됩니다 https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml["GCP에 대한 Cloud Manager 정책입니다"^].
+.. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["GCP 서비스 계정을 생성하고 방금 생성한 사용자 지정 역할을 적용합니다"^].
+.. https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes["이 서비스 계정을 Connector VM에 연결합니다"^].
+.. 다른 프로젝트에 Cloud Volumes ONTAP를 배포하려는 경우 https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console["Cloud Manager 역할을 가진 서비스 계정을 해당 프로젝트에 추가하여 액세스 권한을 부여합니다"^]. 각 프로젝트에 대해 이 단계를 반복해야 합니다.
+
+
+. 로그인한 후 Cloud Manager를 설정합니다.
++
+.. Connector와 연결할 NetApp 계정을 지정합니다.
++
+link:concept-netapp-accounts.html["NetApp 계정 에 대해 알아보십시오"].
+
+.. 시스템의 이름을 입력합니다.
++
+image:screenshot_set_up_cloud_manager.gif["NetApp 계정을 선택하고 시스템의 이름을 지정할 수 있는 설정 화면을 보여주는 스크린샷"]
+
+
+
+
+
+이제 Connector가 NetApp 계정으로 설치 및 설정됩니다. 새로운 작업 환경을 만들 때 Cloud Manager가 이 Connector를 자동으로 사용합니다.
+
+Cloud Manager가 퍼블릭 클라우드 환경 내에서 리소스 및 프로세스를 관리할 수 있도록 권한 설정:
+
+* AWS: link:task-adding-aws-accounts.html["AWS 계정을 설정한 다음 Cloud Manager에 추가합니다"]
+* Azure(Azure): link:task-adding-azure-accounts.html["Azure 계정을 설정한 다음 Cloud Manager에 추가합니다"]
+* Google Cloud: 위의 7단계를 참조하십시오
+

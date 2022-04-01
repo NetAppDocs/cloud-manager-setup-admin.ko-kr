@@ -1,0 +1,269 @@
+---
+sidebar: sidebar 
+permalink: task-adding-aws-accounts.html 
+keywords: permissions, aws, policy, iam, iam role, role, granting, policy, iam policy, iam user, access keys, arn, cloud provider accounts, aws, cloud provider profile, json, iam, credentials, adding credentials, add credentials 
+summary: 다른 AWS 계정에 Cloud Volumes ONTAP를 구축하려는 경우 해당 계정에 필요한 권한을 제공한 다음 세부 정보를 Cloud Manager에 추가해야 합니다. 사용 권한을 제공하는 방법은 Cloud Manager에 AWS 키를 제공할지, 아니면 신뢰할 수 있는 계정에서 역할의 ARN을 제공하는지에 따라 달라집니다. 
+---
+= Cloud Manager의 AWS 자격 증명 및 구독을 관리합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+AWS 자격 증명을 추가 및 관리하여 Cloud Manager가 AWS 계정에 클라우드 리소스를 구축 및 관리하는 데 필요한 권한을 갖도록 합니다. 여러 AWS 구독을 관리하는 경우 자격 증명 페이지에서 각 AWS 자격 증명을 서로 다른 AWS 자격 증명에 할당할 수 있습니다.
+
+
+
+== 개요
+
+AWS 자격 증명을 기존 Connector에 추가하거나 Cloud Manager에 직접 추가할 수 있습니다.
+
+* 기존 커넥터에 AWS 자격 증명을 추가합니다
++
+기존 커넥터에 새로운 AWS 자격 증명을 추가하면 동일한 커넥터를 사용하여 다른 AWS 계정에 Cloud Volumes ONTAP를 구축할 수 있습니다. <<Add credentials to a Connector,Connector에 AWS 자격 증명을 추가하는 방법에 대해 알아보십시오>>.
+
+* Cloud Manager에 AWS 자격 증명을 직접 추가합니다
++
+Cloud Manager에 새 AWS 자격 증명을 추가하면 ONTAP 작업 환경에 대한 FSx를 생성할 수 있습니다. <<Add credentials to Cloud Manager,Cloud Manager에 AWS 자격 증명을 추가하는 방법에 대해 알아보십시오>>.
+
+
+
+
+
+== 자격 증명을 회전하는 방법
+
+Cloud Manager를 사용하면 몇 가지 방법으로 AWS 자격 증명을 제공할 수 있습니다. 예를 들어, Connector 인스턴스와 연관된 IAM 역할이나 신뢰할 수 있는 계정에서 IAM 역할을 가정하거나 AWS 액세스 키를 제공하여 AWS 자격 증명을 제공할 수 있습니다. link:concept-accounts-aws.html["AWS 자격 증명 및 권한에 대해 자세히 알아보십시오"].
+
+처음 두 옵션을 사용할 때 Cloud Manager는 AWS 보안 토큰 서비스를 사용하여 지속적으로 회전하는 임시 자격 증명을 얻습니다. 이 프로세스는 자동적이며 안전하기 때문에 가장 좋은 방법입니다.
+
+Cloud Manager에 AWS 액세스 키를 제공하는 경우 Cloud Manager에서 키를 정기적으로 업데이트하여 키를 회전해야 합니다. 이는 완전히 수동으로 진행되는 프로세스입니다.
+
+
+
+== 커넥터에 자격 증명을 추가합니다
+
+Connector가 다른 AWS 계정에서 Cloud Volumes ONTAP를 구축 및 관리할 수 있도록 AWS 자격 증명을 추가합니다. 다른 계정에서 IAM 역할의 ARN을 제공하거나 AWS 액세스 키를 제공할 수 있습니다.
+
+
+
+=== 권한을 부여합니다
+
+Connector에 AWS 자격 증명을 추가하기 전에 필요한 권한을 제공해야 합니다. Cloud Manager에서 사용 권한을 통해 해당 AWS 계정 내의 리소스와 프로세스를 관리할 수 있습니다. 사용 권한을 제공하는 방법은 Cloud Manager에 신뢰할 수 있는 계정 또는 AWS 키에서 역할의 ARN을 제공할지 여부에 따라 달라집니다.
+
+
+NOTE: Cloud Manager에서 Connector를 구축한 경우 Cloud Manager는 Connector를 구축한 계정에 대한 AWS 자격 증명을 자동으로 추가합니다. 기존 시스템에 Connector 소프트웨어를 수동으로 설치한 경우에는 이 초기 계정이 추가되지 않습니다. link:concept-accounts-aws.html["AWS 자격 증명 및 권한에 대해 알아보십시오"].
+
+* 선택 *
+
+* <<Grant permissions by assuming an IAM role in another account>>
+* <<Grant permissions by providing AWS keys>>
+
+
+
+
+==== 다른 계정에서 IAM 역할을 가정하여 권한을 부여합니다
+
+IAM 역할을 사용하여 Connector 인스턴스를 구축한 소스 AWS 계정과 다른 AWS 계정 간에 신뢰 관계를 설정할 수 있습니다. 그런 다음 Cloud Manager에 신뢰할 수 있는 계정의 IAM 역할 ARN을 제공합니다.
+
+.단계
+. Cloud Volumes ONTAP를 배포하려는 대상 계정의 IAM 콘솔로 이동합니다.
+. 액세스 관리에서 * 역할 > 역할 만들기 * 를 클릭하고 단계를 따라 역할을 만듭니다.
++
+다음을 수행하십시오.
+
++
+** 신뢰할 수 있는 엔터티 유형 * 에서 * AWS 계정 * 을 선택합니다.
+** 다른 AWS 계정 * 을 선택하고 Connector 인스턴스가 있는 계정의 ID를 입력합니다.
+** Cloud Manager IAM 정책을 사용하여 정책을 생성합니다. 이 정책은 에서 사용할 수 있습니다 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 정책 페이지"^].
+
+
+. 나중에 Cloud Manager에 붙여넣을 수 있도록 IAM 역할의 역할 ARN을 복사합니다.
+
+
+이제 계정에 필요한 권한이 있습니다. <<add-the-credentials,이제 Connector에 자격 증명을 추가할 수 있습니다>>.
+
+
+
+==== AWS 키를 제공하여 권한을 부여합니다
+
+Cloud Manager에 IAM 사용자를 위한 AWS 키를 제공하려면 해당 사용자에게 필요한 권한을 부여해야 합니다. Cloud Manager IAM 정책은 Cloud Manager에서 사용할 수 있는 AWS 작업 및 리소스를 정의합니다.
+
+.단계
+. 에서 Cloud Manager IAM 정책을 다운로드합니다 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 정책 페이지"^].
+. IAM 콘솔에서 Cloud Manager IAM 정책의 텍스트를 복사하여 붙여넣어 고유한 정책을 생성합니다.
++
+https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html["AWS 설명서: IAM 정책 생성"^]
+
+. IAM 역할 또는 IAM 사용자에 정책을 연결합니다.
++
+** https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html["AWS 설명서: IAM 역할 생성"^]
+** https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html["AWS 설명서: IAM 정책 추가 및 제거"^]
+
+
+
+
+이제 계정에 필요한 권한이 있습니다. <<add-the-credentials,이제 Connector에 자격 증명을 추가할 수 있습니다>>.
+
+
+
+=== 자격 증명을 추가합니다
+
+필요한 권한이 있는 AWS 계정을 제공한 후 해당 계정의 자격 증명을 기존 Connector에 추가할 수 있습니다. 이렇게 하면 동일한 커넥터를 사용하여 해당 계정에서 Cloud Volumes ONTAP 시스템을 시작할 수 있습니다.
+
+클라우드 공급자에서 이러한 자격 증명을 만든 경우 사용할 수 있을 때까지 몇 분 정도 걸릴 수 있습니다. 몇 분 후에 Cloud Manager에 자격 증명을 추가합니다.
+
+.단계
+. Cloud Manager에서 현재 올바른 커넥터가 선택되어 있는지 확인합니다.
+. Cloud Manager 콘솔의 오른쪽 위에서 설정 아이콘을 클릭하고 * 자격 증명 * 을 선택합니다.
++
+image:screenshot_settings_icon.gif["Cloud Manager 콘솔의 오른쪽 위에 설정 아이콘이 표시된 스크린샷"]
+
+. 자격 증명 추가 * 를 클릭하고 마법사의 단계를 따릅니다.
++
+.. * 자격 증명 위치 *: * Amazon Web Services > Connector * 를 선택합니다.
+.. * 자격 증명 정의 *: 신뢰할 수 있는 IAM 역할의 ARN(Amazon Resource Name)을 제공하거나 AWS 액세스 키와 비밀 키를 입력합니다.
+.. * Marketplace 구독 *: 지금 가입하거나 기존 구독을 선택하여 마켓플레이스 구독을 이러한 자격 증명과 연결합니다.
++
+PAYGO(시간당 급여) 또는 연간 계약으로 Cloud Volumes ONTAP를 지불하려면 AWS 마켓플레이스의 Cloud Volumes ONTAP 구독과 AWS 자격 증명이 연결되어 있어야 합니다.
+
+.. * 검토 *: 새 자격 증명에 대한 세부 정보를 확인하고 * 추가 * 를 클릭합니다.
+
+
+
+
+이제 새 작업 환경을 만들 때 세부 정보 및 자격 증명 페이지에서 다른 자격 증명 세트로 전환할 수 있습니다.
+
+image:screenshot_accounts_switch_aws.png["세부 정보 및 amp;Credentials 페이지에서 계정 전환 을 클릭한 후 클라우드 공급자 계정 간 선택을 보여 주는 스크린샷"]
+
+
+
+== Cloud Manager에 자격 증명을 추가합니다
+
+ONTAP 작업 환경에 대한 FSx를 생성하는 데 필요한 권한을 클라우드 관리자에게 제공하는 IAM 역할의 ARN을 제공하여 AWS 자격 증명을 Cloud Manager에 추가합니다.
+
+
+
+=== IAM 역할을 설정합니다
+
+Cloud Manager SaaS가 역할을 맡을 수 있도록 IAM 역할을 설정합니다.
+
+.단계
+. 대상 계정에서 IAM 콘솔로 이동합니다.
+. 액세스 관리에서 * 역할 > 역할 만들기 * 를 클릭하고 단계를 따라 역할을 만듭니다.
++
+다음을 수행하십시오.
+
++
+** 신뢰할 수 있는 엔터티 유형 * 에서 * AWS 계정 * 을 선택합니다.
+** 다른 AWS 계정 * 을 선택하고 Cloud Manager SaaS:952013314444의 ID를 입력합니다
+** 다음 권한이 포함된 정책을 만듭니다.
++
+[source, json]
+----
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "fsx:*",
+                "ec2:Describe*",
+                "ec2:CreateTags",
+                "kms:Describe*",
+                "kms:List*",
+                "iam:CreateServiceLinkedRole"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+----
+
+
+. 다음 단계에서 Cloud Manager에 붙여넣을 수 있도록 IAM 역할의 역할 ARN을 복사합니다.
+
+
+이제 IAM 역할에 필요한 권한이 있습니다. <<add-the-credentials-2,이제 Cloud Manager에 추가할 수 있습니다>>.
+
+
+
+=== 자격 증명을 추가합니다
+
+필요한 권한을 IAM 역할에 제공한 후 ARN 역할을 Cloud Manager에 추가합니다.
+
+방금 IAM 역할을 생성한 경우 사용할 수 있을 때까지 몇 분 정도 걸릴 수 있습니다. 몇 분 후에 Cloud Manager에 자격 증명을 추가합니다.
+
+.단계
+. Cloud Manager 콘솔의 오른쪽 위에서 설정 아이콘을 클릭하고 * 자격 증명 * 을 선택합니다.
++
+image:screenshot_settings_icon.gif["Cloud Manager 콘솔의 오른쪽 위에 설정 아이콘이 표시된 스크린샷"]
+
+. 자격 증명 추가 * 를 클릭하고 마법사의 단계를 따릅니다.
++
+.. * 자격 증명 위치 *: * Amazon Web Services > Cloud Manager * 를 선택합니다.
+.. * 자격 증명 정의 *: IAM 역할의 ARN(Amazon Resource Name)을 제공합니다.
+.. * 검토 *: 새 자격 증명에 대한 세부 정보를 확인하고 * 추가 * 를 클릭합니다.
+
+
+
+
+이제 ONTAP 작업 환경에 대한 FSx를 생성할 때 자격 증명을 사용할 수 있습니다.
+
+
+
+== AWS 구독을 연결합니다
+
+AWS 자격 증명을 Cloud Manager에 추가한 후 AWS Marketplace 구독을 해당 자격 증명과 연결할 수 있습니다. 구독을 통해 PAYGO(시간당 급여) 또는 연간 계약을 사용하여 Cloud Volumes ONTAP에 대한 비용을 지불하고, 다른 NetApp 클라우드 서비스를 사용할 수 있습니다.
+
+Cloud Manager에 자격 증명을 이미 추가한 후에 AWS Marketplace 구독을 연결할 수 있는 두 가지 시나리오가 있습니다.
+
+* 처음에 Cloud Manager에 자격 증명을 추가했을 때 구독을 연결하지 않았습니다.
+* 기존 AWS Marketplace 구독을 새 구독으로 교체하려고 합니다.
+
+
+Cloud Manager 설정을 변경하려면 먼저 Connector를 생성해야 합니다. link:concept-connectors.html#how-to-create-a-connector["커넥터를 만드는 방법에 대해 알아봅니다"].
+
+.단계
+. Cloud Manager 콘솔의 오른쪽 위에서 설정 아이콘을 클릭하고 * 자격 증명 * 을 선택합니다.
+. 자격 증명 집합에 대한 작업 메뉴를 클릭한 다음 * 가입 연결 * 을 선택합니다.
++
+image:screenshot_associate_subscription.png["기존 자격 증명 집합에 대한 작업 메뉴 스크린샷"]
+
+. 드롭다운 목록에서 기존 구독을 선택하거나 * 구독 추가 * 를 클릭하고 단계에 따라 새 구독을 만듭니다.
++
+video::video_subscribing_aws.mp4[width=848,height=480]
+
+
+
+
+== 자격 증명을 편집합니다
+
+Cloud Manager에서 계정 유형(AWS 키 또는 역할이라고 함)을 변경하거나, 이름을 편집하거나, 자격 증명(키 또는 ARN 역할)을 업데이트하여 AWS 자격 증명을 편집합니다.
+
+
+TIP: Connector 인스턴스와 연결된 인스턴스 프로파일의 자격 증명은 편집할 수 없습니다.
+
+.단계
+. Cloud Manager 콘솔의 오른쪽 위에서 설정 아이콘을 클릭하고 * 자격 증명 * 을 선택합니다.
+. 자격 증명 집합에 대한 작업 메뉴를 클릭한 다음 * 자격 증명 편집 * 을 선택합니다.
+. 필요한 내용을 변경한 다음 * 적용 * 을 클릭합니다.
+
+
+
+
+== 자격 증명을 삭제하는 중입니다
+
+자격 증명 세트가 더 이상 필요하지 않으면 Cloud Manager에서 삭제할 수 있습니다. 작업 환경과 연결되지 않은 자격 증명만 삭제할 수 있습니다.
+
+
+TIP: Connector 인스턴스와 연결된 인스턴스 프로파일의 자격 증명은 삭제할 수 없습니다.
+
+.단계
+. Cloud Manager 콘솔의 오른쪽 위에서 설정 아이콘을 클릭하고 * 자격 증명 * 을 선택합니다.
+. 자격 증명 집합에 대한 작업 메뉴를 클릭한 다음 * 자격 증명 삭제 * 를 선택합니다.
+. 확인하려면 * 삭제 * 를 클릭합니다.
+

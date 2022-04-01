@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: task-logging-in.html 
+keywords: logging in, log in, sign in, signing in, cloud central, netapp cloud central, user account, federated, federation, federated login, federation login 
+summary: 'Cloud Manager 인터페이스는 로 이동하여 SaaS 기반 사용자 인터페이스를 통해 액세스할 수 있습니다 https://cloudmanager.netapp.com[].' 
+---
+= Cloud Manager에 로그인
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Manager 인터페이스는 로 이동하여 SaaS 기반 사용자 인터페이스를 통해 액세스할 수 있습니다 https://cloudmanager.netapp.com[].
+
+
+TIP: Single Sign-On을 사용하여 회사 디렉터리(통합 ID)의 자격 증명을 사용하여 로그인할 수 있습니다. 자세한 내용은 로 이동하십시오 https://cloud.netapp.com/help-center["Cloud Central 도움말 센터"^] 그런 다음 * Cloud Central 로그인 옵션 * 을 클릭합니다.
+
+.단계
+. 웹 브라우저를 열고 로 이동합니다 https://cloudmanager.netapp.com[].
+. NetApp Cloud Central 자격 증명을 사용하여 로그인합니다.
++
+image:screenshot_login.gif["Cloud Central의 로그인 화면"]
+
+
+
+이제 로그인했으므로 Cloud Manager를 사용하여 하이브리드 멀티 클라우드 인프라를 관리할 수 있습니다.

@@ -1,0 +1,107 @@
+---
+sidebar: sidebar 
+permalink: reference-permissions-gcp.html 
+keywords: permissions, gcp, gcp permissions 
+summary: Cloud Manager를 사용하려면 클라우드 공급자에서 작업을 수행할 수 있는 권한이 필요합니다. 이러한 사용 권한은 NetApp에서 제공하는 정책에 포함됩니다. Cloud Manager가 이러한 사용 권한을 통해 수행하는 작업을 이해하기를 원할 수 있습니다. 
+---
+= Google Cloud의 Connector에 대한 필수 권한
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Manager를 사용하려면 클라우드 공급자에서 작업을 수행할 수 있는 권한이 필요합니다. 이러한 권한은 에 포함되어 있습니다 https://mysupport.netapp.com/site/info/cloud-manager-policies["NetApp에서 제공하는 정책"^]. Cloud Manager가 이러한 사용 권한을 통해 수행하는 작업을 이해하기를 원할 수 있습니다.
+
+GCP용 Cloud Manager 정책에는 Cloud Manager가 Cloud Volumes ONTAP를 구현 및 관리하는 데 필요한 권한이 포함되어 있습니다.
+
+[cols="50,50"]
+|===
+| 작업 | 목적 
+
+
+| -compute.disks.create-compute.disks.createSnapshot-compute.disks.delete -compute.disks.get-compute.disks.list -compute.disks.setLabels -compute.disks.us e | Cloud Volumes ONTAP용 디스크를 생성하고 관리합니다. 
+
+
+| -compute.w방화벽.create-compute.firewalls.delete-compute.w방화벽.get-compute.w방화벽.list를 참조하십시오 | Cloud Volumes ONTAP에 대한 방화벽 규칙을 만듭니다. 
+
+
+| -compute.globalOperations.get | 작업 상태를 확인합니다. 
+
+
+| -compute.images.get-compute.images.getFromFamily-compute.images.list-compute.images.useReadOnly 를 참조하십시오 | VM 인스턴스의 이미지를 가져옵니다. 
+
+
+| compute.instances.attachDisk - compute.instances.detachDisk 으로 문의하십시오 | Cloud Volumes ONTAP에 디스크를 연결 및 분리합니다. 
+
+
+| compute.instances.create - compute.instances.delete 으로 문의하십시오 | Cloud Volumes ONTAP VM 인스턴스를 생성 및 삭제합니다. 
+
+
+| compute.instances.get 으로 문의하십시오 | VM 인스턴스를 나열합니다. 
+
+
+| compute.instances.getSerialPortOutput 으로 문의하십시오 | 콘솔 로그를 가져옵니다. 
+
+
+| compute.instances.list 으로 문의하십시오 | 영역에 있는 인스턴스 목록을 검색합니다. 
+
+
+| compute.instances.setDeletionProtection 으로 문의하십시오 | 인스턴스에 대한 삭제 보호를 설정합니다. 
+
+
+| compute.instances.setLabels 으로 문의하십시오 | 를 눌러 라벨을 추가합니다. 
+
+
+| compute.instances.setMachineType - compute.instances.setMinCpuPlatform 으로 문의하십시오 | Cloud Volumes ONTAP의 기계 유형을 변경합니다. 
+
+
+| compute.instances.setMetadata 으로 문의하십시오 | 를 눌러 메타데이터를 추가합니다. 
+
+
+| compute.instances.setTags 으로 문의하십시오 | 방화벽 규칙에 대한 태그를 추가하려면 
+
+
+| compute.instances.start - compute.instances.stop - compute.instances.updateDisplayDevice | Cloud Volumes ONTAP를 시작 및 중지합니다. 
+
+
+| -compute.machineTypes.get | 를 클릭하여 qoutas를 확인하십시오. 
+
+
+| compute.projects.get 으로 문의하십시오 | 여러 프로젝트를 지원합니다. 
+
+
+| -compute.snapshots.create-compute.snapshots.delete-compute.snapshots.get-compute.snapshots.list-compute.snapshots.setLabels 를 참조하십시오 | 영구 디스크 스냅샷을 생성하고 관리합니다. 
+
+
+| -compute.networks.get -compute.networks.list -compute.regions.get-compute.regions.list-compute.subnetworks.get-compute.subnetworks.list-compute.zoneOperations.get-compute.zones.get-compute.zones.list 를 참조하십시오 | 새 Cloud Volumes ONTAP 가상 머신 인스턴스를 생성하는 데 필요한 네트워킹 정보를 가져옵니다. 
+
+
+| deploymentmanager.compositeTypes.get -deploymentmanager.compositeTypes.list -deploymentmanager.deployments.create -deploymentmanager.deployments.delete -deploymentmanager.deployments.get -deploymentmanager.deployments.list deploymentmanager.manifests.get-deploymentmanager.manager.manifests.list.deploymentmanager.operations.get-deploymentmanager.resources.get-deploymentmanager.resources.list.list.deploymentmanager.deploymentmanager.deploymentmanager.deploymentmanager.type.deploymentmanager.deploymentmanager.deploymentmanager.type.get.type.get | Google Cloud Deployment Manager를 사용하여 Cloud Volumes ONTAP 가상 머신 인스턴스를 구축합니다. 
+
+
+| logging.logEntrs.list-logging.privateLogEntrs.list 를 참조하십시오 | 스택 로그 드라이브를 가져옵니다. 
+
+
+| resourcemanager.projects.get 으로 문의하십시오 | 여러 프로젝트를 지원합니다. 
+
+
+| -storage.버킷.create-storage.buckets.delete-storage.버킷.get-storage.버킷.list-storage.버킷.update | 데이터 계층화를 위한 Google Cloud Storage 버킷 생성 및 관리 
+
+
+| -cloudkms.cryptoKeyVersions.useToEncrypt -cloudkms.cryptoKeys.get-cloudkms.cryptoKeys.list-cloudkms.keyring.list를 참조하십시오 | 클라우드 키 관리 서비스(Cloud Volumes ONTAP 포함)에서 고객이 관리하는 암호화 키를 사용하려면 
+
+
+| -compute.instances.setServiceAccount -iam.serviceAccounts.actAs -iam.serviceAccounts.getIamPolicy -iam.serviceAccounts.list -storage.objects.get-storage.objects.list 를 참조하십시오 | Cloud Volumes ONTAP 인스턴스에서 서비스 계정을 설정하려면 이 서비스 계정은 Google Cloud Storage 버킷에 대한 데이터 계층화 권한을 제공합니다. 
+
+
+| -compute.addresses.list-compute.backendServices.create-compute.networks.updatePolicy-compute.regionBackendServices.create-compute.regionBackendServices.get-compute.regionBackendServices.list를 참조하십시오 | HA 쌍을 구축합니다. 
+
+
+| compute.subnetworks.us e-compute.subnetworks.useExternalIp - compute.instances.addAccessConfig 으로 문의하십시오 | 클라우드 데이터 센스를 활성화하려면 
+
+
+| -container.clusters.get-container.clusters.list 를 참조하십시오 | Google Kubernetes Engine에서 실행 중인 Kubernetes 클러스터를 검색할 수 있습니다. 
+|===

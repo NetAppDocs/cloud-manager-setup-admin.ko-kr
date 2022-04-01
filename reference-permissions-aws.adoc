@@ -1,0 +1,101 @@
+---
+sidebar: sidebar 
+permalink: reference-permissions-aws.html 
+keywords: permissions, actions, aws, aws permissions 
+summary: Cloud Manager를 사용하려면 클라우드 공급자에서 작업을 수행할 수 있는 권한이 필요합니다. 이러한 사용 권한은 NetApp에서 제공하는 정책에 포함됩니다. Cloud Manager가 이러한 사용 권한을 통해 수행하는 작업을 이해하기를 원할 수 있습니다. 
+---
+= AWS의 커넥터에 대한 필수 권한
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Manager를 사용하려면 클라우드 공급자에서 작업을 수행할 수 있는 권한이 필요합니다. 이러한 권한은 에 포함되어 있습니다 https://mysupport.netapp.com/site/info/cloud-manager-policies["NetApp에서 제공하는 정책"^]. Cloud Manager가 이러한 사용 권한을 통해 수행하는 작업을 이해하기를 원할 수 있습니다.
+
+Cloud Manager는 AWS 계정을 사용하여 EC2, S3, CloudFormation, IAM, 보안 토큰 서비스(STS) 및 키 관리 서비스(KMS).
+
+[cols="50,50"]
+|===
+| 작업 | 목적 
+
+
+| "EC2:StartInstances", "EC2:StopInstances", "EC2:DescribeInstances", "EC2:DescribeInstanceStatus", "EC2:RunInstances", "EC2: TerminateInstances", "EC2: ModifyInstanceAttribute", | Cloud Volumes ONTAP 인스턴스를 시작하고 인스턴스를 중지, 시작 및 모니터링합니다. 
+
+
+| "EC2: DescribeInstanceAttribute", | 지원되는 인스턴스 유형에 대해 향상된 네트워킹이 활성화되어 있는지 확인합니다. 
+
+
+| "EC2: DescribeRouteTables", "EC2: DescribeImages", | Cloud Volumes ONTAP HA 구성을 시작합니다. 
+
+
+| "EC2:CreateTags", | Cloud Manager가 만드는 모든 리소스에 "WorkingEnvironment" 및 "WorkingEnvironmentId" 태그를 지정합니다. Cloud Manager는 유지보수 및 비용 할당에 이러한 태그를 사용합니다. 
+
+
+| "EC2:CreateVolume", "EC2:DescribeVolumes", "EC2:ModifyVolumeAttribute", "EC2:AttachVolume", "EC2:DeleteVolume", "EC2: DetachVolume(EC2: 멈춤쇠 볼륨)", | Cloud Volumes ONTAP가 백엔드 스토리지로 사용하는 EBS 볼륨을 관리합니다. 
+
+
+| "EC2:CreateSecurityGroup", "EC2:DeleteSecurityGroup", "EC2:DescribeSecurityGroups", "EC2:RevokeSecurityGroupEgress", "EC2:AuthorizeSecurityGroupEgress", "EC2:AuthorizeSecurityGroupIngress", "EC2:RevokeSecurityGroupIngress", | Cloud Volumes ONTAP에 대해 미리 정의된 보안 그룹을 만듭니다. 
+
+
+| "EC2:CreateNetworkInterface", "EC2:DescribeNetworkInterfaces", "EC2:DeleteNetworkInterface", "EC2:ModifyNetworkInterfaceAttribute", | 대상 서브넷에서 Cloud Volumes ONTAP에 대한 네트워크 인터페이스를 생성하고 관리합니다. 
+
+
+| "EC2: DescribeSubnet", "EC2: DescribeVpcs", | Cloud Volumes ONTAP 에 대한 새 작업 환경을 만들 때 필요한 대상 서브넷 및 보안 그룹 목록을 가져옵니다. 
+
+
+| "EC2: DescribeDhcpOptions", | Cloud Volumes ONTAP 인스턴스를 시작할 때 DNS 서버와 기본 도메인 이름을 결정합니다. 
+
+
+| "EC2:CreateSnapshot", "EC2:DeleteSnapshot", "EC2:DescribeSnapshots", | 초기 설정 중에 및 Cloud Volumes ONTAP 인스턴스가 중지될 때마다 EBS 볼륨의 스냅샷을 생성합니다. 
+
+
+| "EC2:GetConsoleOutput", | AutoSupport 메시지에 첨부된 Cloud Volumes ONTAP 콘솔을 캡처합니다. 
+
+
+| "EC2: 설명", | 인스턴스를 시작할 때 사용 가능한 키 쌍 목록을 가져옵니다. 
+
+
+| "EC2: 설명 영역", | 사용 가능한 AWS 영역 목록을 가져옵니다. 
+
+
+| "EC2:DeleteTags", "EC2: DescribeTags", | Cloud Volumes ONTAP 인스턴스와 관련된 리소스의 태그를 관리합니다. 
+
+
+| "CloudFormation:CreateStack", "CloudFormation:DeleteStack", "CloudFormation:DescribeStacks", "CloudFormation:DescribeStackEvents", "CloudFormation:ValidateTemplate", | Cloud Volumes ONTAP 인스턴스를 시작합니다. 
+
+
+| "IAM:PassRole", "IAM:CreateRole", "IAM:DeleteRole", "IAM:PutRolePolicy", "IAM:CreateInstanceProfile", "IAM:DeleteRolePolicy", "IAM:AddRoleToInstanceProfile", "IAM:RemoveRoleFromInstanceProfile", "IAM:DeleteInstanceProfile", | Cloud Volumes ONTAP HA 구성을 시작합니다. 
+
+
+| "IAM:ListInstanceProfiles", "STS:DecodeAuthorizationMessage", "EC2:AssociateIamInstanceProfile", "EC2:DescribeIamInstanceProfileAssociations", "EC2:DisconnectateIamInstanceProfile", | Cloud Volumes ONTAP 인스턴스의 인스턴스 프로파일을 관리합니다. 
+
+
+| "S3:GetBucketTagging", "S3:GetBucketLocation", "S3:ListAllMyBucket", "S3:ListBucket" | Cloud Manager를 NetApp Data Fabric Cloud Sync 서비스와 통합할 수 있도록 AWS S3 버킷에 대한 정보 확보 
+
+
+| "S3:CreateBucket", "S3:DeleteBucket", "S3:GetLifecycleConfiguration", "S3:PutLifecycleConfiguration", "S3:PutketTagging", "S3:ListBuckketVersions", "S3:GetBuckketPolicyStatus", "S3:GetBuckketPublicAccessBlock", "S3:GetBuckketAcl", "S3:GetBuckketPolicy", "S3:PutBucketPublicAccessBlock" | Cloud Volumes ONTAP 시스템이 데이터 계층화를 위한 용량 계층으로 사용하는 S3 버킷을 관리합니다. 
+
+
+| "kms:List * ", "kms:ReEncrypt * ", "kms:설명 * ", "kms:CreateGrant", | AWS KMS(키 관리 서비스)를 사용하여 Cloud Volumes ONTAP의 데이터 암호화를 지원합니다. 
+
+
+| "CE:GetReservationUtilization", "CE:GetDimensionValues", "CE:GetCostAndUsage", "CE:GetTags" | Cloud Volumes ONTAP에 대한 AWS 비용 데이터를 가져옵니다. 
+
+
+| "EC2:CreatePlacementGroup", "EC2:DeletePlacementGroup" | 단일 AWS Availability Zone에 HA 구성을 구축하면 Cloud Manager가 두 개의 HA 노드를 시작하고 AWS Spread 배치 그룹에서 중재자를 실행합니다. 
+
+
+| "EC2: DescribeReservedInstances편리" | Cloud Manager는 Cloud Data Sense 배포의 일부로 사용 권한을 사용하여 사용할 인스턴스 유형을 선택합니다. 
+
+
+| "EC2:CreateTags", "EC2:DeleteTags", "EC2:DescribeTags", "tag:getResources", "tag:getTagKeys", "tag:getTagValues", "tag:TagResources", "tag:UntagResources" | Cloud Manager Tagging 서비스를 사용하여 AWS 리소스의 태그를 관리할 수 있습니다. 
+
+
+| "S3:DeleteBucket", "S3:GetLifecycleConfiguration", "S3:PutLifecycleConfiguration", "S3:PutketTagging", "S3:ListBuckketVersions", "S3:GetObject", "S3:ListBucket", "S3:ListAllMyBucket", "S3:GetBuckTagging", "S3:GetBuckketLocation" "S3:GetBuckketPolicyStatus", "S3:GetBuckketPublicAccessBlock", "S3:GetBuckketAcl", "S3:GetBuckketPolicy", "S3:PutketPublicAccessBlock" | Cloud Manager는 Backup to S3 서비스를 활성화할 때 이러한 권한을 사용합니다. 
+
+
+| "eks:ListClusters", "eks:DescribeCluster", "IAM:GetInstanceProfile" | Amazon EKS 클러스터 검색을 활성화합니다. 
+|===

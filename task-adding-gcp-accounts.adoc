@@ -1,0 +1,106 @@
+---
+sidebar: sidebar 
+permalink: task-adding-gcp-accounts.html 
+keywords: permissions, gcp, marketplace, gcp subscription, subscription, gcp marketplace, subscribe, data tiering, tiering, setup, requirements, account for data tiering, account for tiering, interoperable, interoperability, interoperable storage access keys, access keys 
+summary: Connector VM 인스턴스와 연결된 자격 증명을 관리할 수 있습니다. 
+---
+= Cloud Manager의 GCP 자격 증명 및 구독 관리
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Connector VM 인스턴스와 연결된 자격 증명을 관리할 수 있습니다.
+
+
+
+== Marketplace 구독을 GCP 자격 증명과 연결합니다
+
+GCP에서 Connector를 구축하면 Cloud Manager가 Connector VM 인스턴스와 연결된 기본 자격 증명 세트를 생성합니다. Cloud Manager에서 Cloud Volumes ONTAP를 구축하는 데 사용하는 자격 증명입니다.
+
+언제든지 이러한 자격 증명과 연결된 마켓플레이스 구독을 변경할 수 있습니다. 구독을 통해 선불 종량제 Cloud Volumes ONTAP 시스템을 생성하고 다른 NetApp 클라우드 서비스를 사용할 수 있습니다.
+
+.단계
+. Cloud Manager 콘솔의 오른쪽 위에서 설정 아이콘을 클릭하고 * 자격 증명 * 을 선택합니다.
+. 자격 증명 집합에 대한 작업 메뉴를 클릭한 다음 * 가입 연결 * 을 선택합니다.
++
+image:screenshot_gcp_add_subscription.png["기존 자격 증명 집합에 대한 작업 메뉴 스크린샷"]
+
+. 드롭다운 목록에서 Google Cloud 프로젝트 및 구독을 선택합니다.
++
+image:screenshot_gcp_associate.gif["Google Cloud 자격 증명을 위해 선택한 Google Cloud 프로젝트 및 가입 스크린샷"]
+
+. Associate * 를 클릭합니다.
+. 아직 구독이 없는 경우 * 구독 추가 * 를 클릭하고 아래 단계에 따라 새 구독을 만듭니다.
++
+
+NOTE: 다음 단계를 완료하기 전에 Google Cloud 계정뿐만 아니라 NetApp Cloud Central 로그인에서도 청구 관리자 권한이 모두 있는지 확인하십시오.
+
+. 구독 단계를 보고 * 계속 * 을 클릭합니다.
++
+image:screenshot_gcp_sub_popup.png["구독 팝업의 스크린샷."]
+
+. 로 리디렉션된 후 https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager["Google Cloud Marketplace의 NetApp Cloud Manager 페이지를 참조하십시오"^]상단 탐색 메뉴에서 올바른 프로젝트가 선택되어 있는지 확인합니다.
++
+image:screenshot_gcp_cvo_marketplace.png["GCP CVO 마켓플레이스 페이지의 스크린샷"]
+
+. 구독 * 을 클릭합니다.
+. 적절한 청구 계정을 선택하고 이용 약관에 동의합니다.
++
+image:screenshot_gcp_terms_and_conditions.png["GCP 약관 스크린샷"]
+
+. 구독 * 을 클릭합니다.
++
+이 단계에서는 전송 요청을 NetApp에 전송합니다.
+
+. 팝업 대화 상자에서 * Register with NetApp, Inc. * 를 클릭하여 NetApp Cloud Central로 리디렉션합니다.
++
+image:screenshot_gcp_marketplace_register.png["등록 팝업 스크린샷."]
+
++
+
+NOTE: GCP 구독을 NetApp 계정에 연결하려면 이 단계를 완료해야 합니다. 이 페이지에서 리디렉션되어 NetApp Cloud Central에 로그인할 때까지 구독 연결 프로세스가 완료되지 않습니다.
+
+. Cloud Central로 리디렉션되면 NetApp Cloud Central에 로그인하거나 등록하고 * 완료 * 를 클릭하여 계속 진행하십시오.
++
+GCP 구독은 사용자 로그인과 연결된 모든 NetApp 계정에 연결됩니다.
+
++
+image:screenshot_gcp_sub_mapping.png["GCP 구독을 NetApp 계정에 매핑하는 스크린샷"]
+
++
+
+NOTE: 조직의 누군가가 이미 청구 계정에서 NetApp Cloud Manager 구독을 신청하면 로 리디렉션됩니다 https://cloud.netapp.com/ontap-cloud?x-gcp-marketplace-token=["NetApp Cloud Central의 Cloud Volumes ONTAP 페이지"^] 대신 예기치 않은 상황인 경우 NetApp 세일즈 팀에 문의하십시오. Google은 Google 청구 계정당 하나의 가입만 활성화합니다.
+
+. 이 프로세스가 완료되면 Cloud Manager의 자격 증명 페이지로 돌아가 이 새 구독을 선택합니다.
++
+image:screenshot_gcp_associate.gif["구독 할당 페이지의 스크린샷."]
+
+
+
+
+
+== 마켓플레이스 가입 프로세스 문제 해결
+
+Google Cloud Marketplace를 통해 Cloud Volumes ONTAP을 구독하는 경우 잘못된 권한이 있거나 NetApp Cloud Central로 리디렉션된 후 우연히 팔로우하지 않아 조각화될 수 있습니다. 이 경우 다음 단계를 사용하여 구독 프로세스를 완료합니다.
+
+.단계
+. 로 이동합니다 https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager["Google Cloud Marketplace의 NetApp Cloud Manager 페이지를 참조하십시오"^] 주문 상태를 확인합니다. 페이지에 * 공급자 * 에서 관리 * 가 표시되면 아래로 스크롤하여 * 주문 관리 * 를 클릭합니다.
++
+image:screenshot_gcp_manage_orders.png["마켓플레이스 페이지 사후 구독 스크린샷."]
+
++
+.. 주문에 녹색 확인 표시가 있고 예상치 못한 경우 동일한 대금 청구 계정을 사용하는 조직의 다른 사용자가 이미 구독 중인 것일 수 있습니다. 예기치 않은 요청이거나 이 구독에 대한 자세한 정보가 필요한 경우 NetApp 세일즈 팀에 문의하십시오.
++
+image:screenshot_gcp_green_marketplace.png["승인된 소유 권한의 스크린샷."]
+
+.. 주문에 시계 및 * 보류 * 상태가 표시되면 마켓플레이스 페이지로 돌아가서 * 공급자 관리 * 를 선택하여 위에 설명된 프로세스를 완료합니다.
++
+image:screenshot_gcp_pending_marketplace.png["보류 중인 마켓플레이스 소유 권한의 스크린샷."]
+
+
+
+

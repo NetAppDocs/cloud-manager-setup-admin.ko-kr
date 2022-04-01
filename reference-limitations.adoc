@@ -1,0 +1,89 @@
+---
+sidebar: sidebar 
+permalink: reference-limitations.html 
+keywords: limitations, active directory, ad, iscsi, key managers, ip address, govcloud, cloud manager, Cloud Volumes ONTAP, days, 14 days, running, Connectors should remain running 
+summary: 알려진 제한 사항은 이 제품 릴리스에서 지원하지 않거나 올바르게 상호 운용되지 않는 플랫폼, 장치 또는 기능을 식별합니다. 이러한 제한 사항을 주의 깊게 검토하십시오. 
+---
+= 알려진 제한 사항
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+알려진 제한 사항은 이 제품 릴리스에서 지원하지 않거나 올바르게 상호 운용되지 않는 플랫폼, 장치 또는 기능을 식별합니다. 이러한 제한 사항을 주의 깊게 검토하십시오.
+
+이러한 제한은 Cloud Manager 설정 및 관리, 즉 커넥터, SaaS 플랫폼 등에 적용됩니다.
+
+
+
+== 커넥터 제한
+
+
+
+=== HTTP 프록시 서버만 지원됩니다
+
+회사 정책에 따라 인터넷에 대한 모든 HTTP 통신에 프록시 서버를 사용해야 하는 경우 해당 HTTP 프록시 서버를 사용하도록 커넥터를 구성해야 합니다. 프록시 서버는 클라우드 또는 네트워크에 있을 수 있습니다.
+
+Cloud Manager는 Connector에서 HTTPS 프록시 사용을 지원하지 않습니다.
+
+
+
+=== SSL 암호 해독은 지원되지 않습니다
+
+Cloud Manager는 SSL 암호 해독이 활성화된 방화벽 구성을 지원하지 않습니다. SSL 암호 해독이 활성화된 경우 Cloud Manager에 오류 메시지가 나타나고 Connector 인스턴스가 비활성으로 표시됩니다.
+
+보안 강화를 위해 을(를) 선택할 수 있습니다 link:task-installing-https-cert.html["CA(인증 기관)에서 서명한 HTTPS 인증서 설치"].
+
+
+
+=== 로컬 UI를 로드할 때 빈 페이지입니다
+
+Connector에 대한 로컬 사용자 인터페이스를 로드하면 UI가 표시되지 않을 수 있으며 빈 페이지가 표시될 수도 있습니다.
+
+이 문제는 캐싱 문제와 관련이 있습니다. 해결 방법은 익명 또는 개인 웹 브라우저 세션을 사용하는 것입니다.
+
+
+
+== SaaS 제한 사항
+
+
+
+=== 정부 지역에서는 SaaS 플랫폼을 사용할 수 없습니다
+
+AWS GovCloud 지역, Azure Gov 지역 또는 Azure DoD 지역에 Connector를 구축하는 경우 Connector의 호스트 IP 주소를 통해서만 Cloud Manager에 액세스할 수 있습니다. 전체 계정에 대해 SaaS 플랫폼에 대한 액세스가 비활성화되었습니다.
+
+즉, 최종 사용자 내부 VPC/VNET에 액세스할 수 있는 권한이 있는 사용자만 Cloud Manager의 UI 또는 API를 사용할 수 있습니다.
+
+또한 Cloud Manager에서 다음 서비스를 사용할 수 없습니다.
+
+* 클라우드 데이터 감지
+* 쿠버네티스
+* 클라우드 계층화
+* 글로벌 파일 캐시
+
+
+이러한 서비스를 사용하려면 SaaS 플랫폼이 필요합니다.
+
+
+NOTE: Cloud Backup, Cloud Data Sense 및 Monitoring 서비스는 정부 지역에서 지원 및 제공됩니다.
+
+
+
+== 시장 제한
+
+
+
+== Azure 및 Google Cloud 파트너는 사용한 만큼만 지불하는 방식을 사용할 수 없습니다
+
+Microsoft 클라우드 솔루션 공급자(CSP) 파트너이거나 Google Cloud 파트너인 경우 NetApp의 용량제 구독을 사용할 수 없습니다. BYOL 라이센스를 통해 NetApp 클라우드 솔루션을 구축하고 라이센스를 구입해야 함
+
+다음 NetApp 클라우드 서비스에서는 용량제 구독을 사용할 수 없습니다.
+
+* Cloud Volumes ONTAP
+* 클라우드 계층화
+* 클라우드 백업
+* 클라우드 데이터 감지
+

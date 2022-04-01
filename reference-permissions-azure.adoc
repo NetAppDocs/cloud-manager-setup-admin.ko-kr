@@ -1,0 +1,95 @@
+---
+sidebar: sidebar 
+permalink: reference-permissions-azure.html 
+keywords: permissions, azure, azure permissions 
+summary: Cloud Manager를 사용하려면 클라우드 공급자에서 작업을 수행할 수 있는 권한이 필요합니다. 이러한 사용 권한은 NetApp에서 제공하는 정책에 포함됩니다. Cloud Manager가 이러한 사용 권한을 통해 수행하는 작업을 이해하기를 원할 수 있습니다. 
+---
+= Azure의 커넥터에 대한 필수 권한
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Manager를 사용하려면 클라우드 공급자에서 작업을 수행할 수 있는 권한이 필요합니다. 이러한 권한은 에 포함되어 있습니다 https://mysupport.netapp.com/site/info/cloud-manager-policies["NetApp에서 제공하는 정책"^]. Cloud Manager가 이러한 사용 권한을 통해 수행하는 작업을 이해하기를 원할 수 있습니다.
+
+Cloud Manager Azure 정책에는 Cloud Manager가 Azure에서 Cloud Volumes ONTAP를 배포하고 관리하는 데 필요한 권한이 포함되어 있습니다.
+
+[cols="50,50"]
+|===
+| 작업 | 목적 
+
+
+| "Microsoft.Compute/locations/operations/read", "Microsoft.Compute/locations/vmSizes/read", "Microsoft.Compute/operations/read", "Microsoft.Compute/virtualMachines/instanceView/read","Microsoft.Compute/virtualMachines/powerOff/action", "Microsoft.Compute/virtualMachines/read", "Microsoft.Compute/virtualMachines/restart/action", "Microsoft.Compute/virtualMachines/start/action", "Microsoft.Compute/virtualMachines/deallocate/action","Microsoft.Compute/virtualMachines/vmSizes/read", "Microsoft.Compute/virtualMachines/write", | Cloud Volumes ONTAP를 생성하고 시스템 상태를 중지, 시작, 삭제 및 가져옵니다. 
+
+
+| "Microsoft.Compute/images/write"," Microsoft.Compute/images/read", | VHD에서 Cloud Volumes ONTAP 배포를 활성화합니다. 
+
+
+| "Microsoft.Compute/disks/delete", "Microsoft.Compute/disks/read", "Microsoft.Compute/disks/write", "Microsoft.Storage/checkknameAvailability/read", "Microsoft.Storage/operations/read", "Microsoft.Storage/storageAccounts/listkeys/action", "Microsoft.Storage/storageAccounts/read", "Microsoft.Storage/storageAccounts/REV/ACTION", "Microsoft.Storage/storageAccounts/write", "Microsoft.Storage/storageAccounts/delete", "Microsoft.Storage/en사용법/read", | Azure 스토리지 계정 및 디스크를 관리하고 디스크를 Cloud Volumes ONTAP에 연결합니다. 
+
+
+| "Microsoft.Storage/storageAccounts/blobServices/containers/read", "Microsoft.KeyVault/vaults/read", "Microsoft.KeyVault/vaults/accessPolicies/write" | Azure Blob 저장소에 백업 및 스토리지 계정 암호화를 지원합니다 
+
+
+| "Microsoft.Network/networkInterfaces/read", "Microsoft.Network/networkInterfaces/write"," Microsoft.Network/networkInterfaces/join/action", | 대상 서브넷에서 Cloud Volumes ONTAP에 대한 네트워크 인터페이스를 생성하고 관리합니다. 
+
+
+| "Microsoft.Network/networkSecurityGroups/read", "Microsoft.Network/networkSecurityGroups/write"," Microsoft.Network/networkSecurityGroups/join/action", | Cloud Volumes ONTAP에 대해 미리 정의된 네트워크 보안 그룹을 생성합니다. 
+
+
+| "Microsoft.Resources/Subscriptions/locations/read", "Microsoft.Network/locations/operationResults/read", "Microsoft.Network/locations/operations/read", "Microsoft.Network/virtualNetworks/read"," Microsoft.Network/virtualNetworks/checkIpAddressAvailability/read", "Microsoft.Network/virtualNetworks/subnets/read", "Microsoft.Network/virtualNetworks/subnets/virtualMachines/read", "Microsoft.Network/virtualNetworks/virtualMachines/read","Microsoft.Network/virtualNetworks/subnets/join/action", | 지역, 대상 VNET 및 서브넷에 대한 네트워크 정보를 가져오고 Cloud Volumes ONTAP를 VNets에 추가합니다. 
+
+
+| "Microsoft.Network/virtualNetworks/subnets/write"," Microsoft.Network/routeTables/join/action", | 데이터 계층화를 위한 VNET 서비스 엔드포인트를 활성화합니다. 
+
+
+| "Microsoft.Resources/Deployments/operations/read", "Microsoft.Resources/Deployments/read", "Microsoft.Resources/Deployments/Write", | 템플릿에서 Cloud Volumes ONTAP를 배포합니다. 
+
+
+| "Microsoft.Resources/Deployments/operations/read", "Microsoft.Resources/Deployments/read", "Microsoft.Resources/Deployments/write", "Microsoft.Resources/resources/read", "Microsoft.Resources/Subscriptions/operationresults/read", "Microsoft.Resources/Subscriptions/resourceGroups/delete", "Microsoft.Resources/Subscriptions/resourceGroups/read", "Microsoft.Resources/Subscriptions/resourcegroups/resourceGroups/read", "Microsoft.Resources/Subscriptions/resourceGroups/write", | Cloud Volumes ONTAP에 대한 리소스 그룹을 생성하고 관리합니다. 
+
+
+| "Microsoft.Compute/snapshots/write", "Microsoft.Compute/snapshots/read", "Microsoft.Compute/snapshots/delete","Microsoft.Compute/disks/beginGetAccess/action", | Azure 관리 스냅샷을 생성하고 관리합니다. 
+
+
+| "Microsoft.Compute/availabilitySets/write"," Microsoft.Compute/availabilitySets/read", | Cloud Volumes ONTAP의 가용성 세트를 생성하고 관리합니다. 
+
+
+| "Microsoft.MarketplaceOrdering/offerstypes/publishers/Offers/Plans/Agreement/read", "Microsoft.MarketplaceOrdering/offerstypes/publisherTypes/publishers/Offers/Plans/Agreement/write", | Azure Marketplace에서 프로그래밍 방식으로 배포할 수 있습니다. 
+
+
+| "Microsoft.Network/loadBalancers/read", "Microsoft.Network/loadBalancers/write", "Microsoft.Network/loadBalancers/delete", "Microsoft.Network/loadBalancers/backendAddressPools/read","Microsoft.Network/loadBalancers/backendAddressPools/join/action", "Microsoft.Network/loadBalancers/frontendIPConfigurations/read", "Microsoft.Network/loadBalancers/loadBalancingRules/read", "Microsoft.Network/loadBalancers/probes/read","Microsoft.Network/loadBalancers/probes/join/action", | HA 쌍에 대한 Azure 로드 밸런서를 관리합니다. 
+
+
+| "Microsoft.Authorization/lock/ *", | Azure 디스크의 잠금 관리를 활성화합니다. 
+
+
+| "Microsoft.Authorization/roleDefinitions/write", "Microsoft.Authorization/roleAssignments/write", "Microsoft.Web/sites/ *" | HA 쌍의 페일오버 관리 
+
+
+| "Microsoft.Network/privateEndpoints/write", "Microsoft.Storage/storageAccounts/PrivateEndpointConnectionsApproval/action", "Microsoft.Storage/storageAccounts/privateEndpointConnections/read", "Microsoft.Network/privateEndpoints/read", "Microsoft.Network/privateDnsZones/write", "Microsoft.Network/privateDnsZones/virtualNetworkLinks/write", "Microsoft.Network/virtualNetworks/join/action", "Microsoft.Network/privateDnsZones/A/write", "Microsoft.Network/privateDnsZones/read","Microsoft.Network/privateDnsZones/virtualNetworkLinks/read", | 전용 엔드포인트를 관리할 수 있습니다. 전용 엔드포인트는 서브넷 외부에 접속이 제공되지 않을 때 사용됩니다. Cloud Manager는 서브넷 내에서 내부 연결만 제공하는 HA용 스토리지 계정을 생성합니다. 
+
+
+| "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/delete", | Cloud Manager에서 Azure NetApp Files의 볼륨을 삭제할 수 있습니다. 
+
+
+| "Microsoft.Resources/Deployments/operationStates/read" | Azure에서는 일부 가상 시스템 배포에 대해 이 권한이 필요합니다(배포 중에 사용되는 기본 물리적 하드웨어에 따라 다름). 
+
+
+| "Microsoft.Resources/Deployments/operationStates/read", "Microsoft.Insights/Metrics/Read", "Microsoft.Compute/virtualMachines/extensions/write", "Microsoft.Compute/virtualMachines/extensions/read"," Microsoft.Compute/virtualMachines/extensions/delete", "Microsoft.Compute/virtualMachines/delete", "Microsoft.Network/networkInterfaces/delete", "Microsoft.Network/networkSecurityGroups/delete", "Microsoft.Resources/Deployments/delete", | 글로벌 파일 캐시를 사용할 수 있습니다. 
+
+
+| "Microsoft.Network/privateEndpoints/delete"," Microsoft.Compute/availabilitySets/delete", | Cloud Manager에서 배포 실패 또는 삭제 시 Cloud Volumes ONTAP에 속한 리소스 그룹에서 리소스를 제거할 수 있습니다. 
+
+
+| "Microsoft.Compute/diskEncryptionSets/read"" Microsoft.Compute/diskEncryptionSets/write", "Microsoft.Compute/diskEncryptionSets/delete" "Microsoft.KeyVault/vaults/deploy/action", "Microsoft.KeyVault/vaults/waults/read", "Microsoft.KeyVault/vaults/accessPolicies/write", | Cloud Volumes ONTAP에서 고객이 관리하는 암호화 키를 사용할 수 있습니다. 이 기능은 API를 사용하여 지원됩니다. 
+
+
+| "Microsoft.Resources/tags/read", "Microsoft.Resources/tags/write", "Microsoft.Resources/tags/delete" | Cloud Manager 태그 지정 서비스를 사용하여 Azure 리소스의 태그를 관리할 수 있습니다. 
+
+
+| "Microsoft.Network/applicationSecurityGroups/write", "Microsoft.Network/applicationSecurityGroups/read", "Microsoft.Network/applicationSecurityGroups/joinIpConfiguration/action", "Microsoft.Network/networkSecurityGroups/securityRules/write","Microsoft.Network/applicationSecurityGroups/delete", "Microsoft.Network/networkSecurityGroups/securityRules/delete" 참조하십시오 | Cloud Manager에서 HA 인터커넥트 및 클러스터 네트워크 NIC를 격리하는 HA 쌍에 대한 애플리케이션 보안 그룹을 구성할 수 있습니다. 
+|===

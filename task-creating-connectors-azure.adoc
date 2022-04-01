@@ -1,0 +1,410 @@
+---
+sidebar: sidebar 
+permalink: task-creating-connectors-azure.html 
+keywords: create connector in azure, launch connector in azure, deploy connector in azure, azure connector, connector azure, connector permissions, create custom role, create azure custom role, azure custom role 
+summary: 대부분의 Cloud Manager 기능을 사용하려면 계정 관리자가 Connector를 배포해야 합니다. Connector를 사용하면 Cloud Manager에서 퍼블릭 클라우드 환경 내의 리소스와 프로세스를 관리할 수 있습니다. 
+---
+= Cloud Manager에서 Azure에 Connector를 생성합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+대부분의 Cloud Manager 기능을 사용하려면 계정 관리자가 _Connector_를 배포해야 합니다. Connector를 사용하면 Cloud Manager에서 퍼블릭 클라우드 환경 내의 리소스와 프로세스를 관리할 수 있습니다. link:concept-connectors.html["커넥터가 필요한 시기를 알아보십시오"].
+
+이 페이지에서는 Cloud Manager에서 직접 Azure에 Connector를 생성하는 방법을 설명합니다. link:concept-connectors.html#how-to-create-a-connector["커넥터를 배포하는 다른 방법에 대해 알아봅니다"].
+
+이러한 단계는 계정 관리자 역할을 가진 사용자가 완료해야 합니다. 작업 영역 관리자가 연결선을 만들 수 없습니다.
+
+
+TIP: 첫 번째 Cloud Volumes ONTAP 작업 환경을 생성할 때 커넥터가 아직 없는 경우 Cloud Manager에서 커넥터를 생성하라는 메시지를 표시합니다.
+
+
+
+== 개요
+
+Connector를 배포하려면 Azure에서 Connector VM을 생성하는 데 필요한 권한이 있는 로그인을 Cloud Manager에 제공해야 합니다.
+
+두 가지 옵션이 있습니다.
+
+. 메시지가 나타나면 Microsoft 계정으로 로그인합니다. 이 계정에는 특정 Azure 권한이 있어야 합니다. 이 옵션이 기본 옵션입니다.
++
+<<Create a Connector using your Azure account,시작하려면 아래 단계를 따르십시오>>.
+
+. Azure AD 서비스 보안 주체에 대한 세부 정보를 제공합니다. 이 서비스 보안 주체는 특정 권한도 필요합니다.
++
+<<Create a Connector using a service principal,시작하려면 아래 단계를 따르십시오>>.
+
+
+
+
+
+== Azure 지역에 대한 참고 사항
+
+커넥터는 해당 커넥터가 관리하는 Cloud Volumes ONTAP 시스템과 동일한 Azure 영역에 배포하거나 에 배포되어야 합니다 https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies["Azure 지역 쌍"^] Cloud Volumes ONTAP 시스템의 경우 이 요구 사항은 Cloud Volumes ONTAP와 연결된 스토리지 계정 간에 Azure 전용 링크 연결이 사용되도록 합니다. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html["Cloud Volumes ONTAP에서 Azure 프라이빗 링크를 사용하는 방법에 대해 알아보십시오"^].
+
+
+
+== Azure 계정을 사용하여 커넥터를 만듭니다
+
+Azure에서 Connector를 만드는 기본 방법은 메시지가 표시되면 Azure 계정으로 로그인하는 것입니다. 로그인 양식은 Microsoft에서 소유하고 호스팅됩니다. 자격 증명이 NetApp에 제공되지 않습니다.
+
+
+
+=== Azure 계정에 대한 권한을 설정합니다
+
+Cloud Manager에서 Connector를 배포하기 전에 Azure 계정에 올바른 권한이 있는지 확인해야 합니다.
+
+.단계
+. 를 다운로드합니다 https://s3.amazonaws.com/occm-sample-policies/Policy_for_Setup_As_Service_Azure.json["Connector에 대한 Azure 정책입니다"^].
++
+
+TIP: 링크를 마우스 오른쪽 단추로 클릭하고 * 다른 이름으로 링크 저장... * 을 클릭하여 파일을 다운로드합니다.
+
+. 할당 범위에 Azure 구독 ID를 추가하여 JSON 파일을 수정합니다.
++
+* 예 *
+
++
+[source, json]
+----
+"AssignableScopes": [
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz"
+],
+----
+. JSON 파일을 사용하여 Azure에서 사용자 지정 역할을 생성합니다.
++
+다음 단계에서는 Azure Cloud Shell에서 Bash를 사용하여 역할을 생성하는 방법을 설명합니다.
+
++
+.. 시작 https://docs.microsoft.com/en-us/azure/cloud-shell/overview["Azure 클라우드 셸"^] Bash 환경을 선택하십시오.
+.. JSON 파일을 업로드합니다.
++
+image:screenshot_azure_shell_upload.png["파일을 업로드하는 옵션을 선택할 수 있는 Azure Cloud Shell의 스크린 샷"]
+
+.. 다음 Azure CLI 명령을 입력합니다.
++
+[source, azurecli]
+----
+az role definition create --role-definition Policy_for_Setup_As_Service_Azure.json
+----
+
+
++
+이제 _Azure SetupAsService_라는 사용자 지정 역할이 있어야 합니다.
+
+. Cloud Manager에서 Connector를 배포할 사용자에게 역할을 할당합니다.
++
+.. Subscriptions * 서비스를 열고 사용자의 구독을 선택합니다.
+.. IAM(액세스 제어) * 을 클릭합니다.
+.. Add * > * Add role assignment * 를 클릭한 후 권한을 추가합니다.
++
+*** Azure SetupAsService * 역할을 선택하고 * 다음 * 을 클릭합니다.
++
+
+NOTE: Azure SetupAsService 는 에 제공된 기본 이름입니다 https://mysupport.netapp.com/site/info/cloud-manager-policies["Azure용 커넥터 배포 정책"^]. 역할에 다른 이름을 선택한 경우 대신 해당 이름을 선택합니다.
+
+*** 사용자, 그룹 또는 서비스 보안 주체 * 를 선택한 상태로 유지합니다.
+*** 회원 선택 * 을 클릭하고 사용자 계정을 선택한 다음 * 선택 * 을 클릭합니다.
+*** 다음 * 을 클릭합니다.
+*** 검토 + 할당 * 을 클릭합니다.
+
+
+
+
+
+
+이제 Azure 사용자는 Cloud Manager에서 Connector를 배포하는 데 필요한 권한을 갖게 됩니다.
+
+
+
+=== Azure 계정으로 로그인하여 Connector를 생성합니다
+
+Cloud Manager를 사용하면 사용자 인터페이스에서 직접 Azure에 Connector를 생성할 수 있습니다.
+
+.무엇을 &#8217;필요로 할거야
+* Azure 구독.
+* 선택한 Azure 지역에서 VNET 및 서브넷입니다.
+* Cloud Manager가 Connector에 대한 Azure 역할을 자동으로 생성하지 않도록 하려면 고유한 역할을 만들어야 합니다 https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.12.json["이 정책을 사용합니다"^].
++
+이러한 권한은 Connector 인스턴스 자체에 대한 것입니다. 이전 설정과는 다른 사용 권한 집합으로 Connector를 배포하기만 하면 됩니다.
+
+
+
+.단계
+. 처음 작업 환경을 만드는 경우 * 작업 환경 추가 * 를 클릭하고 화면의 지시를 따릅니다. 그렇지 않으면 * 커넥터 * 드롭다운을 클릭하고 * 커넥터 추가 * 를 선택합니다.
++
+image:screenshot_connector_add.gif["머리글의 연결선 아이콘 및 연결선 추가 동작을 보여 주는 스크린샷"]
+
+. 클라우드 공급자로 * Microsoft Azure * 를 선택합니다.
++
+Connector는 만들고 있는 작업 환경 유형과 활성화할 서비스에 대한 네트워크 연결이 있어야 합니다.
+
++
+link:reference-networking-cloud-manager.html["Connector의 네트워킹 요구 사항에 대해 자세히 알아보십시오"].
+
+. 마법사의 단계에 따라 커넥터를 작성합니다.
++
+** * 준비 완료 *: 필요한 항목을 검토하고 * 다음 * 을 클릭합니다.
+** 메시지가 표시되면 Microsoft 계정에 로그인합니다. 이 계정에는 가상 컴퓨터를 만드는 데 필요한 권한이 있어야 합니다.
++
+이 양식은 Microsoft에서 소유하고 호스팅됩니다. 자격 증명이 NetApp에 제공되지 않습니다.
+
++
+
+TIP: 이미 Azure 계정에 로그인한 경우 Cloud Manager는 해당 계정을 자동으로 사용합니다. 계정이 여러 개인 경우 먼저 로그아웃해야 올바른 계정을 사용할 수 있습니다.
+
+** * VM 인증 *: Azure 구독, 위치, 새 리소스 그룹 또는 기존 리소스 그룹을 선택한 다음 인증 방법을 선택합니다.
+** * 세부 정보 *: 인스턴스의 이름을 입력하고 태그를 지정한 다음 Cloud Manager에서 필요한 권한이 있는 새 역할을 생성할지 또는 로 설정한 기존 역할을 선택할지 여부를 선택합니다 https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.12.json["필요한 권한"^].
++
+이 역할과 연결된 구독을 선택할 수 있습니다. 선택한 각 구독은 해당 구독에 Cloud Volumes ONTAP를 배포할 수 있는 권한을 커넥터에 제공합니다.
+
+** * 네트워크 *: VNET 및 서브넷을 선택하고, 공용 IP 주소를 활성화할지 여부를 선택한 다음 선택적으로 프록시 구성을 지정합니다.
+** * 보안 그룹 *: 새 보안 그룹을 생성할지 또는 인바운드 HTTP, HTTPS 및 SSH 액세스를 허용하는 기존 보안 그룹을 선택할지 여부를 선택합니다.
++
+
+NOTE: 커넥터 를 시작하지 않으면 커넥터로 들어오는 트래픽이 없습니다. HTTP 및 HTTPS는 에 대한 액세스를 제공합니다 link:concept-connectors.html#the-local-user-interface["로컬 UI"]이는 드문 경우지만 사용할 수 있습니다. SSH는 문제 해결을 위해 호스트에 연결해야 하는 경우에만 필요합니다.
+
+** * 검토 *: 선택 사항을 검토하여 설정이 올바른지 확인합니다.
+
+
+. 추가 * 를 클릭합니다.
++
+가상 시스템은 약 7분 내에 준비되어야 합니다. 프로세스가 완료될 때까지 페이지를 유지해야 합니다.
+
+
+
+작업 영역 관리자가 이러한 커넥터를 사용하여 Cloud Volumes ONTAP 시스템을 만들 수 있도록 작업 영역과 커넥터를 연결해야 합니다. Account Admins만 있는 경우에는 Connector를 작업 영역과 연결할 필요가 없습니다. 계정 관리자는 기본적으로 Cloud Manager의 모든 작업 영역에 액세스할 수 있습니다. link:task-setting-up-netapp-accounts.html#associating-connectors-with-workspaces["자세한 정보"].
+
+
+
+== 서비스 보안 주체를 사용하여 커넥터를 만듭니다
+
+Azure 계정으로 로그인하는 대신 필요한 권한이 있는 Azure 서비스 보안 주체에 대한 자격 증명을 Cloud Manager에 제공할 수도 있습니다.
+
+
+
+=== 서비스 보안 주체를 사용하여 Azure 사용 권한 부여
+
+Azure Active Directory에서 서비스 보안 주체를 생성 및 설정하고 Cloud Manager에 필요한 Azure 자격 증명을 획득하여 Azure에 Connector를 배포하는 데 필요한 권한을 부여합니다.
+
+.단계
+. <<Create an Azure Active Directory application>>.
+. <<Assign the application to a role>>.
+. <<Add Windows Azure Service Management API permissions>>.
+. <<Get the application ID and directory ID>>.
+. <<Create a client secret>>.
+
+
+
+
+==== Azure Active Directory 응용 프로그램을 만듭니다
+
+Cloud Manager가 Connector를 배포하는 데 사용할 수 있는 Azure AD(Active Directory) 애플리케이션 및 서비스 보안 주체를 생성합니다.
+
+Active Directory 응용 프로그램을 만들고 응용 프로그램을 역할에 할당하려면 Azure에 적절한 권한이 있어야 합니다. 자세한 내용은 을 참조하십시오 https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions/["Microsoft Azure 문서: 필요한 권한"^].
+
+.단계
+. Azure 포털에서 * Azure Active Directory * 서비스를 엽니다.
++
+image:screenshot_azure_ad.gif["에는 Microsoft Azure의 Active Directory 서비스가 나와 있습니다."]
+
+. 메뉴에서 * 앱 등록 * 을 클릭합니다.
+. 새 등록 * 을 클릭합니다.
+. 응용 프로그램에 대한 세부 정보를 지정합니다.
++
+** * 이름 *: 응용 프로그램의 이름을 입력합니다.
+** * 계정 유형 *: 계정 유형을 선택합니다(모두 Cloud Manager와 연동함).
+** * URI 리디렉션 *: 이 필드는 비워 둘 수 있습니다.
+
+
+. Register * 를 클릭합니다.
+
+
+AD 응용 프로그램 및 서비스 보안 주체를 만들었습니다.
+
+
+
+==== 애플리케이션에 역할을 할당합니다
+
+Connector를 배포하려는 Azure 구독에 서비스 보안 주체를 바인딩하고 사용자 지정 "Azure SetupAsService" 역할을 할당해야 합니다.
+
+.단계
+. 를 다운로드합니다 https://mysupport.netapp.com/site/info/cloud-manager-policies["Azure용 커넥터 배포 정책"^].
++
+
+TIP: 링크를 마우스 오른쪽 단추로 클릭하고 * 다른 이름으로 링크 저장... * 을 클릭하여 파일을 다운로드합니다.
+
+. 할당 범위에 Azure 구독 ID를 추가하여 JSON 파일을 수정합니다.
++
+* 예 *
+
++
+[source, json]
+----
+"AssignableScopes": [
+"/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
+----
+. JSON 파일을 사용하여 Azure에서 사용자 지정 역할을 생성합니다.
++
+다음 단계에서는 Azure Cloud Shell에서 Bash를 사용하여 역할을 생성하는 방법을 설명합니다.
+
++
+.. 시작 https://docs.microsoft.com/en-us/azure/cloud-shell/overview["Azure 클라우드 셸"^] Bash 환경을 선택하십시오.
+.. JSON 파일을 업로드합니다.
++
+image:screenshot_azure_shell_upload.png["파일을 업로드하는 옵션을 선택할 수 있는 Azure Cloud Shell의 스크린 샷"]
+
+.. 다음 Azure CLI 명령을 입력합니다.
++
+[source, azurecli]
+----
+az role definition create --role-definition Policy_for_Setup_As_Service_Azure.json
+----
+
+
++
+이제 _Azure SetupAsService_라는 사용자 지정 역할이 있어야 합니다.
+
+. 역할에 응용 프로그램을 할당합니다.
++
+.. Azure 포털에서 * Subscriptions * 서비스를 엽니다.
+.. 구독을 선택합니다.
+.. IAM(Access Control) > 추가 > 역할 할당 추가 * 를 클릭합니다.
+.. Role * 탭에서 * Cloud Manager Operator * 역할을 선택하고 * Next * 를 클릭합니다.
+.. Members* 탭에서 다음 단계를 완료합니다.
++
+*** 사용자, 그룹 또는 서비스 보안 주체 * 를 선택한 상태로 유지합니다.
+*** 구성원 선택 * 을 클릭합니다.
++
+image:screenshot-azure-service-principal-role.png["애플리케이션에 역할을 추가할 때 구성원 탭을 표시하는 Azure 포털의 스크린샷"]
+
+*** 응용 프로그램의 이름을 검색합니다.
++
+예를 들면 다음과 같습니다.
+
++
+image:screenshot_azure_service_principal_role.png["Azure 포털에서 역할 할당 추가 양식을 보여 주는 Azure 포털의 스크린샷"]
+
+*** 응용 프로그램을 선택하고 * 선택 * 을 클릭합니다.
+*** 다음 * 을 클릭합니다.
+
+
+.. 검토 + 할당 * 을 클릭합니다.
++
+이제 서비스 보안 주체에 Connector를 배포하는 데 필요한 Azure 권한이 있습니다.
+
+
+
+
+
+
+
+==== Windows Azure 서비스 관리 API 권한을 추가합니다
+
+서비스 보안 주체는 "Windows Azure Service Management API" 권한이 있어야 합니다.
+
+.단계
+. Azure Active Directory * 서비스에서 * 앱 등록 * 을 클릭하고 응용 프로그램을 선택합니다.
+. API 권한 > 권한 추가 * 를 클릭합니다.
+. Microsoft API * 에서 * Azure Service Management * 를 선택합니다.
++
+image:screenshot_azure_service_mgmt_apis.gif["Azure 서비스 관리 API 권한을 보여 주는 Azure 포털의 스크린샷"]
+
+. Access Azure Service Management as organization users * 를 클릭한 다음 * Add permissions * 를 클릭합니다.
++
+image:screenshot_azure_service_mgmt_apis_add.gif["Azure 서비스 관리 API 추가를 보여 주는 Azure 포털의 스크린샷"]
+
+
+
+
+
+==== 애플리케이션 ID 및 디렉토리 ID를 가져옵니다
+
+Cloud Manager에서 Connector를 생성할 때 애플리케이션의 애플리케이션(클라이언트) ID와 디렉토리(테넌트) ID를 제공해야 합니다. Cloud Manager는 ID를 사용하여 프로그래밍 방식으로 로그인합니다.
+
+.단계
+. Azure Active Directory * 서비스에서 * 앱 등록 * 을 클릭하고 응용 프로그램을 선택합니다.
+. 응용 프로그램(클라이언트) ID * 와 * 디렉터리(테넌트) ID * 를 복사합니다.
++
+image:screenshot_azure_app_ids.gif["Azure Active Directory의 응용 프로그램에 대한 응용 프로그램(클라이언트) ID 및 디렉터리(테넌트) ID를 보여 주는 스크린샷"]
+
+
+
+
+
+==== 클라이언트 암호를 생성합니다
+
+클라이언트 암호를 생성한 다음 Cloud Manager가 이 암호를 사용하여 Azure AD를 인증할 수 있도록 Cloud Manager에 비밀의 값을 제공해야 합니다.
+
+.단계
+. Azure Active Directory * 서비스를 엽니다.
+. 앱 등록 * 을 클릭하고 응용 프로그램을 선택합니다.
+. 인증서 및 비밀 > 새 클라이언트 비밀 * 을 클릭합니다.
+. 비밀과 기간에 대한 설명을 제공하십시오.
+. 추가 * 를 클릭합니다.
+. 클라이언트 암호 값을 복사합니다.
++
+image:screenshot_azure_client_secret.gif["Azure AD 서비스 보안 주체에 대한 클라이언트 암호를 보여 주는 Azure 포털의 스크린샷"]
+
+
+
+이제 서비스 보안 주체가 설정되었으므로 응용 프로그램(클라이언트) ID, 디렉터리(테넌트) ID 및 클라이언트 암호 값을 복사해야 합니다. Connector를 생성할 때 Cloud Manager에 이 정보를 입력해야 합니다.
+
+
+
+=== 서비스 보안 주체에 로그인하여 Connector를 작성합니다
+
+Cloud Manager를 사용하면 사용자 인터페이스에서 직접 Azure에 Connector를 생성할 수 있습니다.
+
+.무엇을 &#8217;필요로 할거야
+* Azure 구독.
+* 선택한 Azure 지역에서 VNET 및 서브넷입니다.
+* Cloud Manager가 Connector에 대한 Azure 역할을 자동으로 생성하지 않도록 하려면 고유한 역할을 만들어야 합니다 https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.12.json["이 정책을 사용합니다"^].
++
+이러한 권한은 Connector 인스턴스 자체에 대한 것입니다. 이전 설정과는 다른 사용 권한 집합으로 Connector를 배포하기만 하면 됩니다.
+
+
+
+.단계
+. 처음 작업 환경을 만드는 경우 * 작업 환경 추가 * 를 클릭하고 화면의 지시를 따릅니다. 그렇지 않으면 * 커넥터 * 드롭다운을 클릭하고 * 커넥터 추가 * 를 선택합니다.
++
+image:screenshot_connector_add.gif["머리글의 연결선 아이콘 및 연결선 추가 동작을 보여 주는 스크린샷"]
+
+. 클라우드 공급자로 * Microsoft Azure * 를 선택합니다.
++
+Connector는 만들고 있는 작업 환경 유형과 활성화할 서비스에 대한 네트워크 연결이 있어야 합니다.
+
++
+link:reference-networking-cloud-manager.html["Connector의 네트워킹 요구 사항에 대해 자세히 알아보십시오"].
+
+. 마법사의 단계에 따라 커넥터를 작성합니다.
++
+** * 준비 완료 *: * Azure AD 서비스 보안 주체 * 를 클릭하고 필요한 권한을 부여하는 Azure Active Directory 서비스 보안 주체에 대한 정보를 입력합니다.
+** 응용 프로그램(클라이언트) ID: 을 참조하십시오 <<Get the application ID and directory ID>>.
+** 디렉토리(테넌트) ID: 을 참조하십시오 <<Get the application ID and directory ID>>.
+** 클라이언트 암호: 을 참조하십시오 <<Create a client secret>>.
+** * VM 인증 *: Azure 구독, 위치, 새 리소스 그룹 또는 기존 리소스 그룹을 선택한 다음 인증 방법을 선택합니다.
+** * 세부 정보 *: 인스턴스의 이름을 입력하고 태그를 지정한 다음 Cloud Manager에서 필요한 권한이 있는 새 역할을 생성할지 또는 로 설정한 기존 역할을 선택할지 여부를 선택합니다 https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.9.12.json["필요한 권한"^].
++
+이 역할과 연결된 구독을 선택할 수 있습니다. 선택한 각 구독은 해당 구독에 Cloud Volumes ONTAP를 배포할 수 있는 권한을 커넥터에 제공합니다.
+
+** * 네트워크 *: VNET 및 서브넷을 선택하고, 공용 IP 주소를 활성화할지 여부를 선택한 다음 선택적으로 프록시 구성을 지정합니다.
+** * 보안 그룹 *: 새 보안 그룹을 생성할지 또는 인바운드 HTTP, HTTPS 및 SSH 액세스를 허용하는 기존 보안 그룹을 선택할지 여부를 선택합니다.
++
+
+NOTE: 커넥터 를 시작하지 않으면 커넥터로 들어오는 트래픽이 없습니다. HTTP 및 HTTPS는 에 대한 액세스를 제공합니다 link:concept-connectors.html#the-local-user-interface["로컬 UI"]이는 드문 경우지만 사용할 수 있습니다. SSH는 문제 해결을 위해 호스트에 연결해야 하는 경우에만 필요합니다.
+
+** * 검토 *: 선택 사항을 검토하여 설정이 올바른지 확인합니다.
+
+
+. 추가 * 를 클릭합니다.
++
+가상 시스템은 약 7분 내에 준비되어야 합니다. 프로세스가 완료될 때까지 페이지를 유지해야 합니다.
+
+
+
+작업 영역 관리자가 이러한 커넥터를 사용하여 Cloud Volumes ONTAP 시스템을 만들 수 있도록 작업 영역과 커넥터를 연결해야 합니다. Account Admins만 있는 경우에는 Connector를 작업 영역과 연결할 필요가 없습니다. 계정 관리자는 기본적으로 Cloud Manager의 모든 작업 영역에 액세스할 수 있습니다. link:task-setting-up-netapp-accounts.html#associating-connectors-with-workspaces["자세한 정보"].
