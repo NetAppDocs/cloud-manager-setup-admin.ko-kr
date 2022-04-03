@@ -22,7 +22,7 @@ Cloud Manager에서 직접 Connector를 생성하는 것이 가장 좋지만 원
 Azure Marketplace의 이미지를 사용하여 Azure에서 Connector를 구축한 다음 Connector에 로그인하여 NetApp 계정을 지정합니다.
 
 .단계
-. https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-oncommand-cloud-manager["Cloud Manager의 Azure 마켓플레이스 페이지로 이동합니다"^].
+. https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-oncommand-cloud-manager["Azure 마켓플레이스에서 NetApp Connector VM 페이지로 이동합니다"^]
 . 지금 받기 * 를 클릭한 다음 * 계속 * 을 클릭합니다.
 . Azure 포털에서 * Create * 를 클릭하고 다음 단계에 따라 가상 시스템을 구성합니다.
 +

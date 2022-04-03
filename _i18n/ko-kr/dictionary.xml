@@ -1817,8 +1817,6 @@
   <block id="6505fd7495c0d65d3dcf8a473c69ddcf" category="doc">Azure Marketplace에서 Connector를 생성합니다</block>
   <block id="7f9fe9913d1b2a08f5ff2caaa85912bf" category="section-title">Azure에서 커넥터 만들기</block>
   <block id="2653228f6dbeaeda53ae60e7bb131779" category="paragraph">Azure Marketplace의 이미지를 사용하여 Azure에서 Connector를 구축한 다음 Connector에 로그인하여 NetApp 계정을 지정합니다.</block>
-  <block id="1d80646243999957d1e01e9849c2ed27" category="inline-link">Cloud Manager의 Azure 마켓플레이스 페이지로 이동합니다</block>
-  <block id="8202e734d42a9a45c8e93070745403ca" category="list-text"><block ref="ac928af2ed1a52edbabcdb5fb107f598" category="inline-link-rx"></block>.</block>
   <block id="225df19c00186b6ea3e256ba18a0a186" category="list-text">지금 받기 * 를 클릭한 다음 * 계속 * 을 클릭합니다.</block>
   <block id="74056a9be421d18494e08827c2a4c7f6" category="list-text">Azure 포털에서 * Create * 를 클릭하고 다음 단계에 따라 가상 시스템을 구성합니다.</block>
   <block id="d110361593d3c3b635cec5b83db5e311" category="paragraph">VM을 구성할 때 다음 사항에 유의하십시오.</block>
@@ -2073,4 +2071,7 @@
   <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">NetApp 커뮤니티</block>
   <block id="ff6c37cbc252e306a6b4e390ec13cbc1" category="sidebar">Cloud Central 블로그</block>
   <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">클라우드 웨비나</block>
+  <block id="f350efde95c992c9fb3c75c0e8aefcf0" category="list-text">역할* 탭에서 * Azure SetupAsService* 역할을 선택하고 * 다음 * 을 클릭합니다.</block>
+  <block id="61436c30fe3edb3aff76fa203adba8c5" category="inline-link">Azure 마켓플레이스에서 NetApp Connector VM 페이지로 이동합니다</block>
+  <block id="cabf039014b588edb6021204b108f503" category="list-text"><block ref="cabf039014b588edb6021204b108f503" category="inline-link-rx"></block></block>
 </blocks>
