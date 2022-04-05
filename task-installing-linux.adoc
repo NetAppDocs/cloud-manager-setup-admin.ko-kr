@@ -83,7 +83,7 @@ AWS에서 EC2 인스턴스에 파일을 연결하고 복사하는 방법은 를 
 +
 [source, cli]
 ----
-chmod +x OnCommandCloudManager-V3.9.14.sh
+chmod +x OnCommandCloudManager-V3.9.16.sh
 ----
 . 설치 스크립트를 실행합니다.
 +
@@ -92,7 +92,7 @@ chmod +x OnCommandCloudManager-V3.9.14.sh
 +
 [source, cli]
 ----
- ./OnCommandCloudManager-V3.9.14.sh [silent] [proxy=ipaddress] [proxyport=port] [proxyuser=user_name] [proxypwd=password]
+ ./OnCommandCloudManager-V3.9.16.sh [silent] [proxy=ipaddress] [proxyport=port] [proxyuser=user_name] [proxypwd=password]
 ----
 +
 _silent_는 정보를 묻지 않고 설치를 실행합니다.

@@ -18,16 +18,9 @@ summary: 로그인한 후 Cloud Manager를 설정했으므로 사용자는 작�
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html["Cloud Volumes ONTAP for AWS 시작하기"^]
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html["Azure용 Cloud Volumes ONTAP를 시작하십시오"^]
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html["Cloud Volumes ONTAP for Google Cloud를 시작해 보십시오"^]
-* https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-manage-anf.html["Azure NetApp Files를 설정합니다"^]
-* https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/task-getting-started-fsx.html["ONTAP용 Amazon FSx를 설정합니다"^]
+* https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-quick-start.html["Azure NetApp Files를 설정합니다"^]
+* https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/start/task-getting-started-fsx.html["ONTAP용 Amazon FSx를 설정합니다"^]
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-service-aws/task-manage-cvs-aws.html["Cloud Volumes Service for AWS 설정"^]
 * https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["사내 ONTAP 클러스터를 검색합니다"^]
 * link:task-viewing-amazon-s3.html["Amazon S3 버킷을 검색합니다"]
-
-
-관리자인 경우 첫 번째 커넥터를 생성한 후 Cloud Manager 설정을 관리할 수 있습니다.
-
-* link:concept-connectors.html["커넥터에 대해 자세히 알아보십시오"]
-* link:task-installing-https-cert.html["보안 액세스를 위해 HTTPS 인증서를 관리합니다"]
-* link:task-configuring-proxy.html["프록시 설정을 구성합니다"]
 

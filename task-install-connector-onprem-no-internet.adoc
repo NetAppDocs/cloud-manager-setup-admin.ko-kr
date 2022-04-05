@@ -74,13 +74,13 @@ sudo sysctl enable docker && sudo sysctl start docker
 +
 [source, cli]
 ----
-chmod +x /path/cloud-manager-connector-offline-v3.9.14
+chmod +x /path/cloud-manager-connector-offline-v3.9.16
 ----
 . 설치 스크립트를 실행합니다.
 +
 [source, cli]
 ----
-sudo /path/cloud-manager-connector-offline-v3.9.14
+sudo /path/cloud-manager-connector-offline-v3.9.16
 ----
 . 웹 브라우저를 열고 를 입력합니다 https://_ipaddress_[] 여기서 _ipaddress_는 Linux 호스트의 IP 주소입니다.
 +

@@ -62,7 +62,7 @@ AWS 서비스(amazonaws.com):
 
 
 | 커넥터의 IP 주소입니다  a| 
-대부분의 경우 SaaS UI에서 Cloud Manager로 작업해야 하지만 link:concept-connectors.html#using-multiple-connectors-with-the-same-working-environment["로컬 UI를 사용하는 경우"]그런 다음 웹 브라우저에서 호스트의 IP 주소를 입력해야 합니다.
+대부분의 경우 SaaS UI에서 Cloud Manager로 작업해야 하지만 link:concept-connectors.html#the-local-user-interface["로컬 UI를 사용하는 경우"]그런 다음 웹 브라우저에서 호스트의 IP 주소를 입력해야 합니다.
 
 클라우드 공급자에 대한 연결에 따라 호스트에 할당된 프라이빗 IP 또는 공용 IP를 사용합니다.
 
@@ -156,33 +156,10 @@ NOTE: 커넥터를 작성하는 다른 방법이 있습니다. 에서 커넥터�
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-azure.html["Azure용 Cloud Volumes ONTAP"^]
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-gcp.html["GCP용 Cloud Volumes ONTAP"^]
 * https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html["ONTAP 시스템 간 데이터 복제"^]
-* https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-cloud-compliance.html["클라우드 데이터 센스를 구축하는 중입니다"^]
-+
-** https://docs.netapp.com/us-en/cloud-manager-data-sense/task-getting-started-compliance.html["Cloud Volumes ONTAP 및 사내 ONTAP에 대한 클라우드 데이터 감지"^]
-** https://docs.netapp.com/us-en/cloud-manager-data-sense/task-scanning-anf.html["Azure NetApp Files에 대한 클라우드 데이터 감지"^]
-** https://docs.netapp.com/us-en/cloud-manager-data-sense/task-scanning-fsx.html["ONTAP용 Amazon FSx에 대한 클라우드 데이터 감지"^]
-** https://docs.netapp.com/us-en/cloud-manager-data-sense/task-scanning-s3.html["Amazon S3에 대한 클라우드 데이터 감지"^]
-** https://docs.netapp.com/us-en/cloud-manager-data-sense/task-scanning-file-shares.html["비NetApp NFS 또는 CIFS 파일 공유에 대한 Cloud Data Sense"^]
-
-
+* https://docs.netapp.com/us-en/cloud-manager-data-sense/index.html["클라우드 데이터 센스를 구축하는 중입니다"^]
 * https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["온프레미스 ONTAP 클러스터"^]
-* https://docs.netapp.com/us-en/cloud-manager-tiering/concept-cloud-tiering.html["클라우드 계층화"^]
-+
-** https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-aws.html["ONTAP 클러스터에서 Amazon S3로 데이터 계층화"^]
-** https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-azure.html["ONTAP 클러스터에서 Azure Blob 스토리지까지 데이터 계층화"^]
-** https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-gcp.html["ONTAP 클러스터에서 Google 클라우드 스토리지로 데이터 계층화"^]
-** https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-storagegrid.html["ONTAP 클러스터에서 StorageGRID로 데이터 계층화"^]
-** https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-s3-compat.html["ONTAP 클러스터에서 일반 S3 오브젝트 스토리지로 데이터 계층화"^]
-
-
-* https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html["클라우드 백업"^]
-+
-** https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-to-aws.html["ONTAP 클러스터에서 Amazon S3로 데이터 백업"^]
-** https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-to-azure.html["ONTAP 클러스터에서 Azure Blob 스토리지까지 데이터 백업"^]
-** https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-to-gcp.html["ONTAP 클러스터에서 Google 클라우드 스토리지로 데이터 백업"^]
-** https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html["ONTAP 클러스터에서 StorageGRID로 데이터 백업"^]
-
-
+* https://docs.netapp.com/us-en/cloud-manager-tiering/index.html["클라우드 계층화"^]
+* https://docs.netapp.com/us-en/cloud-manager-backup-restore/index.html["클라우드 백업"^]
 
 
 --

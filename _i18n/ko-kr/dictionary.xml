@@ -376,7 +376,6 @@
   <block id="0dd6409072fddd7ebe4fbc13bf55f62e" category="paragraph">클라우드 공급자의 마켓플레이스에서 구독하면 계정 설정 위젯에서 각 구독을 사용할 수 있습니다. 구독의 이름을 바꾸고 하나 이상의 계정에서 구독을 연결 해제할 수 있습니다.</block>
   <block id="eb6dd0692058cd4edb3fb82f48db1f57" category="paragraph">예를 들어, 두 개의 계정이 있고 각각 별도의 구독을 통해 비용이 청구된다고 가정해 보겠습니다. Cloud Volume ONTAP 작업 환경을 생성할 때 해당 계정의 사용자가 실수로 잘못된 구독을 선택하지 않도록 계정 중 하나에서 구독을 연결 해제할 수 있습니다.</block>
   <block id="4e33b7dde110d702aea770ac0e58ff70" category="inline-link-macro">구독에 대해 자세히 알아보십시오</block>
-  <block id="19a6dd979dd3db547bdfe28180fe57e7" category="paragraph"><block ref="c3a068d5eb869a66b5df99f709ee7286" category="inline-link-macro-rx"></block>.</block>
   <block id="e60fd65ca245c4c248984b9d4277352e" category="list-text">구독 * 을 클릭합니다.</block>
   <block id="1422eb9c77ef6c74d6abe35beedc5d64" category="paragraph">현재 보고 있는 계정과 연결된 구독만 표시됩니다.</block>
   <block id="73da254ba1aec222348424b9442c52df" category="list-text">관리할 구독에 해당하는 행의 작업 메뉴를 클릭합니다.</block>
@@ -402,7 +401,6 @@
   <block id="92d2b6aba6afa3f690540cf3dba9b633" category="list-text">클라우드 계층화</block>
   <block id="24e6e2f6171b43a847fe194a9a9b5cd0" category="list-text">글로벌 파일 캐시</block>
   <block id="8ea5339a59d1a6a15d2ad2629fa9dd33" category="inline-link-macro">Connector에서 사용할 수 있는 로컬 사용자 인터페이스입니다</block>
-  <block id="b1a8483f4ef9e2fae977682029aacd36" category="paragraph">SaaS 플랫폼을 사용하지 않도록 설정하는 경우 에서 모든 작업을 수행해야 합니다 <block ref="1ee879ae7fa10704e3ddb6f84b95d52f" category="inline-link-macro-rx"></block>.</block>
   <block id="2068ab1b78dd1737c2778d09fccd0cdd" category="admonition">이 작업은 되돌릴 수 없는 작업으로 Cloud Manager SaaS 플랫폼을 사용할 수 없습니다. 로컬 커넥터에서 작업을 수행해야 합니다. NetApp의 다양한 통합 클라우드 서비스를 사용할 수 없으며 SaaS 플랫폼을 재활용하려면 NetApp의 지원이 필요합니다.</block>
   <block id="bd24a7e9d8368897df823b65a8960e61" category="list-text">개요 탭에서 옵션을 전환하여 SaaS 플랫폼 사용을 비활성화합니다.</block>
   <block id="aa4a2d39c40b194469bb9cbe09c12c88" category="summary">서비스 계정은 Cloud Manager에 Connector와 동일한 프로젝트 또는 다른 프로젝트에 있는 Cloud Volumes ONTAP 시스템을 배포 및 관리할 수 있는 권한을 제공합니다.</block>
@@ -639,7 +637,6 @@
   <block id="d818c001b3cfbc2033e278823ec2a52a" category="section-title">타임라인의 계정</block>
   <block id="9b67e1ec262493b1df3ec41cc4fbd4a0" category="paragraph">이제 Cloud Manager의 타임라인에 계정 관리와 관련된 작업 및 이벤트가 표시됩니다. 이러한 동작에는 사용자 연결, 작업 영역 만들기, 커넥터 만들기 등이 있습니다. 특정 작업을 수행한 사람을 확인해야 하거나 작업의 상태를 확인해야 하는 경우 시간 표시 막대를 확인하는 것이 도움이 됩니다.</block>
   <block id="2355c6490a09de53516a5be37a0fe654" category="inline-link-macro">타임라인을 Tenancy 서비스로 필터링하는 방법에 대해 알아보십시오</block>
-  <block id="5a8ad48c9b03f69b19da38f8dbd7c49d" category="paragraph"><block ref="a092f71e9bc6341ca08fc630392b20df" category="inline-link-macro-rx"></block>.</block>
   <block id="a751a999298090bf2562492d1817e583" category="section-title">API는 Cloud Manager로 직접 호출합니다</block>
   <block id="c22052aa83aad03ab1340970700a2c27" category="paragraph">프록시 서버를 구성한 경우 프록시를 통하지 않고 API 호출을 Cloud Manager로 직접 전송하는 옵션을 사용할 수 있습니다. 이 옵션은 AWS 또는 Google Cloud에서 실행되는 커넥터에서 지원됩니다.</block>
   <block id="9dede71b8a52f35ab437be508256e623" category="inline-link-macro">이 설정에 대해 자세히 알아보십시오</block>
@@ -1210,7 +1207,6 @@
   <block id="d78e63b2e43a582b35ba2f4c0eac45bd" category="inline-link">SaaS 사용자 인터페이스</block>
   <block id="fbd47947ca4ebf7d7bec907722dc57c2" category="paragraph">에서 거의 모든 작업을 수행해야 합니다<block ref="8f305b98f88a161e5a1e68aca36c2103" category="inline-link-rx"></block>로컬 사용자 인터페이스는 Connector에서 계속 사용할 수 있습니다. 이 인터페이스는 인터넷에 액세스할 수 없는 환경에 Connector를 설치하고 SaaS 인터페이스 대신 Connector 자체에서 수행해야 하는 몇 가지 작업에 필요합니다.</block>
   <block id="1765f6ca29cc9e21e15e0348d66bfdca" category="inline-link-macro">로컬 UI에 액세스하는 방법을 알아보십시오</block>
-  <block id="248e12ce2015483a09bc0c048f061ff9" category="paragraph"><block ref="f04885d4a405b71306c2b0b788e4a43e" category="inline-link-macro-rx"></block>.</block>
   <block id="538fc0c04ce8a0ef5cf78a12dbe8f68a" category="section-title">커넥터 업그레이드</block>
   <block id="d4150be963d8e8a8648985d057b82c98" category="summary">회사 정책에 따라 인터넷에 대한 모든 HTTP 통신에 프록시 서버를 사용해야 하는 경우 해당 HTTP 프록시 서버를 사용하도록 커넥터를 구성해야 합니다. 프록시 서버는 클라우드 또는 네트워크에 있을 수 있습니다.</block>
   <block id="bfe172c64db091b2b40778626fd53667" category="doc">HTTP 프록시 서버를 사용하도록 Connector 구성</block>
@@ -1282,7 +1278,6 @@
   <block id="30fe214f0e8ecaf9b895a0137cad8ce9" category="cell">제품 내에서 NetApp 클라우드 전문가와 상담할 수 있는 채팅을 제공합니다.</block>
   <block id="df5b9982059c29cbe72aa6342e6b47a8" category="cell">커넥터의 IP 주소입니다</block>
   <block id="0b83c97017787b7fdc5aaf31aaf0da59" category="inline-link-macro">로컬 UI를 사용하는 경우</block>
-  <block id="24cab055f54ab41810520ced03c2a0d0" category="paragraph">대부분의 경우 SaaS UI에서 Cloud Manager로 작업해야 하지만 <block ref="e696b204eb0d1975055aab2e86a9e719" category="inline-link-macro-rx"></block>그런 다음 웹 브라우저에서 호스트의 IP 주소를 입력해야 합니다.</block>
   <block id="4c2345ba2614b91eb52d47835c18de63" category="paragraph">클라우드 공급자에 대한 연결에 따라 호스트에 할당된 프라이빗 IP 또는 공용 IP를 사용합니다.</block>
   <block id="a106b753f18f3561086de4e9f0a06365" category="list-text">개인 IP는 VPN이 있고 가상 네트워크에 직접 액세스할 수 있는 경우에 작동합니다</block>
   <block id="460ad81025c5e747a488e7ca0874eca7" category="list-text">공용 IP는 모든 네트워킹 시나리오에서 작동합니다</block>
@@ -1338,39 +1333,8 @@
   <block id="e15e447fcce2b91cca79cdc4c1db7ac7" category="inline-link">ONTAP 시스템 간 데이터 복제</block>
   <block id="4557b8d2c43f638617a5dfab3fc7e215" category="list-text"><block ref="4557b8d2c43f638617a5dfab3fc7e215" category="inline-link-rx"></block></block>
   <block id="477cc4915054f9673449fba3eb8237f7" category="inline-link">클라우드 데이터 센스를 구축하는 중입니다</block>
-  <block id="cb8fddcb2dd7dd077148e1279c35cc06" category="list-text"><block ref="cb8fddcb2dd7dd077148e1279c35cc06" category="inline-link-rx"></block></block>
-  <block id="fced4b813951ce6bb87af97b2d3ebb4a" category="inline-link">Cloud Volumes ONTAP 및 사내 ONTAP에 대한 클라우드 데이터 감지</block>
-  <block id="ff239d7e90f2fdf0bcf6ce634bfe149e" category="list-text"><block ref="ff239d7e90f2fdf0bcf6ce634bfe149e" category="inline-link-rx"></block></block>
-  <block id="b6b7fd4bdfa112337a11359b2464b62b" category="inline-link">Azure NetApp Files에 대한 클라우드 데이터 감지</block>
-  <block id="f20b47347c31a7db20dac9513a415cfd" category="list-text"><block ref="f20b47347c31a7db20dac9513a415cfd" category="inline-link-rx"></block></block>
-  <block id="f7948d8ad5f38001edbcab2d3d1ba469" category="inline-link">ONTAP용 Amazon FSx에 대한 클라우드 데이터 감지</block>
-  <block id="6c08eb7bfe01820e65fb88d5bbf59aa4" category="list-text"><block ref="6c08eb7bfe01820e65fb88d5bbf59aa4" category="inline-link-rx"></block></block>
-  <block id="9be5f5732b11ac16e7c75e2068062382" category="inline-link">Amazon S3에 대한 클라우드 데이터 감지</block>
-  <block id="9157aa6a59b2fb29cd2acc461eec6f36" category="list-text"><block ref="9157aa6a59b2fb29cd2acc461eec6f36" category="inline-link-rx"></block></block>
-  <block id="2fe8d0a937cf64042182fefdbc5fc4c5" category="inline-link">비NetApp NFS 또는 CIFS 파일 공유에 대한 Cloud Data Sense</block>
-  <block id="7e155c896053d986ddda96092303cd44" category="list-text"><block ref="7e155c896053d986ddda96092303cd44" category="inline-link-rx"></block></block>
   <block id="d0f1687c68ee0f0d9bac765716d18923" category="inline-link">온프레미스 ONTAP 클러스터</block>
   <block id="ede70ed6f915794fb0cf32f488c14c20" category="list-text"><block ref="ede70ed6f915794fb0cf32f488c14c20" category="inline-link-rx"></block></block>
-  <block id="1e1c63d2b7e6d02f9212d47b8afef045" category="list-text"><block ref="1e1c63d2b7e6d02f9212d47b8afef045" category="inline-link-rx"></block></block>
-  <block id="82e8b639181969cb947829a1fd806f1b" category="inline-link">ONTAP 클러스터에서 Amazon S3로 데이터 계층화</block>
-  <block id="07922f0c739157a6817380d742f2d304" category="list-text"><block ref="07922f0c739157a6817380d742f2d304" category="inline-link-rx"></block></block>
-  <block id="0b6218e5eb6cc08b2e2ee54a9be06f5e" category="inline-link">ONTAP 클러스터에서 Azure Blob 스토리지까지 데이터 계층화</block>
-  <block id="7d3f5163075c4adcf8a32ba445b31ef9" category="list-text"><block ref="7d3f5163075c4adcf8a32ba445b31ef9" category="inline-link-rx"></block></block>
-  <block id="182138487e862afb5cd70c384a61deea" category="inline-link">ONTAP 클러스터에서 Google 클라우드 스토리지로 데이터 계층화</block>
-  <block id="35b84b8d88837bbeae7ecef4d2133c27" category="list-text"><block ref="35b84b8d88837bbeae7ecef4d2133c27" category="inline-link-rx"></block></block>
-  <block id="da87e3c7096bc1d55ef1bd69f2324339" category="inline-link">ONTAP 클러스터에서 StorageGRID로 데이터 계층화</block>
-  <block id="dd932e8d6e2b8339ead1b0390e63f4a1" category="list-text"><block ref="dd932e8d6e2b8339ead1b0390e63f4a1" category="inline-link-rx"></block></block>
-  <block id="d2d8cd3eb5a6b11db45f18eca162411f" category="inline-link">ONTAP 클러스터에서 일반 S3 오브젝트 스토리지로 데이터 계층화</block>
-  <block id="4a3a4370e13a7bb85e3adcced431adfe" category="list-text"><block ref="4a3a4370e13a7bb85e3adcced431adfe" category="inline-link-rx"></block></block>
-  <block id="c809e4139ade2f820b4c00f92453c46e" category="list-text"><block ref="c809e4139ade2f820b4c00f92453c46e" category="inline-link-rx"></block></block>
-  <block id="64732ee5c06fb09321957435134e2555" category="inline-link">ONTAP 클러스터에서 Amazon S3로 데이터 백업</block>
-  <block id="9ffd92633d8c66c50fdb9f956839ab89" category="list-text"><block ref="9ffd92633d8c66c50fdb9f956839ab89" category="inline-link-rx"></block></block>
-  <block id="10b35d6b357ee513aae281da7f36a165" category="inline-link">ONTAP 클러스터에서 Azure Blob 스토리지까지 데이터 백업</block>
-  <block id="68dc0565a33d3d2b565d24b31d08bc33" category="list-text"><block ref="68dc0565a33d3d2b565d24b31d08bc33" category="inline-link-rx"></block></block>
-  <block id="4b22083b940fbe36df2375fc532dc047" category="inline-link">ONTAP 클러스터에서 Google 클라우드 스토리지로 데이터 백업</block>
-  <block id="61fea87a9f30c17af7032a0bb19a191a" category="list-text"><block ref="61fea87a9f30c17af7032a0bb19a191a" category="inline-link-rx"></block></block>
-  <block id="91c29a7350a929dff231819a1a31b4e2" category="inline-link">ONTAP 클러스터에서 StorageGRID로 데이터 백업</block>
-  <block id="b68a2333504b1cbe4c0a93c4e734f08a" category="list-text"><block ref="b68a2333504b1cbe4c0a93c4e734f08a" category="inline-link-rx"></block></block>
   <block id="09739b6c330f03109d4f13e3f3744ecd" category="summary">Cloud Manager를 사용하면 IT 전문가 및 클라우드 설계자가 NetApp의 클라우드 솔루션을 사용하여 하이브리드 멀티 클라우드 인프라를 중앙에서 관리할 수 있습니다.</block>
   <block id="a3808d965d01d1991004853a600a94b3" category="doc">Cloud Manager에 대해 자세히 알아보십시오</block>
   <block id="98f770b0af18ca763421bac22b4b6805" category="section-title">피처</block>
@@ -1722,21 +1686,14 @@
   <block id="f4488428860ec63a8b5d5b49e6e05044" category="inline-link">Cloud Volumes ONTAP for Google Cloud를 시작해 보십시오</block>
   <block id="f16a9ac5c661e28643e0bd9a18254d16" category="list-text"><block ref="f16a9ac5c661e28643e0bd9a18254d16" category="inline-link-rx"></block></block>
   <block id="1a13f57b619b2ef0b47e851b04e48aec" category="inline-link">Azure NetApp Files를 설정합니다</block>
-  <block id="8000a8bc30a24767c0c0e9cf51168c4f" category="list-text"><block ref="8000a8bc30a24767c0c0e9cf51168c4f" category="inline-link-rx"></block></block>
   <block id="64e7cbd14ba57000ea8cdd5fa33d079f" category="inline-link">ONTAP용 Amazon FSx를 설정합니다</block>
-  <block id="b0f56c6497b3bf5942ba8b68935fe29b" category="list-text"><block ref="b0f56c6497b3bf5942ba8b68935fe29b" category="inline-link-rx"></block></block>
   <block id="ee1b3fc0e1771ee3c8d6a1474ba7b403" category="inline-link">Cloud Volumes Service for AWS 설정</block>
   <block id="3707f9686304d02d294cdb98fb9cbf36" category="list-text"><block ref="3707f9686304d02d294cdb98fb9cbf36" category="inline-link-rx"></block></block>
   <block id="c6f905e067bdaa7ba33a58a907e59477" category="inline-link">사내 ONTAP 클러스터를 검색합니다</block>
   <block id="b28e9c0d24784ac4474fb496f6e3ce23" category="list-text"><block ref="b28e9c0d24784ac4474fb496f6e3ce23" category="inline-link-rx"></block></block>
   <block id="a3e15006a0362130cf46b948ce3a5626" category="inline-link-macro">Amazon S3 버킷을 검색합니다</block>
   <block id="3f48c5e9be05508878e1ceb77d8423a7" category="list-text"><block ref="3f48c5e9be05508878e1ceb77d8423a7" category="inline-link-macro-rx"></block></block>
-  <block id="21f4926f5f6526e194035a606363605e" category="paragraph">관리자인 경우 첫 번째 커넥터를 생성한 후 Cloud Manager 설정을 관리할 수 있습니다.</block>
-  <block id="cf5ca6b9240c788ff8567aec79def853" category="list-text"><block ref="cf5ca6b9240c788ff8567aec79def853" category="inline-link-macro-rx"></block></block>
-  <block id="57adc27f15b9bdd4782ceac895d7cf0d" category="inline-link-macro">보안 액세스를 위해 HTTPS 인증서를 관리합니다</block>
-  <block id="e75bc674180b36e68f094ba8d326ff2e" category="list-text"><block ref="e75bc674180b36e68f094ba8d326ff2e" category="inline-link-macro-rx"></block></block>
   <block id="ca82fdd9a480fcc34a6b470f5ec8e908" category="inline-link-macro">프록시 설정을 구성합니다</block>
-  <block id="a4de781486d1578d264042c10eb977f8" category="list-text"><block ref="a4de781486d1578d264042c10eb977f8" category="inline-link-macro-rx"></block></block>
   <block id="91e052fcfd90f5b7f85fae79cd7c6174" category="doc">Google Cloud의 Connector에 대한 필수 권한</block>
   <block id="43db2d5daf3a0d765cb047fb4af50659" category="paragraph">GCP용 Cloud Manager 정책에는 Cloud Manager가 Cloud Volumes ONTAP를 구현 및 관리하는 데 필요한 권한이 포함되어 있습니다.</block>
   <block id="8224e3db072d582bb34ae19441c597fe" category="cell">-compute.disks.create-compute.disks.createSnapshot-compute.disks.delete -compute.disks.get-compute.disks.list -compute.disks.setLabels -compute.disks.us e</block>
@@ -1877,7 +1834,6 @@
   <block id="93568a1c17a387012558e910c14e7060" category="paragraph">구독한 후에는 계정 관리 위젯에서 각 구독을 사용할 수 있습니다. 현재 보고 있는 계정과 연결된 구독만 표시됩니다.</block>
   <block id="bda4907cd89656b2bda837a282994221" category="paragraph">구독의 이름을 바꾸고 하나 이상의 계정에서 구독을 연결 해제할 수 있습니다.</block>
   <block id="3bdc84428bee979e77f1781f40304f42" category="inline-link-macro">서브스크립션 관리 방법에 대해 알아보십시오</block>
-  <block id="0c2c72ed3dfb7d56c7be824005208b68" category="paragraph"><block ref="c030696f19120c95d52ef0dbba4340d2" category="inline-link-macro-rx"></block>.</block>
   <block id="ff7c0fcd6a31e735a61c001f75426961" category="section-title">예</block>
   <block id="6643fe16b29885768bd30191d9673e3e" category="paragraph">다음 예에서는 계정을 설정하는 방법을 보여 줍니다.</block>
   <block id="5035e448f1f49334cb738cddfa38f051" category="admonition">이어지는 두 예제 이미지 모두에서 Connector와 Cloud Volumes ONTAP 시스템은 실제로 클라우드 공급자에서 실행 중인 _ in _ 에 상주하지 않습니다. 각 구성 요소 간의 관계를 개념적으로 나타낸 것입니다.</block>
@@ -2098,4 +2054,15 @@
   <block id="6dc6b060b761d145366b9ed041137917" category="sidebar">AWS 자격 증명 관리</block>
   <block id="c135c603177e58023474a65f829c0fd3" category="sidebar">Azure 자격 증명을 관리합니다</block>
   <block id="15f599d5c4282f662b38657a0b5c5739" category="sidebar">Google Cloud 자격 증명을 관리합니다</block>
+  <block id="09c202bf0add37d2a76b765c2e456516" category="paragraph"><block ref="461fdc6a79888d7d572f0fc87e6f595a" category="inline-link-macro-rx"></block>.</block>
+  <block id="736683b36559de9a86788ab6e33c00d8" category="paragraph">SaaS 플랫폼을 사용하지 않도록 설정하는 경우 에서 모든 작업을 수행해야 합니다 <block ref="d248ae1d8e530aaf57663e2d920abe18" category="inline-link-macro-rx"></block>.</block>
+  <block id="42719a12f66c2c272af903550dd96abe" category="paragraph"><block ref="3d5e26c44503b9c3759d0014c33a4b1a" category="inline-link-macro-rx"></block>.</block>
+  <block id="cf1d9ac600892a9c03d7ebca3ca130cb" category="paragraph"><block ref="1a1e214f52d56e3240a2456ee3e051fc" category="inline-link-macro-rx"></block>.</block>
+  <block id="bec1707277e86035fd8916958ae0bd6b" category="paragraph">대부분의 경우 SaaS UI에서 Cloud Manager로 작업해야 하지만 <block ref="9a2b10ef390e45d8a69a5a0f7a3a563a" category="inline-link-macro-rx"></block>그런 다음 웹 브라우저에서 호스트의 IP 주소를 입력해야 합니다.</block>
+  <block id="0992dccda336100add15ce23fc9702f3" category="list-text"><block ref="0992dccda336100add15ce23fc9702f3" category="inline-link-rx"></block></block>
+  <block id="3439d2a50956809b2cccde2f89685ce6" category="list-text"><block ref="3439d2a50956809b2cccde2f89685ce6" category="inline-link-rx"></block></block>
+  <block id="fad43b5fbcb08d889da84d61cf2ea0e8" category="list-text"><block ref="fad43b5fbcb08d889da84d61cf2ea0e8" category="inline-link-rx"></block></block>
+  <block id="d1640a3b53ec580119ad1efa519fa5a4" category="list-text"><block ref="d1640a3b53ec580119ad1efa519fa5a4" category="inline-link-rx"></block></block>
+  <block id="571331341f9a044145a7015b8d5b9b03" category="list-text"><block ref="571331341f9a044145a7015b8d5b9b03" category="inline-link-rx"></block></block>
+  <block id="a37da40b1cf1ce86308b603dbc497d9d" category="paragraph"><block ref="443587ef67dfdb72c89535a3fb85e4c4" category="inline-link-macro-rx"></block>.</block>
 </blocks>

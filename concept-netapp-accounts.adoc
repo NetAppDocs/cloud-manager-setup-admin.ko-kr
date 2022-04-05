@@ -104,7 +104,7 @@ link:concept-connectors.html["커넥터에 대해 자세히 알아보십시오"]
 
 예를 들어, 두 개의 계정이 있고 각각 별도의 구독을 통해 비용이 청구된다고 가정해 보겠습니다. Cloud Volume ONTAP 작업 환경을 생성할 때 해당 계정의 사용자가 실수로 잘못된 구독을 선택하지 않도록 계정 중 하나에서 구독을 연결 해제할 수 있습니다.
 
-link:task-managing-netapp-accounts.html["서브스크립션 관리 방법에 대해 알아보십시오"].
+link:task-managing-netapp-accounts.html#managing-subscriptions["서브스크립션 관리 방법에 대해 알아보십시오"].
 
 
 

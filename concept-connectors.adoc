@@ -219,7 +219,7 @@ link:task-managing-connectors.html["커넥터 간 전환 방법에 대해 알아
 * AutoSupport 메시지 다운로드(일반적으로 문제가 있을 때 NetApp 담당자가 지시)
 
 
-link:task-managing-connectors.html["로컬 UI에 액세스하는 방법을 알아보십시오"^].
+link:task-managing-connectors.html#access-the-local-ui["로컬 UI에 액세스하는 방법을 알아보십시오"].
 
 
 
