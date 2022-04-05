@@ -24,37 +24,73 @@ TIP: 첫 번째 Cloud Volumes ONTAP 작업 환경을 생성할 때 커넥터가 
 
 
 
-== 커넥터 생성을 위한 AWS 권한 설정
+== AWS 인증 설정
 
-Cloud Manager에서 Connector를 구축하기 전에 AWS 계정에 올바른 권한이 있는지 확인해야 합니다.
+VPC에 Connector 인스턴스를 구축하려면 Cloud Manager에서 AWS를 인증해야 합니다. 다음 인증 방법 중 하나를 선택할 수 있습니다.
+
+* Cloud Manager가 IAM 역할을 맡도록 합니다
+* IAM 사용자를 위한 AWS 액세스 키 및 비밀 키를 제공합니다
+
+
+사용하는 인증 방법에는 Connector 인스턴스를 AWS에 구축하는 데 필요한 권한이 있어야 합니다.
+
+
+
+=== IAM 역할을 설정합니다
+
+Cloud Manager가 AWS에 Connector를 구축하기 위해 수행할 수 있는 IAM 역할을 설정합니다.
 
 .단계
-. 다음 위치에서 Connector IAM 정책을 다운로드합니다.
+. 에서 Connector IAM 정책을 다운로드합니다 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 정책 페이지"^].
 +
-https://mysupport.netapp.com/site/info/cloud-manager-policies["NetApp Cloud Manager: AWS, Azure 및 GCP 정책"^]
+이 정책에는 AWS에서 Connector를 생성하는 데 필요한 권한이 포함되어 있습니다. Cloud Manager가 Connector를 만들면 Connector 인스턴스에 새 권한 집합이 적용됩니다.
+
+. 대상 계정에서 AWS IAM 콘솔로 이동합니다.
+. 액세스 관리에서 * 역할 > 역할 만들기 * 를 클릭하고 단계를 따라 역할을 만듭니다.
++
+다음을 수행하십시오.
 
 +
+** 신뢰할 수 있는 엔터티 유형 * 에서 * AWS 계정 * 을 선택합니다.
+** 다른 AWS 계정 * 을 선택하고 Cloud Manager SaaS 계정의 ID를 입력합니다. 952013314444
+** 이전에 다운로드한 Connector IAM 정책에 표시된 권한을 포함하는 정책을 생성합니다.
 
-TIP: ONTAP용 Amazon FSx에 대한 IAM 사용자 권한은 를 참조하십시오 https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/task-creating-fsx-working-environment.html["ONTAP 작업 환경을 위한 FSx를 생성합니다"^].
+
+. Connector를 생성할 때 Cloud Manager에 붙여넣을 수 있도록 IAM 역할의 Role ARN을 복사합니다.
+
+
+이제 IAM 역할에 필요한 권한이 있습니다.
+
+
+
+=== IAM 사용자에 대한 권한을 설정합니다
+
+Connector를 생성할 때 Connector 인스턴스를 배포하는 데 필요한 권한이 있는 IAM 사용자에게 AWS 액세스 키와 비밀 키를 제공할 수 있습니다.
+
+.단계
+. 에서 Connector 배포 정책을 다운로드합니다 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 정책 페이지"^].
++
+이 IAM 정책에는 AWS에서 Connector를 생성하는 데 필요한 권한이 포함되어 있습니다. Cloud Manager가 Connector를 만들면 Connector 인스턴스에 새 권한 집합이 적용됩니다.
 
 . AWS IAM 콘솔에서 Connector IAM 정책의 텍스트를 복사하여 붙여넣어 고유한 정책을 생성합니다.
 . 이전 단계에서 생성한 정책을 Cloud Manager에서 Connector를 생성할 IAM 사용자에게 연결합니다.
+. IAM 사용자의 액세스 키 및 비밀 키에 액세스할 수 있는지 확인합니다.
 
 
 이제 AWS 사용자에게 Cloud Manager에서 Connector를 생성하는 데 필요한 권한이 있습니다. Cloud Manager에서 메시지가 표시되면 이 사용자에 대한 AWS 액세스 키를 지정해야 합니다.
 
 
 
-== AWS에서 커넥터 생성
+== 커넥터를 작성합니다
 
 Cloud Manager를 사용하면 AWS에서 사용자 인터페이스에서 직접 Connector를 생성할 수 있습니다.
 
 .무엇을 &#8217;필요로 할거야
-* 가 있는 IAM 사용자를 위한 AWS 액세스 키 및 암호 키입니다 https://mysupport.netapp.com/site/info/cloud-manager-policies["필수 권한"^] 커넥터를 작성합니다.
+* AWS 인증 방법: Cloud Manager가 가정할 수 있는 IAM 역할의 ARN 또는 IAM 사용자의 AWS 액세스 키 및 비밀 키
 * 선택한 AWS 지역에서 VPC, 서브넷 및 키 쌍을 제공합니다.
 * Cloud Manager가 Connector에 대해 IAM 역할을 자동으로 생성하지 않도록 하려면 자체 IAM을 생성해야 합니다 https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.13.json["이 정책을 사용합니다"^].
 +
-이러한 권한은 Connector 인스턴스에 대한 것입니다. 위의 첫 번째 항목에 제공된 것과 다른 권한 집합입니다.
+Connector가 퍼블릭 클라우드 환경에서 리소스를 관리하는 데 필요한 권한입니다. Connector 인스턴스를 만들기 위해 제공한 것과 다른 권한 집합입니다.
 
 
 
@@ -73,7 +109,11 @@ link:reference-networking-cloud-manager.html["Connector의 네트워킹 요구 �
 . 마법사의 단계에 따라 커넥터를 작성합니다.
 +
 ** * 준비 완료 *: 필요한 사항을 검토합니다.
-** AWS 자격 증명 *: 사용 권한 요구 사항에 맞는 AWS 액세스 키와 비밀 키를 지정한 다음 해당 지역을 선택합니다.
+** * AWS 자격 증명 *: AWS 지역을 지정한 다음, Cloud Manager가 가정할 수 있는 IAM 역할 또는 AWS 액세스 키와 비밀 키를 선택할 수 있는 인증 방법을 선택합니다.
++
+
+TIP: 역할 * 가정 을 선택한 경우 커넥터 배포 마법사에서 첫 번째 자격 증명 집합을 만들 수 있습니다. 자격 증명 페이지에서 추가 자격 증명 세트를 생성해야 합니다. 그런 다음 드롭다운 목록의 마법사에서 사용할 수 있습니다. link:task-adding-aws-accounts.html["자격 증명을 추가하는 방법에 대해 알아봅니다"].
+
 ** * 세부 정보 *: 커넥터에 대한 세부 정보를 제공합니다.
 +
 *** 인스턴스의 이름을 입력합니다.

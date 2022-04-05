@@ -38,7 +38,7 @@ NetApp은 이제 Microsoft Azure Active Directory를 지원 및 라이선싱과 
 NSS 계정을 IDaaS로 마이그레이션하지 않은 경우 먼저 계정을 마이그레이션한 다음 Cloud Manager에서 자격 증명을 업데이트해야 합니다.
 
 * https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login["NetApp에서 ID 관리를 위해 Microsoft Azure AD를 사용하는 방법에 대해 자세히 알아보십시오"^]
-* link:task-adding-nss-accounts.html#update-an-nss-account-for-the-new-authentication-method["NSS 계정을 새 인증 방법으로 업데이트하는 방법을 알아봅니다"]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html#update-an-nss-account-for-the-new-authentication-method["NSS 계정을 새 인증 방법으로 업데이트하는 방법을 알아봅니다"]
 
 
 
@@ -51,7 +51,7 @@ NSS 계정을 IDaaS로 마이그레이션하지 않은 경우 먼저 계정을 �
 
 Connector가 퍼블릭 클라우드 환경 내에서 리소스와 프로세스를 관리하는 데 필요한 엔드포인트 수를 줄였습니다.
 
-link:reference-networking-cloud-manager.html#outbound-internet-access["필요한 끝점 목록을 봅니다"].
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-networking-cloud-manager.html#outbound-internet-access["필요한 끝점 목록을 봅니다"].
 
 
 
@@ -59,7 +59,7 @@ link:reference-networking-cloud-manager.html#outbound-internet-access["필요한
 
 Cloud Manager에서 AWS에 새 Connector를 구축하는 경우 이제 기본 마스터 키 또는 관리 키를 사용하여 Connector의 EBS 디스크를 암호화할 수 있습니다.
 
-image:screenshot-connector-disk-encryption.png["AWS에서 커넥터를 생성할 때 디스크 암호화 옵션을 보여 주는 스크린샷"]
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-connector-disk-encryption.png["AWS에서 커넥터를 생성할 때 디스크 암호화 옵션을 보여 주는 스크린샷"]
 
 
 
@@ -67,7 +67,7 @@ image:screenshot-connector-disk-encryption.png["AWS에서 커넥터를 생성할
 
 이제 Cloud Manager에서 NetApp Support 사이트 계정과 연결된 이메일 주소를 표시할 수 있습니다.
 
-image:screenshot-nss-display-email.png["이메일 주소를 표시할 수 있는 기능이 포함된 NetApp Support 사이트 계정의 작업 메뉴를 보여주는 스크린샷"]
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-nss-display-email.png["이메일 주소를 표시할 수 있는 기능이 포함된 NetApp Support 사이트 계정의 작업 메뉴를 보여주는 스크린샷"]
 
 
 

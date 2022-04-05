@@ -126,18 +126,36 @@ homepage:
       url: concept-overview.html
     - title: 시작 체크리스트
       url: reference-checklist-cm.html
-  - title: Cloud Manager 관리
+  - title: 커넥터
     links:
-    - title: NetApp 계정을 관리합니다
-      url: task-managing-netapp-accounts.html
+    - title: 커넥터에 대해 자세히 알아보십시오
+      url: concept-connectors.html
+    - title: 네트워크 설정
+      url: reference-networking-cloud-manager.html
     - title: 커넥터 관리
       url: task-managing-connectors.html
+  - title: NetApp 계정
+    links:
+    - title: NetApp 계정 에 대해 알아보십시오
+      url: concept-netapp-accounts.html
+    - title: 작업 영역 및 사용자를 설정합니다
+      url: task-setting-up-netapp-accounts.html
+    - title: NetApp 계정을 관리합니다
+      url: task-managing-netapp-accounts.html
+  - title: 클라우드 공급자 계정
+    links:
+    - title: AWS 자격 증명 관리
+      url: task-adding-aws-accounts.html
+    - title: Azure 자격 증명을 관리합니다
+      url: task-adding-azure-accounts.html
+    - title: Google Cloud 자격 증명을 관리합니다
+      url: task-adding-gcp-accounts.html
   - title: 블로그 커뮤니티
     links:
     - title: NetApp 커뮤니티
       url: https://community.netapp.com/t5/Cloud-Data-Services/ct-p/CDS
     - title: Cloud Central 블로그
-      url: https://cloud.netapp.com/blog
+      url: https://cloud.netapp.com/blog/topic/cloud-manager
     - title: 클라우드 웨비나
       url: https://cloud.netapp.com/events
 product-family: {}

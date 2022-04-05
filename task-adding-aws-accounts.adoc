@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-adding-aws-accounts.html 
 keywords: permissions, aws, policy, iam, iam role, role, granting, policy, iam policy, iam user, access keys, arn, cloud provider accounts, aws, cloud provider profile, json, iam, credentials, adding credentials, add credentials 
-summary: 다른 AWS 계정에 Cloud Volumes ONTAP를 구축하려는 경우 해당 계정에 필요한 권한을 제공한 다음 세부 정보를 Cloud Manager에 추가해야 합니다. 사용 권한을 제공하는 방법은 Cloud Manager에 AWS 키를 제공할지, 아니면 신뢰할 수 있는 계정에서 역할의 ARN을 제공하는지에 따라 달라집니다. 
+summary: AWS 자격 증명을 추가 및 관리하여 Cloud Manager가 AWS 계정에 클라우드 리소스를 구축 및 관리하는 데 필요한 권한을 갖도록 합니다. 여러 AWS 구독을 관리하는 경우 자격 증명 페이지에서 각 AWS 자격 증명을 서로 다른 AWS 자격 증명에 할당할 수 있습니다. 
 ---
 = Cloud Manager의 AWS 자격 증명 및 구독을 관리합니다
 :hardbreaks:
@@ -27,7 +27,7 @@ AWS 자격 증명을 기존 Connector에 추가하거나 Cloud Manager에 직접
 
 * Cloud Manager에 AWS 자격 증명을 직접 추가합니다
 +
-Cloud Manager에 새 AWS 자격 증명을 추가하면 ONTAP 작업 환경에 대한 FSx를 생성할 수 있습니다. <<Add credentials to Cloud Manager,Cloud Manager에 AWS 자격 증명을 추가하는 방법에 대해 알아보십시오>>.
+Cloud Manager에 새 AWS 자격 증명을 추가하면 Cloud Manager에서 ONTAP 작업 환경을 위한 FSx를 생성 및 관리하거나 커넥터를 생성하는 데 필요한 권한을 얻을 수 있습니다. <<Add credentials to Cloud Manager,Cloud Manager에 AWS 자격 증명을 추가하는 방법에 대해 알아보십시오>>.
 
 
 
@@ -45,7 +45,7 @@ Cloud Manager에 AWS 액세스 키를 제공하는 경우 Cloud Manager에서 �
 
 == 커넥터에 자격 증명을 추가합니다
 
-Connector가 다른 AWS 계정에서 Cloud Volumes ONTAP를 구축 및 관리할 수 있도록 AWS 자격 증명을 추가합니다. 다른 계정에서 IAM 역할의 ARN을 제공하거나 AWS 액세스 키를 제공할 수 있습니다.
+다른 AWS 계정에 Cloud Volumes ONTAP를 구축 및 관리할 수 있도록 커넥터에 AWS 자격 증명을 추가합니다. 다른 계정에서 IAM 역할의 ARN을 제공하거나 AWS 액세스 키를 제공할 수 있습니다.
 
 
 
@@ -142,7 +142,9 @@ image:screenshot_accounts_switch_aws.png["세부 정보 및 amp;Credentials 페�
 
 == Cloud Manager에 자격 증명을 추가합니다
 
-ONTAP 작업 환경에 대한 FSx를 생성하는 데 필요한 권한을 클라우드 관리자에게 제공하는 IAM 역할의 ARN을 제공하여 AWS 자격 증명을 Cloud Manager에 추가합니다.
+IAM 역할의 ARN을 제공하여 Cloud Manager에 AWS 자격 증명을 추가합니다. 그러면 Cloud Manager가 ONTAP 작업 환경을 위한 FSx를 생성하거나 커넥터를 생성하는 데 필요한 권한을 부여합니다.
+
+ONTAP 작업 환경을 위한 FSx를 생성하거나 새 커넥터를 생성할 때 자격 증명을 사용할 수 있습니다.
 
 
 
@@ -159,29 +161,12 @@ Cloud Manager SaaS가 역할을 맡을 수 있도록 IAM 역할을 설정합니�
 +
 ** 신뢰할 수 있는 엔터티 유형 * 에서 * AWS 계정 * 을 선택합니다.
 ** 다른 AWS 계정 * 을 선택하고 Cloud Manager SaaS:952013314444의 ID를 입력합니다
-** 다음 권한이 포함된 정책을 만듭니다.
+** ONTAP 작업 환경을 위한 FSx를 생성하거나 커넥터를 생성하는 데 필요한 권한을 포함하는 정책을 생성합니다.
 +
-[source, json]
-----
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [
-                "fsx:*",
-                "ec2:Describe*",
-                "ec2:CreateTags",
-                "kms:Describe*",
-                "kms:List*",
-                "iam:CreateServiceLinkedRole"
-            ],
-            "Resource": "*"
-        }
-    ]
-}
-----
+*** https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["ONTAP용 FSx에 필요한 권한을 봅니다"^]
+*** 에서 Connector 배포 정책을 봅니다 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 정책 페이지"^]
+
+
 
 
 . 다음 단계에서 Cloud Manager에 붙여넣을 수 있도록 IAM 역할의 역할 ARN을 복사합니다.
@@ -211,7 +196,7 @@ image:screenshot_settings_icon.gif["Cloud Manager 콘솔의 오른쪽 위에 설
 
 
 
-이제 ONTAP 작업 환경에 대한 FSx를 생성할 때 자격 증명을 사용할 수 있습니다.
+이제 ONTAP 작업 환경을 위한 FSx를 생성하거나 새 커넥터를 생성할 때 자격 증명을 사용할 수 있습니다.
 
 
 
