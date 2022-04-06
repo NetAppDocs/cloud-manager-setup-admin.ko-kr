@@ -125,8 +125,8 @@ NOTE: 커넥터를 작성하는 다른 방법이 있습니다. 에서 커넥터�
 
 | 설치하고  a| 
 . AWS에서 IAM 정책을 생성하는 데 필요한 권한이 포함된 JSON 파일을 사용하십시오.
-. Cloud Manager에서 Connector를 생성할 IAM 사용자에게 정책을 연결합니다.
-. Connector를 생성할 때 필요한 권한이 있는 IAM 사용자에 대한 AWS 액세스 키와 비밀 키를 Cloud Manager에 제공합니다.
+. IAM 역할 또는 IAM 사용자에 정책을 연결합니다.
+. Connector를 생성할 때 Cloud Manager에 IAM 역할의 ARN 또는 IAM 사용자를 위한 AWS 액세스 키 및 비밀 키를 제공합니다.
 
 | link:task-creating-connectors-aws.html["자세한 단계를 보려면 여기를 클릭하십시오"]. 
 

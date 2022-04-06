@@ -19,9 +19,9 @@ Cloud Manager를 사용하면 Cloud Volumes ONTAP 구축 시 사용할 AWS 자�
 
 == 초기 AWS 자격 증명
 
-Cloud Manager에서 Connector를 구축하는 경우 Connector 인스턴스를 시작할 수 있는 권한이 있는 AWS 계정을 사용해야 합니다. 필요한 권한이 에 나열됩니다 https://mysupport.netapp.com/site/info/cloud-manager-policies["AWS의 커넥터 구축 정책"^].
+Cloud Manager에서 Connector를 구축하는 경우 IAM 사용자의 ARN 또는 액세스 키를 제공해야 합니다. 사용하는 인증 방법에는 Connector 인스턴스를 AWS에 구축하는 데 필요한 권한이 있어야 합니다. 필요한 권한이 에 나열됩니다 https://mysupport.netapp.com/site/info/cloud-manager-policies["AWS의 커넥터 구축 정책"^].
 
-Cloud Manager가 AWS에서 Connector 인스턴스를 시작하면 IAM 역할과 인스턴스에 대한 인스턴스 프로필이 생성됩니다. 또한 Cloud Manager에 해당 AWS 계정 내의 리소스 및 프로세스를 관리할 수 있는 권한을 제공하는 정책을 연결합니다. link:reference-permissions-aws.html["Cloud Manager에서 사용 권한을 사용하는 방법을 검토합니다"].
+Cloud Manager가 AWS에서 Connector 인스턴스를 시작하면 IAM 역할과 인스턴스에 대한 인스턴스 프로필이 생성됩니다. 또한 Connector에 해당 AWS 계정 내의 리소스 및 프로세스를 관리할 수 있는 권한을 제공하는 정책을 첨부합니다. link:reference-permissions-aws.html["Cloud Manager에서 사용 권한을 사용하는 방법을 검토합니다"].
 
 image:diagram_permissions_initial_aws.png["Cloud Central에서 AWS 계정에 Cloud Manager를 구축하는 방법을 보여 주는 개념적 이미지입니다. IAM 정책은 Cloud Manager 인스턴스에 연결된 IAM 역할에 할당됩니다."]
 
@@ -33,6 +33,12 @@ image:screenshot_accounts_select_aws.gif["세부 정보 및 amp;Credentials 페�
 
 == 추가 AWS 자격 증명
 
+AWS 자격 증명을 추가하는 방법에는 두 가지가 있습니다.
+
+
+
+=== 기존 커넥터에 AWS 자격 증명을 추가합니다
+
 다른 AWS 계정에서 Cloud Volumes ONTAP를 실행하려면 다음 중 하나를 수행합니다 link:task-adding-aws-accounts.html["IAM 사용자 또는 신뢰할 수 있는 계정에서 역할의 ARN에 AWS 키를 제공합니다"]. 다음 이미지는 두 개의 추가 계정을 보여 줍니다. 하나는 신뢰할 수 있는 계정에서 IAM 역할을 통해 권한을 제공하고 다른 하나는 IAM 사용자의 AWS 키를 통해 권한을 제공합니다.
 
 image:diagram_permissions_multiple_aws.png["두 개의 추가 계정을 보여 주는 개념 이미지입니다. 각 정책에는 IAM 정책이 있으며, 하나는 IAM 사용자에게 연결되고 다른 하나는 IAM 역할에 연결됩니다."]
@@ -42,6 +48,12 @@ image:diagram_permissions_multiple_aws.png["두 개의 추가 계정을 보여 �
 다른 자격 증명 세트를 추가한 후 새 작업 환경을 만들 때 자격 증명으로 전환할 수 있습니다.
 
 image:screenshot_accounts_switch_aws.png["세부 정보 및 amp;Credentials 페이지에서 계정 전환 을 클릭한 후 클라우드 공급자 계정 간 선택을 보여 주는 스크린샷"]
+
+
+
+=== Cloud Manager에 AWS 자격 증명을 직접 추가합니다
+
+Cloud Manager에 새 AWS 자격 증명을 추가하면 Cloud Manager에서 ONTAP 작업 환경을 위한 FSx를 생성 및 관리하거나 커넥터를 생성하는 데 필요한 권한을 얻을 수 있습니다.
 
 
 
