@@ -7,6 +7,7 @@ summary: Cloud Manager를 시작하면 NetApp의 클라우드 서비스를 사�
 ---
 = Cloud Manager 설정 및 관리
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

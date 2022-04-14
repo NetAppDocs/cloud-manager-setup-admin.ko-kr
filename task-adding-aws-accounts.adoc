@@ -6,6 +6,7 @@ summary: AWS 자격 증명을 추가 및 관리하여 Cloud Manager가 AWS 계�
 ---
 = Cloud Manager의 AWS 자격 증명 및 구독을 관리합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

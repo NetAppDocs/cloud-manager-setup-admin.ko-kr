@@ -6,6 +6,7 @@ summary: 'NSS(NetApp Support Site) 계정의 자격 증명을 제공하여 Cloud
 ---
 = Cloud Manager에서 NetApp Support 사이트 계정을 추가하고 관리합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

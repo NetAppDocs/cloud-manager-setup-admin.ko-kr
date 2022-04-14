@@ -6,6 +6,7 @@ summary: 이 체크리스트를 사용하여 Connector가 아웃바운드 인터
 ---
 = 시작 체크리스트
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

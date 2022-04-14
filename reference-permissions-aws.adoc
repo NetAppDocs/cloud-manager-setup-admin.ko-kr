@@ -6,6 +6,7 @@ summary: Cloud Manager를 사용하려면 클라우드 공급자에서 작업을
 ---
 = AWS의 커넥터에 대한 필수 권한
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

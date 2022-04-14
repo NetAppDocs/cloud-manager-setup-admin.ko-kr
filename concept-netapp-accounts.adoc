@@ -6,6 +6,7 @@ summary: NetApp 계정은 멀티 테넌시를 제공하며 Cloud Manager 내에�
 ---
 = NetApp 계정 에 대해 알아보십시오
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

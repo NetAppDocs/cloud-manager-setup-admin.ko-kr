@@ -6,6 +6,7 @@ summary: 서비스 계정은 Cloud Manager에 Connector와 동일한 프로젝�
 ---
 = Google Cloud 프로젝트, 권한 및 계정
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

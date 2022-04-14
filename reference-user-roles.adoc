@@ -6,6 +6,7 @@ summary: 계정 관리자, 작업 영역 관리자, 규정 준수 뷰어 및 Sna
 ---
 = 역할
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

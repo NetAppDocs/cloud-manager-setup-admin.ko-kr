@@ -6,6 +6,7 @@ summary: 인터넷에 액세스할 수 없는 온프레미스 Linux 호스트에
 ---
 = 인터넷에 접속하지 않고 커넥터를 내부에 설치합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

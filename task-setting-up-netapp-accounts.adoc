@@ -6,6 +6,7 @@ summary: Cloud Manager에 처음 로그인하면 NetApp 계정을 만들라는 �
 ---
 = NetApp 계정의 작업 공간과 사용자를 설정합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

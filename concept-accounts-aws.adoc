@@ -6,6 +6,7 @@ summary: Cloud Manager를 사용하면 Cloud Volumes ONTAP 구축 시 사용할 
 ---
 = AWS 자격 증명 및 권한
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

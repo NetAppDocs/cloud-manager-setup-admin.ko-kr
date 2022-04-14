@@ -6,6 +6,7 @@ summary: NetApp 계정, 커넥터, 클라우드 공급자 자격 증명 등과 �
 ---
 = 새로운 기능
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

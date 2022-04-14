@@ -6,6 +6,7 @@ summary: Connector VM 인스턴스와 연결된 자격 증명을 관리할 수 �
 ---
 = Cloud Manager의 GCP 자격 증명 및 구독 관리
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

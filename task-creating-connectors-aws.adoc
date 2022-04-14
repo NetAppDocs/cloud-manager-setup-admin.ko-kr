@@ -6,6 +6,7 @@ summary: 대부분의 Cloud Manager 기능을 사용하려면 계정 관리자�
 ---
 = Cloud Manager에서 AWS에 Connector를 생성합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

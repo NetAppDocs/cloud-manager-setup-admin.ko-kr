@@ -6,6 +6,7 @@ summary: Connector를 생성하는 가장 일반적인 방법은 Cloud Manager �
 ---
 = 인터넷에 액세스할 수 있는 기존 Linux 호스트에 커넥터를 설치합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
