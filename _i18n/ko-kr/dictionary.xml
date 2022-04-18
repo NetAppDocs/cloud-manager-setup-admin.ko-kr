@@ -1400,7 +1400,6 @@
   <block id="7dca630291dc35d5447daa0c9abf8da4" category="cell">커넥터 호스트에 대한 SSH 액세스를 제공합니다</block>
   <block id="293c9ea246ff9985dc6f62a650f78986" category="cell">HTTP</block>
   <block id="f033ab37c30201f73f142449d037028d" category="cell">80</block>
-  <block id="e41468f89241b53dc9a8cebeff010b25" category="cell">클라이언트 웹 브라우저에서 로컬 사용자 인터페이스로 HTTP 액세스를 제공하고 Cloud Data Sense에서 연결을 제공합니다</block>
   <block id="0e8433f9a404f1f3ba601c14b026d321" category="cell">HTTPS</block>
   <block id="13f3cf8c531952d72e5847c4183e6910" category="cell">443</block>
   <block id="2f0c197eb73a7c6da10b03384f241025" category="cell">클라이언트 웹 브라우저에서 로컬 사용자 인터페이스로 HTTPS 액세스를 제공합니다</block>
@@ -1435,8 +1434,6 @@
   <block id="ed5f2bdecbd4bd349d09412d1ff6a6fb" category="cell">DNS</block>
   <block id="d82c8d1619ad8176d665453cfb2e55f0" category="cell">53</block>
   <block id="dd8679112f038315d04028c46da1fef7" category="cell">Cloud Manager에서 DNS Resolve에 사용됩니다</block>
-  <block id="6cf25d0dcbf586ed6aff3b930e4d8019" category="cell">클라우드 데이터 감지 인스턴스</block>
-  <block id="059ace13ef3980df592dafb754ef8883" category="cell">Cloud Volumes ONTAP에 대한 클라우드 데이터 감지</block>
   <block id="b445de53411a165e9c56da6430c38d59" category="section-title">Azure의 커넥터 규칙</block>
   <block id="63b34d7f22329c0eb7915fca7a346007" category="cell">클라이언트 웹 브라우저에서 로컬 사용자 인터페이스로 HTTP 액세스를 제공합니다</block>
   <block id="b52a434afaffee3d1646df3eb9acc853" category="section-title">GCP의 Connector에 대한 규칙입니다</block>
@@ -2083,4 +2080,6 @@
   <block id="efe81cff8e6f47ec59ef94167b76bf5a" category="list-text">문제 열기 * 를 클릭하고 옵션 중 하나를 선택한 다음 * 보내기 * 를 클릭합니다.</block>
   <block id="cbb1040836732e478409dacf7e45171a" category="paragraph">NetApp 담당자가 귀하의 케이스를 검토하고 곧 다시 귀하에 연락을 드릴 것입니다.</block>
   <block id="8f8ddac26068fbb5a6761635f0559bf3" category="paragraph">이러한 서비스를 사용하려면 SaaS 플랫폼이 필요합니다.</block>
+  <block id="0c01b3b7191c43507ad9ca43d6443731" category="cell">클라이언트 웹 브라우저에서 로컬 사용자 인터페이스에 대한 HTTPS 액세스 및 Cloud Data Sense 인스턴스의 연결을 제공합니다</block>
+  <block id="b774573fe7b53358246a054f6d44ca83" category="cell">Cloud Data Sense를 활성화하고 사용할 수 있는 기능 제공(정부 클라우드 구축에만 필요)</block>
 </blocks>
