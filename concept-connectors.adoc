@@ -85,18 +85,6 @@ Google Cloud에서 Cloud Volumes ONTAP 시스템을 만들려면 Google Cloud에
 
 
 
-== 공유 Linux 호스트는 지원되지 않습니다
-
-Connector는 다른 애플리케이션과 공유되는 VM에서 지원되지 않습니다. VM은 Connector 소프트웨어 전용이어야 합니다.
-
-
-
-== 타사 에이전트 및 내선 번호
-
-타사 에이전트 또는 VM 확장은 커넥터 VM에서 지원되지 않습니다.
-
-
-
 == 커넥터는 계속 작동 중이어야 합니다
 
 커넥터는 항상 작동 상태를 유지해야 합니다. 이는 여러분이 제공하는 서비스의 지속적인 상태 및 운영에 중요합니다.
@@ -107,7 +95,7 @@ Connector는 다른 애플리케이션과 공유되는 VM에서 지원되지 않
 
 == 커넥터 작성 방법
 
-작업 영역 관리자가 Cloud Volumes ONTAP 작업 환경을 만들고 위에 나열된 다른 기능을 사용하려면 계정 관리자가 커넥터를 만들어야 합니다.
+작업 영역 관리자가 Cloud Volumes ONTAP 작업 환경을 만들고 위에 나열된 다른 서비스를 사용하려면 계정 관리자가 커넥터를 만들어야 합니다.
 
 계정 관리자는 다음과 같은 여러 가지 방법으로 커넥터를 만들 수 있습니다.
 
@@ -159,6 +147,14 @@ Cloud Manager에서 직접 Connector를 생성하면 Cloud Manager에서 필요�
 AWS Marketplace, Azure Marketplace 또는 소프트웨어를 수동으로 설치하여 직접 Connector를 생성하는 경우 올바른 권한이 있는지 확인해야 합니다.
 
 https://mysupport.netapp.com/site/info/cloud-manager-policies["각 클라우드 공급자에 대한 정책을 봅니다"^]
+
+
+
+== 커넥터 업그레이드
+
+일반적으로 매월 커넥터 소프트웨어를 업데이트하여 새로운 기능을 소개하고 안정성 향상을 제공합니다. Cloud Manager 플랫폼의 대부분의 서비스와 기능은 SaaS 기반 소프트웨어를 통해 제공되지만, Connector의 버전에 따라 몇 가지 기능이 달라집니다. 여기에는 Cloud Volumes ONTAP 관리, 온프레미스 ONTAP 클러스터 관리, 설정 및 도움말이 포함됩니다.
+
+Connector는 소프트웨어가 있는 한 소프트웨어를 최신 버전으로 자동 업데이트합니다 link:reference-networking-cloud-manager.html["아웃바운드 인터넷 액세스"] 를 클릭하여 소프트웨어 업데이트를 얻습니다.
 
 
 
@@ -221,9 +217,3 @@ link:task-managing-connectors.html["커넥터 간 전환 방법에 대해 알아
 
 
 link:task-managing-connectors.html#access-the-local-ui["로컬 UI에 액세스하는 방법을 알아보십시오"].
-
-
-
-== 커넥터 업그레이드
-
-Connector는 소프트웨어가 있는 한 소프트웨어를 최신 버전으로 자동 업데이트합니다 link:reference-networking-cloud-manager.html["아웃바운드 인터넷 액세스"] 를 클릭하여 소프트웨어 업데이트를 얻습니다.
