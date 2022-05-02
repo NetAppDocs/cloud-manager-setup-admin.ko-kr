@@ -571,10 +571,7 @@
   <block id="84a965b235dbf71095fa90c6e442a58e" category="summary">NetApp 계정, 커넥터, 클라우드 공급자 자격 증명 등과 같은 Cloud Manager의 관리 기능의 새로운 기능에 대해 알아보십시오.</block>
   <block id="490414e0366b091220802d406e52c076" category="doc">새로운 기능</block>
   <block id="f6197c5e32978fc6ef2a0a4b4ae9403a" category="paragraph">Cloud Manager의 관리 기능, 즉 NetApp 계정, 커넥터, 클라우드 공급자 자격 증명 등과 관련된 새로운 기능에 대해 알아보십시오.</block>
-  <block id="0fc27381f6df0f20af584e656aa215b9" category="section-title">Google Cloud의 커넥터 향상</block>
   <block id="23ea931bf11f885e1a49e6970b0aa60a" category="paragraph">Google Cloud에서 새 Connector를 만들면 Cloud Manager에 기존의 모든 방화벽 정책이 표시됩니다. 이전에는 Cloud Manager에 타겟 태그가 없는 정책이 표시되지 않았습니다.</block>
-  <block id="4c192c0d77af6017716138a0c469c687" category="section-title">NetApp Support 사이트 계정 알림</block>
-  <block id="553da3d1de1480b23203668d02c692f5" category="paragraph">NetApp은 이제 Microsoft Azure Active Directory를 지원 및 라이선싱과 관련된 인증 서비스의 ID 공급자로 사용합니다. 이 업데이트를 설치하면 Cloud Manager에서 이전에 추가한 기존 계정의 NSS(NetApp Support Site) 자격 증명을 업데이트하라는 메시지가 표시됩니다.</block>
   <block id="a47acc65b2885cddfc6096e5aa5324f7" category="paragraph">NSS 계정을 IDaaS로 마이그레이션하지 않은 경우 먼저 계정을 마이그레이션한 다음 Cloud Manager에서 자격 증명을 업데이트해야 합니다.</block>
   <block id="b48762bb68eb4f8c518d5be6f1c76d16" category="inline-link">NetApp에서 ID 관리를 위해 Microsoft Azure AD를 사용하는 방법에 대해 자세히 알아보십시오</block>
   <block id="d9031e6782c3419c7b81c9c83572daf7" category="list-text"><block ref="d9031e6782c3419c7b81c9c83572daf7" category="inline-link-rx"></block></block>
@@ -956,7 +953,6 @@
   <block id="ca11f864d1d24298bcf7e821561507f3" category="cell">Cloud Manager Tagging 서비스를 사용하여 AWS 리소스의 태그를 관리할 수 있습니다.</block>
   <block id="9257ea230a460909e07d0bfe81207794" category="cell">"S3:DeleteBucket", "S3:GetLifecycleConfiguration", "S3:PutLifecycleConfiguration", "S3:PutketTagging", "S3:ListBuckketVersions", "S3:GetObject", "S3:ListBucket", "S3:ListAllMyBucket", "S3:GetBuckTagging", "S3:GetBuckketLocation" "S3:GetBuckketPolicyStatus", "S3:GetBuckketPublicAccessBlock", "S3:GetBuckketAcl", "S3:GetBuckketPolicy", "S3:PutketPublicAccessBlock"</block>
   <block id="2445d6dfa41a1dd564df073cc12fb413" category="cell">Cloud Manager는 Backup to S3 서비스를 활성화할 때 이러한 권한을 사용합니다.</block>
-  <block id="9492f1b92768f2baaad9549670647478" category="cell">"eks:ListClusters", "eks:DescribeCluster", "IAM:GetInstanceProfile"</block>
   <block id="716a2c38419203ac88bbd14e10539866" category="cell">Amazon EKS 클러스터 검색을 활성화합니다.</block>
   <block id="63f6e1958614b96c8fd95bf42f5748fd" category="summary">NetApp Cloud Central에 등록하여 NetApp의 클라우드 서비스에 액세스할 수 있습니다.</block>
   <block id="fb74c4ef62549ee8dd9207310052bd9c" category="doc">NetApp Cloud Central에 등록</block>
@@ -1817,11 +1813,8 @@
   <block id="198fe9ebcb781bf0ef99cc9c20067692" category="paragraph">Connector를 생성하는 가장 일반적인 방법은 Cloud Manager 또는 클라우드 공급자의 마켓플레이스에서 직접 생성하는 것입니다. 그러나 네트워크 또는 클라우드의 기존 Linux 호스트에 Connector 소프트웨어를 다운로드하여 설치할 수 있습니다. 이 단계는 인터넷 액세스가 있는 호스트에만 적용됩니다.</block>
   <block id="dc68b79f0ef7708bb6b593e10e6a0631" category="paragraph"><block ref="4c54a8bb31cbafd8cd337aae920ff024" category="inline-link-macro-rx"></block>.</block>
   <block id="38522fbf43585538a7a55ea25460e779" category="list-text">AWS EC2 인스턴스 유형</block>
-  <block id="b16b01fe868a2b46f872d190b6d9b912" category="list-text">위의 CPU 및 RAM 요구 사항을 충족하는 인스턴스 유형입니다. T3.xLarge를 사용하고 Cloud Manager에서 직접 Connector를 배포할 때 해당 인스턴스 유형을 사용하는 것이 좋습니다.</block>
   <block id="893ba5865a015de9dc77765cdf7184e3" category="list-text">Azure VM 크기입니다</block>
-  <block id="a70a1c03a508e9db0b89842d54d18080" category="list-text">위의 CPU 및 RAM 요구 사항을 충족하는 인스턴스 유형입니다. Connector를 Cloud Manager에서 직접 배포할 때는 DS3 v2를 사용하고 해당 VM 크기를 사용하는 것이 좋습니다.</block>
   <block id="0779e9296a32341a31830e6c4e36d7f5" category="list-text">GCP 시스템 유형입니다</block>
-  <block id="ef445d60087b65b2686e2d8256ef4f1e" category="list-text">위의 CPU 및 RAM 요구 사항을 충족하는 인스턴스 유형입니다. n1-standard-4를 사용하고 Cloud Manager에서 직접 Connector를 구축할 때는 해당 시스템 유형을 사용하는 것이 좋습니다.</block>
   <block id="7ebcb503cdda50b6cfafe4b188689a5c" category="inline-link-macro">커넥터에 대한 네트워킹 요구 사항</block>
   <block id="8f13fe03e92b3df99e4fdab3f70b8bd0" category="list-text">Connector를 설치하고 Connector가 퍼블릭 클라우드 환경 내의 리소스 및 프로세스를 관리하려면 아웃바운드 인터넷 액세스가 필요합니다. 끝점 목록은 을 참조하십시오 <block ref="4ec3519046179fc5881484cb894283f9" category="inline-link-macro-rx"></block>.</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="list-title">이 작업에 대해</block>
@@ -1966,8 +1959,6 @@
   <block id="ff6c37cbc252e306a6b4e390ec13cbc1" category="sidebar">Cloud Central 블로그</block>
   <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">클라우드 웨비나</block>
   <block id="f350efde95c992c9fb3c75c0e8aefcf0" category="list-text">역할* 탭에서 * Azure SetupAsService* 역할을 선택하고 * 다음 * 을 클릭합니다.</block>
-  <block id="61436c30fe3edb3aff76fa203adba8c5" category="inline-link">Azure 마켓플레이스에서 NetApp Connector VM 페이지로 이동합니다</block>
-  <block id="cabf039014b588edb6021204b108f503" category="list-text"><block ref="cabf039014b588edb6021204b108f503" category="inline-link-rx"></block></block>
   <block id="e8303b3c359355a29e343d1741791f05" category="paragraph">Cloud Manager에 새 AWS 자격 증명을 추가하면 Cloud Manager에서 ONTAP 작업 환경을 위한 FSx를 생성 및 관리하거나 커넥터를 생성하는 데 필요한 권한을 얻을 수 있습니다. <block ref="2b759c7fb1c1b2ce728a7fb1e8e64b6d" category="inline-xref-macro-rx"></block>.</block>
   <block id="448746f589ceea8f1b3191a05fe6c57c" category="paragraph">다른 AWS 계정에 Cloud Volumes ONTAP를 구축 및 관리할 수 있도록 커넥터에 AWS 자격 증명을 추가합니다. 다른 계정에서 IAM 역할의 ARN을 제공하거나 AWS 액세스 키를 제공할 수 있습니다.</block>
   <block id="86a80f2c5791260c43446585966588d0" category="paragraph">IAM 역할의 ARN을 제공하여 Cloud Manager에 AWS 자격 증명을 추가합니다. 그러면 Cloud Manager가 ONTAP 작업 환경을 위한 FSx를 생성하거나 커넥터를 생성하는 데 필요한 권한을 부여합니다.</block>
@@ -1979,7 +1970,6 @@
   <block id="174c30e12e5caabc3d6093c8f5d239eb" category="paragraph">이제 ONTAP 작업 환경을 위한 FSx를 생성하거나 새 커넥터를 생성할 때 자격 증명을 사용할 수 있습니다.</block>
   <block id="ba26e4556a0f160834687982b0479336" category="section-title">2022년 2월 27일</block>
   <block id="3ac47455b10c6fb4061a70a91fdbfde2" category="section-title">2022년 1월 30일</block>
-  <block id="56e138c1cde783765ac6d2c9d4217fad" category="list-text"><block ref="56e138c1cde783765ac6d2c9d4217fad" category="inline-link-rx"></block></block>
   <block id="586301717819197e24001cac47efdaaa" category="section-title">2022년 1월 2일</block>
   <block id="3f9908dd0d34e73be621e521e51cd6a8" category="paragraph"><block ref="5f52a012a929ebfb0b0a901a58e91a4c" category="inline-link-rx"></block>.</block>
   <block id="1a3140f260afcdb189bbb444b89966c4" category="paragraph"><block ref="1a3140f260afcdb189bbb444b89966c4" category="inline-image-macro-rx" type="image"></block></block>
@@ -2092,4 +2082,47 @@
   <block id="b30f3d123c465c70e2c71150136ed92d" category="list-text">백업 대상 설정 * 을 클릭합니다.</block>
   <block id="cc5581f22ce63f7556f4354dd88e93e0" category="paragraph">작업 영역 관리자가 Cloud Volumes ONTAP 작업 환경을 만들고 위에 나열된 다른 서비스를 사용하려면 계정 관리자가 커넥터를 만들어야 합니다.</block>
   <block id="75af5b4615967c5f4c52ae9be3a8526c" category="paragraph">일반적으로 매월 커넥터 소프트웨어를 업데이트하여 새로운 기능을 소개하고 안정성 향상을 제공합니다. Cloud Manager 플랫폼의 대부분의 서비스와 기능은 SaaS 기반 소프트웨어를 통해 제공되지만, Connector의 버전에 따라 몇 가지 기능이 달라집니다. 여기에는 Cloud Volumes ONTAP 관리, 온프레미스 ONTAP 클러스터 관리, 설정 및 도움말이 포함됩니다.</block>
+  <block id="3cdc0b8cb855b1fb9c206c3d696b6c9e" category="list-text">위의 CPU 및 RAM 요구 사항을 충족하는 인스턴스 유형입니다. T3.xLarge를 권장합니다.</block>
+  <block id="a6daae7da601d04e5cdb89d612a8d9b1" category="list-text">위의 CPU 및 RAM 요구 사항을 충족하는 인스턴스 유형입니다. DS3 v2를 권장합니다.</block>
+  <block id="a364c69650d36423667264592b72c7ce" category="list-text">위의 CPU 및 RAM 요구 사항을 충족하는 인스턴스 유형입니다. n1-standard-4를 권장합니다.</block>
+  <block id="984ca77a9a51746d3dd5a855a71d3493" category="inline-link">차폐된 VM 기능</block>
+  <block id="5e59673ea4dc0650f587413c4848c02c" category="paragraph">Connector는 를 지원하는 OS가 있는 VM 인스턴스의 Google Cloud에서 지원됩니다<block ref="bd10301ee2e8f0cb38112a71d2b6920c" category="inline-link-rx"></block></block>
+  <block id="49644953fd4e9612a9842d17bef5e79b" category="section-title">2022년 5월 2일</block>
+  <block id="def752908b0fa662bfb5de654a533140" category="section-title">커넥터 3.9.18</block>
+  <block id="0a6b76c04095167ad3b2e08901195ca3" category="list-text">Connector는 이제 다음 Google Cloud 영역에서 지원됩니다.</block>
+  <block id="b11df59ba05c25c3a8734d54b7501ae7" category="list-text">델리(아시아 - 남쪽 2)</block>
+  <block id="68fb6cfeb81e52feef062b88d7037b7e" category="list-text">멜번(호주 - 수테스토2)</block>
+  <block id="4b14bbd178377e932c7e97664c276be7" category="list-text">밀라노(유럽 - west8)</block>
+  <block id="dcbe8ad0293bd53296a9d2ec0f030d10" category="list-text">산티아고(사우스메리카 - 웨스투트어)</block>
+  <block id="3b61cbbfa7452cc07df9dbea0756d650" category="inline-link">지원되는 영역의 전체 목록을 봅니다</block>
+  <block id="0ec2b2e4840acfd3f21b50b176ec45f1" category="paragraph"><block ref="0ec2b2e4840acfd3f21b50b176ec45f1" category="inline-link-rx"></block></block>
+  <block id="5750adecdd8602aee9e0d7052b8cd392" category="list-text">Connector에 사용할 Google Cloud 서비스 계정을 선택하면 Cloud Manager에 각 서비스 계정과 연결된 이메일 주소가 표시됩니다. 이메일 주소를 보면 동일한 이름을 공유하는 서비스 계정을 쉽게 구별할 수 있습니다.</block>
+  <block id="898d465c80c6b6783418f6fa71db0946" category="inline-image-macro">서비스 계정 필드의 스크린샷</block>
+  <block id="506e06ca3e996f21913a49d1f4920902" category="paragraph"><block ref="506e06ca3e996f21913a49d1f4920902" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2e0bddfca809f95cf3d5d7adfccca0e2" category="list-text">당사는 지원하는 OS를 통해 VM 인스턴스에서 Google Cloud의 Connector를 인증했습니다<block ref="bd10301ee2e8f0cb38112a71d2b6920c" category="inline-link-rx"></block></block>
+  <block id="561748ecfe4fd0bd9f15c851d5de4d29" category="inline-link">이러한 향상된 기능에 대해 알아보십시오</block>
+  <block id="d2b88fcff484dc7cae448a7e8c287a1f" category="list-text">이 커넥터 릴리스에는 Cloud Volumes ONTAP의 향상된 기능도 포함되어 있습니다.<block ref="60a968f5f71ebaff72f2727ce31f8e5b" category="inline-link-rx"></block></block>
+  <block id="5e9d36e4528c82da2b7294c252e52427" category="list-text">Connector에서 Cloud Volumes ONTAP를 구축하려면 새로운 AWS 권한이 필요합니다.</block>
+  <block id="bfd761a70b5f9cd277ef7c878344df38" category="paragraph">이제 AZ(단일 가용성 영역)에 HA 쌍을 구축할 때 AWS 분산 배치 그룹을 생성하려면 다음 권한이 필요합니다.</block>
+  <block id="0080f4096e51a12d4256890c125c5c46" category="paragraph">이제 Cloud Manager에서 배치 그룹을 만드는 방법을 최적화하려면 이러한 권한이 필요합니다.</block>
+  <block id="eaf263597aafb24c99ce4e16af420ae8" category="inline-link">Cloud Manager 정책 페이지</block>
+  <block id="26dd25d183752a9f37249174f3d3ff89" category="paragraph">Cloud Manager에 추가한 각 AWS 자격 증명 세트에 이러한 권한을 제공해야 합니다. 에서 최신 사용 권한 목록을 찾을 수 있습니다<block ref="0e92ab1ca454f31f07a6e5fba6519a3a" category="inline-link-rx"></block>.</block>
+  <block id="5e16db4c47abe8cb1c5bd746df2fd94a" category="section-title">2022년 4월 3일</block>
+  <block id="5dc3495f29e6f1332d6d809ba30cbf83" category="section-title">커넥터 3.9.17</block>
+  <block id="dc45cdfe41bbcfa7f2d8bf1ed54a89ed" category="list-text">이제 Cloud Manager가 사용자 환경에서 설정한 IAM 역할을 가정하도록 하여 Connector를 생성할 수 있습니다. 이 인증 방법은 AWS 액세스 키와 비밀 키를 공유하는 것보다 더 안전합니다.</block>
+  <block id="c1ef500163b033b0cacf87c830339c6e" category="inline-link">IAM 역할을 사용하여 커넥터를 생성하는 방법에 대해 알아봅니다</block>
+  <block id="1d74a995b1a421dcb50976efb8094b21" category="paragraph"><block ref="f92b2fbbcca658498705715523d67bd6" category="inline-link-rx"></block>.</block>
+  <block id="1d99a1c8fadd3f9a537fec830e9791e0" category="list-text">이 커넥터 릴리스에는 Cloud Volumes ONTAP의 향상된 기능도 포함되어 있습니다.<block ref="66c4cd7232189d67ede2231e4ccd26ce" category="inline-link-rx"></block></block>
+  <block id="8c4a1103eeca70528bc946c2246ec6f1" category="section-title">커넥터 3.9.16</block>
+  <block id="8452efafcd305c048b35a9ac1eaa0a58" category="list-text">이 커넥터 릴리스에는 Cloud Volumes ONTAP의 향상된 기능도 포함되어 있습니다.<block ref="f53661746a388d6e170677167c0cb4ac" category="inline-link-rx"></block></block>
+  <block id="1bb66afbb0f9c20ad9ce021a7051d622" category="section-title">커넥터 3.9.15</block>
+  <block id="3934da05a8696f0f2771f6794b16d0fe" category="paragraph">이 커넥터 릴리스에는 Cloud Volumes ONTAP의 향상된 기능이 포함되어 있습니다.<block ref="56b0b409fd26975ec3a06e3bfbb1d0c5" category="inline-link-rx"></block></block>
+  <block id="54e507c4461f09157653db1c97f633b3" category="cell">"eks:ListClusters", "eks:DescribeCluster", "IAM:GetInstanceProfile",</block>
+  <block id="e0399b3db0c9216059d2e42a30b09612" category="cell">"EC2:DescribePlacementGroups", "IAM:GetRolePolicy",</block>
+  <block id="4811a96d917e86f9cc499d8404bd91c9" category="cell">단일 AZ(Availability Zone)에 구축된 HA 쌍에 대한 AWS 분산 배치 그룹을 생성합니다.</block>
+  <block id="40ca3108b6381f9eda9574daf00c3b01" category="list-text">Azure 마켓플레이스에서 NetApp Connector VM 페이지로 이동합니다.</block>
+  <block id="0c5f74a83e5cbc5c6c230dd0caf096f7" category="inline-link">상용 지역에 대한 Azure Marketplace 페이지</block>
+  <block id="5fb9ace1b2fee444b848b1ad1c5d886c" category="list-text"><block ref="5fb9ace1b2fee444b848b1ad1c5d886c" category="inline-link-rx"></block></block>
+  <block id="8ac340f924d72696326df51a32dbdee5" category="inline-link">Azure Government 지역의 Azure Marketplace 페이지</block>
+  <block id="d60d2a63a86471881f173bb3041b00f7" category="list-text"><block ref="d60d2a63a86471881f173bb3041b00f7" category="inline-link-rx"></block></block>
 </blocks>

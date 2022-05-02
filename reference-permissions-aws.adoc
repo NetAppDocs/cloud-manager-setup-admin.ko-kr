@@ -98,5 +98,8 @@ Cloud Manager는 AWS 계정을 사용하여 EC2, S3, CloudFormation, IAM, 보안
 | "S3:DeleteBucket", "S3:GetLifecycleConfiguration", "S3:PutLifecycleConfiguration", "S3:PutketTagging", "S3:ListBuckketVersions", "S3:GetObject", "S3:ListBucket", "S3:ListAllMyBucket", "S3:GetBuckTagging", "S3:GetBuckketLocation" "S3:GetBuckketPolicyStatus", "S3:GetBuckketPublicAccessBlock", "S3:GetBuckketAcl", "S3:GetBuckketPolicy", "S3:PutketPublicAccessBlock" | Cloud Manager는 Backup to S3 서비스를 활성화할 때 이러한 권한을 사용합니다. 
 
 
-| "eks:ListClusters", "eks:DescribeCluster", "IAM:GetInstanceProfile" | Amazon EKS 클러스터 검색을 활성화합니다. 
+| "eks:ListClusters", "eks:DescribeCluster", "IAM:GetInstanceProfile", | Amazon EKS 클러스터 검색을 활성화합니다. 
+
+
+| "EC2:DescribePlacementGroups", "IAM:GetRolePolicy", | 단일 AZ(Availability Zone)에 구축된 HA 쌍에 대한 AWS 분산 배치 그룹을 생성합니다. 
 |===
