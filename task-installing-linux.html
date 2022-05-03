@@ -292,11 +292,11 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-setup-admin/task-installing-linux.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ja-jp/cloud-manager-setup-admin/task-installing-linux.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-setup-admin/task-installing-linux.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/task-installing-linux.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
@@ -997,7 +997,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-14 17:28:33 +0000">04/14/2022</time>
+    <time datetime="2022-05-03 00:03:38 +0000">05/03/2022</time>
     
   
 
@@ -1048,15 +1048,22 @@ Google Cloud에서 Cloud Volumes ONTAP 시스템을 만들려면 Google Cloud에
 </dd>
 <dt class="hdlist1">AWS EC2 인스턴스 유형</dt>
 <dd>
-<p>위의 CPU 및 RAM 요구 사항을 충족하는 인스턴스 유형입니다. T3.xLarge를 사용하고 Cloud Manager에서 직접 Connector를 배포할 때 해당 인스턴스 유형을 사용하는 것이 좋습니다.</p>
+<p>위의 CPU 및 RAM 요구 사항을 충족하는 인스턴스 유형입니다. T3.xLarge를 권장합니다.</p>
 </dd>
 <dt class="hdlist1">Azure VM 크기입니다</dt>
 <dd>
-<p>위의 CPU 및 RAM 요구 사항을 충족하는 인스턴스 유형입니다. Connector를 Cloud Manager에서 직접 배포할 때는 DS3 v2를 사용하고 해당 VM 크기를 사용하는 것이 좋습니다.</p>
+<p>위의 CPU 및 RAM 요구 사항을 충족하는 인스턴스 유형입니다. DS3 v2를 권장합니다.</p>
 </dd>
 <dt class="hdlist1">GCP 시스템 유형입니다</dt>
 <dd>
-<p>위의 CPU 및 RAM 요구 사항을 충족하는 인스턴스 유형입니다. n1-standard-4를 사용하고 Cloud Manager에서 직접 Connector를 구축할 때는 해당 시스템 유형을 사용하는 것이 좋습니다.</p>
+<p>위의 CPU 및 RAM 요구 사항을 충족하는 인스턴스 유형입니다. n1-standard-4를 권장합니다.</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Connector는 를 지원하는 OS가 있는 VM 인스턴스의 Google Cloud에서 지원됩니다 <a href="https://cloud.google.com/compute/shielded-vm/docs/shielded-vm" target="_blank" rel="noopener">"차폐된 VM 기능"</a></p>
+</div>
+</div>
+</div>
 </dd>
 <dt class="hdlist1">지원되는 운영 체제</dt>
 <dd>
