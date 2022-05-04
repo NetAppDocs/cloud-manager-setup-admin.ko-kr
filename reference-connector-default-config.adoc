@@ -14,78 +14,121 @@ summary: 커넥터 문제를 해결해야 하는 경우 커넥터 구성 방법�
 
 
 [role="lead"]
-커넥터 문제를 해결해야 하는 경우 커넥터 구성 방법을 이해하는 데 도움이 될 수 있습니다.
+Connector를 배포하기 전에 또는 문제를 해결해야 하는 경우에 대해 자세히 알아볼 수 있습니다.
 
 
 
 == 인터넷 액세스가 가능한 기본 구성
 
-* Cloud Manager에서 Connector를 배포했거나 클라우드 공급자의 마켓플레이스에서 직접 구축한 경우 다음을 확인하십시오.
-+
-** AWS에서 EC2 Linux 인스턴스의 사용자 이름은 EC2-user입니다.
-** 이미지의 운영 체제는 다음과 같습니다.
-+
-*** AWS: Red Hat Enterprise Linux 7.6(HVM)
-*** Azure:CentOS 7.6
-*** GCP: CentOS 7.9
+다음 구성 정보는 클라우드 공급자의 마켓플레이스에서 Connector를 배포했거나 인터넷에 액세스할 수 있는 온프레미스 Linux 호스트에 Connector를 수동으로 설치한 경우에 적용됩니다.
+
+
+
+=== AWS 세부 정보
+
+Cloud Manager 또는 클라우드 공급자의 마켓플레이스에서 Connector를 구축한 경우 다음을 참조하십시오.
+
+* EC2 인스턴스 유형은 T3.xLarge입니다.
+* 이미지의 운영 체제는 Red Hat Enterprise Linux 7.6(HVM)입니다.
 +
 운영 체제에는 GUI가 포함되어 있지 않습니다. 시스템에 액세스하려면 터미널을 사용해야 합니다.
 
+* EC2 Linux 인스턴스의 사용자 이름은 EC2-user입니다.
+* 기본 시스템 디스크는 50GiB GP2 디스크입니다.
 
 
 
 
-* Cloud Manager에서 구축할 경우 기본 시스템 디스크는 다음과 같습니다.
+=== Azure 세부 정보
+
+Cloud Manager 또는 클라우드 공급자의 마켓플레이스에서 Connector를 구축한 경우 다음을 참조하십시오.
+
+* VM 유형은 DS3 v2입니다.
+* 이미지의 운영 체제는 CentOS 7.6입니다.
 +
-** AWS: 50GiB GP2 디스크
-** Azure: 100GiB 프리미엄 SSD 디스크
-** Google Cloud: 100GiB SSD 영구 디스크
+운영 체제에는 GUI가 포함되어 있지 않습니다. 시스템에 액세스하려면 터미널을 사용해야 합니다.
+
+* 기본 시스템 디스크는 100GiB 프리미엄 SSD 디스크입니다.
 
 
-* Connector 설치 폴더는 다음 위치에 있습니다.
+
+
+=== Google Cloud 세부 정보
+
+Cloud Manager 또는 클라우드 공급자의 마켓플레이스에서 Connector를 구축한 경우 다음을 참조하십시오.
+
+* VM 인스턴스는 n1-standard-4입니다.
+* 이미지의 운영 체제는 CentOS 7.9입니다.
 +
+운영 체제에는 GUI가 포함되어 있지 않습니다. 시스템에 액세스하려면 터미널을 사용해야 합니다.
+
+* 기본 시스템 디스크는 100GiB SSD 영구 디스크입니다.
+
+
+
+
+=== 설치 폴더
+
+Connector 설치 폴더는 다음 위치에 있습니다.
+
 /opt/application/netapp/cloudmanager입니다
 
-* 로그 파일은 다음 폴더에 들어 있습니다.
-+
-** /opt/application/netapp/cloudmanager/log입니다
+
+
+=== 로그 파일
+
+로그 파일은 다음 폴더에 들어 있습니다.
+
+* /opt/application/netapp/cloudmanager/log입니다
 +
 이 폴더의 로그에는 Connector 및 Docker 이미지에 대한 세부 정보가 나와 있습니다.
 
-** /opt/application/netapp/cloudmanager/docker/데이터/로그
+* /opt/application/netapp/cloudmanager/docker/데이터/로그
 +
 이 폴더의 로그에는 Connector에서 실행되는 클라우드 서비스와 Cloud Manager 서비스에 대한 세부 정보가 나와 있습니다.
 
 
+
+
+
+=== 커넥터 서비스
 
 * Cloud Manager 서비스의 이름은 occm입니다.
 * occm 서비스는 MySQL 서비스에 따라 달라진다.
 +
 MySQL 서비스가 다운되면 occm 서비스도 다운됩니다.
 
-* Cloud Manager는 다음 패키지를 아직 설치하지 않은 경우 Linux 호스트에 설치합니다.
-+
-** 7zip
-** AWSCLI
-** Docker 를 참조하십시오
-** 자바
-** 쿠베틀입니다
-** MySQL
-** 트리엔ctl
-** 잡아당깁니다
-** 윙입니다
 
 
-* 커넥터는 Linux 호스트에서 다음 포트를 사용합니다.
-+
-** HTTP 액세스용 80
-** HTTPS 액세스용 443
-** Cloud Manager 데이터베이스용 3306
-** Cloud Manager API 프록시의 경우 8080
-** 서비스 관리자 API용 8666
-** 8777)을 참조하십시오
 
 
+=== 패키지
+
+Cloud Manager는 다음 패키지를 아직 설치하지 않은 경우 Linux 호스트에 설치합니다.
+
+* 7zip
+* AWSCLI
+* Docker 를 참조하십시오
+* 자바
+* 쿠베틀입니다
+* MySQL
+* 트리엔ctl
+* 잡아당깁니다
+* 윙입니다
+
+
+
+
+=== 포트
+
+커넥터는 Linux 호스트에서 다음 포트를 사용합니다.
+
+* HTTP 액세스용 80
+* HTTPS 액세스용 443
+* Cloud Manager 데이터베이스용 3306
+* Cloud Manager API 프록시의 경우 8080
+* 서비스 관리자 API용 8666
+* 8777)을 참조하십시오
 
 
 

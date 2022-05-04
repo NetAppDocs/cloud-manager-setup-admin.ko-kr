@@ -1871,17 +1871,7 @@
   <block id="d091f5f5ef56e437171dce81de151778" category="summary">커넥터 문제를 해결해야 하는 경우 커넥터 구성 방법을 이해하는 데 도움이 될 수 있습니다.</block>
   <block id="6e8114a6676a5923599d8d78479d23d8" category="doc">Connector의 기본 설정</block>
   <block id="87047facc49847cec237f6d055d56b31" category="section-title">인터넷 액세스가 가능한 기본 구성</block>
-  <block id="10f2e7fb8617ff712fbe7aa54032781c" category="list-text">Cloud Manager에서 Connector를 배포했거나 클라우드 공급자의 마켓플레이스에서 직접 구축한 경우 다음을 확인하십시오.</block>
-  <block id="b222582f646de6fbdc5d97b39ae8192d" category="list-text">AWS에서 EC2 Linux 인스턴스의 사용자 이름은 EC2-user입니다.</block>
-  <block id="1c809a23dbe4e8bcccad6aa2a0c8c0e2" category="list-text">이미지의 운영 체제는 다음과 같습니다.</block>
-  <block id="7ca420018a135668285e51700826f06a" category="list-text">AWS: Red Hat Enterprise Linux 7.6(HVM)</block>
-  <block id="955934a26058d02cfec6d0f285c4a307" category="list-text">Azure:CentOS 7.6</block>
-  <block id="72c52a7fd1e647b2a2830c39c7942919" category="list-text">GCP: CentOS 7.9</block>
   <block id="953e61420be6157aa122dfd3475d4070" category="paragraph">운영 체제에는 GUI가 포함되어 있지 않습니다. 시스템에 액세스하려면 터미널을 사용해야 합니다.</block>
-  <block id="4325e913be25be97380072015ae5e7cc" category="list-text">Cloud Manager에서 구축할 경우 기본 시스템 디스크는 다음과 같습니다.</block>
-  <block id="09563c397639582ef720de7349c524bc" category="list-text">AWS: 50GiB GP2 디스크</block>
-  <block id="7733c97f1ef8dd1877b419499696175b" category="list-text">Azure: 100GiB 프리미엄 SSD 디스크</block>
-  <block id="0d3dd665317c1c18249ab1e0e27a84fc" category="list-text">Google Cloud: 100GiB SSD 영구 디스크</block>
   <block id="6bcce13786258734e514d9a072a3c23a" category="list-text">Connector 설치 폴더는 다음 위치에 있습니다.</block>
   <block id="1290fecb35d9c7e8b4f1faf1f9b5c7f3" category="paragraph">/opt/application/netapp/cloudmanager입니다</block>
   <block id="af22c16aeca9d8bc2515764efff73455" category="list-text">로그 파일은 다음 폴더에 들어 있습니다.</block>
@@ -2125,4 +2115,27 @@
   <block id="5fb9ace1b2fee444b848b1ad1c5d886c" category="list-text"><block ref="5fb9ace1b2fee444b848b1ad1c5d886c" category="inline-link-rx"></block></block>
   <block id="8ac340f924d72696326df51a32dbdee5" category="inline-link">Azure Government 지역의 Azure Marketplace 페이지</block>
   <block id="d60d2a63a86471881f173bb3041b00f7" category="list-text"><block ref="d60d2a63a86471881f173bb3041b00f7" category="inline-link-rx"></block></block>
+  <block id="da14ee4a8100ac08980150bcda1e397d" category="inline-link-macro">Connector의 기본 설정에 대해 알아봅니다</block>
+  <block id="84fc34721c0c912a148a70d22ac7cd5a" category="paragraph"><block ref="2e3b01a9181b70ea3432226bf12e488f" category="inline-link-macro-rx"></block>.</block>
+  <block id="2fc22405cb36e8596d9bdb7b52cbf10c" category="paragraph">Connector를 배포하기 전에 또는 문제를 해결해야 하는 경우에 대해 자세히 알아볼 수 있습니다.</block>
+  <block id="2c6b952beb0b945d11bcb7f47c9fc222" category="paragraph">다음 구성 정보는 클라우드 공급자의 마켓플레이스에서 Connector를 배포했거나 인터넷에 액세스할 수 있는 온프레미스 Linux 호스트에 Connector를 수동으로 설치한 경우에 적용됩니다.</block>
+  <block id="5eeca886fa07462826a9ea747483f528" category="section-title">AWS 세부 정보</block>
+  <block id="52a3f135a86ccbbb1fcbcae6bafe5d71" category="paragraph">Cloud Manager 또는 클라우드 공급자의 마켓플레이스에서 Connector를 구축한 경우 다음을 참조하십시오.</block>
+  <block id="6b3a1b41a32e70a38db42e8ec15a6fba" category="list-text">EC2 인스턴스 유형은 T3.xLarge입니다.</block>
+  <block id="1c4a1f461d9d9ab860d5238735bbfa23" category="list-text">이미지의 운영 체제는 Red Hat Enterprise Linux 7.6(HVM)입니다.</block>
+  <block id="09572768e7bd2d34b2a051ebb8774173" category="list-text">EC2 Linux 인스턴스의 사용자 이름은 EC2-user입니다.</block>
+  <block id="3e08af2c96d38d93f2b461c17451752f" category="list-text">기본 시스템 디스크는 50GiB GP2 디스크입니다.</block>
+  <block id="b8c4a5bd8ed4eb470e80955a542dd4bf" category="section-title">Azure 세부 정보</block>
+  <block id="82e44dd5e94a855110f9dea154fed0ed" category="list-text">VM 유형은 DS3 v2입니다.</block>
+  <block id="6b20346212b35fa23c8778f7b40af243" category="list-text">이미지의 운영 체제는 CentOS 7.6입니다.</block>
+  <block id="474a089504b47eb34ee00ee62f121108" category="list-text">기본 시스템 디스크는 100GiB 프리미엄 SSD 디스크입니다.</block>
+  <block id="f246cf5f23e765f0a7ebed4a6c1d923a" category="section-title">Google Cloud 세부 정보</block>
+  <block id="eea8625f5c96ad7dadcdf9b2b4ddc80d" category="list-text">VM 인스턴스는 n1-standard-4입니다.</block>
+  <block id="eac23d653ed188286a19e5301fe3807e" category="list-text">이미지의 운영 체제는 CentOS 7.9입니다.</block>
+  <block id="6cb5fb9b61376b8ee3092321445fdea4" category="list-text">기본 시스템 디스크는 100GiB SSD 영구 디스크입니다.</block>
+  <block id="bc4aa6323016172de14a6835883b27c7" category="section-title">설치 폴더</block>
+  <block id="81fae4ea40cc442afa43dab4cc001004" category="section-title">로그 파일</block>
+  <block id="7ab07ea46199c644dddf2520b843394b" category="section-title">커넥터 서비스</block>
+  <block id="27fe4eb3edbaff8f250e2d51f7462681" category="section-title">패키지</block>
+  <block id="407c4e9fac86b98147da49acd4fa0d01" category="section-title">포트</block>
 </blocks>

@@ -56,6 +56,8 @@ Cloud Manager 소프트웨어는 NetApp에서 무료로 제공합니다.
 
 대부분의 작업에서 Cloud Manager는 클라우드 네트워크에 Connector를 배포하라는 메시지를 표시합니다. 그러면 컴퓨팅 인스턴스 및 관련 스토리지에 대한 클라우드 공급자의 요금이 부과됩니다. 구내에서 Connector 소프트웨어를 실행할 수 있는 옵션이 있습니다.
 
+link:reference-connector-default-config.html["Connector의 기본 설정에 대해 알아봅니다"].
+
 
 
 == Cloud Manager의 작동 방식
