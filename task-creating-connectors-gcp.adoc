@@ -16,7 +16,7 @@ summary: 대부분의 Cloud Manager 기능을 사용하려면 계정 관리자�
 [role="lead"]
 대부분의 Cloud Manager 기능을 사용하려면 계정 관리자가 _Connector_를 배포해야 합니다. link:concept-connectors.html["커넥터가 필요한 시기를 알아보십시오"]. Connector를 사용하면 Cloud Manager에서 퍼블릭 클라우드 환경 내의 리소스와 프로세스를 관리할 수 있습니다.
 
-이 페이지에서는 Cloud Manager에서 직접 GCP에서 Connector를 생성하는 방법을 설명합니다. link:concept-connectors.html#how-to-create-a-connector["커넥터를 배포하는 다른 방법에 대해 알아봅니다"].
+이 페이지에서는 Cloud Manager에서 직접 Google Cloud에 Connector를 생성하는 방법을 설명합니다. link:concept-connectors.html#how-to-create-a-connector["커넥터를 배포하는 다른 방법에 대해 알아봅니다"].
 
 이러한 단계는 계정 관리자 역할을 가진 사용자가 완료해야 합니다. 작업 영역 관리자가 연결선을 만들 수 없습니다.
 
@@ -27,10 +27,10 @@ TIP: 첫 번째 Cloud Volumes ONTAP 작업 환경을 생성할 때 커넥터가 
 
 == 사용 권한 설정
 
-Connector를 배포하기 전에 GCP 계정에 올바른 권한이 있고 Connector VM에 대해 서비스 계정이 설정되어 있는지 확인해야 합니다.
+Connector를 배포하기 전에 Google Cloud 계정에 올바른 권한이 있는지, 그리고 Connector VM에 대해 서비스 계정이 설정되어 있는지 확인해야 합니다.
 
 .단계
-. Connector를 배포하는 GCP 사용자에게 에 대한 권한이 있는지 확인합니다 https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml["GCP에 대한 커넥터 배포 정책"^].
+. Connector를 배포하는 Google Cloud 사용자에게 에 대한 권한이 있는지 확인합니다 https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml["Google Cloud용 커넥터 배포 정책"^].
 +
 https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["YAML 파일을 사용하여 맞춤형 역할을 생성할 수 있습니다"^] 그런 다음 사용자에게 연결합니다. gcloud 명령줄을 사용하여 역할을 생성해야 합니다.
 
@@ -39,17 +39,17 @@ https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-
 이 서비스 계정을 만들 때 Connector VM에 연결합니다.
 
 +
-.. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["GCP에서 역할을 생성합니다"^] 여기에는 에 정의된 권한이 포함됩니다 https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml["GCP에 대한 Cloud Manager 정책입니다"^]. gcloud 명령줄을 사용해야 합니다.
+.. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["GCP에서 역할을 생성합니다"^] 여기에는 에 정의된 권한이 포함됩니다 https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml["Google Cloud에 대한 Cloud Manager 정책"^]. gcloud 명령줄을 사용해야 합니다.
 +
 이 YAML 파일에 포함된 사용 권한은 1단계의 사용 권한과 다릅니다.
 
-.. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["GCP 서비스 계정을 생성하고 방금 생성한 사용자 지정 역할을 적용합니다"^].
+.. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["Google Cloud 서비스 계정을 만들고 방금 만든 사용자 지정 역할을 적용합니다"^].
 .. 다른 프로젝트에 Cloud Volumes ONTAP를 배포하려는 경우 https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console["Cloud Manager 역할을 가진 서비스 계정을 해당 프로젝트에 추가하여 액세스 권한을 부여합니다"^]. 각 프로젝트에 대해 이 단계를 반복해야 합니다.
 
 
 
 
-이제 GCP 사용자에게 Connector를 생성하는 데 필요한 권한이 있으며 Connector VM에 대한 서비스 계정이 설정됩니다.
+이제 Google Cloud 사용자에게 Connector를 생성하는 데 필요한 권한이 있으며 Connector VM에 대한 서비스 계정이 설정됩니다.
 
 
 
@@ -59,10 +59,19 @@ https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-
 
 [cols="10,10,10,20,20,30"]
 |===
-| 서비스 계정 | 창조자 | 에서 호스팅됩니다 | 서비스 프로젝트 권한 | 호스트 프로젝트 권한 | 목적 
+| 아이덴티티 | 창조자 | 에서 호스팅됩니다 | 서비스 프로젝트 권한 | 호스트 프로젝트 권한 | 목적 
 
 
-| Cloud Manager 서비스 계정 | 맞춤형 | 서비스 프로젝트  a| 
+| Connector를 배포하는 데 사용되는 Google 계정입니다 | 맞춤형 | 서비스 프로젝트  a| 
+* https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml["YAML 파일에 있는 권한"^]
+
+ a| 
+* compute.networkUser
+
+| 서비스 프로젝트에 Connector 배포 
+
+
+| 커넥터 서비스 계정 | 맞춤형 | 서비스 프로젝트  a| 
 * https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml["YAML 파일에 있는 권한"^]
 
  a| 
@@ -79,22 +88,22 @@ https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-
 | 해당 없음 | (선택 사항) 데이터 계층화 및 Cloud Backup을 위한 솔루션 
 
 
-| Google API 서비스 에이전트입니다 | GCP | 서비스 프로젝트  a| 
+| Google API 서비스 에이전트입니다 | Google 클라우드 | 서비스 프로젝트  a| 
 * (기본값) 편집기
 
  a| 
 * compute.networkUser
 
-| 배포를 대신하여 GCP API와 상호 작용합니다. Cloud Manager에서 공유 네트워크를 사용할 수 있습니다. 
+| 배포를 대신하여 Google Cloud API와 상호 작용합니다. Cloud Manager에서 공유 네트워크를 사용할 수 있습니다. 
 
 
-| Google Compute Engine 기본 서비스 계정입니다 | GCP | 서비스 프로젝트  a| 
+| Google Compute Engine 기본 서비스 계정입니다 | Google 클라우드 | 서비스 프로젝트  a| 
 * (기본값) 편집기
 
  a| 
 * compute.networkUser
 
-| 구축을 대신하여 GCP 인스턴스 및 컴퓨팅 인프라를 구축합니다. Cloud Manager에서 공유 네트워크를 사용할 수 있습니다. 
+| 배포를 대신하여 Google Cloud 인스턴스 및 컴퓨팅 인프라를 배포합니다. Cloud Manager에서 공유 네트워크를 사용할 수 있습니다. 
 |===
 참고:
 
@@ -123,7 +132,7 @@ Connector와 Cloud Volumes ONTAP를 구축하려면 여러 API가 필요합니�
 
 
 
-== GCP에서 커넥터를 생성하는 중입니다
+== Google Cloud에서 커넥터 만들기
 
 Cloud Manager 사용자 인터페이스에서 직접 또는 gcloud를 사용하여 Google Cloud에서 Connector를 생성합니다.
 
@@ -178,7 +187,7 @@ NOTE: 커넥터 를 시작하지 않으면 커넥터로 들어오는 트래픽�
 --
 . 원하는 방법을 사용하여 gcloud SDK에 로그인합니다.
 +
-이 예에서는 gcloud SDK가 설치된 로컬 셸을 사용하지만 GCP 콘솔에서 기본 Google Cloud Shell을 사용할 수 있습니다.
+이 예에서는 gcloud SDK가 설치된 로컬 셸을 사용하지만 Google Cloud 콘솔에서 기본 Google Cloud Shell을 사용할 수 있습니다.
 
 +
 Google Cloud SDK에 대한 자세한 내용은 를 참조하십시오 link:https://cloud.google.com/sdk["Google Cloud SDK 설명서 페이지"^].
