@@ -2144,4 +2144,7 @@
   <block id="abb8f06c60f79c0d26aa84ecd4b682a9" category="cell">배포를 대신하여 Google Cloud 인스턴스 및 컴퓨팅 인프라를 배포합니다. Cloud Manager에서 공유 네트워크를 사용할 수 있습니다.</block>
   <block id="c251b4e4495910558d988ba699a63a67" category="section-title">Google Cloud에서 커넥터 만들기</block>
   <block id="70d434e2bfd18a27962842edd06609f7" category="paragraph">이 예에서는 gcloud SDK가 설치된 로컬 셸을 사용하지만 Google Cloud 콘솔에서 기본 Google Cloud Shell을 사용할 수 있습니다.</block>
+  <block id="390e66de0b25a9d9b226d4ede6fa20b5" category="section-title">2022년 5월 12일</block>
+  <block id="e2632c3a4c1aff50543e98b03420fd3c" category="section-title">커넥터 3.9.18 패치</block>
+  <block id="8156333613ef46e2aeaf70650af07b00" category="paragraph">버그 수정을 소개하기 위해 Connector를 업데이트했습니다. 가장 주목할 만한 수정 사항은 커넥터가 공유 VPC에 있을 때 Google Cloud의 Cloud Volumes ONTAP 구축에 영향을 미치는 문제입니다.</block>
 </blocks>
