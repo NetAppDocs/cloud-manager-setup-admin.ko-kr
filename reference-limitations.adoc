@@ -30,7 +30,7 @@ Cloud Manager는 172.17.0.0/16 및 172.18.0.0/16 범위의 IP 주소를 가진 �
 
 네트워크에 이러한 범위 중 하나로 구성된 서브넷이 있는 경우 Cloud Manager에서 연결 장애가 발생할 수 있습니다. 예를 들어, Cloud Manager에서 온프레미스 ONTAP 클러스터를 검색하지 못할 수 있습니다.
 
-해결 방법은 커넥터 인터페이스의 IP 주소를 변경하는 것입니다. NetApp 지원에 문의하여 도움을 받으십시오.
+기술 자료 문서를 참조하십시오 link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Manager/Cloud_Manager_shows_inactive_as_Connector_IP_range_in_172.x.x.x_conflict_with_docker_network["Cloud Manager Connector IP가 기존 네트워크와 충돌합니다"] 커넥터 인터페이스의 IP 주소를 변경하는 방법에 대한 지침은 을 참조하십시오.
 
 
 
