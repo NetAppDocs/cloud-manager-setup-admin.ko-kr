@@ -105,4 +105,7 @@ GCP용 Cloud Manager 정책에는 Cloud Manager가 Cloud Volumes ONTAP를 구현
 
 
 | -container.clusters.get-container.clusters.list 를 참조하십시오 | Google Kubernetes Engine에서 실행 중인 Kubernetes 클러스터를 검색할 수 있습니다. 
+
+
+| -compute.instanceGroups.get -compute.addresses.get | 를 사용하여 HA 쌍에서 스토리지 VM을 생성하고 관리합니다. 
 |===

@@ -102,4 +102,7 @@ Cloud Manager는 AWS 계정을 사용하여 EC2, S3, CloudFormation, IAM, 보안
 
 
 | "EC2:DescribePlacementGroups", "IAM:GetRolePolicy", | 단일 AZ(Availability Zone)에 구축된 HA 쌍에 대한 AWS 분산 배치 그룹을 생성합니다. 
+
+
+| "EC2: DescribeVolumesModifications", "EC2: ModifyVolume", | Amazon EBS Elastic Volumes 기능을 지원하는 Cloud Volumes ONTAP 애그리게이트를 설정 및 관리할 수 있습니다. 
 |===

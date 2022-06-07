@@ -1892,7 +1892,6 @@
   <block id="a15b1a7954f2d926c5ee7f261a97b4d2" category="paragraph">/var/lib/docker/volumes/DS_occmpdata/_data/log</block>
   <block id="590b2ea5933ad8ead3c9a15a914f1a9c" category="list-text">모든 서비스가 Docker 컨테이너 내부에서 실행 중입니다</block>
   <block id="f76b4c57c56377745199382d59cdeed3" category="paragraph">서비스는 실행 중인 Docker 런타임 서비스에 따라 다릅니다</block>
-  <block id="7ff191df90fac0fa94ab5c2b5101a5e9" category="sidebar">모든 Cloud Manager 설명서</block>
   <block id="b7117438679aa668508b75822322c225" category="sidebar">설정 및 관리 문서</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">릴리스 정보</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">새로운 소식</block>
@@ -2148,4 +2147,17 @@
   <block id="8156333613ef46e2aeaf70650af07b00" category="paragraph">버그 수정을 소개하기 위해 Connector를 업데이트했습니다. 가장 주목할 만한 수정 사항은 커넥터가 공유 VPC에 있을 때 Google Cloud의 Cloud Volumes ONTAP 구축에 영향을 미치는 문제입니다.</block>
   <block id="9d629a9ec3f84748aec778918407cebb" category="inline-link-macro">Cloud Manager Connector IP가 기존 네트워크와 충돌합니다</block>
   <block id="a1fd2cb29c69b5f22a015cf8e9b56775" category="paragraph">기술 자료 문서를 참조하십시오 <block ref="a91fb084431280c2dea29b2cdbf32954" category="inline-link-macro-rx"></block> 커넥터 인터페이스의 IP 주소를 변경하는 방법에 대한 지침은 을 참조하십시오.</block>
+  <block id="f8b475a3fefebada77a30229238d0a1a" category="section-title">2022년 6월 7일</block>
+  <block id="40beea3ec23a7affa39b1a1cbd52f21d" category="section-title">커넥터 3.9.19</block>
+  <block id="fb9fefdc512037af8c4c1f84c436bd8e" category="list-text">커넥터는 현재 AWS 자카르타 지역(AP-동남동-3)에서 지원됩니다.</block>
+  <block id="49ed7ab586a5135eae3ee7b3aea2ae20" category="list-text">이제 Connector는 Azure Brazil Southeast 지역에서 지원됩니다.</block>
+  <block id="1765dff10197df4bf080f41e5537f2a5" category="list-text">이번 커넥터 릴리즈에는 Cloud Volumes ONTAP의 향상된 기능과 사내 ONTAP 클러스터의 향상된 기능도 포함되어 있습니다.</block>
+  <block id="03e6ae21f561049c3e8010740c63aab3" category="inline-link">Cloud Volumes ONTAP의 향상된 기능에 대해 알아보십시오</block>
+  <block id="2027473f3ca71543274163d3bb9dd8e1" category="list-text"><block ref="2027473f3ca71543274163d3bb9dd8e1" category="inline-link-rx"></block></block>
+  <block id="6ff2a7981cc8a7efd758e8ffec4cc69e" category="inline-link">ONTAP 온프레미스 클러스터 개선 사항에 대해 알아보십시오</block>
+  <block id="f0aff813a70ef2591adfbb6a1a06b553" category="list-text"><block ref="f0aff813a70ef2591adfbb6a1a06b553" category="inline-link-rx"></block></block>
+  <block id="d91c9747b757db55982f71a386bfd0d6" category="cell">-compute.instanceGroups.get -compute.addresses.get</block>
+  <block id="e6896223c5f9bd9bbdd1b0c9eac6686f" category="cell">를 사용하여 HA 쌍에서 스토리지 VM을 생성하고 관리합니다.</block>
+  <block id="4a95dbd25f9c78f9b32c636955913f0c" category="cell">"EC2: DescribeVolumesModifications", "EC2: ModifyVolume",</block>
+  <block id="2ab6f4b7f1eda4096fbe91764dbb5eb6" category="cell">Amazon EBS Elastic Volumes 기능을 지원하는 Cloud Volumes ONTAP 애그리게이트를 설정 및 관리할 수 있습니다.</block>
 </blocks>

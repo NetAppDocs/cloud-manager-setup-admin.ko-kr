@@ -18,6 +18,27 @@ Cloud Manager의 관리 기능, 즉 NetApp 계정, 커넥터, 클라우드 공�
 
 
 
+== 2022년 6월 7일
+
+
+
+=== 커넥터 3.9.19
+
+* 커넥터는 현재 AWS 자카르타 지역(AP-동남동-3)에서 지원됩니다.
+* 이제 Connector는 Azure Brazil Southeast 지역에서 지원됩니다.
++
+https://cloud.netapp.com/cloud-volumes-global-regions["지원되는 영역의 전체 목록을 봅니다"^]
+
+* 이번 커넥터 릴리즈에는 Cloud Volumes ONTAP의 향상된 기능과 사내 ONTAP 클러스터의 향상된 기능도 포함되어 있습니다.
++
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#7-june-2022["Cloud Volumes ONTAP의 향상된 기능에 대해 알아보십시오"^]
+** https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/whats-new.html#7-june-2022["ONTAP 온프레미스 클러스터 개선 사항에 대해 알아보십시오"^]
+
+
+
+
+
+
 == 2022년 5월 12일
 
 
