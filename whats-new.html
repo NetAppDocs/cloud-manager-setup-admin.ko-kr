@@ -277,35 +277,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">한국어</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">한국어</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/cloud-manager-setup-admin/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-setup-admin/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-setup-admin/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/cloud-manager-setup-admin/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-setup-admin/whats-new.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/whats-new.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-setup-admin/whats-new.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/whats-new.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-setup-admin/whats-new.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -360,8 +352,6 @@
         
         <a target="_blank" href="/ko-kr/cloud-manager-setup-admin/pdfs/fullsite-sidebar/Cloud_Manager_설정_및_관리.pdf" >
           <img src="/ko-kr/cloud-manager-setup-admin/images/pdf.png" width="16" height="16"/>이 문서 사이트의 PDF</a>
-
-
 
 
 
@@ -812,10 +802,10 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
-  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/cloud-manager-family">
-        모든 Cloud Manager 설명서
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-setup-admin/index.html">
+</script><div class="prod-nav" id="product-nav">
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/ko-kr/cloud-manager-family/"><img src="/ko-kr/cloud-manager-setup-admin/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+</div><div class="sidebar-nav-container" id="mysidebardiv">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-setup-admin/index.html">
         설정 및 관리 문서
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 릴리스 정보</div>
@@ -1003,7 +993,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-13 15:34:24 +0000">05/13/2022</time>
+    <time datetime="2022-06-07 20:54:08 +0000">06/07/2022</time>
     
   
 
@@ -1014,6 +1004,40 @@
 <div class="sectionbody">
 <div class="paragraph lead">
 <p>Cloud Manager의 관리 기능, 즉 NetApp 계정, 커넥터, 클라우드 공급자 자격 증명 등과 관련된 새로운 기능에 대해 알아보십시오.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="2022년-6월-7일">2022년 6월 7일</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="커넥터-3-9-19">커넥터 3.9.19</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>커넥터는 현재 AWS 자카르타 지역(AP-동남동-3)에서 지원됩니다.</p>
+</li>
+<li>
+<p>이제 Connector는 Azure Brazil Southeast 지역에서 지원됩니다.</p>
+<div class="paragraph">
+<p><a href="https://cloud.netapp.com/cloud-volumes-global-regions" target="_blank" rel="noopener">"지원되는 영역의 전체 목록을 봅니다"</a></p>
+</div>
+</li>
+<li>
+<p>이번 커넥터 릴리즈에는 Cloud Volumes ONTAP의 향상된 기능과 사내 ONTAP 클러스터의 향상된 기능도 포함되어 있습니다.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#7-june-2022" target="_blank" rel="noopener">"Cloud Volumes ONTAP의 향상된 기능에 대해 알아보십시오"</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/whats-new.html#7-june-2022" target="_blank" rel="noopener">"ONTAP 온프레미스 클러스터 개선 사항에 대해 알아보십시오"</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -1526,4 +1550,5 @@
     </script>
     <script src='/ko-kr/cloud-manager-setup-admin/js/www-ntap.js'></script>
     <script src='/ko-kr/cloud-manager-setup-admin/js/tabbed-blocks.js'></script>
+    <script src='/ko-kr/cloud-manager-setup-admin/js/sidebar.js'></script>
   </body></html>
