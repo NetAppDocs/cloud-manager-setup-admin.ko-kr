@@ -1749,8 +1749,6 @@
   <block id="3fc84828d29031ccb044fc851a791dd5" category="inline-link-macro">NetApp 계정 설정</block>
   <block id="72c3eeaa29779a60f2efe95a1c173302" category="paragraph">단계별 지침은 을 참조하십시오 <block ref="2e63be6a139b9c6424fb3c44b74add23" category="inline-link-macro-rx"></block>.</block>
   <block id="6b9aff54334b24c64be5688e6f9c12cc" category="section-title">최대 Cloud Volumes ONTAP 시스템 수</block>
-  <block id="3ac6338087c4180b5cbb359584abab3a" category="paragraph">사용 중인 라이센스 모델에 관계없이 Cloud Volumes ONTAP 시스템의 최대 수는 NetApp 계정당 20개로 제한됩니다.</block>
-  <block id="5908d4e5a438659ba844464125f51abe" category="paragraph">a_system_은 HA 쌍 또는 단일 노드 시스템입니다. 예를 들어, 2개의 Cloud Volumes ONTAP HA 쌍과 2개의 단일 노드 시스템이 있다면 총 4개의 시스템이 있고 고객 계정에 16개의 추가 시스템을 위한 공간이 있을 것입니다.</block>
   <block id="a259bb127cd2a1cd02edf6a3a2484f33" category="paragraph">궁금한 사항이 있으면 어카운트 담당자 또는 세일즈 팀에 문의하십시오.</block>
   <block id="ff73074ccafb0bcfc1c49a09ceb6532f" category="section-title">계정 설정</block>
   <block id="6f42c9f4b429467eb11ea5ae99b87c9d" category="paragraph">Cloud Manager의 계정 관리 위젯을 사용하면 계정 관리자가 NetApp 계정을 관리할 수 있습니다. 방금 계정을 만든 경우 처음부터 다시 시작할 수 있습니다. 그러나 이미 계정을 설정한 경우에는 계정과 연결된 사용자, 작업 영역, 커넥터 및 구독이 _ALL_으로 표시됩니다.</block>
@@ -2160,4 +2158,6 @@
   <block id="e6896223c5f9bd9bbdd1b0c9eac6686f" category="cell">를 사용하여 HA 쌍에서 스토리지 VM을 생성하고 관리합니다.</block>
   <block id="4a95dbd25f9c78f9b32c636955913f0c" category="cell">"EC2: DescribeVolumesModifications", "EC2: ModifyVolume",</block>
   <block id="2ab6f4b7f1eda4096fbe91764dbb5eb6" category="cell">Amazon EBS Elastic Volumes 기능을 지원하는 Cloud Volumes ONTAP 애그리게이트를 설정 및 관리할 수 있습니다.</block>
+  <block id="fe133d1f6db8d046e4b328c0d9a967a1" category="paragraph">사용 중인 라이센스 모델에 관계없이 Cloud Volumes ONTAP 시스템의 최대 수는 NetApp 계정당 50개로 제한됩니다.</block>
+  <block id="ae5034ae6657395ba1fc2a16d2c55db3" category="paragraph">a_system_은 HA 쌍 또는 단일 노드 시스템입니다. 예를 들어, 8개의 Cloud Volumes ONTAP HA 쌍과 4개의 단일 노드 시스템이 있다면 총 12개의 시스템이 있고 고객 시스템에 38개의 추가 시스템이 있을 것입니다.</block>
 </blocks>
