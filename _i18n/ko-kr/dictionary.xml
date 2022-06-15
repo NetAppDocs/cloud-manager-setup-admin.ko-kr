@@ -1471,7 +1471,6 @@
   <block id="342df35452bbec008148c714d47038f6" category="list-text">주문에 시계 및 * 보류 * 상태가 표시되면 마켓플레이스 페이지로 돌아가서 * 공급자 관리 * 를 선택하여 위에 설명된 프로세스를 완료합니다.</block>
   <block id="9547217bb6aa822040056cba67310321" category="inline-image-macro">보류 중인 마켓플레이스 소유 권한의 스크린샷.</block>
   <block id="e6ec8d6dff39d45a9056311495699cef" category="paragraph"><block ref="e6ec8d6dff39d45a9056311495699cef" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4c7da566c048accbd9ccb27c9b060bde" category="summary">인터넷에 액세스할 수 없는 온프레미스 Linux 호스트에 커넥터를 설치할 수 있습니다. 그런 다음, 온프레미스 ONTAP 클러스터를 검색하고, 클러스터 간에 데이터를 복제하고, 클라우드 데이터 센스로 데이터를 스캔할 수 있습니다.</block>
   <block id="424a4bbc5d90882baf6dfd31a70caf62" category="doc">인터넷에 접속하지 않고 커넥터를 내부에 설치합니다</block>
   <block id="92241232df0720bddf843b8b16c8be1a" category="paragraph">이러한 설치 지침은 위에서 설명한 사용 사례를 위한 것입니다. <block ref="f56df5f8b4fd558a7482d6115403eadd" category="inline-link-macro-rx"></block>.</block>
   <block id="93144470251168b3e5488b736447f48f" category="section-title">호스트 요구 사항을 확인합니다</block>
@@ -1527,8 +1526,6 @@
   <block id="533c556705825be9a1a97d191373f80f" category="list-text"><block ref="533c556705825be9a1a97d191373f80f" category="inline-link-rx"></block></block>
   <block id="8160a46a5d4541efd7702f3fa8a2ecad" category="inline-link">온프레미스 ONTAP 클러스터 간에 데이터를 복제합니다</block>
   <block id="1b8412d43fb2448299621a31132c8729" category="list-text"><block ref="1b8412d43fb2448299621a31132c8729" category="inline-link-rx"></block></block>
-  <block id="44260f7555e9d7359b83f5d558c95bf0" category="inline-link">Cloud Data Sense를 사용하여 볼륨 데이터를 스캔합니다</block>
-  <block id="19ffc38fbe7641c4f1c1b5bba95bd159" category="list-text"><block ref="19ffc38fbe7641c4f1c1b5bba95bd159" category="inline-link-rx"></block></block>
   <block id="c4d9d6c8e652595e9d46970f56499783" category="inline-link-macro">Connector를 업그레이드하는 방법에 대해 알아보십시오</block>
   <block id="873c98dded4257d9b65fdcad74460e91" category="paragraph">Connector 소프트웨어의 새 버전을 사용할 수 있으면 NetApp Support 사이트에 게시됩니다. <block ref="c7624839f14a2e41667804d3cbb29094" category="inline-link-macro-rx"></block>.</block>
   <block id="1eba71d64e6c5e410e558530711e835b" category="summary">알려진 제한 사항은 이 제품 릴리스에서 지원하지 않거나 올바르게 상호 운용되지 않는 플랫폼, 장치 또는 기능을 식별합니다. 이러한 제한 사항을 주의 깊게 검토하십시오.</block>
@@ -2160,4 +2157,9 @@
   <block id="2ab6f4b7f1eda4096fbe91764dbb5eb6" category="cell">Amazon EBS Elastic Volumes 기능을 지원하는 Cloud Volumes ONTAP 애그리게이트를 설정 및 관리할 수 있습니다.</block>
   <block id="fe133d1f6db8d046e4b328c0d9a967a1" category="paragraph">사용 중인 라이센스 모델에 관계없이 Cloud Volumes ONTAP 시스템의 최대 수는 NetApp 계정당 50개로 제한됩니다.</block>
   <block id="ae5034ae6657395ba1fc2a16d2c55db3" category="paragraph">a_system_은 HA 쌍 또는 단일 노드 시스템입니다. 예를 들어, 8개의 Cloud Volumes ONTAP HA 쌍과 4개의 단일 노드 시스템이 있다면 총 12개의 시스템이 있고 고객 시스템에 38개의 추가 시스템이 있을 것입니다.</block>
+  <block id="bea9d9e1b3f9260b5dafbfee794aead7" category="summary">인터넷에 액세스할 수 없는 온프레미스 Linux 호스트에 커넥터를 설치할 수 있습니다. 그런 다음, 온프레미스 ONTAP 클러스터를 검색하고, 클러스터 간에 데이터를 복제하고, 클라우드 백업을 사용하여 볼륨을 백업하고, 클라우드 데이터 센스로 검색할 수 있습니다.</block>
+  <block id="89b945901df4999cfbb07b91df7f3e83" category="inline-link">클라우드 백업을 사용하여 사내 ONTAP 볼륨 데이터를 StorageGRID에 백업합니다</block>
+  <block id="0ef5e09df96e6b4d97470a69c3a5bb03" category="list-text"><block ref="0ef5e09df96e6b4d97470a69c3a5bb03" category="inline-link-rx"></block></block>
+  <block id="c6e51205c48cc37a7cc66b973d442adf" category="inline-link">클라우드 데이터 센스를 사용하여 온프레미스 ONTAP 볼륨 데이터를 스캔합니다</block>
+  <block id="a2946220130b0d51ecc66e35f8a65cbe" category="list-text"><block ref="a2946220130b0d51ecc66e35f8a65cbe" category="inline-link-rx"></block></block>
 </blocks>
