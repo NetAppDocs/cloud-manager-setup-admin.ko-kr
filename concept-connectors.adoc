@@ -89,7 +89,7 @@ Google Cloud에서 Cloud Volumes ONTAP 시스템을 만들려면 Google Cloud에
 
 커넥터는 항상 작동 상태를 유지해야 합니다. 이는 여러분이 제공하는 서비스의 지속적인 상태 및 운영에 중요합니다.
 
-예를 들어, Connector는 Cloud Volumes ONTAP PAYGO 시스템의 상태 및 작동에 있어 핵심 구성 요소입니다. 커넥터가 꺼져 있는 경우, Cloud Volumes ONTAP PAYGO 시스템은 커넥터와의 통신이 14일 이상 끊긴 후 종료됩니다.
+예를 들어, Connector는 Cloud Volumes ONTAP의 상태 및 작동에 있어 핵심 구성 요소입니다. 커넥터 전원이 꺼져 있는 경우 노드 기반 라이센스를 가진 Cloud Volumes ONTAP PAYGO 시스템은 커넥터 통신이 14일 이상 끊긴 후 종료됩니다.
 
 
 

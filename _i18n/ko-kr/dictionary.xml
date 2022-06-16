@@ -1125,7 +1125,6 @@
   <block id="c305e694f602a4913fd20d15e3508fcc" category="paragraph">타사 에이전트 또는 VM 확장은 커넥터 VM에서 지원되지 않습니다.</block>
   <block id="9b2658aca840a5bb63ea0f460945616d" category="section-title">커넥터는 계속 작동 중이어야 합니다</block>
   <block id="e3b183b81588a53a9977e2f408f637ca" category="paragraph">커넥터는 항상 작동 상태를 유지해야 합니다. 이는 여러분이 제공하는 서비스의 지속적인 상태 및 운영에 중요합니다.</block>
-  <block id="6eee50fc3992cd30620eeeea86d66be2" category="paragraph">예를 들어, Connector는 Cloud Volumes ONTAP PAYGO 시스템의 상태 및 작동에 있어 핵심 구성 요소입니다. 커넥터가 꺼져 있는 경우, Cloud Volumes ONTAP PAYGO 시스템은 커넥터와의 통신이 14일 이상 끊긴 후 종료됩니다.</block>
   <block id="fa1f9e92f4f0aa51cba859b2dbc37a02" category="section-title">커넥터 작성 방법</block>
   <block id="71e28ecafe43c8df318f195746ba6a2f" category="paragraph">계정 관리자는 다음과 같은 여러 가지 방법으로 커넥터를 만들 수 있습니다.</block>
   <block id="3e889e02d7a02cbc9daaa364c56aa381" category="list-text">Cloud Manager에서 직접(권장)</block>
@@ -2162,4 +2161,5 @@
   <block id="0ef5e09df96e6b4d97470a69c3a5bb03" category="list-text"><block ref="0ef5e09df96e6b4d97470a69c3a5bb03" category="inline-link-rx"></block></block>
   <block id="c6e51205c48cc37a7cc66b973d442adf" category="inline-link">클라우드 데이터 센스를 사용하여 온프레미스 ONTAP 볼륨 데이터를 스캔합니다</block>
   <block id="a2946220130b0d51ecc66e35f8a65cbe" category="list-text"><block ref="a2946220130b0d51ecc66e35f8a65cbe" category="inline-link-rx"></block></block>
+  <block id="fe287ea744fed512490d3282fcd528aa" category="paragraph">예를 들어, Connector는 Cloud Volumes ONTAP의 상태 및 작동에 있어 핵심 구성 요소입니다. 커넥터 전원이 꺼져 있는 경우 노드 기반 라이센스를 가진 Cloud Volumes ONTAP PAYGO 시스템은 커넥터 통신이 14일 이상 끊긴 후 종료됩니다.</block>
 </blocks>
