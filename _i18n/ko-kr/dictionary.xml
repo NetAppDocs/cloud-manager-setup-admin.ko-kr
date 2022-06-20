@@ -970,7 +970,6 @@
   <block id="4b8bff03335e3b9e10cd47a213ff79e2" category="paragraph"><block ref="4b8bff03335e3b9e10cd47a213ff79e2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a9512880dd99d7a0ea8a44aae7aaf9aa" category="paragraph">Cloud Manager는 선택한 커넥터와 연결된 작업 환경을 새로 고치고 표시합니다.</block>
   <block id="61fb0edb10f3698f23f558d3a9ffae84" category="section-title">로컬 UI에 액세스합니다</block>
-  <block id="13f82657bcb08b6808b377b42bb36b38" category="paragraph">SaaS 사용자 인터페이스에서 거의 모든 작업을 수행해야 하지만 로컬 사용자 인터페이스는 Connector에서 계속 사용할 수 있습니다. 이 인터페이스는 커넥터 자체에서 수행해야 하는 몇 가지 작업에 필요합니다.</block>
   <block id="8f1f697128124fa5f7ac3ca04e2076b2" category="inline-link-macro">프록시 서버 설정</block>
   <block id="e18fe7db665c72786571535a9d181827" category="list-text"><block ref="e18fe7db665c72786571535a9d181827" category="inline-link-macro-rx"></block></block>
   <block id="5534b7b22bef2cb909c67010ed56403f" category="list-text">패치 설치(일반적으로 NetApp 직원과 협력하여 패치 설치)</block>
@@ -978,7 +977,6 @@
   <block id="049e58b9154b9217b877a3ecc16fc5cf" category="inline-link-macro">Cloud Manager SaaS 인터페이스에 로그인합니다</block>
   <block id="c372128408c839bd88cba5d74f93343f" category="list-text"><block ref="6dc57c9a66b985810d1730868aac7fd2" category="inline-link-macro-rx"></block> Connector 인스턴스에 대한 네트워크 연결이 있는 컴퓨터에서</block>
   <block id="9d277575663069d52e56d4f8641722bb" category="paragraph">커넥터에 공용 IP 주소가 없는 경우 VPN 연결이 필요하거나 Connector와 동일한 네트워크에 있는 점프 호스트에서 연결해야 합니다.</block>
-  <block id="fe21300b1f75f7d8f3a770f3424dd83c" category="list-text">Connector * 드롭다운을 클릭한 다음 * Go to Local UI * 를 클릭합니다.</block>
   <block id="aa5200385a837d314289fa0e1a6076d8" category="inline-image-macro">머리글의 연결선 아이콘 및 로컬 UI로 이동 동작을 보여 주는 스크린샷</block>
   <block id="1830014a8a628750265ffacd0aadfae4" category="paragraph"><block ref="1830014a8a628750265ffacd0aadfae4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e39eb53ef1cb43062749c69a86d41297" category="paragraph">Connector에서 실행되는 Cloud Manager 인터페이스는 새 브라우저 탭에 로드됩니다.</block>
@@ -1543,8 +1541,6 @@
   <block id="3197827325be6e413fb43c8aa3862608" category="section-title">정부 지역에서는 SaaS 플랫폼을 사용할 수 없습니다</block>
   <block id="6aef346cd7f1d02d8a385ef5501430b5" category="paragraph">AWS GovCloud 지역, Azure Gov 지역 또는 Azure DoD 지역에 Connector를 구축하는 경우 Connector의 호스트 IP 주소를 통해서만 Cloud Manager에 액세스할 수 있습니다. 전체 계정에 대해 SaaS 플랫폼에 대한 액세스가 비활성화되었습니다.</block>
   <block id="01b185b57976f8db5702424954f912de" category="paragraph">즉, 최종 사용자 내부 VPC/VNET에 액세스할 수 있는 권한이 있는 사용자만 Cloud Manager의 UI 또는 API를 사용할 수 있습니다.</block>
-  <block id="b1ba27dfecc5d2afa7479b0e66831cb2" category="paragraph">또한 Cloud Manager에서 다음 서비스를 사용할 수 없습니다.</block>
-  <block id="7719c1d7366788cfbb45dc7ab4e61716" category="admonition">Cloud Backup, Cloud Data Sense 및 Monitoring 서비스는 정부 지역에서 지원 및 제공됩니다.</block>
   <block id="4c8bad6756ca0d84a9a56e8303428c9c" category="section-title">시장 제한</block>
   <block id="09b41782e7d4a148f9a7da9ba9dd8aab" category="section-title">Azure 및 Google Cloud 파트너는 사용한 만큼만 지불하는 방식을 사용할 수 없습니다</block>
   <block id="3bb34cc4b91242a4a34cd43a6fe0fd46" category="paragraph">Microsoft 클라우드 솔루션 공급자(CSP) 파트너이거나 Google Cloud 파트너인 경우 NetApp의 용량제 구독을 사용할 수 없습니다. BYOL 라이센스를 통해 NetApp 클라우드 솔루션을 구축하고 라이센스를 구입해야 함</block>
@@ -2037,7 +2033,6 @@
   <block id="bece28b158ab337d9ed24b00d7d02cc7" category="list-text">NetApp 기술 지원을 위한 전화 번호를 찾으려면 * 문의하다</block>
   <block id="efe81cff8e6f47ec59ef94167b76bf5a" category="list-text">문제 열기 * 를 클릭하고 옵션 중 하나를 선택한 다음 * 보내기 * 를 클릭합니다.</block>
   <block id="cbb1040836732e478409dacf7e45171a" category="paragraph">NetApp 담당자가 귀하의 케이스를 검토하고 곧 다시 귀하에 연락을 드릴 것입니다.</block>
-  <block id="8f8ddac26068fbb5a6761635f0559bf3" category="paragraph">이러한 서비스를 사용하려면 SaaS 플랫폼이 필요합니다.</block>
   <block id="0c01b3b7191c43507ad9ca43d6443731" category="cell">클라이언트 웹 브라우저에서 로컬 사용자 인터페이스에 대한 HTTPS 액세스 및 Cloud Data Sense 인스턴스의 연결을 제공합니다</block>
   <block id="b774573fe7b53358246a054f6d44ca83" category="cell">Cloud Data Sense를 활성화하고 사용할 수 있는 기능 제공(정부 클라우드 구축에만 필요)</block>
   <block id="5c6b09600cdfc594130f9f3c053efecb" category="section-title">커넥터의 IP 주소를 변경합니다</block>
@@ -2162,4 +2157,10 @@
   <block id="c6e51205c48cc37a7cc66b973d442adf" category="inline-link">클라우드 데이터 센스를 사용하여 온프레미스 ONTAP 볼륨 데이터를 스캔합니다</block>
   <block id="a2946220130b0d51ecc66e35f8a65cbe" category="list-text"><block ref="a2946220130b0d51ecc66e35f8a65cbe" category="inline-link-rx"></block></block>
   <block id="fe287ea744fed512490d3282fcd528aa" category="paragraph">예를 들어, Connector는 Cloud Volumes ONTAP의 상태 및 작동에 있어 핵심 구성 요소입니다. 커넥터 전원이 꺼져 있는 경우 노드 기반 라이센스를 가진 Cloud Volumes ONTAP PAYGO 시스템은 커넥터 통신이 14일 이상 끊긴 후 종료됩니다.</block>
+  <block id="f959d763eb10941db3ab7db04cdccc7d" category="paragraph">SaaS 사용자 인터페이스에서 거의 모든 작업을 수행해야 하지만 로컬 사용자 인터페이스는 Connector에서 계속 사용할 수 있습니다. 정부 지역 또는 아웃바운드 인터넷 액세스가 없는 사이트에서 Cloud Manager에 액세스하는 경우 Connector에서 실행되는 로컬 사용자 인터페이스를 사용해야 합니다.</block>
+  <block id="bf16d7909c891a5a760cab0ad77d53bc" category="list-text">로그인하려면 사용자 이름과 암호를 입력하십시오.</block>
+  <block id="bb88bf03aaf2d1b8891c8b85df8bd28f" category="paragraph">이러한 지역에서 지원되는 유일한 서비스는 Cloud Volumes ONTAP, 클라우드 백업, 클라우드 데이터 감지 및 복제입니다. 정부 지역에서는 다른 NetApp 서비스가 지원되지 않습니다.</block>
+  <block id="4141e80854c65807682dd0ff767b4228" category="inline-link-macro">Connector에서 로컬 UI에 액세스하는 방법에 대해 알아봅니다</block>
+  <block id="b5d309d79224e6f55d1d4c6b68090c82" category="paragraph"><block ref="2061c033ff26af000ddf0a91359fc3b2" category="inline-link-macro-rx"></block>.</block>
+  <block id="60eb2845b0a0e58270dc0f4a47eeb2b9" category="paragraph">정부 지역 또는 아웃바운드 인터넷 액세스가 없는 사이트에서 Cloud Manager에 액세스하는 경우 Connector에서 실행 중인 로컬 사용자 인터페이스에 로그인해야 합니다. <block ref="2061c033ff26af000ddf0a91359fc3b2" category="inline-link-macro-rx"></block>.</block>
 </blocks>

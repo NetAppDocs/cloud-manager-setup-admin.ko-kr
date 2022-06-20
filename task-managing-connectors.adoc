@@ -38,25 +38,17 @@ Cloud Manager는 선택한 커넥터와 연결된 작업 환경을 새로 고치
 
 == 로컬 UI에 액세스합니다
 
-SaaS 사용자 인터페이스에서 거의 모든 작업을 수행해야 하지만 로컬 사용자 인터페이스는 Connector에서 계속 사용할 수 있습니다. 이 인터페이스는 커넥터 자체에서 수행해야 하는 몇 가지 작업에 필요합니다.
-
-* link:task-configuring-proxy.html["프록시 서버 설정"]
-* 패치 설치(일반적으로 NetApp 직원과 협력하여 패치 설치)
-* AutoSupport 메시지 다운로드(일반적으로 문제가 있을 때 NetApp 담당자가 지시)
-
+SaaS 사용자 인터페이스에서 거의 모든 작업을 수행해야 하지만 로컬 사용자 인터페이스는 Connector에서 계속 사용할 수 있습니다. 정부 지역 또는 아웃바운드 인터넷 액세스가 없는 사이트에서 Cloud Manager에 액세스하는 경우 Connector에서 실행되는 로컬 사용자 인터페이스를 사용해야 합니다.
 
 .단계
-. link:task-logging-in.html["Cloud Manager SaaS 인터페이스에 로그인합니다"^] Connector 인스턴스에 대한 네트워크 연결이 있는 컴퓨터에서
+. 웹 브라우저를 열고 다음 URL을 입력합니다.
 +
-커넥터에 공용 IP 주소가 없는 경우 VPN 연결이 필요하거나 Connector와 동일한 네트워크에 있는 점프 호스트에서 연결해야 합니다.
-
-. Connector * 드롭다운을 클릭한 다음 * Go to Local UI * 를 클릭합니다.
-+
-image:screenshot_connector_local_ui.gif["머리글의 연결선 아이콘 및 로컬 UI로 이동 동작을 보여 주는 스크린샷"]
+https://_ipaddress_[]
 
 +
-Connector에서 실행되는 Cloud Manager 인터페이스는 새 브라우저 탭에 로드됩니다.
+_ipaddress_는 호스트 구성에 따라 localhost, 개인 IP 주소 또는 공용 IP 주소일 수 있습니다. 예를 들어, Connector가 공용 IP 주소가 없는 공용 클라우드에 있는 경우 Connector 호스트에 대한 연결이 있는 호스트의 전용 IP 주소를 입력해야 합니다.
 
+. 로그인하려면 사용자 이름과 암호를 입력하십시오.
 
 
 
