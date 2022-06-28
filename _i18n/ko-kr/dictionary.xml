@@ -956,9 +956,7 @@
   <block id="eefda50da2224ff311614c053cf3f8f6" category="summary">Cloud Manager 인터페이스는 로 이동하여 SaaS 기반 사용자 인터페이스를 통해 액세스할 수 있습니다<block ref="ed21e31bd71ab546f26978ff562b5c5d" category="inline-link-rx"></block>.</block>
   <block id="ae9e8c2e99c4eb5ab4d5d43ef6eb0e5e" category="doc">Cloud Manager에 로그인</block>
   <block id="89e460c9a52ba6b696ff1bf3de604ff8" category="list-text">웹 브라우저를 열고 로 이동합니다<block ref="ed21e31bd71ab546f26978ff562b5c5d" category="inline-link-rx"></block>.</block>
-  <block id="465b9d23562359c56377ba35bfcf5c48" category="list-text">NetApp Cloud Central 자격 증명을 사용하여 로그인합니다.</block>
   <block id="7e3c9594a3f6833ecddbf1cbe150528c" category="inline-image-macro">Cloud Central의 로그인 화면</block>
-  <block id="33ec64420d3361f9794053a9add38468" category="paragraph"><block ref="33ec64420d3361f9794053a9add38468" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1c6b5d54a9051a8a77fa6a66f0a8cc9b" category="paragraph">이제 로그인했으므로 Cloud Manager를 사용하여 하이브리드 멀티 클라우드 인프라를 관리할 수 있습니다.</block>
   <block id="660bef525617f48933744ba42660cbd7" category="summary">하나 이상의 커넥터를 만든 후에는 커넥터 간 전환, 커넥터에서 실행되는 로컬 사용자 인터페이스에 연결 등을 통해 커넥터를 관리할 수 있습니다.</block>
   <block id="25f39581bcecd91d6c252b00ea32b305" category="doc">기존 커넥터 관리</block>
@@ -2163,4 +2161,16 @@
   <block id="60eb2845b0a0e58270dc0f4a47eeb2b9" category="paragraph">정부 지역 또는 아웃바운드 인터넷 액세스가 없는 사이트에서 Cloud Manager에 액세스하는 경우 Connector에서 실행 중인 로컬 사용자 인터페이스에 로그인해야 합니다. <block ref="2061c033ff26af000ddf0a91359fc3b2" category="inline-link-macro-rx"></block>.</block>
   <block id="3ac6338087c4180b5cbb359584abab3a" category="paragraph">사용 중인 라이센스 모델에 관계없이 Cloud Volumes ONTAP 시스템의 최대 수는 NetApp 계정당 20개로 제한됩니다.</block>
   <block id="b730a5e05a41eebeb51f5aee7c746386" category="paragraph">a_system_은 HA 쌍 또는 단일 노드 시스템입니다. 예를 들어, 2개의 Cloud Volumes ONTAP HA 쌍과 2개의 단일 노드 시스템이 있다면 총 4개의 시스템이 있고 고객 계정에 16개의 추가 시스템을 위한 공간이 있을 것입니다.</block>
+  <block id="38ce4e90f119b89b2fdf1f274431e262" category="section-title">2022년 6월 28일</block>
+  <block id="47d69a1f17128c359904338c3502fe31" category="section-title">NetApp 자격 증명으로 로그인합니다</block>
+  <block id="f646305c890b8deec88379aeecbe56a5" category="paragraph">새로운 사용자가 Cloud Central에 등록하면 이제 NetApp * 옵션을 사용하여 로그인 * 을 선택하여 NetApp Support 사이트 자격 증명으로 로그인할 수 있습니다. 이 방법은 전자 메일 주소와 암호를 입력하는 대신 사용됩니다.</block>
+  <block id="f27b2370dfece83354cbb560bf251abc" category="admonition">전자 메일 주소와 암호를 사용하는 기존 로그인은 해당 로그인 방법을 계속 사용해야 합니다. NetApp으로 로그인 옵션은 등록하는 새 사용자를 위해 사용할 수 있습니다.</block>
+  <block id="38f56a558a4d21cafea24d2843b0d77d" category="list-text">NetApp Cloud Central 자격 증명을 입력하거나 * NetApp * 으로 로그인 * 을 클릭하고 NetApp Support 사이트 자격 증명을 입력하여 로그인합니다.</block>
+  <block id="7fd998996aeaec7fba56157b137fee51" category="paragraph">Cloud Central에 등록할 때 사용한 옵션을 선택해야 합니다.</block>
+  <block id="decc333898509c715afbf4242e91a6fc" category="list-text">전자 메일 및 암호를 입력하여 등록한 경우 로그인할 때마다 해당 자격 증명을 입력해야 합니다.</block>
+  <block id="13a0adeb2b159ac19c415adb2a302ac7" category="list-text">NetApp Support 사이트 자격 증명으로 로그인하여 등록한 경우 매번 해당 로그인 옵션을 사용해야 합니다.</block>
+  <block id="e7330d051a059d074bb6d948d1b195a1" category="paragraph"><block ref="e7330d051a059d074bb6d948d1b195a1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0a3af967406da233deb44a3e3518540a" category="list-text">NetApp Support 사이트 계정을 등록한 경우 * NetApp으로 로그인 * 을 클릭하고 NetApp Support 사이트 자격 증명을 입력합니다.</block>
+  <block id="0eac24292d137662727eddfcb308122d" category="paragraph">로그인할 때마다 이 등록 과정에서 선택한 옵션을 사용해야 합니다.</block>
+  <block id="5bcda5b087049d72bac31d0484792c9e" category="admonition">NetApp에 로그인하면 NetApp Support 사이트 자격 증명이 지원 대시보드의 Cloud Manager에 추가되지 않습니다.</block>
 </blocks>
