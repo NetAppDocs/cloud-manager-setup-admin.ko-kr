@@ -2170,7 +2170,7 @@
   <block id="decc333898509c715afbf4242e91a6fc" category="list-text">전자 메일 및 암호를 입력하여 등록한 경우 로그인할 때마다 해당 자격 증명을 입력해야 합니다.</block>
   <block id="13a0adeb2b159ac19c415adb2a302ac7" category="list-text">NetApp Support 사이트 자격 증명으로 로그인하여 등록한 경우 매번 해당 로그인 옵션을 사용해야 합니다.</block>
   <block id="e7330d051a059d074bb6d948d1b195a1" category="paragraph"><block ref="e7330d051a059d074bb6d948d1b195a1" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="0a3af967406da233deb44a3e3518540a" category="list-text">NetApp Support 사이트 계정을 등록한 경우 * NetApp으로 로그인 * 을 클릭하고 NetApp Support 사이트 자격 증명을 입력합니다.</block>
   <block id="0eac24292d137662727eddfcb308122d" category="paragraph">로그인할 때마다 이 등록 과정에서 선택한 옵션을 사용해야 합니다.</block>
   <block id="5bcda5b087049d72bac31d0484792c9e" category="admonition">NetApp에 로그인하면 NetApp Support 사이트 자격 증명이 지원 대시보드의 Cloud Manager에 추가되지 않습니다.</block>
+  <block id="bb3811f4fe37370092ea428b21cf1249" category="list-text">등록된 NetApp Support 사이트 계정이 있는 경우 * NetApp으로 로그인 * 을 클릭하고 NetApp Support 사이트 자격 증명을 입력합니다.</block>
 </blocks>
