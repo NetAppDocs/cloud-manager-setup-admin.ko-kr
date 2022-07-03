@@ -42,11 +42,11 @@ Cloud Central 사용자를 NetApp 계정과 연결하여 Cloud Manager에서 작
 . 사용자가 아직 이 작업을 수행하지 않은 경우 사용자에게 로 이동하라고 요청합니다 https://cloud.netapp.com["NetApp Cloud Central에서"^] 을 클릭합니다.
 . Cloud Manager 상단에서 * Account * (계정 *) 드롭다운을 클릭합니다.
 +
-image:screenshot_account_settings_menu.gif["Cloud Manager의 상단 배너에 계정 설정 옵션이 표시된 스크린샷"]
+image:screenshot-account-settings-menu.png["Cloud Manager의 상단 배너에 계정 설정 옵션이 표시된 스크린샷"]
 
 . 현재 선택한 계정 옆에 있는 * 계정 관리 * 를 클릭합니다.
 +
-image:screenshot_manage_account_settings.gif["계정 드롭다운에서 사용할 수 있는 계정 설정 관리 옵션을 보여 주는 스크린샷"]
+image:screenshot-manage-account-settings.png["계정 드롭다운에서 사용할 수 있는 계정 설정 관리 옵션을 보여 주는 스크린샷"]
 
 . 구성원 탭에서 * 사용자 연결 * 을 클릭합니다.
 . 사용자의 이메일 주소를 입력하고 사용자의 역할을 선택합니다.
@@ -75,7 +75,7 @@ image:screenshot_associate_user.gif["역할과 관련 작업 영역을 선택하
 .단계
 . Cloud Manager 상단에서 * 계정 * 드롭다운을 클릭하고 * 계정 관리 * 를 클릭합니다.
 +
-image:screenshot_manage_account_settings.gif["계정 드롭다운에서 사용할 수 있는 계정 설정 관리 옵션을 보여 주는 스크린샷"]
+image:screenshot-manage-account-settings.png["계정 드롭다운에서 사용할 수 있는 계정 설정 관리 옵션을 보여 주는 스크린샷"]
 
 . 구성원 탭의 행에 있는 해당 사용자에 해당하는 작업 메뉴를 클릭합니다.
 +
@@ -95,7 +95,7 @@ image:screenshot_associate_user_workspace.png["사용자 테이블에서 사용�
 .단계
 . Cloud Manager 상단에서 * 계정 * 드롭다운을 클릭하고 * 계정 관리 * 를 클릭합니다.
 +
-image:screenshot_manage_account_settings.gif["계정 드롭다운에서 사용할 수 있는 계정 설정 관리 옵션을 보여 주는 스크린샷"]
+image:screenshot-manage-account-settings.png["계정 드롭다운에서 사용할 수 있는 계정 설정 관리 옵션을 보여 주는 스크린샷"]
 
 . 구성원 탭의 행에 있는 해당 사용자에 해당하는 작업 메뉴를 클릭합니다.
 +
@@ -126,11 +126,11 @@ Connector가 작업 공간에도 연결되어 있는 한 이제 사용자는 Clo
 .단계
 . Cloud Manager 상단에서 * Account * (계정 *) 드롭다운을 클릭합니다.
 +
-image:screenshot_account_settings_menu.gif["Cloud Manager의 상단 배너에 계정 설정 옵션이 표시된 스크린샷"]
+image:screenshot-account-settings-menu.png["Cloud Manager의 상단 배너에 계정 설정 옵션이 표시된 스크린샷"]
 
 . 현재 선택한 계정 옆에 있는 * 계정 관리 * 를 클릭합니다.
 +
-image:screenshot_manage_account_settings.gif["계정 드롭다운에서 사용할 수 있는 계정 설정 관리 옵션을 보여 주는 스크린샷"]
+image:screenshot-manage-account-settings.png["계정 드롭다운에서 사용할 수 있는 계정 설정 관리 옵션을 보여 주는 스크린샷"]
 
 . 구성원 탭에서 * 서비스 계정 만들기 * 를 클릭합니다.
 . 이름을 입력하고 역할을 선택합니다. 계정 관리자 이외의 역할을 선택한 경우 이 서비스 계정과 연결할 작업 영역을 선택합니다.

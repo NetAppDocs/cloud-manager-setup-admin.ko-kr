@@ -16,93 +16,457 @@ summary: Cloud Manager를 사용하려면 클라우드 공급자에서 작업을
 [role="lead"]
 Cloud Manager를 사용하려면 클라우드 공급자에서 작업을 수행할 수 있는 권한이 필요합니다. 이러한 권한은 에 포함되어 있습니다 https://mysupport.netapp.com/site/info/cloud-manager-policies["NetApp에서 제공하는 정책"^]. Cloud Manager가 이러한 사용 권한을 통해 수행하는 작업을 이해하기를 원할 수 있습니다.
 
-Cloud Manager는 AWS 계정을 사용하여 EC2, S3, CloudFormation, IAM, 보안 토큰 서비스(STS) 및 키 관리 서비스(KMS).
+다음 섹션에서는 각 NetApp 클라우드 서비스에 대한 사용 권한을 어떻게 사용하는지 설명합니다. 이 정보는 기업 정책에 따라 사용 권한이 필요한 경우에만 제공된다는 내용이 지정되어 있는 경우에 유용합니다.
 
-[cols="50,50"]
+
+
+== AppTemplate 태그
+
+Connector는 AppTemplate Tagging 서비스를 사용할 때 AWS 리소스의 태그 관리를 위해 다음과 같은 API 요청을 수행합니다.
+
+* EC2: CreateTags(태그 생성)
+* EC2: 삭제 태그
+* EC2: DescribeTags(설명 태그)
+* 태그: getResources
+* 태그: getTagKeys
+* 태그: getTagValues
+* 태그: 태그 리소스
+* 태그: UntagResources
+
+
+
+
+== 클라우드 백업
+
+Connector는 다음과 같은 API 요청을 통해 Cloud Backup의 복원 인스턴스를 구축합니다.
+
+* EC2: StartInstances(시작 인스턴스)
+* EC2: StopInstances(중지 인스턴스)
+* EC2: DescribeInstances(지시 인스턴스)
+* EC2: DescribeInstanceStatus
+* EC2: 런인스턴스
+* EC2: 터미네이스
+* EC2: DescribeInstanceAttribute
+* EC2: DescribeImages(설명 영상)
+* EC2: CreateTags(태그 생성)
+* EC2: CreateVolume
+* EC2:CreateSecurityGroup입니다
+* EC2: DescribeSubnet
+* EC2: 설명
+* EC2: 설명
+* CloudFormation:CreateStack
+* CloudFormation:DeleteStack
+* CloudFormation: DescribeStacks
+
+
+Connector는 Amazon S3에서 백업을 관리하기 위해 다음과 같은 API 요청을 수행합니다.
+
+* S3:GetBucketLocation
+* S3:ListAllMyBucket
+* S3:목록 버킷
+* S3:생성 버킷
+* S3:GetLifecycleConfiguration
+* S3: PutLifecycleConfiguration
+* S3: PutBucketTagging
+* S3:목록 BuckketVersions
+* S3:GetBuckketAcl
+* S3: PutBucketPublicAccessBlock
+* KMS: 목록 *
+* KMS: 설명 *
+* S3:GetObject
+* EC2: desceverVpcEndpoints입니다
+* KMS: ListAliases
+* S3:PutEncryptionConfiguration
+
+
+Connector는 검색 및 복원 방법을 사용하여 볼륨 및 파일을 복원할 때 다음과 같은 API 요청을 수행합니다.
+
+* S3:생성 버킷
+* S3:DeleteObject 를 선택합니다
+* S3:DeleteObjectVersion
+* S3:GetBuckketAcl
+* S3:목록 버킷
+* S3:목록 BuckketVersions
+* S3:ListBuckketMultipartUploads
+* S3:PutObject
+* S3: PutBucketAcl
+* S3: PutLifecycleConfiguration
+* S3: PutBucketPublicAccessBlock
+* S3:중단멀티업로드입니다
+* S3:ListMultipartUploadParts(S3:ListMultimpartUploadParts) 를
+* Athena:StartQueryExecutionc
+* Athena:GetQueryResults
+* Athena:GetQueryExecution을 참조하십시오
+* Athena: StopQueryExecution
+* 글루:CreateDatabase
+* 글루:CreateTable
+* GLUE:BatchDeletePartition
+
+
+
+
+== 클라우드 데이터 감지
+
+Connector는 Cloud Data Sense 인스턴스를 구축하기 위해 다음과 같은 API 요청을 수행합니다.
+
+* EC2: DescribeInstances(지시 인스턴스)
+* EC2: DescribeInstanceStatus
+* EC2: 런인스턴스
+* EC2: 터미네이스
+* EC2: CreateTags(태그 생성)
+* EC2: CreateVolume
+* EC2: AttachVolume
+* EC2:CreateSecurityGroup입니다
+* EC2: DeleteSecurityGroup
+* EC2: DescribeSecurityGroups
+* EC2: CreateNetworkInterface입니다
+* EC2: DescribeNetworkInterfaces를 참조하십시오
+* EC2: DeleteNetworkInterface
+* EC2: DescribeSubnet
+* EC2: 설명
+* EC2: 스냅샷을 만듭니다
+* EC2: 설명
+* CloudFormation:CreateStack
+* CloudFormation:DeleteStack
+* CloudFormation: DescribeStacks
+* CloudFormation: DescribeStackEvents
+* IAM:AddRoleToInstanceProfile 을 참조하십시오
+* EC2: AssociateIamInstanceProfile 을 참조하십시오
+* EC2: DescribeIamInstanceProfileAssociations
+
+
+Connector는 Cloud Data Sense를 사용할 때 S3 버킷을 스캔하기 위해 다음과 같은 API 요청을 수행합니다.
+
+* IAM:AddRoleToInstanceProfile 을 참조하십시오
+* EC2: AssociateIamInstanceProfile 을 참조하십시오
+* EC2: DescribeIamInstanceProfileAssociations
+* S3:GetBucketTagging
+* S3:GetBucketLocation
+* S3:ListAllMyBucket
+* S3:목록 버킷
+* S3:GetBuckketPolicyStatus를 참조하십시오
+* S3:GetBuckketPolicy를 참조하십시오
+* S3:GetBuckketAcl
+* S3:GetObject
+* IAM:GetRole
+* S3:DeleteObject 를 선택합니다
+* S3:DeleteObjectVersion
+* S3:PutObject
+* STS:AssumeRole
+
+
+
+
+== 클라우드 계층화
+
+Connector는 Cloud Tiering을 사용할 때 Amazon S3에 데이터를 계층화하도록 다음과 같은 API 요청을 수행합니다.
+
+[cols="3*"]
 |===
-| 작업 | 목적 
+| 조치 | 설정에 사용됩니까? | 일상적 운영에 사용됩니까? 
 
 
-| "EC2:StartInstances", "EC2:StopInstances", "EC2:DescribeInstances", "EC2:DescribeInstanceStatus", "EC2:RunInstances", "EC2: TerminateInstances", "EC2: ModifyInstanceAttribute", | Cloud Volumes ONTAP 인스턴스를 시작하고 인스턴스를 중지, 시작 및 모니터링합니다. 
+| S3:생성 버킷 | 예 | 아니요 
 
 
-| "EC2: DescribeInstanceAttribute", | 지원되는 인스턴스 유형에 대해 향상된 네트워킹이 활성화되어 있는지 확인합니다. 
+| S3: PutLifecycleConfiguration | 예 | 아니요 
 
 
-| "EC2: DescribeRouteTables", "EC2: DescribeImages", | Cloud Volumes ONTAP HA 구성을 시작합니다. 
+| S3:GetLifecycleConfiguration | 예 | 예 
 
 
-| "EC2:CreateTags", | Cloud Manager가 만드는 모든 리소스에 "WorkingEnvironment" 및 "WorkingEnvironmentId" 태그를 지정합니다. Cloud Manager는 유지보수 및 비용 할당에 이러한 태그를 사용합니다. 
-
-
-| "EC2:CreateVolume", "EC2:DescribeVolumes", "EC2:ModifyVolumeAttribute", "EC2:AttachVolume", "EC2:DeleteVolume", "EC2: DetachVolume(EC2: 멈춤쇠 볼륨)", | Cloud Volumes ONTAP가 백엔드 스토리지로 사용하는 EBS 볼륨을 관리합니다. 
-
-
-| "EC2:CreateSecurityGroup", "EC2:DeleteSecurityGroup", "EC2:DescribeSecurityGroups", "EC2:RevokeSecurityGroupEgress", "EC2:AuthorizeSecurityGroupEgress", "EC2:AuthorizeSecurityGroupIngress", "EC2:RevokeSecurityGroupIngress", | Cloud Volumes ONTAP에 대해 미리 정의된 보안 그룹을 만듭니다. 
-
-
-| "EC2:CreateNetworkInterface", "EC2:DescribeNetworkInterfaces", "EC2:DeleteNetworkInterface", "EC2:ModifyNetworkInterfaceAttribute", | 대상 서브넷에서 Cloud Volumes ONTAP에 대한 네트워크 인터페이스를 생성하고 관리합니다. 
-
-
-| "EC2: DescribeSubnet", "EC2: DescribeVpcs", | Cloud Volumes ONTAP 에 대한 새 작업 환경을 만들 때 필요한 대상 서브넷 및 보안 그룹 목록을 가져옵니다. 
-
-
-| "EC2: DescribeDhcpOptions", | Cloud Volumes ONTAP 인스턴스를 시작할 때 DNS 서버와 기본 도메인 이름을 결정합니다. 
-
-
-| "EC2:CreateSnapshot", "EC2:DeleteSnapshot", "EC2:DescribeSnapshots", | 초기 설정 중에 및 Cloud Volumes ONTAP 인스턴스가 중지될 때마다 EBS 볼륨의 스냅샷을 생성합니다. 
-
-
-| "EC2:GetConsoleOutput", | AutoSupport 메시지에 첨부된 Cloud Volumes ONTAP 콘솔을 캡처합니다. 
-
-
-| "EC2: 설명", | 인스턴스를 시작할 때 사용 가능한 키 쌍 목록을 가져옵니다. 
-
-
-| "EC2: 설명 영역", | 사용 가능한 AWS 영역 목록을 가져옵니다. 
-
-
-| "EC2:DeleteTags", "EC2: DescribeTags", | Cloud Volumes ONTAP 인스턴스와 관련된 리소스의 태그를 관리합니다. 
-
-
-| "CloudFormation:CreateStack", "CloudFormation:DeleteStack", "CloudFormation:DescribeStacks", "CloudFormation:DescribeStackEvents", "CloudFormation:ValidateTemplate", | Cloud Volumes ONTAP 인스턴스를 시작합니다. 
-
-
-| "IAM:PassRole", "IAM:CreateRole", "IAM:DeleteRole", "IAM:PutRolePolicy", "IAM:CreateInstanceProfile", "IAM:DeleteRolePolicy", "IAM:AddRoleToInstanceProfile", "IAM:RemoveRoleFromInstanceProfile", "IAM:DeleteInstanceProfile", | Cloud Volumes ONTAP HA 구성을 시작합니다. 
-
-
-| "IAM:ListInstanceProfiles", "STS:DecodeAuthorizationMessage", "EC2:AssociateIamInstanceProfile", "EC2:DescribeIamInstanceProfileAssociations", "EC2:DisconnectateIamInstanceProfile", | Cloud Volumes ONTAP 인스턴스의 인스턴스 프로파일을 관리합니다. 
-
-
-| "S3:GetBucketTagging", "S3:GetBucketLocation", "S3:ListAllMyBucket", "S3:ListBucket" | Cloud Manager를 NetApp Data Fabric Cloud Sync 서비스와 통합할 수 있도록 AWS S3 버킷에 대한 정보 확보 
-
-
-| "S3:CreateBucket", "S3:DeleteBucket", "S3:GetLifecycleConfiguration", "S3:PutLifecycleConfiguration", "S3:PutketTagging", "S3:ListBuckketVersions", "S3:GetBuckketPolicyStatus", "S3:GetBuckketPublicAccessBlock", "S3:GetBuckketAcl", "S3:GetBuckketPolicy", "S3:PutBucketPublicAccessBlock" | Cloud Volumes ONTAP 시스템이 데이터 계층화를 위한 용량 계층으로 사용하는 S3 버킷을 관리합니다. 
-
-
-| "kms:List * ", "kms:ReEncrypt * ", "kms:설명 * ", "kms:CreateGrant", | AWS KMS(키 관리 서비스)를 사용하여 Cloud Volumes ONTAP의 데이터 암호화를 지원합니다. 
-
-
-| "CE:GetReservationUtilization", "CE:GetDimensionValues", "CE:GetCostAndUsage", "CE:GetTags" | Cloud Volumes ONTAP에 대한 AWS 비용 데이터를 가져옵니다. 
-
-
-| "EC2:CreatePlacementGroup", "EC2:DeletePlacementGroup" | 단일 AWS Availability Zone에 HA 구성을 구축하면 Cloud Manager가 두 개의 HA 노드를 시작하고 AWS Spread 배치 그룹에서 중재자를 실행합니다. 
-
-
-| "EC2: DescribeReservedInstances편리" | Cloud Manager는 Cloud Data Sense 배포의 일부로 사용 권한을 사용하여 사용할 인스턴스 유형을 선택합니다. 
-
-
-| "EC2:CreateTags", "EC2:DeleteTags", "EC2:DescribeTags", "tag:getResources", "tag:getTagKeys", "tag:getTagValues", "tag:TagResources", "tag:UntagResources" | Cloud Manager Tagging 서비스를 사용하여 AWS 리소스의 태그를 관리할 수 있습니다. 
-
-
-| "S3:DeleteBucket", "S3:GetLifecycleConfiguration", "S3:PutLifecycleConfiguration", "S3:PutketTagging", "S3:ListBuckketVersions", "S3:GetObject", "S3:ListBucket", "S3:ListAllMyBucket", "S3:GetBuckTagging", "S3:GetBuckketLocation" "S3:GetBuckketPolicyStatus", "S3:GetBuckketPublicAccessBlock", "S3:GetBuckketAcl", "S3:GetBuckketPolicy", "S3:PutketPublicAccessBlock" | Cloud Manager는 Backup to S3 서비스를 활성화할 때 이러한 권한을 사용합니다. 
-
-
-| "eks:ListClusters", "eks:DescribeCluster", "IAM:GetInstanceProfile", | Amazon EKS 클러스터 검색을 활성화합니다. 
-
-
-| "EC2:DescribePlacementGroups", "IAM:GetRolePolicy", | 단일 AZ(Availability Zone)에 구축된 HA 쌍에 대한 AWS 분산 배치 그룹을 생성합니다. 
-
-
-| "EC2: DescribeVolumesModifications", "EC2: ModifyVolume", | Amazon EBS Elastic Volumes 기능을 지원하는 Cloud Volumes ONTAP 애그리게이트를 설정 및 관리할 수 있습니다. 
+| EC2: 설명 | 예 | 예 
 |===
+
+
+== Cloud Volumes ONTAP
+
+Connector는 AWS에서 Cloud Volumes ONTAP를 구축 및 관리하기 위해 다음과 같은 API 요청을 수행합니다.
+
+[cols="5*"]
+|===
+| 목적 | 조치 | 배포에 사용되었습니까? | 일상적 운영에 사용됩니까? | 삭제에 사용되었습니까? 
+
+
+.13+| Cloud Volumes ONTAP 인스턴스에 대한 IAM 역할 및 인스턴스 프로필을 생성하고 관리합니다 | IAM: ListInstanceProfiles(인스턴스 프로필) | 예 | 예 | 아니요 
+
+
+| IAM: CreateRole | 예 | 아니요 | 아니요 
+
+
+| IAM: DeleteRole | 아니요 | 예 | 예 
+
+
+| IAM: PutRolePolicy(입수 정책) | 예 | 아니요 | 아니요 
+
+
+| IAM:CreateInstanceProfile | 예 | 아니요 | 아니요 
+
+
+| IAM: DeleteRolePolicy(삭제 RolePolicy | 아니요 | 예 | 예 
+
+
+| IAM:AddRoleToInstanceProfile 을 참조하십시오 | 예 | 아니요 | 아니요 
+
+
+| IAM:RemoveRoleFromInstanceProfile 을 참조하십시오 | 아니요 | 예 | 예 
+
+
+| IAM: DeleteInstanceProfile | 아니요 | 예 | 예 
+
+
+| IAM: 암호 역할 | 예 | 아니요 | 아니요 
+
+
+| EC2: AssociateIamInstanceProfile 을 참조하십시오 | 예 | 예 | 아니요 
+
+
+| EC2: DescribeIamInstanceProfileAssociations | 예 | 예 | 아니요 
+
+
+| EC2: DiscassociateIamInstanceProfile 을 참조하십시오 | 아니요 | 예 | 아니요 
+
+
+| 인증 상태 메시지를 디코딩합니다 | STS:DecodeAuthorizationMessage 를 참조하십시오 | 예 | 예 | 아니요 
+
+
+| 계정에 사용할 수 있는 지정된 영상(AMI)을 설명합니다 | EC2: DescribeImages(설명 영상) | 예 | 예 | 아니요 
+
+
+| VPC의 라우트 테이블 설명(HA 쌍에만 필요) | EC2: 설명표 | 예 | 아니요 | 아니요 
+
+
+.7+| 인스턴스를 중지, 시작 및 모니터링합니다 | EC2: StartInstances(시작 인스턴스) | 예 | 예 | 아니요 
+
+
+| EC2: StopInstances(중지 인스턴스) | 예 | 예 | 아니요 
+
+
+| EC2: DescribeInstances(지시 인스턴스) | 예 | 예 | 아니요 
+
+
+| EC2: DescribeInstanceStatus | 예 | 예 | 아니요 
+
+
+| EC2: 런인스턴스 | 예 | 아니요 | 아니요 
+
+
+| EC2: 터미네이스 | 아니요 | 아니요 | 예 
+
+
+| EC2: ModifyInstanceAttribute | 아니요 | 예 | 아니요 
+
+
+| 지원되는 인스턴스 유형에 대해 향상된 네트워킹이 활성화되어 있는지 확인합니다 | EC2: DescribeInstanceAttribute | 아니요 | 예 | 아니요 
+
+
+| 유지 관리 및 비용 할당에 사용되는 "WorkingEnvironment" 및 "WorkingEnvironmentId" 태그로 리소스에 태그를 지정합니다 | EC2: CreateTags(태그 생성) | 예 | 예 | 아니요 
+
+
+.6+| Cloud Volumes ONTAP가 백엔드 스토리지로 사용하는 EBS 볼륨을 관리합니다 | EC2: CreateVolume | 예 | 예 | 아니요 
+
+
+| EC2: 설명 볼륨을 참조하십시오 | 예 | 예 | 예 
+
+
+| EC2: ModifyVolumeAttribute | 아니요 | 예 | 예 
+
+
+| EC2: AttachVolume | 예 | 예 | 아니요 
+
+
+| EC2: DeleteVolume(삭제 볼륨) | 아니요 | 예 | 예 
+
+
+| EC2: DetachVolume(분리 볼륨) | 아니요 | 예 | 예 
+
+
+.7+| Cloud Volumes ONTAP에 대한 보안 그룹을 만들고 관리합니다 | EC2:CreateSecurityGroup입니다 | 예 | 아니요 | 아니요 
+
+
+| EC2: DeleteSecurityGroup | 아니요 | 예 | 예 
+
+
+| EC2: DescribeSecurityGroups | 예 | 예 | 예 
+
+
+| EC2: RevokeSecurityGroupEgress | 예 | 아니요 | 아니요 
+
+
+| EC2: AuthorizeSecurityGroupEgress 를 참조하십시오 | 예 | 아니요 | 아니요 
+
+
+| EC2: AuthorizeSecurityGroupIngress 를 참조하십시오 | 예 | 아니요 | 아니요 
+
+
+| EC2: RevokeSecurityGroupIngress 를 참조하십시오 | 예 | 예 | 아니요 
+
+
+.4+| 대상 서브넷에서 Cloud Volumes ONTAP에 대한 네트워크 인터페이스를 생성하고 관리합니다 | EC2: CreateNetworkInterface입니다 | 예 | 아니요 | 아니요 
+
+
+| EC2: DescribeNetworkInterfaces를 참조하십시오 | 예 | 예 | 아니요 
+
+
+| EC2: DeleteNetworkInterface | 아니요 | 예 | 예 
+
+
+| EC2: ModifyNetworkInterfaceAttribute 입니다 | 아니요 | 예 | 아니요 
+
+
+.2+| 대상 서브넷 및 보안 그룹 목록을 가져옵니다 | EC2: DescribeSubnet | 예 | 예 | 아니요 
+
+
+| EC2: 설명 | 예 | 예 | 아니요 
+
+
+| Cloud Volumes ONTAP 인스턴스의 DNS 서버와 기본 도메인 이름을 가져옵니다 | EC2: DescribeDhcpOptions | 예 | 아니요 | 아니요 
+
+
+.3+| Cloud Volumes ONTAP용 EBS 볼륨의 스냅샷을 생성합니다 | EC2: 스냅샷을 만듭니다 | 예 | 예 | 아니요 
+
+
+| EC2: DeleteSnapshot | 아니요 | 예 | 예 
+
+
+| EC2: 설명 | 아니요 | 예 | 아니요 
+
+
+| AutoSupport 메시지에 첨부된 Cloud Volumes ONTAP 콘솔을 캡처합니다 | EC2:GetConsoleOutput 을 참조하십시오 | 예 | 예 | 아니요 
+
+
+| 사용 가능한 키 쌍 목록을 가져옵니다 | EC2: 설명 | 예 | 아니요 | 아니요 
+
+
+| 사용 가능한 AWS 지역 목록을 확인하십시오 | EC2: 설명 | 예 | 예 | 아니요 
+
+
+.2+| Cloud Volumes ONTAP 인스턴스와 연결된 리소스의 태그를 관리합니다 | EC2: 삭제 태그 | 아니요 | 예 | 예 
+
+
+| EC2: DescribeTags(설명 태그) | 아니요 | 예 | 아니요 
+
+
+.5+| AWS CloudFormation 템플릿을 위한 스택을 만들고 관리합니다 | CloudFormation:CreateStack | 예 | 아니요 | 아니요 
+
+
+| CloudFormation:DeleteStack | 예 | 아니요 | 아니요 
+
+
+| CloudFormation: DescribeStacks | 예 | 예 | 아니요 
+
+
+| CloudFormation: DescribeStackEvents | 예 | 아니요 | 아니요 
+
+
+| CloudFormation:ValidateTemplate 을 참조하십시오 | 예 | 아니요 | 아니요 
+
+
+.15+| Cloud Volumes ONTAP 시스템이 데이터 계층화를 위한 용량 계층으로 사용하는 S3 버킷을 생성 및 관리합니다 | S3:생성 버킷 | 예 | 예 | 아니요 
+
+
+| S3:삭제 버킷 | 아니요 | 예 | 예 
+
+
+| S3:GetLifecycleConfiguration | 아니요 | 예 | 아니요 
+
+
+| S3: PutLifecycleConfiguration | 아니요 | 예 | 아니요 
+
+
+| S3: PutBucketTagging | 아니요 | 예 | 아니요 
+
+
+| S3:목록 BuckketVersions | 아니요 | 예 | 아니요 
+
+
+| S3:GetBuckketPolicyStatus를 참조하십시오 | 아니요 | 예 | 아니요 
+
+
+| S3:GetBuckketPublicAccessBlock | 아니요 | 예 | 아니요 
+
+
+| S3:GetBuckketAcl | 아니요 | 예 | 아니요 
+
+
+| S3:GetBuckketPolicy를 참조하십시오 | 아니요 | 예 | 아니요 
+
+
+| S3: PutBucketPublicAccessBlock | 아니요 | 예 | 아니요 
+
+
+| S3:GetBucketTagging | 아니요 | 예 | 아니요 
+
+
+| S3:GetBucketLocation | 아니요 | 예 | 아니요 
+
+
+| S3:ListAllMyBucket | 아니요 | 아니요 | 아니요 
+
+
+| S3:목록 버킷 | 아니요 | 예 | 아니요 
+
+
+.4+| AWS KMS(키 관리 서비스)를 사용하여 Cloud Volumes ONTAP의 데이터 암호화 지원 | KMS: 목록 * | 예 | 예 | 아니요 
+
+
+| KMS: 재암호화 * | 예 | 아니요 | 아니요 
+
+
+| KMS: 설명 * | 예 | 예 | 아니요 
+
+
+| KMS: CreateGrant | 예 | 예 | 아니요 
+
+
+.4+| Cloud Volumes ONTAP의 AWS 비용 데이터 확보 | CE:GetReservationUtilization을 참조하십시오 | 아니요 | 예 | 아니요 
+
+
+| CE:GetDimensionValues | 아니요 | 예 | 아니요 
+
+
+| CE: GetCostAndUsage | 아니요 | 예 | 아니요 
+
+
+| CE:GetTags | 아니요 | 예 | 아니요 
+
+
+.2+| 단일 AWS Availability Zone에서 2개의 HA 노드를 위한 AWS 분산 배치 그룹과 중재자를 생성하고 관리합니다 | EC2: CreatePlacementGroup(배치 그룹 생성) | 예 | 아니요 | 아니요 
+
+
+| EC2: DeletePlacementGroup | 아니요 | 예 | 예 
+
+
+.2+| 보고서 작성 | FSX: 설명 * | 아니요 | 예 | 아니요 
+
+
+| FSX:목록 * | 아니요 | 예 | 아니요 
+
+
+.2+| Amazon EBS Elastic Volumes 기능을 지원하는 애그리게이트를 생성 및 관리합니다 | EC2: 볼륨 수정 설명 | 아니요 | 예 | 아니요 
+
+
+| EC2: ModifyVolume(수정 볼륨) | 아니요 | 예 | 아니요 
+|===
+
+
+== 글로벌 파일 캐시
+
+Connector는 배포 중에 다음과 같은 API 요청을 통해 글로벌 파일 캐시 인스턴스를 구축합니다.
+
+* CloudFormation: DescribeStacks
+* CloudWatch: GetMetricStatistics
+* CloudFormation: ListStacks
+
+
+
+
+== 쿠버네티스
+
+Connector는 다음과 같은 API 요청을 수행하여 Amazon EKS 클러스터를 검색하고 관리합니다.
+
+* EC2: 설명
+* EKS: ListClusters
+* EKS: DescribeCluster
+* IAM:GetInstanceProfile 을 참조하십시오
+

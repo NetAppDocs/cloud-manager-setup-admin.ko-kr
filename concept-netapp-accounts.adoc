@@ -30,16 +30,6 @@ image:screenshot_account_settings.gif["사용자, 작업 영역 및 커넥터를
 
 
 
-== 최대 Cloud Volumes ONTAP 시스템 수
-
-사용 중인 라이센스 모델에 관계없이 Cloud Volumes ONTAP 시스템의 최대 수는 NetApp 계정당 20개로 제한됩니다.
-
-a_system_은 HA 쌍 또는 단일 노드 시스템입니다. 예를 들어, 2개의 Cloud Volumes ONTAP HA 쌍과 2개의 단일 노드 시스템이 있다면 총 4개의 시스템이 있고 고객 계정에 16개의 추가 시스템을 위한 공간이 있을 것입니다.
-
-궁금한 사항이 있으면 어카운트 담당자 또는 세일즈 팀에 문의하십시오.
-
-
-
 == 계정 설정
 
 Cloud Manager의 계정 관리 위젯을 사용하면 계정 관리자가 NetApp 계정을 관리할 수 있습니다. 방금 계정을 만든 경우 처음부터 다시 시작할 수 있습니다. 그러나 이미 계정을 설정한 경우에는 계정과 연결된 사용자, 작업 영역, 커넥터 및 구독이 _ALL_으로 표시됩니다.
@@ -133,3 +123,9 @@ image:diagram_cloud_central_accounts_one.png["2개의 작업 공간이 포함된
 계정 2에는 별도의 커넥터가 2개 포함되어 있습니다. 시스템이 다른 지역이나 별도의 클라우드 공급자에 있는 경우 이러한 문제가 발생할 수 있습니다.
 
 image:diagram_cloud_central_accounts_two.png["각 계정에는 여러 개의 작업 공간과 연결된 Workspace Admins가 있는 두 개의 NetApp 계정을 보여 주는 다이어그램입니다."]
+
+
+
+== 최대 Cloud Volumes ONTAP 시스템 수
+
+각 NetApp 계정은 최대 Cloud Volumes ONTAP 시스템 수로 제한됩니다. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#max-number-of-systems["이 제한에 대해 자세히 알아보십시오"^]

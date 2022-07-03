@@ -192,14 +192,12 @@
   <block id="9a1152221994c4390c82d2e946e8ba93" category="paragraph">AWS 자격 증명을 기존 Connector에 추가하거나 Cloud Manager에 직접 추가할 수 있습니다.</block>
   <block id="a456be184fc96fef017630ede092b15d" category="list-text">기존 커넥터에 AWS 자격 증명을 추가합니다</block>
   <block id="86ae9eb7648ce9574603dd22de833a70" category="inline-xref">Connector에 AWS 자격 증명을 추가하는 방법에 대해 알아보십시오</block>
-  <block id="83e2c729c13db1077fa9b54d7289d7a0" category="paragraph">기존 커넥터에 새로운 AWS 자격 증명을 추가하면 동일한 커넥터를 사용하여 다른 AWS 계정에 Cloud Volumes ONTAP를 구축할 수 있습니다. <block ref="568ce14d3cdae759e790bc127b222228" category="inline-xref-macro-rx"></block>.</block>
   <block id="7b6cf044a66e935a098fb8cd83363e83" category="list-text">Cloud Manager에 AWS 자격 증명을 직접 추가합니다</block>
   <block id="899c13f90184c78b69349bbceb931d16" category="inline-xref">Cloud Manager에 AWS 자격 증명을 추가하는 방법에 대해 알아보십시오</block>
   <block id="d40f2c83e95f6746ea810ba2593deb2d" category="section-title">자격 증명을 회전하는 방법</block>
   <block id="e7273d95e9d37fd9da1a8a44576c6922" category="inline-link-macro">AWS 자격 증명 및 권한에 대해 자세히 알아보십시오</block>
   <block id="49a4eb544564882dc7440ee482a753dd" category="paragraph">Cloud Manager를 사용하면 몇 가지 방법으로 AWS 자격 증명을 제공할 수 있습니다. 예를 들어, Connector 인스턴스와 연관된 IAM 역할이나 신뢰할 수 있는 계정에서 IAM 역할을 가정하거나 AWS 액세스 키를 제공하여 AWS 자격 증명을 제공할 수 있습니다. <block ref="327ad200be450c94b449dea92a32b142" category="inline-link-macro-rx"></block>.</block>
   <block id="c0f3d62ee13e3d6026170d25c9384876" category="paragraph">처음 두 옵션을 사용할 때 Cloud Manager는 AWS 보안 토큰 서비스를 사용하여 지속적으로 회전하는 임시 자격 증명을 얻습니다. 이 프로세스는 자동적이며 안전하기 때문에 가장 좋은 방법입니다.</block>
-  <block id="2107472aff38cfdebba436df3f42b23b" category="section-title">커넥터에 자격 증명을 추가합니다</block>
   <block id="1b516070ab36ad4c186fe30bd203fb45" category="section-title">권한을 부여합니다</block>
   <block id="8a128a994df87cb5973b2c0be1404679" category="paragraph">Connector에 AWS 자격 증명을 추가하기 전에 필요한 권한을 제공해야 합니다. Cloud Manager에서 사용 권한을 통해 해당 AWS 계정 내의 리소스와 프로세스를 관리할 수 있습니다. 사용 권한을 제공하는 방법은 Cloud Manager에 신뢰할 수 있는 계정 또는 AWS 키에서 역할의 ARN을 제공할지 여부에 따라 달라집니다.</block>
   <block id="e5fc05695d6d40579715f8fc43e17cf6" category="inline-link-macro">AWS 자격 증명 및 권한에 대해 알아보십시오</block>
@@ -244,7 +242,6 @@
   <block id="1e65c796a2058f2e006fb33cdd7e9879" category="paragraph">PAYGO(시간당 급여) 또는 연간 계약으로 Cloud Volumes ONTAP를 지불하려면 AWS 마켓플레이스의 Cloud Volumes ONTAP 구독과 AWS 자격 증명이 연결되어 있어야 합니다.</block>
   <block id="cc993521b8909c4085841bf25067d9c0" category="list-text">* 검토 *: 새 자격 증명에 대한 세부 정보를 확인하고 * 추가 * 를 클릭합니다.</block>
   <block id="59c42111c120e2a009a663d366f4914f" category="paragraph">이제 새 작업 환경을 만들 때 세부 정보 및 자격 증명 페이지에서 다른 자격 증명 세트로 전환할 수 있습니다.</block>
-  <block id="80eeb375dbaa0ef03077d457dd5bbb95" category="section-title">Cloud Manager에 자격 증명을 추가합니다</block>
   <block id="d8a56d983b91f097e5ba55dd03a18509" category="section-title">IAM 역할을 설정합니다</block>
   <block id="d9a499196547b3d025fe2a7d3c56baa1" category="paragraph">Cloud Manager SaaS가 역할을 맡을 수 있도록 IAM 역할을 설정합니다.</block>
   <block id="44030f19e52b4a03b050525f287bbc15" category="list-text">대상 계정에서 IAM 콘솔로 이동합니다.</block>
@@ -297,10 +294,8 @@
   <block id="85b23e78a5378b13a6b045754a0ef6ba" category="list-text">사용자가 아직 이 작업을 수행하지 않은 경우 사용자에게 로 이동하라고 요청합니다<block ref="acbb6886c35e57125998fe7d6c5eea1f" category="inline-link-rx"></block> 을 클릭합니다.</block>
   <block id="6639bbc2108217d7988bbb025e9e0166" category="list-text">Cloud Manager 상단에서 * Account * (계정 *) 드롭다운을 클릭합니다.</block>
   <block id="667f9a4e33c2cfcaea0966df0722d888" category="inline-image-macro">Cloud Manager의 상단 배너에 계정 설정 옵션이 표시된 스크린샷</block>
-  <block id="3c0c17adfadc5411ec36c64a2cb34ce6" category="paragraph"><block ref="3c0c17adfadc5411ec36c64a2cb34ce6" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0e220d57324e8ec19657c586d617f1b3" category="list-text">현재 선택한 계정 옆에 있는 * 계정 관리 * 를 클릭합니다.</block>
   <block id="155907ffed37b938531a447277cae166" category="inline-image-macro">계정 드롭다운에서 사용할 수 있는 계정 설정 관리 옵션을 보여 주는 스크린샷</block>
-  <block id="fcf5dd520b92e39be509ae40b2957fcf" category="paragraph"><block ref="fcf5dd520b92e39be509ae40b2957fcf" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6ca690b81e3a9bfb83efc25638a82370" category="list-text">구성원 탭에서 * 사용자 연결 * 을 클릭합니다.</block>
   <block id="66305d9d43f9788034811d163f26dc58" category="list-text">사용자의 이메일 주소를 입력하고 사용자의 역할을 선택합니다.</block>
   <block id="370c8f2e8720fa9970b1da1dde1c1c74" category="list-text">* 계정 관리자 *: Cloud Manager에서 모든 작업을 수행할 수 있습니다.</block>
@@ -419,7 +414,6 @@
   <block id="b2a3116602dffae5ec2500e053b897f2" category="list-text"><block ref="b2a3116602dffae5ec2500e053b897f2" category="inline-link-macro-rx"></block></block>
   <block id="f60679ea9193d78da48c95dcafcc2633" category="inline-link">GCP에서 Cloud Volumes ONTAP를 구축하고 프로젝트를 선택하는 방법에 대해 알아보십시오</block>
   <block id="f850e57f948d8d4d2e709b781e92097a" category="list-text"><block ref="f850e57f948d8d4d2e709b781e92097a" category="inline-link-rx"></block></block>
-  <block id="5e8d19da75a8b6ccce6aaa5d933f8f5d" category="summary">Cloud Manager에서 수행하는 작업의 상태를 모니터링하여 해결해야 할 문제가 있는지 확인할 수 있습니다. 알림 센터 또는 시각표에서 상태를 볼 수 있습니다.</block>
   <block id="1c7784f7c916758812d6f71e8b886a5e" category="doc">계정 내 작업 모니터링</block>
   <block id="0c6abed7ba16b0c5ed00cc5dc01fbcd5" category="paragraph">이 표에서는 각 에서 제공해야 할 사항을 이해할 수 있도록 알림 센터와 일정을 비교합니다.</block>
   <block id="9085e5686dfeb6405cc2917702710ed3" category="cell">알림 센터</block>
@@ -427,21 +421,13 @@
   <block id="0486b07a3d352a89611f0005bff8bbd3" category="cell">이벤트 및 작업에 대한 상위 상태를 표시합니다</block>
   <block id="c32042b6c968f47ecb4422de1d828cb1" category="cell">추가 조사를 위한 각 이벤트 또는 조치에 대한 세부 정보를 제공합니다</block>
   <block id="a5c1b2ed537308ce80afa4dc2316d6a1" category="cell">현재 로그인 세션의 상태를 표시합니다. 로그오프한 후에는 알림 센터에 정보가 나타나지 않습니다</block>
-  <block id="32e761e6e5329a33f23e7cc9da3074a6" category="cell">지난 달까지 상태를 유지합니다</block>
   <block id="b2d8a4e919485c2282a84ad3f4408095" category="cell">사용자 인터페이스에서 시작된 작업만 표시합니다</block>
   <block id="8c6775236733a876a2482bf9932cd018" category="cell">UI 또는 API의 모든 작업을 표시합니다</block>
   <block id="b39e5932e5cb552fc7335a37242f82b9" category="cell">사용자가 시작한 작업을 표시합니다</block>
   <block id="ccd4bc4aaf0a115f3a6bbe1e30e9ef4c" category="cell">사용자가 시작했는지 또는 시스템이 시작되었는지에 관계없이 모든 작업을 표시합니다</block>
   <block id="d040772afd73d06726db90efc0407647" category="cell">중요도에 따라 결과를 필터링합니다</block>
   <block id="29ab04719210957e371eb573f91dbb73" category="cell">서비스, 작업, 사용자, 상태 등을 기준으로 필터링합니다</block>
-  <block id="9ee2bdcf8fc9126dec61af7833c5a7ff" category="section-title">Notification Center를 사용하여 작업 상태 모니터링</block>
-  <block id="f1c53fff682db8018bf204803f5beae8" category="paragraph">알림은 Cloud Manager에서 시작한 작업의 진행률을 추적하는 이벤트와 유사하므로 작업의 성공 여부를 확인할 수 있습니다. 이 뷰를 사용하면 현재 로그인 세션에서 시작한 Cloud Manager 작업(및 향후 클라우드 서비스 작업)의 상태를 확인할 수 있습니다.</block>
-  <block id="99cd7a102b6f7dd7ccf9a838365cd684" category="paragraph">현재 다음 Cloud Volumes ONTAP 객체를 생성 및 삭제하는 알림만 지원됩니다.</block>
-  <block id="1466896d5b0d20c0d6c674a18c41b022" category="list-text">작업 환경</block>
-  <block id="46710fe77f663864a23e02a880a9ae53" category="list-text">애그리게이트</block>
-  <block id="078831e29f354e83fac6da3db6ed6b7b" category="list-text">볼륨</block>
   <block id="40da6f1400e45d080a97992a6a539894" category="inline-image-macro">알림 벨</block>
-  <block id="65cb7a00a52fe8747af691195a38593d" category="paragraph">알림 벨(<block ref="df7c8a71ca3da4359e40e121f18f87b9" category="inline-image-macro-rx" type="image"></block>)를 선택합니다. 벨의 작은 거품의 색상은 활성 상태인 최상위 심각도 알림을 나타냅니다. 따라서 빨간색 기포가 나타나면 확인해야 할 중요한 알림이 있다는 의미입니다.</block>
   <block id="d59387ab05a2cbd005866b74628417a0" category="inline-image-macro">알림 센터의 현재 알림 목록을 보여 주는 스크린샷</block>
   <block id="e24c5199eee665d8e879dc72dc56c667" category="paragraph"><block ref="e24c5199eee665d8e879dc72dc56c667" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6cb9efb52e844953331e64c6588258d5" category="section-title">알림을 필터링하는 중입니다</block>
@@ -458,7 +444,6 @@
   <block id="32d01e2ee6eb96c809aad8205457b728" category="section-title">사용자 계정의 사용자 활동 감사</block>
   <block id="50bb8640e882684969c34ae623ca3d5e" category="paragraph">Cloud Manager의 타임라인에는 사용자가 계정 관리를 위해 완료한 작업이 표시됩니다. 여기에는 사용자 연결, 작업 영역 만들기, 커넥터 만들기 등의 관리 작업이 포함됩니다.</block>
   <block id="322812be635bbd80fb94dbae450a00b4" category="paragraph">특정 작업을 수행한 사람을 확인해야 하거나 작업의 상태를 확인해야 하는 경우 시간 표시 막대를 확인하는 것이 도움이 됩니다.</block>
-  <block id="351baefdab0634c3a967ecfb602f64ea" category="list-text">모든 서비스 &gt; 일정 * 을 클릭합니다.</block>
   <block id="b505fc306e045c1511c6f1d37531ee7f" category="list-text">필터 아래에서 * 서비스 * 를 클릭하고 * 임차 * 를 활성화한 다음 * 적용 * 을 클릭합니다.</block>
   <block id="7aa6a4ffdbdc6eccd7f131257c7de6a8" category="paragraph">계정 관리 작업이 표시되도록 타임라인이 업데이트됩니다.</block>
   <block id="5cc47ef6d684116dbea75fa5016faf05" category="summary">NSS(NetApp Support Site) 계정의 자격 증명을 제공하여 Cloud Volumes ONTAP의 주요 워크플로우를 활성화하고 Active IQ를 통해 예측 분석 및 사전 지원을 활성화합니다.</block>
@@ -889,58 +874,8 @@
   <block id="06645c43c34bb238a7352c0ffaf29f49" category="doc">AWS의 커넥터에 대한 필수 권한</block>
   <block id="9edd86f763fc6d21418429b5c63134af" category="inline-link">NetApp에서 제공하는 정책</block>
   <block id="cfd01abeea487fb705ae7a8ea38814da" category="paragraph">Cloud Manager를 사용하려면 클라우드 공급자에서 작업을 수행할 수 있는 권한이 필요합니다. 이러한 권한은 에 포함되어 있습니다<block ref="d2f8d77175d2dd5e5ed1a096c2593510" category="inline-link-rx"></block>. Cloud Manager가 이러한 사용 권한을 통해 수행하는 작업을 이해하기를 원할 수 있습니다.</block>
-  <block id="f6619a1c896a4d87a38e339f0bbf2daf" category="paragraph">Cloud Manager는 AWS 계정을 사용하여 EC2, S3, CloudFormation, IAM, 보안 토큰 서비스(STS) 및 키 관리 서비스(KMS).</block>
   <block id="06df33001c1d7187fdd81ea1f5b277aa" category="cell">작업</block>
-  <block id="feb69cba943a0bf1d35c3241c08a7585" category="cell">"EC2:StartInstances", "EC2:StopInstances", "EC2:DescribeInstances", "EC2:DescribeInstanceStatus", "EC2:RunInstances", "EC2: TerminateInstances", "EC2: ModifyInstanceAttribute",</block>
-  <block id="dc6b603ede2fb9f7b2167bddd6c18e78" category="cell">Cloud Volumes ONTAP 인스턴스를 시작하고 인스턴스를 중지, 시작 및 모니터링합니다.</block>
-  <block id="5170a6e11a0d410d51001b6189104d5b" category="cell">"EC2: DescribeInstanceAttribute",</block>
-  <block id="92f69a6800d57f0ca15ad51a1c574436" category="cell">지원되는 인스턴스 유형에 대해 향상된 네트워킹이 활성화되어 있는지 확인합니다.</block>
-  <block id="2431056d4d2c9ddab8b8806f89c32645" category="cell">"EC2: DescribeRouteTables", "EC2: DescribeImages",</block>
-  <block id="f98bed33fb0c98b4385cbac8b28c31b6" category="cell">Cloud Volumes ONTAP HA 구성을 시작합니다.</block>
-  <block id="ddffa84f2d5ddf54df06ca164f295bab" category="cell">"EC2:CreateTags",</block>
-  <block id="04ed252cc254fb3e2e3ab1490cc342c0" category="cell">Cloud Manager가 만드는 모든 리소스에 "WorkingEnvironment" 및 "WorkingEnvironmentId" 태그를 지정합니다. Cloud Manager는 유지보수 및 비용 할당에 이러한 태그를 사용합니다.</block>
-  <block id="6360b76052d622cf2ee7f27e85b4d39c" category="cell">"EC2:CreateVolume", "EC2:DescribeVolumes", "EC2:ModifyVolumeAttribute", "EC2:AttachVolume", "EC2:DeleteVolume", "EC2: DetachVolume(EC2: 멈춤쇠 볼륨)",</block>
-  <block id="79b0af086c58a227b928a2e7bb14b96c" category="cell">Cloud Volumes ONTAP가 백엔드 스토리지로 사용하는 EBS 볼륨을 관리합니다.</block>
-  <block id="54f1220f9cea15e69d1dfd1a8e1949e9" category="cell">"EC2:CreateSecurityGroup", "EC2:DeleteSecurityGroup", "EC2:DescribeSecurityGroups", "EC2:RevokeSecurityGroupEgress", "EC2:AuthorizeSecurityGroupEgress", "EC2:AuthorizeSecurityGroupIngress", "EC2:RevokeSecurityGroupIngress",</block>
-  <block id="7e269e44eed573c1c12ae0f65ad28aad" category="cell">Cloud Volumes ONTAP에 대해 미리 정의된 보안 그룹을 만듭니다.</block>
-  <block id="5c0455fe145ed11dc068a75e6e14343c" category="cell">"EC2:CreateNetworkInterface", "EC2:DescribeNetworkInterfaces", "EC2:DeleteNetworkInterface", "EC2:ModifyNetworkInterfaceAttribute",</block>
   <block id="e81639b3c138e7deea81d6ea285642c3" category="cell">대상 서브넷에서 Cloud Volumes ONTAP에 대한 네트워크 인터페이스를 생성하고 관리합니다.</block>
-  <block id="bc4a4f5a4d77f0d3adfbe055988ebad5" category="cell">"EC2: DescribeSubnet", "EC2: DescribeVpcs",</block>
-  <block id="c16176e76672e363d3ae3a919c8e9071" category="cell">Cloud Volumes ONTAP 에 대한 새 작업 환경을 만들 때 필요한 대상 서브넷 및 보안 그룹 목록을 가져옵니다.</block>
-  <block id="4565a1a4035f85b5ef5dad5de7ba47b0" category="cell">"EC2: DescribeDhcpOptions",</block>
-  <block id="e3eee4d199010637597a90050bcdb496" category="cell">Cloud Volumes ONTAP 인스턴스를 시작할 때 DNS 서버와 기본 도메인 이름을 결정합니다.</block>
-  <block id="23d985a5648f032afd1704c32e035bec" category="cell">"EC2:CreateSnapshot", "EC2:DeleteSnapshot", "EC2:DescribeSnapshots",</block>
-  <block id="76ddd0913d0613b90e0ac307c38c1ca9" category="cell">초기 설정 중에 및 Cloud Volumes ONTAP 인스턴스가 중지될 때마다 EBS 볼륨의 스냅샷을 생성합니다.</block>
-  <block id="067189f3c34ff397bb11ca2b09712ce6" category="cell">"EC2:GetConsoleOutput",</block>
-  <block id="215a7358270627a7045db1afa58e0e7e" category="cell">AutoSupport 메시지에 첨부된 Cloud Volumes ONTAP 콘솔을 캡처합니다.</block>
-  <block id="8d51b40bb6e105332e10bd0c3efad022" category="cell">"EC2: 설명",</block>
-  <block id="474b08266984af38460de1fcd3e68d9e" category="cell">인스턴스를 시작할 때 사용 가능한 키 쌍 목록을 가져옵니다.</block>
-  <block id="824879419848a15df1643509746b60bf" category="cell">"EC2: 설명 영역",</block>
-  <block id="98e454327ced0d4a3e01e23ca7415423" category="cell">사용 가능한 AWS 영역 목록을 가져옵니다.</block>
-  <block id="6d04eb7253459baaa3b987b6fdd22343" category="cell">"EC2:DeleteTags", "EC2: DescribeTags",</block>
-  <block id="f77324452240f2ec9b97c9d90c25c370" category="cell">Cloud Volumes ONTAP 인스턴스와 관련된 리소스의 태그를 관리합니다.</block>
-  <block id="80bd5e91275c18aa878d604b8b7bc1b6" category="cell">"CloudFormation:CreateStack", "CloudFormation:DeleteStack", "CloudFormation:DescribeStacks", "CloudFormation:DescribeStackEvents", "CloudFormation:ValidateTemplate",</block>
-  <block id="d1955c7aa6a50cd1f8064ebe27ead6bb" category="cell">Cloud Volumes ONTAP 인스턴스를 시작합니다.</block>
-  <block id="94000632aa8758ec1f26a0115e76e3e8" category="cell">"IAM:PassRole", "IAM:CreateRole", "IAM:DeleteRole", "IAM:PutRolePolicy", "IAM:CreateInstanceProfile", "IAM:DeleteRolePolicy", "IAM:AddRoleToInstanceProfile", "IAM:RemoveRoleFromInstanceProfile", "IAM:DeleteInstanceProfile",</block>
-  <block id="334d249e5303d38a836fd83ab5c6efd7" category="cell">"IAM:ListInstanceProfiles", "STS:DecodeAuthorizationMessage", "EC2:AssociateIamInstanceProfile", "EC2:DescribeIamInstanceProfileAssociations", "EC2:DisconnectateIamInstanceProfile",</block>
-  <block id="955511edf25866d77f27429a69afe592" category="cell">Cloud Volumes ONTAP 인스턴스의 인스턴스 프로파일을 관리합니다.</block>
-  <block id="a9b5c6bfb4513f0982f314de38a8ac0f" category="cell">"S3:GetBucketTagging", "S3:GetBucketLocation", "S3:ListAllMyBucket", "S3:ListBucket"</block>
-  <block id="681ce93d57ad8816bfe1aca775d105f5" category="cell">Cloud Manager를 NetApp Data Fabric Cloud Sync 서비스와 통합할 수 있도록 AWS S3 버킷에 대한 정보 확보</block>
-  <block id="ea73629204744bc4e00ec9b357a6eb38" category="cell">"S3:CreateBucket", "S3:DeleteBucket", "S3:GetLifecycleConfiguration", "S3:PutLifecycleConfiguration", "S3:PutketTagging", "S3:ListBuckketVersions", "S3:GetBuckketPolicyStatus", "S3:GetBuckketPublicAccessBlock", "S3:GetBuckketAcl", "S3:GetBuckketPolicy", "S3:PutBucketPublicAccessBlock"</block>
-  <block id="eaacc3ae187e9cff5bb76cde6d72c352" category="cell">Cloud Volumes ONTAP 시스템이 데이터 계층화를 위한 용량 계층으로 사용하는 S3 버킷을 관리합니다.</block>
-  <block id="ae1a5dcbd44b42e45c9ae5a6ef92d11c" category="cell">"kms:List * ", "kms:ReEncrypt * ", "kms:설명 * ", "kms:CreateGrant",</block>
-  <block id="25b859b64344382764d86df1147b712f" category="cell">AWS KMS(키 관리 서비스)를 사용하여 Cloud Volumes ONTAP의 데이터 암호화를 지원합니다.</block>
-  <block id="2c51888f65027b6b841a91ef20e98075" category="cell">"CE:GetReservationUtilization", "CE:GetDimensionValues", "CE:GetCostAndUsage", "CE:GetTags"</block>
-  <block id="bea235d6bcf7752986ebd55f08d0b55f" category="cell">Cloud Volumes ONTAP에 대한 AWS 비용 데이터를 가져옵니다.</block>
-  <block id="7f65ba4b21f070b05fec30fb0b79818b" category="cell">"EC2:CreatePlacementGroup", "EC2:DeletePlacementGroup"</block>
-  <block id="a7366f3b4083ea8a4c1bf6f7bea92222" category="cell">단일 AWS Availability Zone에 HA 구성을 구축하면 Cloud Manager가 두 개의 HA 노드를 시작하고 AWS Spread 배치 그룹에서 중재자를 실행합니다.</block>
-  <block id="7198497e7930d70b3413941abc74e122" category="cell">"EC2: DescribeReservedInstances편리"</block>
-  <block id="edb68c4ca4c606b87cbb2aee5acdb744" category="cell">Cloud Manager는 Cloud Data Sense 배포의 일부로 사용 권한을 사용하여 사용할 인스턴스 유형을 선택합니다.</block>
-  <block id="8274628cdc1a638e234c1627b1226922" category="cell">"EC2:CreateTags", "EC2:DeleteTags", "EC2:DescribeTags", "tag:getResources", "tag:getTagKeys", "tag:getTagValues", "tag:TagResources", "tag:UntagResources"</block>
-  <block id="ca11f864d1d24298bcf7e821561507f3" category="cell">Cloud Manager Tagging 서비스를 사용하여 AWS 리소스의 태그를 관리할 수 있습니다.</block>
-  <block id="9257ea230a460909e07d0bfe81207794" category="cell">"S3:DeleteBucket", "S3:GetLifecycleConfiguration", "S3:PutLifecycleConfiguration", "S3:PutketTagging", "S3:ListBuckketVersions", "S3:GetObject", "S3:ListBucket", "S3:ListAllMyBucket", "S3:GetBuckTagging", "S3:GetBuckketLocation" "S3:GetBuckketPolicyStatus", "S3:GetBuckketPublicAccessBlock", "S3:GetBuckketAcl", "S3:GetBuckketPolicy", "S3:PutketPublicAccessBlock"</block>
-  <block id="2445d6dfa41a1dd564df073cc12fb413" category="cell">Cloud Manager는 Backup to S3 서비스를 활성화할 때 이러한 권한을 사용합니다.</block>
-  <block id="716a2c38419203ac88bbd14e10539866" category="cell">Amazon EKS 클러스터 검색을 활성화합니다.</block>
   <block id="63f6e1958614b96c8fd95bf42f5748fd" category="summary">NetApp Cloud Central에 등록하여 NetApp의 클라우드 서비스에 액세스할 수 있습니다.</block>
   <block id="fb74c4ef62549ee8dd9207310052bd9c" category="doc">NetApp Cloud Central에 등록</block>
   <block id="6294a96fba20202cd9ffb33f93601bb2" category="inline-link">Cloud Central 도움말 센터</block>
@@ -1088,7 +1023,6 @@
   <block id="9eda86aecbd5d5afc09db24b73cff1b5" category="paragraph">Connector는 Cloud Manager의 다양한 기능과 서비스를 사용하는 데 필요합니다.</block>
   <block id="992a0f0542384f1ee5ef51b7cf4ae6c4" category="section-title">서비스</block>
   <block id="234eb6bb27d592cbf06aa6537a33a380" category="list-text">ONTAP용 Amazon FSx 관리 기능</block>
-  <block id="07ef1eb956a87b51e019643b6f5d73a5" category="list-text">Amazon S3 버킷 검색</block>
   <block id="dad57e95fc9a5390302ad830888cbdb9" category="list-text">클라우드 백업</block>
   <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="list-text">Cloud Volumes ONTAP</block>
   <block id="85eb427901278daf26f132cb3e076914" category="list-text">Kubernetes 클러스터</block>
@@ -1121,7 +1055,6 @@
   <block id="9b2658aca840a5bb63ea0f460945616d" category="section-title">커넥터는 계속 작동 중이어야 합니다</block>
   <block id="e3b183b81588a53a9977e2f408f637ca" category="paragraph">커넥터는 항상 작동 상태를 유지해야 합니다. 이는 여러분이 제공하는 서비스의 지속적인 상태 및 운영에 중요합니다.</block>
   <block id="fa1f9e92f4f0aa51cba859b2dbc37a02" category="section-title">커넥터 작성 방법</block>
-  <block id="71e28ecafe43c8df318f195746ba6a2f" category="paragraph">계정 관리자는 다음과 같은 여러 가지 방법으로 커넥터를 만들 수 있습니다.</block>
   <block id="3e889e02d7a02cbc9daaa364c56aa381" category="list-text">Cloud Manager에서 직접(권장)</block>
   <block id="2a6d41af9b09f97725c64e2705d629b2" category="inline-link-macro">AWS에서 생성</block>
   <block id="f6a61a9eb8031d1e8178ffee4fa56624" category="list-text"><block ref="f6a61a9eb8031d1e8178ffee4fa56624" category="inline-link-macro-rx"></block></block>
@@ -1738,7 +1671,6 @@
   <block id="3fc84828d29031ccb044fc851a791dd5" category="inline-link-macro">NetApp 계정 설정</block>
   <block id="72c3eeaa29779a60f2efe95a1c173302" category="paragraph">단계별 지침은 을 참조하십시오 <block ref="2e63be6a139b9c6424fb3c44b74add23" category="inline-link-macro-rx"></block>.</block>
   <block id="6b9aff54334b24c64be5688e6f9c12cc" category="section-title">최대 Cloud Volumes ONTAP 시스템 수</block>
-  <block id="a259bb127cd2a1cd02edf6a3a2484f33" category="paragraph">궁금한 사항이 있으면 어카운트 담당자 또는 세일즈 팀에 문의하십시오.</block>
   <block id="ff73074ccafb0bcfc1c49a09ceb6532f" category="section-title">계정 설정</block>
   <block id="6f42c9f4b429467eb11ea5ae99b87c9d" category="paragraph">Cloud Manager의 계정 관리 위젯을 사용하면 계정 관리자가 NetApp 계정을 관리할 수 있습니다. 방금 계정을 만든 경우 처음부터 다시 시작할 수 있습니다. 그러나 이미 계정을 설정한 경우에는 계정과 연결된 사용자, 작업 영역, 커넥터 및 구독이 _ALL_으로 표시됩니다.</block>
   <block id="e8d4079a6995ce39f10add4f26ab239b" category="paragraph">개요 페이지에는 계정 이름과 계정 ID가 표시됩니다. 일부 서비스를 등록할 때 계정 ID를 제공해야 할 수 있습니다. 이 페이지에는 몇 가지 Cloud Manager 구성 옵션도 포함되어 있습니다.</block>
@@ -1921,15 +1853,8 @@
   <block id="ff6c37cbc252e306a6b4e390ec13cbc1" category="sidebar">Cloud Central 블로그</block>
   <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">클라우드 웨비나</block>
   <block id="f350efde95c992c9fb3c75c0e8aefcf0" category="list-text">역할* 탭에서 * Azure SetupAsService* 역할을 선택하고 * 다음 * 을 클릭합니다.</block>
-  <block id="e8303b3c359355a29e343d1741791f05" category="paragraph">Cloud Manager에 새 AWS 자격 증명을 추가하면 Cloud Manager에서 ONTAP 작업 환경을 위한 FSx를 생성 및 관리하거나 커넥터를 생성하는 데 필요한 권한을 얻을 수 있습니다. <block ref="2b759c7fb1c1b2ce728a7fb1e8e64b6d" category="inline-xref-macro-rx"></block>.</block>
   <block id="448746f589ceea8f1b3191a05fe6c57c" category="paragraph">다른 AWS 계정에 Cloud Volumes ONTAP를 구축 및 관리할 수 있도록 커넥터에 AWS 자격 증명을 추가합니다. 다른 계정에서 IAM 역할의 ARN을 제공하거나 AWS 액세스 키를 제공할 수 있습니다.</block>
-  <block id="86a80f2c5791260c43446585966588d0" category="paragraph">IAM 역할의 ARN을 제공하여 Cloud Manager에 AWS 자격 증명을 추가합니다. 그러면 Cloud Manager가 ONTAP 작업 환경을 위한 FSx를 생성하거나 커넥터를 생성하는 데 필요한 권한을 부여합니다.</block>
-  <block id="620ca61d4ab126187e2b08ea732bc73d" category="paragraph">ONTAP 작업 환경을 위한 FSx를 생성하거나 새 커넥터를 생성할 때 자격 증명을 사용할 수 있습니다.</block>
-  <block id="e8d22804fac9dc3460dec3cade490b3d" category="list-text">ONTAP 작업 환경을 위한 FSx를 생성하거나 커넥터를 생성하는 데 필요한 권한을 포함하는 정책을 생성합니다.</block>
-  <block id="3d35bba2e5ea6e739fb94736dc402017" category="inline-link">ONTAP용 FSx에 필요한 권한을 봅니다</block>
-  <block id="df00618b6e4c6f7fcb9a7fbb4c65b54e" category="list-text"><block ref="df00618b6e4c6f7fcb9a7fbb4c65b54e" category="inline-link-rx"></block></block>
   <block id="a7670b1f58884f1ec2ecfbedc687193d" category="list-text">에서 Connector 배포 정책을 봅니다<block ref="685f869a0580bc1af63188a3b940f7ac" category="inline-link-rx"></block></block>
-  <block id="174c30e12e5caabc3d6093c8f5d239eb" category="paragraph">이제 ONTAP 작업 환경을 위한 FSx를 생성하거나 새 커넥터를 생성할 때 자격 증명을 사용할 수 있습니다.</block>
   <block id="ba26e4556a0f160834687982b0479336" category="section-title">2022년 2월 27일</block>
   <block id="3ac47455b10c6fb4061a70a91fdbfde2" category="section-title">2022년 1월 30일</block>
   <block id="586301717819197e24001cac47efdaaa" category="section-title">2022년 1월 2일</block>
@@ -2041,7 +1966,6 @@
   <block id="c3386ad05590d977aa139a8aac605f20" category="list-text">Cloud Manager로 이동하여 작업 환경을 엽니다.</block>
   <block id="1962304593497a2b02537345ac7be337" category="list-text">메뉴를 클릭하고 * 고급 &gt; 구성 백업 * 을 선택합니다.</block>
   <block id="b30f3d123c465c70e2c71150136ed92d" category="list-text">백업 대상 설정 * 을 클릭합니다.</block>
-  <block id="cc5581f22ce63f7556f4354dd88e93e0" category="paragraph">작업 영역 관리자가 Cloud Volumes ONTAP 작업 환경을 만들고 위에 나열된 다른 서비스를 사용하려면 계정 관리자가 커넥터를 만들어야 합니다.</block>
   <block id="75af5b4615967c5f4c52ae9be3a8526c" category="paragraph">일반적으로 매월 커넥터 소프트웨어를 업데이트하여 새로운 기능을 소개하고 안정성 향상을 제공합니다. Cloud Manager 플랫폼의 대부분의 서비스와 기능은 SaaS 기반 소프트웨어를 통해 제공되지만, Connector의 버전에 따라 몇 가지 기능이 달라집니다. 여기에는 Cloud Volumes ONTAP 관리, 온프레미스 ONTAP 클러스터 관리, 설정 및 도움말이 포함됩니다.</block>
   <block id="3cdc0b8cb855b1fb9c206c3d696b6c9e" category="list-text">위의 CPU 및 RAM 요구 사항을 충족하는 인스턴스 유형입니다. T3.xLarge를 권장합니다.</block>
   <block id="a6daae7da601d04e5cdb89d612a8d9b1" category="list-text">위의 CPU 및 RAM 요구 사항을 충족하는 인스턴스 유형입니다. DS3 v2를 권장합니다.</block>
@@ -2078,9 +2002,6 @@
   <block id="8452efafcd305c048b35a9ac1eaa0a58" category="list-text">이 커넥터 릴리스에는 Cloud Volumes ONTAP의 향상된 기능도 포함되어 있습니다.<block ref="f53661746a388d6e170677167c0cb4ac" category="inline-link-rx"></block></block>
   <block id="1bb66afbb0f9c20ad9ce021a7051d622" category="section-title">커넥터 3.9.15</block>
   <block id="3934da05a8696f0f2771f6794b16d0fe" category="paragraph">이 커넥터 릴리스에는 Cloud Volumes ONTAP의 향상된 기능이 포함되어 있습니다.<block ref="56b0b409fd26975ec3a06e3bfbb1d0c5" category="inline-link-rx"></block></block>
-  <block id="54e507c4461f09157653db1c97f633b3" category="cell">"eks:ListClusters", "eks:DescribeCluster", "IAM:GetInstanceProfile",</block>
-  <block id="e0399b3db0c9216059d2e42a30b09612" category="cell">"EC2:DescribePlacementGroups", "IAM:GetRolePolicy",</block>
-  <block id="4811a96d917e86f9cc499d8404bd91c9" category="cell">단일 AZ(Availability Zone)에 구축된 HA 쌍에 대한 AWS 분산 배치 그룹을 생성합니다.</block>
   <block id="40ca3108b6381f9eda9574daf00c3b01" category="list-text">Azure 마켓플레이스에서 NetApp Connector VM 페이지로 이동합니다.</block>
   <block id="0c5f74a83e5cbc5c6c230dd0caf096f7" category="inline-link">상용 지역에 대한 Azure Marketplace 페이지</block>
   <block id="5fb9ace1b2fee444b848b1ad1c5d886c" category="list-text"><block ref="5fb9ace1b2fee444b848b1ad1c5d886c" category="inline-link-rx"></block></block>
@@ -2144,8 +2065,6 @@
   <block id="f0aff813a70ef2591adfbb6a1a06b553" category="list-text"><block ref="f0aff813a70ef2591adfbb6a1a06b553" category="inline-link-rx"></block></block>
   <block id="d91c9747b757db55982f71a386bfd0d6" category="cell">-compute.instanceGroups.get -compute.addresses.get</block>
   <block id="e6896223c5f9bd9bbdd1b0c9eac6686f" category="cell">를 사용하여 HA 쌍에서 스토리지 VM을 생성하고 관리합니다.</block>
-  <block id="4a95dbd25f9c78f9b32c636955913f0c" category="cell">"EC2: DescribeVolumesModifications", "EC2: ModifyVolume",</block>
-  <block id="2ab6f4b7f1eda4096fbe91764dbb5eb6" category="cell">Amazon EBS Elastic Volumes 기능을 지원하는 Cloud Volumes ONTAP 애그리게이트를 설정 및 관리할 수 있습니다.</block>
   <block id="bea9d9e1b3f9260b5dafbfee794aead7" category="summary">인터넷에 액세스할 수 없는 온프레미스 Linux 호스트에 커넥터를 설치할 수 있습니다. 그런 다음, 온프레미스 ONTAP 클러스터를 검색하고, 클러스터 간에 데이터를 복제하고, 클라우드 백업을 사용하여 볼륨을 백업하고, 클라우드 데이터 센스로 검색할 수 있습니다.</block>
   <block id="89b945901df4999cfbb07b91df7f3e83" category="inline-link">클라우드 백업을 사용하여 사내 ONTAP 볼륨 데이터를 StorageGRID에 백업합니다</block>
   <block id="0ef5e09df96e6b4d97470a69c3a5bb03" category="list-text"><block ref="0ef5e09df96e6b4d97470a69c3a5bb03" category="inline-link-rx"></block></block>
@@ -2158,8 +2077,6 @@
   <block id="4141e80854c65807682dd0ff767b4228" category="inline-link-macro">Connector에서 로컬 UI에 액세스하는 방법에 대해 알아봅니다</block>
   <block id="b5d309d79224e6f55d1d4c6b68090c82" category="paragraph"><block ref="2061c033ff26af000ddf0a91359fc3b2" category="inline-link-macro-rx"></block>.</block>
   <block id="60eb2845b0a0e58270dc0f4a47eeb2b9" category="paragraph">정부 지역 또는 아웃바운드 인터넷 액세스가 없는 사이트에서 Cloud Manager에 액세스하는 경우 Connector에서 실행 중인 로컬 사용자 인터페이스에 로그인해야 합니다. <block ref="2061c033ff26af000ddf0a91359fc3b2" category="inline-link-macro-rx"></block>.</block>
-  <block id="3ac6338087c4180b5cbb359584abab3a" category="paragraph">사용 중인 라이센스 모델에 관계없이 Cloud Volumes ONTAP 시스템의 최대 수는 NetApp 계정당 20개로 제한됩니다.</block>
-  <block id="b730a5e05a41eebeb51f5aee7c746386" category="paragraph">a_system_은 HA 쌍 또는 단일 노드 시스템입니다. 예를 들어, 2개의 Cloud Volumes ONTAP HA 쌍과 2개의 단일 노드 시스템이 있다면 총 4개의 시스템이 있고 고객 계정에 16개의 추가 시스템을 위한 공간이 있을 것입니다.</block>
   <block id="38ce4e90f119b89b2fdf1f274431e262" category="section-title">2022년 6월 28일</block>
   <block id="47d69a1f17128c359904338c3502fe31" category="section-title">NetApp 자격 증명으로 로그인합니다</block>
   <block id="f646305c890b8deec88379aeecbe56a5" category="paragraph">새로운 사용자가 Cloud Central에 등록하면 이제 NetApp * 옵션을 사용하여 로그인 * 을 선택하여 NetApp Support 사이트 자격 증명으로 로그인할 수 있습니다. 이 방법은 전자 메일 주소와 암호를 입력하는 대신 사용됩니다.</block>
@@ -2173,4 +2090,245 @@
   <block id="5bcda5b087049d72bac31d0484792c9e" category="admonition">NetApp에 로그인하면 NetApp Support 사이트 자격 증명이 지원 대시보드의 Cloud Manager에 추가되지 않습니다.</block>
   <block id="bb3811f4fe37370092ea428b21cf1249" category="list-text">등록된 NetApp Support 사이트 계정이 있는 경우 * NetApp으로 로그인 * 을 클릭하고 NetApp Support 사이트 자격 증명을 입력합니다.</block>
   <block id="fa4e197c715b6a6e61487c84fa10bc13" category="paragraph"><block ref="fa4e197c715b6a6e61487c84fa10bc13" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1511b856d0328cfba458b8f83c2e94e3" category="section-title">2022년 7월 3일</block>
+  <block id="dbb3531fc9f461de7f3beb2624712465" category="section-title">커넥터 3.9.20</block>
+  <block id="d62eba143e9a6b4f6e0d6902d78ea096" category="list-text">Cloud Manager 인터페이스에 추가된 새로운 기능을 탐색하는 방법이 도입되었습니다. 이제 왼쪽 패널 위로 마우스를 이동하면 익숙한 Cloud Manager 기능을 모두 쉽게 찾을 수 있습니다.</block>
+  <block id="fb8e25a66c3a27139d3ea3e1474c7db3" category="inline-image-macro">Cloud Manager의 새로운 좌측 탐색 메뉴를 보여주는 스크린샷</block>
+  <block id="f0b1755d1a809617265e005b6e1a8124" category="paragraph"><block ref="f0b1755d1a809617265e005b6e1a8124" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e37234425776295f1624526d17572b8e" category="list-text">이제 Cloud Manager를 구성하여 시스템에 로그인하지 않아도 중요한 시스템 작업을 이메일로 통지할 수 있습니다.</block>
+  <block id="2f439d7fd2d68628b2c40e59bc7ec352" category="inline-link-macro">계정의 작업 모니터링에 대해 자세히 알아보십시오</block>
+  <block id="8fe400bbcf74fee5f6ca96b5d06fd8a8" category="paragraph"><block ref="6207ce0a1413f0c60f2c0a13a1fde26f" category="inline-link-macro-rx"></block>.</block>
+  <block id="0f9a1f2b52f5c8456ca5d25ab69eea52" category="list-text">Cloud Manager는 이제 Amazon S3 지원과 비슷하게 Azure Blob 스토리지 및 Google Cloud Storage를 작업 환경으로 지원합니다.</block>
+  <block id="5134e5a3a5a026f57f4938b2eaa07031" category="paragraph">Azure 또는 Google Cloud에 Connector를 설치한 후 Cloud Manager는 이제 Connector가 설치된 프로젝트의 Azure Blob 스토리지 또는 Google Cloud Storage에 대한 정보를 자동으로 검색합니다. Cloud Manager는 오브젝트 스토리지를 작업 환경으로 표시하여 더 자세한 정보를 볼 수 있도록 합니다.</block>
+  <block id="a2f44a550843ebb8ee7fe06e85e5d378" category="paragraph">Azure Blob 작업 환경의 예는 다음과 같습니다.</block>
+  <block id="c5a0af9953d83a32751880ddded4d5ec" category="inline-image-macro">상위 수준의 개요와 스토리지 계정에 대한 자세한 정보를 볼 수 있는 Azure Blob 작업 환경을 보여 주는 스크린샷</block>
+  <block id="69ea64e8072e702aaf3256d7a40211ee" category="paragraph"><block ref="69ea64e8072e702aaf3256d7a40211ee" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="402ca8386bc10e708c8fa4cd43e8856e" category="list-text">NetApp은 용량, 암호화 세부 정보 등과 같은 S3 버킷에 대한 자세한 정보를 제공하여 Amazon S3 작업 환경의 리소스 페이지를 재설계했습니다.</block>
+  <block id="82e8338c73d6540f48f2e0cc8d035511" category="list-text">마드리드(유럽 - 남서쪽1)</block>
+  <block id="1a1145c860165dcd96b82eb7d32cd59f" category="list-text">파리(유럽 - west9)</block>
+  <block id="eb4cae07e62b958e999eaa4c0d9b254b" category="list-text">바르샤바(유럽-중중심2)</block>
+  <block id="05f08f9410eed79855c8ade92149a276" category="list-text">이제 커넥터는 Azure West US 3 지역에서 지원됩니다.</block>
+  <block id="e8249b4253d6a921188373a80621c098" category="list-text">이 커넥터 릴리스에는 Cloud Volumes ONTAP의 향상된 기능도 포함되어 있습니다.</block>
+  <block id="6ccb5320771ae7d28e23216dda7e303f" category="paragraph"><block ref="6ccb5320771ae7d28e23216dda7e303f" category="inline-link-rx"></block></block>
+  <block id="c330137e6e1ce0bfce55a8c86df33a2b" category="paragraph"><block ref="c330137e6e1ce0bfce55a8c86df33a2b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c04c08fe80b97e132e0d3900955bcba0" category="paragraph"><block ref="c04c08fe80b97e132e0d3900955bcba0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1119a5c0ca85ec4912ce192d30735c02" category="summary">Cloud Manager에서 수행하는 작업의 상태를 모니터링하여 해결해야 할 문제가 있는지 확인할 수 있습니다. 알림 센터, 시각표에서 상태를 보거나 이메일로 알림을 보낼 수 있습니다.</block>
+  <block id="2fe85263c62b0b870277c30652459354" category="cell">지난 달의 상태를 유지합니다</block>
+  <block id="5c61dbbb22810fcf5149eb1192885607" category="cell">계정 사용자 및 다른 사용자에게 알림을 이메일로 보낼 수 있는 기능을 제공합니다</block>
+  <block id="e92861fef775acb8c5a64f8d282a8b80" category="cell">이메일 기능이 없습니다</block>
+  <block id="d6706ddca18dfba027152ceaeffb550e" category="section-title">알림 센터를 사용하여 활동 모니터링</block>
+  <block id="18aff76a65beb281247b3066c1a37525" category="paragraph">알림은 Cloud Manager에서 시작한 작업의 진행률을 추적하므로 작업의 성공 여부를 확인할 수 있습니다. 이 뷰를 사용하면 현재 로그인 세션 중에 시작한 많은 Cloud Manager 작업의 상태를 볼 수 있습니다.</block>
+  <block id="5cf9ecbcae765efe1cb17d1c802e39cb" category="paragraph">알림 벨(<block ref="df7c8a71ca3da4359e40e121f18f87b9" category="inline-image-macro-rx" type="image"></block>)를 선택합니다. 벨의 작은 거품의 색상은 활성 상태인 최상위 심각도 알림을 나타냅니다. 따라서 빨간색 기포가 나타나면 확인해야 할 중요한 알림이 있다는 의미입니다.</block>
+  <block id="6c836fac6db418cb1aa7dbc3dbd8ff62" category="inline-xref">이메일 알림 설정 설정</block>
+  <block id="411759a1626269084faceb1751fdaca6" category="paragraph">또한 Cloud Manager를 구성하여 시스템에 로그인하지 않은 경우에도 중요한 시스템 작업을 확인할 수 있도록 이메일로 알림을 보낼 수 있습니다. 이메일은 NetApp 클라우드 계정의 일부인 Cloud Central 사용자 또는 특정 유형의 시스템 활동을 알아야 하는 다른 수신자에게 보낼 수 있습니다. 을 참조하십시오 <block ref="2fb0285882e9333d924eb054161cd903" category="inline-xref-macro-rx"></block> 아래에 있습니다.</block>
+  <block id="2a4be390687f80c7cdf976afca0fe778" category="section-title">알림 유형</block>
+  <block id="0ebfeb3212b9bb4b152ea82a5877a33b" category="paragraph">알림은 다음 범주로 분류됩니다.</block>
+  <block id="9e89e978c220a2a733d027866cb12907" category="cell">알림 유형입니다</block>
+  <block id="278d01e5af56273bae1bb99a98b370cd" category="cell">심각</block>
+  <block id="0b68cecd3f3f6281c0b25a5c4847524e" category="cell">수정 조치를 즉시 취하지 않으면 서비스가 중단될 수 있는 문제가 발생했습니다.</block>
+  <block id="902b0d55fddef6f8d651fe1035b7d4bd" category="cell">오류</block>
+  <block id="e5fb3557abe29146a95749081ab3a190" category="cell">조치 또는 프로세스가 실패로 끝나거나 시정 조치가 취해지지 않을 경우 실패로 이어질 수 있습니다.</block>
+  <block id="0eaadb4fcb48a0a0ed7bc9868be9fbaa" category="cell">경고</block>
+  <block id="aa228af2278ceaf301af095317b0ff34" category="cell">심각한 심각도에 도달하지 않도록 주의해야 할 문제입니다. 이 심각도에 대한 알림은 서비스 중단을 유발하지 않으며 즉각적인 수정 조치가 필요하지 않을 수 있습니다.</block>
+  <block id="c76e3867213cff8946148c6510af0736" category="cell">권장 사항</block>
+  <block id="e601c98c25210dcc8d9e790827097756" category="cell">시스템 또는 특정 서비스 개선을 위한 조치를 취할 것을 권장하는 시스템 권장 사항(예: 비용 절감, 새로운 서비스 제안, 권장 보안 구성 등)</block>
+  <block id="a82be0f551b8708bc08eb33cd9ded0cf" category="cell">정보</block>
+  <block id="43c6159740686137c49fb6d6b07640f2" category="cell">작업 또는 프로세스에 대한 추가 정보를 제공하는 메시지입니다.</block>
+  <block id="505a83f220c02df2f85c3810cd9ceb38" category="cell">성공</block>
+  <block id="ae75ef51af35154ca4a9e6d19fb16774" category="cell">작업 또는 프로세스가 성공적으로 완료되었습니다.</block>
+  <block id="a6def99842bc15d42718893f4b26be8c" category="paragraph">Cloud Manager에 로그인하지 않아도 특정 유형의 알림을 이메일로 전송하여 중요한 시스템 활동을 확인할 수 있습니다. 이메일은 NetApp 계정의 일부인 사용자나 특정 유형의 시스템 활동을 알아야 하는 다른 수신자에게 보낼 수 있습니다.</block>
+  <block id="b51460585ce77934e0d0f7ab2636f940" category="paragraph">기본적으로 계정 관리자는 모든 "중요" 및 "권장 사항" 알림에 대한 이메일을 받게 됩니다. 다른 모든 사용자와 수신자는 기본적으로 알림 이메일을 수신하지 않도록 구성되어 있습니다.</block>
+  <block id="f6cf378d25bc2bcaeedbdbd322fec41b" category="paragraph">알림 설정을 사용자 지정하려면 계정 관리자여야 합니다.</block>
+  <block id="b53a221b71b7a12562d2dac0686fd53c" category="list-text">Cloud Manager 메뉴 표시줄에서 * 설정 &gt; 알림 및 알림 설정 * 을 클릭합니다.</block>
+  <block id="dffb0ae952f619b638efb5dbc37b121a" category="inline-image-macro">경고 및 알림 설정 페이지를 표시하는 방법을 보여 주는 스크린샷</block>
+  <block id="7d1b8c811a59859856f7d6e326206f8e" category="paragraph"><block ref="7d1b8c811a59859856f7d6e326206f8e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1574c3b98d877a336e31fff7f6edacbc" category="list-text">계정 사용자_탭 또는 _Additional Recipients_tab에서 사용자 또는 여러 사용자를 선택하고 보낼 알림 유형을 선택합니다.</block>
+  <block id="e0f7b60aad81cb4fcc78cf6261b98ff0" category="list-text">단일 사용자를 변경하려면 해당 사용자의 알림 열에 있는 메뉴를 클릭하고 보낼 알림 유형을 선택한 다음 * 적용 * 을 클릭합니다.</block>
+  <block id="41d14bf0cc8b5a28d6f816e19d00ff99" category="list-text">여러 사용자를 변경하려면 각 사용자에 대한 확인란을 선택하고 * 이메일 알림 관리 * 를 클릭한 후 전송할 알림 유형을 선택하고 * 적용 * 을 클릭합니다.</block>
+  <block id="c620f9967c3de275d7f81b04c1220bbb" category="inline-image-macro">여러 사용자에 대한 알림을 변경하는 방법을 보여 주는 스크린샷</block>
+  <block id="ba47221b59f846f383b80e1123a79d45" category="paragraph"><block ref="ba47221b59f846f383b80e1123a79d45" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="74f842f681dec95e3fcba9672d30f73a" category="section-title">추가 이메일 수신자 추가</block>
+  <block id="da69d368769f4f71d80717684f0fae51" category="inline-link-macro">계정 관리 페이지</block>
+  <block id="2866a3379eb6bd7cd5780936bb9623e0" category="paragraph">Account Users_Tab에 표시되는 사용자는 NetApp 계정의 사용자(에서)로부터 자동으로 채워집니다 <block ref="7ec5341aa06784128979f04caa0eaf74" category="inline-link-macro-rx"></block>)를 클릭합니다. Cloud Manager에 액세스할 수 없지만 특정 유형의 경고와 알림에 대해 알림을 받아야 하는 다른 사람 또는 그룹에 대해서는 _Additional Recipients_tab에서 이메일 주소를 추가할 수 있습니다.</block>
+  <block id="0286e36de56c941ab35aeb846ce40a9e" category="list-text">알림 및 알림 설정 페이지에서 * 새 받는 사람 추가 * 를 클릭합니다.</block>
+  <block id="acd827f1422fd31386324c56e2be6d81" category="inline-image-macro">경고와 알림에 대한 새 전자 메일 수신자를 추가하는 방법을 보여 주는 스크린샷</block>
+  <block id="5e56842d0cfbf695522e945a01570eba" category="paragraph"><block ref="5e56842d0cfbf695522e945a01570eba" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b434da4c5ce39b5e4a95ec5159a66676" category="list-text">이름, 이메일 주소를 입력하고 수신인이 수신할 알림 유형을 선택한 다음 * 새 수신자 추가 * 를 클릭합니다.</block>
+  <block id="34cb1ceabae36f23fad53ac3e3680af5" category="list-text">왼쪽 탐색 메뉴에서 * Timeline * 을 선택합니다.</block>
+  <block id="19d38e2a40bebb64998474cbec167167" category="list-text">기존 커넥터에 AWS 자격 증명을 추가합니다</block>
+  <block id="2d85cb7a34de23c6b7db0459f207a310" category="paragraph">기존 커넥터에 새로운 AWS 자격 증명을 추가하면 동일한 커넥터를 사용하여 다른 AWS 계정에 Cloud Volumes ONTAP를 구축할 수 있습니다. <block ref="c25c39db29c727f1578fc8385e3c589b" category="inline-xref-macro-rx"></block>.</block>
+  <block id="b43214d44180a6ca97389c1482285fbf" category="list-text">Connector를 생성하기 위해 Cloud Manager에 AWS 자격 증명을 추가합니다</block>
+  <block id="cb41c26ca274622d9ea3398c74867451" category="paragraph">Cloud Manager에 새로운 AWS 자격 증명을 추가하면 Cloud Manager에서 Connector를 생성하는 데 필요한 권한을 얻을 수 있습니다. <block ref="d9eb564bf95618e99248c2b1e3146ece" category="inline-xref-macro-rx"></block>.</block>
+  <block id="69aa4e5daaa10834feb82eec574735eb" category="list-text">ONTAP용 FSx에 대한 AWS 자격 증명을 Cloud Manager에 추가합니다</block>
+  <block id="f63d604edef29843d35ad367e0d82814" category="inline-link">ONTAP용 FSx에 대한 사용 권한을 설정하는 방법에 대해 알아봅니다</block>
+  <block id="072e31a95d82576794bb6565d0330309" category="paragraph">Cloud Manager에 새 AWS 자격 증명을 추가하면 Cloud Manager에서 ONTAP용 FSx를 생성하고 관리하는 데 필요한 권한을 얻을 수 있습니다.<block ref="47d6cf2cfadcdba49cba9314ed556d4e" category="inline-link-rx"></block></block>
+  <block id="38d6d2ec27372e53c82e1227b5be44d4" category="section-title">Connector에 추가 자격 증명을 추가합니다</block>
+  <block id="bf19fb3e70cc4e8379089c708c9d3206" category="section-title">Connector를 생성하기 위해 Cloud Manager에 자격 증명을 추가합니다</block>
+  <block id="10f9b8e8923f8e5a230d95b268fa385f" category="paragraph">Cloud Manager에 Connector 생성에 필요한 권한을 제공하는 IAM 역할의 ARN을 제공하여 Cloud Manager에 AWS 자격 증명을 추가합니다. 새 Connector를 만들 때 이러한 자격 증명을 선택할 수 있습니다.</block>
+  <block id="875232e8c1abaa42024ddc396bcef6da" category="list-text">Connector를 만드는 데 필요한 권한을 포함하는 정책을 만듭니다.</block>
+  <block id="8dbc816059e1b421ecb65c693d5f2171" category="paragraph">이제 새 커넥터를 만들 때 자격 증명을 사용할 수 있습니다.</block>
+  <block id="c3d36b4a46dce16b3ad60eecabc87582" category="list-text">Amazon S3 검색</block>
+  <block id="bde43e83db72512f1aea47540264c8f0" category="list-text">Azure Blob 검색</block>
+  <block id="6060e8f925263dfdc63a751c294072e0" category="list-text">Google Cloud Storage 검색</block>
+  <block id="cb7056b970dafeecb7fd7cc3be301248" category="paragraph">작업 영역 관리자가 Cloud Volumes ONTAP 작업 환경을 만들고 위에 나열된 다른 서비스를 사용하려면 계정 관리자가 커넥터를 만들어야 합니다. 관리자는 다음과 같은 여러 가지 방법으로 커넥터를 만들 수 있습니다.</block>
+  <block id="29a0d45ad000865bf5504b2da4dc6816" category="paragraph">다음 섹션에서는 각 NetApp 클라우드 서비스에 대한 사용 권한을 어떻게 사용하는지 설명합니다. 이 정보는 기업 정책에 따라 사용 권한이 필요한 경우에만 제공된다는 내용이 지정되어 있는 경우에 유용합니다.</block>
+  <block id="c6705240238244043d7e0d39f6ce1db1" category="section-title">AppTemplate 태그</block>
+  <block id="0cae22bc84eb90b52cc86e22b140eb0c" category="paragraph">Connector는 AppTemplate Tagging 서비스를 사용할 때 AWS 리소스의 태그 관리를 위해 다음과 같은 API 요청을 수행합니다.</block>
+  <block id="693adfb773a054f1c9287da186e8ce5d" category="list-text">EC2: CreateTags(태그 생성)</block>
+  <block id="3a2cbdfb7b022d729d851d5052148241" category="list-text">EC2: 삭제 태그</block>
+  <block id="684a1bfe5fbc91f18d96de978a7df58a" category="list-text">EC2: DescribeTags(설명 태그)</block>
+  <block id="4c62ed8ff3597b57ab26a72e8f7294b7" category="list-text">태그: getResources</block>
+  <block id="b2ca34a52079f0ba5f066943f1dd2482" category="list-text">태그: getTagKeys</block>
+  <block id="f624e5f75138eb92caddd44e1bc7342e" category="list-text">태그: getTagValues</block>
+  <block id="5e665d8f5cf0c341dce9f3bd5e7f4cc0" category="list-text">태그: 태그 리소스</block>
+  <block id="5e10058ad3f07bfeca3eef81de09ce28" category="list-text">태그: UntagResources</block>
+  <block id="ea6a60190611f087b7d1024fdd12f16c" category="paragraph">Connector는 다음과 같은 API 요청을 통해 Cloud Backup의 복원 인스턴스를 구축합니다.</block>
+  <block id="027d28fab935de1ef9181da062feac6b" category="list-text">EC2: StartInstances(시작 인스턴스)</block>
+  <block id="68d58bcae13312f57154b0dc5bd5bee5" category="list-text">EC2: StopInstances(중지 인스턴스)</block>
+  <block id="c8e20ceabac2b519b4f4eb301166c9bd" category="list-text">EC2: DescribeInstances(지시 인스턴스)</block>
+  <block id="3bd5f6b3ab1440bcdf688a075a360180" category="list-text">EC2: DescribeInstanceStatus</block>
+  <block id="392b3d4b5b32ec7fec96c348ecef2c2a" category="list-text">EC2: 런인스턴스</block>
+  <block id="f52c8ff7f97e2de39d8d76587c9f5398" category="list-text">EC2: 터미네이스</block>
+  <block id="339c73e7ad58b4e1def2de5bc9ccdc2e" category="list-text">EC2: DescribeInstanceAttribute</block>
+  <block id="952195e7922a9dcf0a6d5068e747e85f" category="list-text">EC2: DescribeImages(설명 영상)</block>
+  <block id="214856c145abfa33038f64154c203919" category="list-text">EC2: CreateVolume</block>
+  <block id="dfe69f2eb83bcef99d0bb464b50fbf34" category="list-text">EC2:CreateSecurityGroup입니다</block>
+  <block id="fa70443be85a3feec8a5eb9d46413a96" category="list-text">EC2: DescribeSubnet</block>
+  <block id="1bf0cfdea85e9a3c3d97e1c6b8c7c7c1" category="list-text">EC2: 설명</block>
+  <block id="624105df248e28f049a2f58eb3552d40" category="list-text">EC2: 설명</block>
+  <block id="6ccfab5404f73a6b0bacb222665e72d7" category="list-text">CloudFormation:CreateStack</block>
+  <block id="790375dd29bbbf581b13619a3430be3e" category="list-text">CloudFormation:DeleteStack</block>
+  <block id="f404fc6d0850472807e4fcd86203a313" category="list-text">CloudFormation: DescribeStacks</block>
+  <block id="dae64d851fb086fcc7f34e869728783b" category="paragraph">Connector는 Amazon S3에서 백업을 관리하기 위해 다음과 같은 API 요청을 수행합니다.</block>
+  <block id="57beb7405f0a1c7bc500e793294e4d80" category="list-text">S3:GetBucketLocation</block>
+  <block id="e21c94a36c6dbf24001a64bddce9456f" category="list-text">S3:ListAllMyBucket</block>
+  <block id="05cce54a3c6e4b27fe1202c73065ac29" category="list-text">S3:목록 버킷</block>
+  <block id="d0e4bee632dc55607e492853b76d8194" category="list-text">S3:생성 버킷</block>
+  <block id="0c1b0b85cf95eb29ecb3d5b774e010c2" category="list-text">S3:GetLifecycleConfiguration</block>
+  <block id="b1b9fd8bb730a38b7633b4263b5c30ec" category="list-text">S3: PutLifecycleConfiguration</block>
+  <block id="f7e22455b86c7ea94ba86cc949d37161" category="list-text">S3: PutBucketTagging</block>
+  <block id="30756eb77e955d4514eb285a2d31ee73" category="list-text">S3:목록 BuckketVersions</block>
+  <block id="f480e46cdd0b09e0a4d7a66cea36fc72" category="list-text">S3:GetBuckketAcl</block>
+  <block id="4958fee4803d2e1cfa3375212fdcc52a" category="list-text">S3: PutBucketPublicAccessBlock</block>
+  <block id="b18a2220ba0da795c31cbb6cd990fd49" category="list-text">KMS: 목록 *</block>
+  <block id="2101c43af42db107614da3d2faadb4dc" category="list-text">KMS: 설명 *</block>
+  <block id="53cfd5032381d05f65cbc6d64e0004f5" category="list-text">S3:GetObject</block>
+  <block id="9072562ed0b0a146d2eee12aaa27baf4" category="list-text">EC2: desceverVpcEndpoints입니다</block>
+  <block id="276e466538acff21910df6227231c79f" category="list-text">KMS: ListAliases</block>
+  <block id="599a8ceed768fab9cc6e39dff7c9f215" category="list-text">S3:PutEncryptionConfiguration</block>
+  <block id="21eddde0f415ffe52f38d432d14088c9" category="paragraph">Connector는 검색 및 복원 방법을 사용하여 볼륨 및 파일을 복원할 때 다음과 같은 API 요청을 수행합니다.</block>
+  <block id="ec68e11afcd3e390ebf5080e8af5b735" category="list-text">S3:DeleteObject 를 선택합니다</block>
+  <block id="538e4e83b58b6bce3bde0ae671e33b67" category="list-text">S3:DeleteObjectVersion</block>
+  <block id="2fadb459df3bdee0dccfda5cc625c37b" category="list-text">S3:ListBuckketMultipartUploads</block>
+  <block id="8e0864f8129f5d2b658668b9103e83a5" category="list-text">S3:PutObject</block>
+  <block id="b9ddada4de32510796065dc8e8165711" category="list-text">S3: PutBucketAcl</block>
+  <block id="e24d90c482d00361a495cd937be3bb7b" category="list-text">S3:중단멀티업로드입니다</block>
+  <block id="9c6f56f3012c2178f15d4346495a0a67" category="list-text">S3:ListMultipartUploadParts(S3:ListMultimpartUploadParts) 를</block>
+  <block id="7cd7eca4bb03196079ee9a9bde3115be" category="list-text">Athena:StartQueryExecutionc</block>
+  <block id="95c87da99fc1ee2016d0e9c8cb02409d" category="list-text">Athena:GetQueryResults</block>
+  <block id="f0fba07e47b7e372e7ac0e365ea7027a" category="list-text">Athena:GetQueryExecution을 참조하십시오</block>
+  <block id="0c6b0369ea554dd3ec72e592055d373a" category="list-text">Athena: StopQueryExecution</block>
+  <block id="053eccd51ed9451171879091960925f5" category="list-text">글루:CreateDatabase</block>
+  <block id="8aa289a776893bb855ec1aa9bed5209b" category="list-text">글루:CreateTable</block>
+  <block id="a269a322dce9f7dfa0a7cbd6c919eaf4" category="list-text">GLUE:BatchDeletePartition</block>
+  <block id="1ff2ee005f6ebf372516a77eb1822174" category="paragraph">Connector는 Cloud Data Sense 인스턴스를 구축하기 위해 다음과 같은 API 요청을 수행합니다.</block>
+  <block id="a5ea263b5c1fc9d98e3502347db5f38a" category="list-text">EC2: AttachVolume</block>
+  <block id="5c1d3b82016ca9ba106bc6c28ab8c44a" category="list-text">EC2: DeleteSecurityGroup</block>
+  <block id="f81c1800b5bdeba91c623d2a3d6cd80b" category="list-text">EC2: DescribeSecurityGroups</block>
+  <block id="6d284e37c36390a37443cf46fd082a1b" category="list-text">EC2: CreateNetworkInterface입니다</block>
+  <block id="ce8fb0925b8abe52d5d90a64663ad1be" category="list-text">EC2: DescribeNetworkInterfaces를 참조하십시오</block>
+  <block id="ff7f7be0cb6fd6d6bfa0e735a61fc8a8" category="list-text">EC2: DeleteNetworkInterface</block>
+  <block id="0989933f390e4823213ec2adae8c79d2" category="list-text">EC2: 스냅샷을 만듭니다</block>
+  <block id="da044dbe1821a39f63f98e823344b062" category="list-text">CloudFormation: DescribeStackEvents</block>
+  <block id="d734a02593a16de307a6ba72b9e0a84f" category="list-text">IAM:AddRoleToInstanceProfile 을 참조하십시오</block>
+  <block id="5e56dcab5a3d5a272d5e0ea580b6ef9c" category="list-text">EC2: AssociateIamInstanceProfile 을 참조하십시오</block>
+  <block id="878addcc09e93b6f03a1af8fb9aa5472" category="list-text">EC2: DescribeIamInstanceProfileAssociations</block>
+  <block id="cf515733161bef5174a0b4727d3a287a" category="paragraph">Connector는 Cloud Data Sense를 사용할 때 S3 버킷을 스캔하기 위해 다음과 같은 API 요청을 수행합니다.</block>
+  <block id="70c72880a06cb649d8a568819cf5e5d1" category="list-text">S3:GetBucketTagging</block>
+  <block id="e0c462b127c385a7109b2d96fee158ff" category="list-text">S3:GetBuckketPolicyStatus를 참조하십시오</block>
+  <block id="19c320aeee7c39747dcce0815428eea9" category="list-text">S3:GetBuckketPolicy를 참조하십시오</block>
+  <block id="9dcf380856979ca5b723d30e996e1f95" category="list-text">IAM:GetRole</block>
+  <block id="60cfe31830d467874bb430da1683504e" category="list-text">STS:AssumeRole</block>
+  <block id="a5ee53db07b5874a6adfc974dafbbd58" category="paragraph">Connector는 Cloud Tiering을 사용할 때 Amazon S3에 데이터를 계층화하도록 다음과 같은 API 요청을 수행합니다.</block>
+  <block id="004bf6c9a40003140292e97330236c53" category="cell">조치</block>
+  <block id="271544c6feabf3364f5e9d9d71e81991" category="cell">설정에 사용됩니까?</block>
+  <block id="536dc5b351662225d606f29978fb2842" category="cell">일상적 운영에 사용됩니까?</block>
+  <block id="c31a8d2fed6934d9957a2df9cb48885e" category="paragraph">Connector는 AWS에서 Cloud Volumes ONTAP를 구축 및 관리하기 위해 다음과 같은 API 요청을 수행합니다.</block>
+  <block id="8619817b40d160813e1d9e3fbcd2855a" category="cell">배포에 사용되었습니까?</block>
+  <block id="9c9abc943aab3664ef495a82ad4bd11f" category="cell">삭제에 사용되었습니까?</block>
+  <block id="5af7e92e7fbd51883a785485859afd3d" category="cell">Cloud Volumes ONTAP 인스턴스에 대한 IAM 역할 및 인스턴스 프로필을 생성하고 관리합니다</block>
+  <block id="e3282902ca031e34a1aa86c7ee684a82" category="cell">IAM: ListInstanceProfiles(인스턴스 프로필)</block>
+  <block id="3b8d1aa9f2727ee5948e48b70e7ea00b" category="cell">IAM: CreateRole</block>
+  <block id="2fa83ed2b5f63d43f8aaf2419688821c" category="cell">IAM: DeleteRole</block>
+  <block id="a6e64d0684dcf803ad58d40684383bb9" category="cell">IAM: PutRolePolicy(입수 정책)</block>
+  <block id="b099faa86e7e0f5f378356dee887478b" category="cell">IAM:CreateInstanceProfile</block>
+  <block id="1566e3ce8fd64a52b0ba8d5bd6b1d6d2" category="cell">IAM: DeleteRolePolicy(삭제 RolePolicy</block>
+  <block id="b5a94c08b69b4b7f78637d9e9362ee11" category="cell">IAM:RemoveRoleFromInstanceProfile 을 참조하십시오</block>
+  <block id="c23cf794dff78b49a2406145038d63f5" category="cell">IAM: DeleteInstanceProfile</block>
+  <block id="f6ae0a8a1321975a6474722dcafe1322" category="cell">IAM: 암호 역할</block>
+  <block id="d0946769aa3944c2e9e6feb1f6b23851" category="cell">EC2: DiscassociateIamInstanceProfile 을 참조하십시오</block>
+  <block id="817af26026c416850fbe7b9f610053f8" category="cell">인증 상태 메시지를 디코딩합니다</block>
+  <block id="90723f1781278d57fb4f6c3f64e63a19" category="cell">STS:DecodeAuthorizationMessage 를 참조하십시오</block>
+  <block id="c67b7c82529835a49fde9a553fae41a7" category="cell">계정에 사용할 수 있는 지정된 영상(AMI)을 설명합니다</block>
+  <block id="54a4d76d5869b375291de0bd8b2566cf" category="cell">VPC의 라우트 테이블 설명(HA 쌍에만 필요)</block>
+  <block id="c01627c2648879b9ec55b1fca3cbeaf8" category="cell">EC2: 설명표</block>
+  <block id="17b14c1ab3e8350a6f996c6de43f64f9" category="cell">인스턴스를 중지, 시작 및 모니터링합니다</block>
+  <block id="21d0110f8008b90efa11a26fa83b57c3" category="cell">EC2: ModifyInstanceAttribute</block>
+  <block id="4334838bb012bcce350df94e430e8251" category="cell">지원되는 인스턴스 유형에 대해 향상된 네트워킹이 활성화되어 있는지 확인합니다</block>
+  <block id="f1d835bacd60573faa9e3559c63d1f1b" category="cell">유지 관리 및 비용 할당에 사용되는 "WorkingEnvironment" 및 "WorkingEnvironmentId" 태그로 리소스에 태그를 지정합니다</block>
+  <block id="4df68ee329324d6bfab7f1a6bec005d1" category="cell">Cloud Volumes ONTAP가 백엔드 스토리지로 사용하는 EBS 볼륨을 관리합니다</block>
+  <block id="776040484a8199155a9dc8b59d59a80e" category="cell">EC2: 설명 볼륨을 참조하십시오</block>
+  <block id="41335cfc4c2fb5b48949f4e7610951ec" category="cell">EC2: ModifyVolumeAttribute</block>
+  <block id="451d09025146b4c5f4b33a18aa0c4234" category="cell">EC2: DeleteVolume(삭제 볼륨)</block>
+  <block id="06622319fb198ee98832f726ac405c79" category="cell">EC2: DetachVolume(분리 볼륨)</block>
+  <block id="1c921773262c6a99c2023b5b7ebe50d8" category="cell">Cloud Volumes ONTAP에 대한 보안 그룹을 만들고 관리합니다</block>
+  <block id="6b55ca61283cdb7482b6730fe7aa8ee7" category="cell">EC2: RevokeSecurityGroupEgress</block>
+  <block id="0c2207eca5bac43f82f2b5fedbd86541" category="cell">EC2: AuthorizeSecurityGroupEgress 를 참조하십시오</block>
+  <block id="4391a439092a7705738b377b8f7d9770" category="cell">EC2: AuthorizeSecurityGroupIngress 를 참조하십시오</block>
+  <block id="2a95c3248cb0dae5784981086f9b60e6" category="cell">EC2: RevokeSecurityGroupIngress 를 참조하십시오</block>
+  <block id="dd5e5ec5720cb7ce2bde41b83b22504a" category="cell">대상 서브넷에서 Cloud Volumes ONTAP에 대한 네트워크 인터페이스를 생성하고 관리합니다</block>
+  <block id="c07c3c9fb58e5661267c1d69b19a4625" category="cell">EC2: ModifyNetworkInterfaceAttribute 입니다</block>
+  <block id="04844a87d8314fe1e6bc42ce9f40e3b5" category="cell">대상 서브넷 및 보안 그룹 목록을 가져옵니다</block>
+  <block id="deecc88ee53f73cf0897562a4e2fe49f" category="cell">Cloud Volumes ONTAP 인스턴스의 DNS 서버와 기본 도메인 이름을 가져옵니다</block>
+  <block id="10da10750f5abb2bffb583947f1ace05" category="cell">EC2: DescribeDhcpOptions</block>
+  <block id="6c9741300c3794573c1f1d3839d05a79" category="cell">Cloud Volumes ONTAP용 EBS 볼륨의 스냅샷을 생성합니다</block>
+  <block id="fc28bbdf9badba7bbeb760ba7510ad2d" category="cell">EC2: DeleteSnapshot</block>
+  <block id="1b32c4c3d001e61965fb50f468ebf0fa" category="cell">EC2: 설명</block>
+  <block id="9225c0e83b846b8f1588357947e0dc3a" category="cell">AutoSupport 메시지에 첨부된 Cloud Volumes ONTAP 콘솔을 캡처합니다</block>
+  <block id="a018f1be3bfa4533d043570e804c006c" category="cell">EC2:GetConsoleOutput 을 참조하십시오</block>
+  <block id="312de8336b76e9964cac95161a7e5782" category="cell">사용 가능한 키 쌍 목록을 가져옵니다</block>
+  <block id="b561747f1044749aaeab8082f02c0c2f" category="cell">EC2: 설명</block>
+  <block id="d3a6e606d403e90b617202bd6d9bf438" category="cell">사용 가능한 AWS 지역 목록을 확인하십시오</block>
+  <block id="29c9112ad5de5e65a42305c3875fe633" category="cell">Cloud Volumes ONTAP 인스턴스와 연결된 리소스의 태그를 관리합니다</block>
+  <block id="7a10534a7524e11187f8a4ce2d3f2704" category="cell">AWS CloudFormation 템플릿을 위한 스택을 만들고 관리합니다</block>
+  <block id="6f25bb2faea408ecb06dc30a96791ac2" category="cell">CloudFormation:ValidateTemplate 을 참조하십시오</block>
+  <block id="008eceda501c3038492fc4fdebf63110" category="cell">Cloud Volumes ONTAP 시스템이 데이터 계층화를 위한 용량 계층으로 사용하는 S3 버킷을 생성 및 관리합니다</block>
+  <block id="3d48378493503b3c7c04da8400942853" category="cell">S3:삭제 버킷</block>
+  <block id="65a1ad8e5c7e4227f90d2816e2a42fdb" category="cell">S3:GetBuckketPublicAccessBlock</block>
+  <block id="17b712134bd1e93b6948a0a5c9373e79" category="cell">AWS KMS(키 관리 서비스)를 사용하여 Cloud Volumes ONTAP의 데이터 암호화 지원</block>
+  <block id="d5ef88abafcd6e55acdf43a7b5e4413a" category="cell">KMS: 재암호화 *</block>
+  <block id="341d6f040d34917cbc708be689644fc5" category="cell">KMS: CreateGrant</block>
+  <block id="c56dde60b28c88e27c4c3174cfc998e5" category="cell">Cloud Volumes ONTAP의 AWS 비용 데이터 확보</block>
+  <block id="7ece0980451e018d7766b0e5f1ac02bb" category="cell">CE:GetReservationUtilization을 참조하십시오</block>
+  <block id="fb039d4fc4119ba105aab9fac87b7f37" category="cell">CE:GetDimensionValues</block>
+  <block id="bba6542a0e46014b21a818003b1e41d2" category="cell">CE: GetCostAndUsage</block>
+  <block id="f74e5982a82afd7d2755b24355dd08c6" category="cell">CE:GetTags</block>
+  <block id="369aad6f89489e3292ff7cc6ee60488a" category="cell">단일 AWS Availability Zone에서 2개의 HA 노드를 위한 AWS 분산 배치 그룹과 중재자를 생성하고 관리합니다</block>
+  <block id="742d1c396005fec9d48163ebc8b0cbf7" category="cell">EC2: CreatePlacementGroup(배치 그룹 생성)</block>
+  <block id="1a68c5f9c662699cb823586b38edef0b" category="cell">EC2: DeletePlacementGroup</block>
+  <block id="ef7a7b1bec08bef324977926c1fc910c" category="cell">보고서 작성</block>
+  <block id="096f855751ca8a251f3a90595e899592" category="cell">FSX: 설명 *</block>
+  <block id="32e6bcbc3ba209ad50015d597c501851" category="cell">FSX:목록 *</block>
+  <block id="f3edb201fee35ccc535ef38207132cb5" category="cell">Amazon EBS Elastic Volumes 기능을 지원하는 애그리게이트를 생성 및 관리합니다</block>
+  <block id="9708e121f9f5200cf3806e89c2633b16" category="cell">EC2: 볼륨 수정 설명</block>
+  <block id="a0343d4d10d8960a1347cc4819cae46b" category="cell">EC2: ModifyVolume(수정 볼륨)</block>
+  <block id="fced0ebf1fcf946eb97f030a892b2b08" category="paragraph">Connector는 배포 중에 다음과 같은 API 요청을 통해 글로벌 파일 캐시 인스턴스를 구축합니다.</block>
+  <block id="3a902f1e8a6db9861a0a7608e2c5f711" category="list-text">CloudWatch: GetMetricStatistics</block>
+  <block id="1bad3fa525f7b2c60b554cc8a36a911c" category="list-text">CloudFormation: ListStacks</block>
+  <block id="8e07bbd9f07bb93eda5ce53675e2dd26" category="paragraph">Connector는 다음과 같은 API 요청을 수행하여 Amazon EKS 클러스터를 검색하고 관리합니다.</block>
+  <block id="b272876bb8d27e636bb70f2dce15cb34" category="list-text">EKS: ListClusters</block>
+  <block id="457a1b6178515d282232753f808e8cf5" category="list-text">EKS: DescribeCluster</block>
+  <block id="53ac904630fdbb4d62f208e001934c7c" category="list-text">IAM:GetInstanceProfile 을 참조하십시오</block>
+  <block id="7acc5c4a78b2f3e43bbeb07b9c5f8108" category="inline-link">이 제한에 대해 자세히 알아보십시오</block>
+  <block id="b6eb1b17db480470497e94d3911d9e12" category="paragraph">각 NetApp 계정은 최대 Cloud Volumes ONTAP 시스템 수로 제한됩니다.<block ref="ed7500cfb54e6cf775da8a8506d96f75" category="inline-link-rx"></block></block>
 </blocks>
