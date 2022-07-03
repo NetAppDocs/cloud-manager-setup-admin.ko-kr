@@ -26,7 +26,7 @@ Cloud Manager의 관리 기능, 즉 NetApp 계정, 커넥터, 클라우드 공�
 
 * Cloud Manager 인터페이스에 추가된 새로운 기능을 탐색하는 방법이 도입되었습니다. 이제 왼쪽 패널 위로 마우스를 이동하면 익숙한 Cloud Manager 기능을 모두 쉽게 찾을 수 있습니다.
 +
-image:screenshot-navigation.png["Cloud Manager의 새로운 좌측 탐색 메뉴를 보여주는 스크린샷"]
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-navigation.png["Cloud Manager의 새로운 좌측 탐색 메뉴를 보여주는 스크린샷"]
 
 * 이제 Cloud Manager를 구성하여 시스템에 로그인하지 않아도 중요한 시스템 작업을 이메일로 통지할 수 있습니다.
 +
@@ -40,7 +40,7 @@ Azure 또는 Google Cloud에 Connector를 설치한 후 Cloud Manager는 이제 
 Azure Blob 작업 환경의 예는 다음과 같습니다.
 
 +
-image:screenshot-azure-blob.png["상위 수준의 개요와 스토리지 계정에 대한 자세한 정보를 볼 수 있는 Azure Blob 작업 환경을 보여 주는 스크린샷"]
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-azure-blob.png["상위 수준의 개요와 스토리지 계정에 대한 자세한 정보를 볼 수 있는 Azure Blob 작업 환경을 보여 주는 스크린샷"]
 
 * NetApp은 용량, 암호화 세부 정보 등과 같은 S3 버킷에 대한 자세한 정보를 제공하여 Amazon S3 작업 환경의 리소스 페이지를 재설계했습니다.
 * Connector는 이제 다음 Google Cloud 영역에서 지원됩니다.
