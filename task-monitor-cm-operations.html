@@ -9,15 +9,15 @@
   <meta property="og:title" content="계정 내 작업 모니터링 | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/ko-kr/cloud-manager-setup-admin/task-monitor-cm-operations.html" />
-	<meta property="og:description" content="Cloud Manager에서 수행하는 작업의 상태를 모니터링하여 해결해야 할 문제가 있는지 확인할 수 있습니다. 알림 센터 또는 시각표에서 상태를 볼 수 있습니다." />
+	<meta property="og:description" content="Cloud Manager에서 수행하는 작업의 상태를 모니터링하여 해결해야 할 문제가 있는지 확인할 수 있습니다. 알림 센터, 시각표에서 상태를 보거나 이메일로 알림을 보낼 수 있습니다." />
   <meta property="og:image" content="https://docs.netapp.com/ko-kr/cloud-manager-setup-admin/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Cloud Manager에서 수행하는 작업의 상태를 모니터링하여 해결해야 할 문제가 있는지 확인할 수 있습니다. 알림 센터 또는 시각표에서 상태를 볼 수 있습니다.">
-  <meta name="keywords" content=" administer, monitor, account, timeline, notifications, alerts, events, notification center"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Cloud Manager에서 수행하는 작업의 상태를 모니터링하여 해결해야 할 문제가 있는지 확인할 수 있습니다. 알림 센터, 시각표에서 상태를 보거나 이메일로 알림을 보낼 수 있습니다.">
+  <meta name="keywords" content=" administer, monitor, account, timeline, notifications, alerts, events, notification center, email"><!-- Icons -->
   <link rel="icon" href="/ko-kr/cloud-manager-setup-admin/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/ko-kr/cloud-manager-setup-admin/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -959,7 +959,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-14 17:28:33 +0000">04/14/2022</time>
+    <time datetime="2022-07-03 15:56:56 +0000">07/03/2022</time>
     
   
 
@@ -969,7 +969,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Cloud Manager에서 수행하는 작업의 상태를 모니터링하여 해결해야 할 문제가 있는지 확인할 수 있습니다. 알림 센터 또는 시각표에서 상태를 볼 수 있습니다.</p>
+<p>Cloud Manager에서 수행하는 작업의 상태를 모니터링하여 해결해야 할 문제가 있는지 확인할 수 있습니다. 알림 센터, 시각표에서 상태를 보거나 이메일로 알림을 보낼 수 있습니다.</p>
 </div>
 <div class="paragraph">
 <p>이 표에서는 각 에서 제공해야 할 사항을 이해할 수 있도록 알림 센터와 일정을 비교합니다.</p>
@@ -992,7 +992,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">현재 로그인 세션의 상태를 표시합니다. 로그오프한 후에는 알림 센터에 정보가 나타나지 않습니다</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">지난 달까지 상태를 유지합니다</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">지난 달의 상태를 유지합니다</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">사용자 인터페이스에서 시작된 작업만 표시합니다</p></td>
@@ -1006,37 +1006,72 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">중요도에 따라 결과를 필터링합니다</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">서비스, 작업, 사용자, 상태 등을 기준으로 필터링합니다</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">계정 사용자 및 다른 사용자에게 알림을 이메일로 보낼 수 있는 기능을 제공합니다</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">이메일 기능이 없습니다</p></td>
+</tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="notification-center를-사용하여-작업-상태-모니터링">Notification Center를 사용하여 작업 상태 모니터링</h2>
+<h2 id="알림-센터를-사용하여-활동-모니터링">알림 센터를 사용하여 활동 모니터링</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>알림은 Cloud Manager에서 시작한 작업의 진행률을 추적하는 이벤트와 유사하므로 작업의 성공 여부를 확인할 수 있습니다. 이 뷰를 사용하면 현재 로그인 세션에서 시작한 Cloud Manager 작업(및 향후 클라우드 서비스 작업)의 상태를 확인할 수 있습니다.</p>
-</div>
-<div class="paragraph">
-<p>현재 다음 Cloud Volumes ONTAP 객체를 생성 및 삭제하는 알림만 지원됩니다.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>작업 환경</p>
-</li>
-<li>
-<p>애그리게이트</p>
-</li>
-<li>
-<p>볼륨</p>
-</li>
-</ul>
+<p>알림은 Cloud Manager에서 시작한 작업의 진행률을 추적하므로 작업의 성공 여부를 확인할 수 있습니다. 이 뷰를 사용하면 현재 로그인 세션 중에 시작한 많은 Cloud Manager 작업의 상태를 볼 수 있습니다.</p>
 </div>
 <div class="paragraph">
 <p>알림 벨(<span class="image"><img src="./media/icon_bell.png" alt="알림 벨"></span>)를 선택합니다. 벨의 작은 거품의 색상은 활성 상태인 최상위 심각도 알림을 나타냅니다. 따라서 빨간색 기포가 나타나면 확인해야 할 중요한 알림이 있다는 의미입니다.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_notification_full.png" alt="알림 센터의 현재 알림 목록을 보여 주는 스크린샷"></span></p>
+</div>
+<div class="paragraph">
+<p>또한 Cloud Manager를 구성하여 시스템에 로그인하지 않은 경우에도 중요한 시스템 작업을 확인할 수 있도록 이메일로 알림을 보낼 수 있습니다. 이메일은 NetApp 클라우드 계정의 일부인 Cloud Central 사용자 또는 특정 유형의 시스템 활동을 알아야 하는 다른 수신자에게 보낼 수 있습니다. 을 참조하십시오 <a href="#Setting email notification settings">이메일 알림 설정 설정</a> 아래에 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="알림-유형">알림 유형</h3>
+<div class="paragraph">
+<p>알림은 다음 범주로 분류됩니다.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 31.25%;">
+<col style="width: 68.75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">알림 유형입니다</th>
+<th class="tableblock halign-left valign-top">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">심각</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">수정 조치를 즉시 취하지 않으면 서비스가 중단될 수 있는 문제가 발생했습니다.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">오류</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">조치 또는 프로세스가 실패로 끝나거나 시정 조치가 취해지지 않을 경우 실패로 이어질 수 있습니다.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">경고</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">심각한 심각도에 도달하지 않도록 주의해야 할 문제입니다. 이 심각도에 대한 알림은 서비스 중단을 유발하지 않으며 즉각적인 수정 조치가 필요하지 않을 수 있습니다.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">권장 사항</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">시스템 또는 특정 서비스 개선을 위한 조치를 취할 것을 권장하는 시스템 권장 사항(예: 비용 절감, 새로운 서비스 제안, 권장 보안 구성 등)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">정보</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">작업 또는 프로세스에 대한 추가 정보를 제공하는 메시지입니다.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">성공</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">작업 또는 프로세스가 성공적으로 완료되었습니다.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
 <h3 id="알림을-필터링하는-중입니다">알림을 필터링하는 중입니다</h3>
@@ -1048,6 +1083,65 @@
 </div>
 <div class="paragraph">
 <p>예를 들어, Cloud Manager 작업에 대한 "오류" 및 "경고" 알림만 표시하려면 해당 항목을 선택하면 해당 유형의 알림만 표시됩니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="이메일-알림-설정-설정">이메일 알림 설정 설정</h3>
+<div class="paragraph">
+<p>Cloud Manager에 로그인하지 않아도 특정 유형의 알림을 이메일로 전송하여 중요한 시스템 활동을 확인할 수 있습니다. 이메일은 NetApp 계정의 일부인 사용자나 특정 유형의 시스템 활동을 알아야 하는 다른 수신자에게 보낼 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>기본적으로 계정 관리자는 모든 "중요" 및 "권장 사항" 알림에 대한 이메일을 받게 됩니다. 다른 모든 사용자와 수신자는 기본적으로 알림 이메일을 수신하지 않도록 구성되어 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>알림 설정을 사용자 지정하려면 계정 관리자여야 합니다.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>Cloud Manager 메뉴 표시줄에서 * 설정 &gt; 알림 및 알림 설정 * 을 클릭합니다.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-settings-notifications.png" alt="경고 및 알림 설정 페이지를 표시하는 방법을 보여 주는 스크린샷"></span></p>
+</div>
+</li>
+<li>
+<p>계정 사용자_탭 또는 _Additional Recipients_tab에서 사용자 또는 여러 사용자를 선택하고 보낼 알림 유형을 선택합니다.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>단일 사용자를 변경하려면 해당 사용자의 알림 열에 있는 메뉴를 클릭하고 보낼 알림 유형을 선택한 다음 * 적용 * 을 클릭합니다.</p>
+</li>
+<li>
+<p>여러 사용자를 변경하려면 각 사용자에 대한 확인란을 선택하고 * 이메일 알림 관리 * 를 클릭한 후 전송할 알림 유형을 선택하고 * 적용 * 을 클릭합니다.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-change-notifications.png" alt="여러 사용자에 대한 알림을 변경하는 방법을 보여 주는 스크린샷"></span></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="추가-이메일-수신자-추가">추가 이메일 수신자 추가</h3>
+<div class="paragraph">
+<p>Account Users_Tab에 표시되는 사용자는 NetApp 계정의 사용자(에서)로부터 자동으로 채워집니다 <a href="task-managing-netapp-accounts.html#creating-and-managing-users">"계정 관리 페이지"</a>)를 클릭합니다. Cloud Manager에 액세스할 수 없지만 특정 유형의 경고와 알림에 대해 알림을 받아야 하는 다른 사람 또는 그룹에 대해서는 _Additional Recipients_tab에서 이메일 주소를 추가할 수 있습니다.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>알림 및 알림 설정 페이지에서 * 새 받는 사람 추가 * 를 클릭합니다.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-add-email-recipient.png" alt="경고와 알림에 대한 새 전자 메일 수신자를 추가하는 방법을 보여 주는 스크린샷"></span></p>
+</div>
+</li>
+<li>
+<p>이름, 이메일 주소를 입력하고 수신인이 수신할 알림 유형을 선택한 다음 * 새 수신자 추가 * 를 클릭합니다.</p>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect2">
@@ -1077,7 +1171,7 @@
 <div class="title">단계</div>
 <ol class="arabic">
 <li>
-<p>모든 서비스 &gt; 일정 * 을 클릭합니다.</p>
+<p>왼쪽 탐색 메뉴에서 * Timeline * 을 선택합니다.</p>
 </li>
 <li>
 <p>필터 아래에서 * 서비스 * 를 클릭하고 * 임차 * 를 활성화한 다음 * 적용 * 을 클릭합니다.</p>
