@@ -30,7 +30,7 @@ image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/mai
 
 * 이제 Cloud Manager를 구성하여 시스템에 로그인하지 않아도 중요한 시스템 작업을 이메일로 통지할 수 있습니다.
 +
-link:task-monitor-cm-operations.html["계정의 작업 모니터링에 대해 자세히 알아보십시오"].
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html["계정의 작업 모니터링에 대해 자세히 알아보십시오"].
 
 * Cloud Manager는 이제 Amazon S3 지원과 비슷하게 Azure Blob 스토리지 및 Google Cloud Storage를 작업 환경으로 지원합니다.
 +
