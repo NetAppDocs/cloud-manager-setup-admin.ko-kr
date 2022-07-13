@@ -115,4 +115,4 @@ image:screenshot-onprem-darksite-details.png["Cloud Manager 이름과 회사 이
 * https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-compliance-dark-site.html["클라우드 데이터 센스를 사용하여 온프레미스 ONTAP 볼륨 데이터를 스캔합니다"^]
 
 
-Connector 소프트웨어의 새 버전을 사용할 수 있으면 NetApp Support 사이트에 게시됩니다. link:task-managing-connectors.html["Connector를 업그레이드하는 방법에 대해 알아보십시오"].
+Connector 소프트웨어의 새 버전을 사용할 수 있으면 NetApp Support 사이트에 게시됩니다. link:task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["Connector를 업그레이드하는 방법에 대해 알아보십시오"].

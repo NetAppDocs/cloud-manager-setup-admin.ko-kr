@@ -82,7 +82,7 @@ IAM 역할을 사용하여 Connector 인스턴스를 구축한 소스 AWS 계정
 +
 ** 신뢰할 수 있는 엔터티 유형 * 에서 * AWS 계정 * 을 선택합니다.
 ** 다른 AWS 계정 * 을 선택하고 Connector 인스턴스가 있는 계정의 ID를 입력합니다.
-** Cloud Manager IAM 정책을 사용하여 정책을 생성합니다. 이 정책은 에서 사용할 수 있습니다 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 정책 페이지"^].
+** 의 내용을 복사하여 붙여 넣어 정책을 만듭니다 link:reference-permissions-aws.html["Connector에 대한 IAM 정책"].
 
 
 . 나중에 Cloud Manager에 붙여넣을 수 있도록 IAM 역할의 역할 ARN을 복사합니다.
@@ -97,8 +97,7 @@ IAM 역할을 사용하여 Connector 인스턴스를 구축한 소스 AWS 계정
 Cloud Manager에 IAM 사용자를 위한 AWS 키를 제공하려면 해당 사용자에게 필요한 권한을 부여해야 합니다. Cloud Manager IAM 정책은 Cloud Manager에서 사용할 수 있는 AWS 작업 및 리소스를 정의합니다.
 
 .단계
-. 에서 Cloud Manager IAM 정책을 다운로드합니다 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 정책 페이지"^].
-. IAM 콘솔에서 Cloud Manager IAM 정책의 텍스트를 복사하여 붙여넣어 고유한 정책을 생성합니다.
+. IAM 콘솔에서 의 내용을 복사하여 붙여 넣어 정책을 생성합니다 link:reference-permissions-aws.html["Connector에 대한 IAM 정책"].
 +
 https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html["AWS 설명서: IAM 정책 생성"^]
 
@@ -166,7 +165,9 @@ Cloud Manager SaaS가 역할을 맡을 수 있도록 IAM 역할을 설정합니�
 ** 다른 AWS 계정 * 을 선택하고 Cloud Manager SaaS:952013314444의 ID를 입력합니다
 ** Connector를 만드는 데 필요한 권한을 포함하는 정책을 만듭니다.
 +
-에서 Connector 배포 정책을 봅니다 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 정책 페이지"^]
+*** https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["ONTAP용 FSx에 필요한 권한을 봅니다"^]
+*** link:task-creating-connectors-aws.html#create-an-iam-policy["Connector 배포 정책을 봅니다"]
+
 
 
 

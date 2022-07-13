@@ -1,0 +1,71 @@
+---
+sidebar: sidebar 
+permalink: reference-permissions.html 
+keywords: permissions, actions 
+summary: Cloud Manager에서 기능과 서비스를 사용하려면 Cloud Manager가 클라우드 환경에서 작업을 수행할 수 있도록 권한을 제공해야 합니다. 이 페이지의 링크를 사용하여 Cloud Manager에 필요한 권한에 빠르게 액세스할 수 있습니다. 
+---
+= Cloud Manager에 대한 권한 요약
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Manager에서 기능과 서비스를 사용하려면 Cloud Manager가 클라우드 환경에서 작업을 수행할 수 있도록 권한을 제공해야 합니다. 이 페이지의 링크를 사용하여 목표에 따라 필요한 사용 권한에 빠르게 액세스할 수 있습니다.
+
+
+
+== AWS 권한
+
+[cols="25,60,40"]
+|===
+| 목적 | 설명 | 링크 
+
+
+| 커넥터 전개 | Cloud Manager에서 Connector를 생성하는 사용자는 AWS에 인스턴스를 구축하기 위한 특정 권한이 필요합니다. | link:task-creating-connectors-aws.html["Cloud Manager에서 AWS에 Connector를 생성합니다"] 
+
+
+| 커넥터 작동 | Cloud Manager에서 Connector를 시작하면 인스턴스에 정책이 연결되며, 이 정책은 AWS 계정의 리소스와 프로세스를 관리하는 데 필요한 권한을 제공합니다. 정책을 직접 설정해야 합니다 link:task-launching-aws-mktp.html["마켓플레이스에서 Connector를 실행합니다"] 아니면 link:task-adding-aws-accounts.html#add-credentials-to-a-connector["Connector에 AWS 자격 증명을 더 추가합니다"]. 또한 새 권한이 후속 릴리스에 추가될 때 정책이 최신 상태인지 확인해야 합니다. | link:reference-permissions-aws.html["Connector에 대한 AWS 권한"] 
+
+
+| Cloud Volumes ONTAP 작동 | IAM 역할은 AWS의 각 Cloud Volumes ONTAP 노드에 연결되어야 합니다. HA 중재자의 경우도 마찬가지입니다. 기본 옵션은 Cloud Manager에서 IAM 역할을 생성할 수 있도록 하는 것이지만 직접 사용할 수 있습니다. | https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html["IAM 역할을 직접 설정하는 방법에 대해 알아봅니다"^] 
+|===
+
+
+== Azure 권한
+
+[cols="25,60,40"]
+|===
+| 목적 | 설명 | 링크 
+
+
+| 커넥터 전개 | Cloud Manager에서 Connector를 배포하는 경우 Azure에 Connector VM을 배포할 수 있는 권한이 있는 Azure 계정 또는 서비스 보안 주체를 사용해야 합니다. | link:task-creating-connectors-azure.html["Cloud Manager에서 Azure에 Connector를 생성합니다"] 
+
+
+| 커넥터 작동  a| 
+Cloud Manager는 Azure에서 Connector VM을 배포할 때 Azure 구독 내에서 리소스와 프로세스를 관리하는 데 필요한 권한을 제공하는 사용자 지정 역할을 생성합니다.
+
+사용자 지정 역할을 직접 설정해야 합니다 link:task-launching-azure-mktp.html["마켓플레이스에서 Connector를 실행합니다"] 아니면 link:task-adding-azure-accounts.html#adding-additional-azure-credentials-to-cloud-manager["Connector에 Azure 자격 증명을 더 추가합니다"].
+
+또한 새 권한이 후속 릴리스에 추가될 때 정책이 최신 상태인지 확인해야 합니다.
+ a| 
+link:reference-permissions-azure.html["Connector에 대한 Azure 권한"]
+
+|===
+
+
+== Google Cloud 권한
+
+[cols="25,60,40"]
+|===
+| 목적 | 설명 | 링크 
+
+
+| 커넥터 전개 | Cloud Manager에서 Connector를 배포하는 Google Cloud 사용자는 Google Cloud에서 Connector를 배포하기 위한 특정 권한이 필요합니다. | link:task-creating-connectors-gcp.html#set-up-permissions-to-deploy-the-connector["Connector 배포 권한을 설정합니다"] 
+
+
+| 커넥터 작동 | Connector VM 인스턴스의 서비스 계정에는 일상적인 작업에 대한 특정 권한이 있어야 합니다. Cloud Manager에서 서비스 계정을 배포할 때 Connector에 서비스 계정을 연결해야 합니다. 또한 새 권한이 후속 릴리스에 추가될 때 정책이 최신 상태인지 확인해야 합니다. | link:task-creating-connectors-gcp.html#set-up-a-service-account-for-the-connector["Connector에 대한 서비스 계정을 설정합니다"] 
+|===

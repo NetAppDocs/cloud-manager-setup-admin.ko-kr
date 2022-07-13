@@ -134,7 +134,10 @@ Connector를 만들려면 특정 권한이 필요하며 Connector 인스턴스 �
 
 Cloud Manager에서 Connector를 생성하는 사용자는 선택한 클라우드 공급자에 인스턴스를 배포하기 위한 특정 권한이 필요합니다. Cloud Manager는 Connector를 생성할 때 권한 요구 사항을 상기시킵니다.
 
-https://mysupport.netapp.com/site/info/cloud-manager-policies["각 클라우드 공급자에 대한 정책을 봅니다"^].
+* link:task-creating-connectors-aws.html["필요한 AWS 권한을 확인합니다"]
+* link:task-creating-connectors-azure.html["필요한 Azure 권한을 봅니다"]
+* link:task-creating-connectors-gcp.html["필요한 Google Cloud 권한을 봅니다"]
+
 
 
 
@@ -146,7 +149,10 @@ Cloud Manager에서 직접 Connector를 생성하면 Cloud Manager에서 필요�
 
 AWS Marketplace, Azure Marketplace 또는 소프트웨어를 수동으로 설치하여 직접 Connector를 생성하는 경우 올바른 권한이 있는지 확인해야 합니다.
 
-https://mysupport.netapp.com/site/info/cloud-manager-policies["각 클라우드 공급자에 대한 정책을 봅니다"^]
+* link:reference-permissions-aws.html["Connector에서 AWS 권한을 사용하는 방법에 대해 알아보십시오"]
+* link:reference-permissions-azure.html["Connector에서 Azure 권한을 사용하는 방법에 대해 알아봅니다"]
+* link:reference-permissions-gcp.html["Connector가 Google Cloud 권한을 사용하는 방법에 대해 알아보십시오"]
+
 
 
 

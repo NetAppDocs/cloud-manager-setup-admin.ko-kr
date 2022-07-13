@@ -20,7 +20,7 @@ Cloud Manager를 사용하면 Cloud Volumes ONTAP 구축 시 사용할 AWS 자�
 
 == 초기 AWS 자격 증명
 
-Cloud Manager에서 Connector를 구축하는 경우 IAM 사용자의 ARN 또는 액세스 키를 제공해야 합니다. 사용하는 인증 방법에는 Connector 인스턴스를 AWS에 구축하는 데 필요한 권한이 있어야 합니다. 필요한 권한이 에 나열됩니다 https://mysupport.netapp.com/site/info/cloud-manager-policies["AWS의 커넥터 구축 정책"^].
+Cloud Manager에서 Connector를 구축하는 경우 IAM 사용자의 ARN 또는 액세스 키를 제공해야 합니다. 사용하는 인증 방법에는 Connector 인스턴스를 AWS에 구축하는 데 필요한 권한이 있어야 합니다. 필요한 권한이 에 나열됩니다 link:task-creating-connectors-aws.html["AWS의 커넥터 구축 정책"].
 
 Cloud Manager가 AWS에서 Connector 인스턴스를 시작하면 IAM 역할과 인스턴스에 대한 인스턴스 프로필이 생성됩니다. 또한 Connector에 해당 AWS 계정 내의 리소스 및 프로세스를 관리할 수 있는 권한을 제공하는 정책을 첨부합니다. link:reference-permissions-aws.html["Cloud Manager에서 사용 권한을 사용하는 방법을 검토합니다"].
 

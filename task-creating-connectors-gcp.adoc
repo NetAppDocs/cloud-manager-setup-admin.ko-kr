@@ -25,35 +25,198 @@ TIP: 첫 번째 Cloud Volumes ONTAP 작업 환경을 생성할 때 커넥터가 
 
 
 
-== 사용 권한 설정
+== Connector 배포 권한을 설정합니다
 
-Connector를 배포하기 전에 Google Cloud 계정에 올바른 권한이 있는지, 그리고 Connector VM에 대해 서비스 계정이 설정되어 있는지 확인해야 합니다.
+Connector를 배포하기 전에 Google Cloud 계정에 올바른 권한이 있는지 확인해야 합니다.
 
 .단계
-. Connector를 배포하는 Google Cloud 사용자에게 에 대한 권한이 있는지 확인합니다 https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml["Google Cloud용 커넥터 배포 정책"^].
+. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["사용자 지정 역할을 만듭니다"^] 여기에는 다음 권한이 포함됩니다.
 +
-https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["YAML 파일을 사용하여 맞춤형 역할을 생성할 수 있습니다"^] 그런 다음 사용자에게 연결합니다. gcloud 명령줄을 사용하여 역할을 생성해야 합니다.
+[source, yaml]
+----
+title: Connector deployment policy
+description: Permissions for the user who deploys the Connector from Cloud Manager
+stage: GA
+includedPermissions:
+- compute.disks.create
+- compute.disks.get
+- compute.disks.list
+- compute.disks.setLabels
+- compute.disks.use
+- compute.firewalls.create
+- compute.firewalls.delete
+- compute.firewalls.get
+- compute.firewalls.list
+- compute.globalOperations.get
+- compute.images.get
+- compute.images.getFromFamily
+- compute.images.list
+- compute.images.useReadOnly
+- compute.instances.attachDisk
+- compute.instances.create
+- compute.instances.get
+- compute.instances.list
+- compute.instances.setDeletionProtection
+- compute.instances.setLabels
+- compute.instances.setMachineType
+- compute.instances.setMetadata
+- compute.instances.setTags
+- compute.instances.start
+- compute.instances.updateDisplayDevice
+- compute.machineTypes.get
+- compute.networks.get
+- compute.networks.list
+- compute.networks.updatePolicy
+- compute.projects.get
+- compute.regions.get
+- compute.regions.list
+- compute.subnetworks.get
+- compute.subnetworks.list
+- compute.zoneOperations.get
+- compute.zones.get
+- compute.zones.list
+- deploymentmanager.compositeTypes.get
+- deploymentmanager.compositeTypes.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- deploymentmanager.manifests.list
+- deploymentmanager.operations.get
+- deploymentmanager.operations.list
+- deploymentmanager.resources.get
+- deploymentmanager.resources.list
+- deploymentmanager.typeProviders.get
+- deploymentmanager.typeProviders.list
+- deploymentmanager.types.get
+- deploymentmanager.types.list
+- resourcemanager.projects.get
+- compute.instances.setServiceAccount
+- iam.serviceAccounts.list
+----
+. Cloud Manager에서 Connector를 배포할 사용자에 사용자 지정 역할을 연결합니다.
 
-. Cloud Manager에서 프로젝트에서 Cloud Volumes ONTAP 시스템을 만들고 관리하는 데 필요한 권한이 있는 서비스 계정을 설정합니다.
+
+이제 Google Cloud 사용자에게 Connector를 만드는 데 필요한 권한이 있습니다.
+
+
+
+== Connector에 대한 서비스 계정을 설정합니다
+
+Connector에 Google Cloud의 리소스를 관리하는 데 필요한 권한을 제공하려면 서비스 계정이 필요합니다. 이 서비스 계정을 만들 때 Connector VM에 연결합니다.
+
+서비스 계정에 대한 사용 권한이 이전 섹션에서 설정한 사용 권한과 다릅니다.
+
+.단계
+. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["사용자 지정 역할을 만듭니다"^] 여기에는 다음 권한이 포함됩니다.
 +
-이 서비스 계정을 만들 때 Connector VM에 연결합니다.
+[source, yaml]
+----
+title: NetApp Cloud Manager
+description: Permissions for the service account associated with the Connector instance.
+stage: GA
+includedPermissions:
+- iam.serviceAccounts.actAs
+- compute.regionBackendServices.create
+- compute.regionBackendServices.get
+- compute.regionBackendServices.list
+- compute.networks.updatePolicy
+- compute.backendServices.create
+- compute.addresses.list
+- compute.disks.create
+- compute.disks.createSnapshot
+- compute.disks.delete
+- compute.disks.get
+- compute.disks.list
+- compute.disks.setLabels
+- compute.disks.use
+- compute.firewalls.create
+- compute.firewalls.delete
+- compute.firewalls.get
+- compute.firewalls.list
+- compute.globalOperations.get
+- compute.images.get
+- compute.images.getFromFamily
+- compute.images.list
+- compute.images.useReadOnly
+- compute.instances.addAccessConfig
+- compute.instances.attachDisk
+- compute.instances.create
+- compute.instances.delete
+- compute.instances.detachDisk
+- compute.instances.get
+- compute.instances.getSerialPortOutput
+- compute.instances.list
+- compute.instances.setDeletionProtection
+- compute.instances.setLabels
+- compute.instances.setMachineType
+- compute.instances.setMetadata
+- compute.instances.setTags
+- compute.instances.start
+- compute.instances.stop
+- compute.instances.updateDisplayDevice
+- compute.machineTypes.get
+- compute.networks.get
+- compute.networks.list
+- compute.projects.get
+- compute.regions.get
+- compute.regions.list
+- compute.snapshots.create
+- compute.snapshots.delete
+- compute.snapshots.get
+- compute.snapshots.list
+- compute.snapshots.setLabels
+- compute.subnetworks.get
+- compute.subnetworks.list
+- compute.subnetworks.use
+- compute.subnetworks.useExternalIp
+- compute.zoneOperations.get
+- compute.zones.get
+- compute.zones.list
+- compute.instances.setServiceAccount
+- deploymentmanager.compositeTypes.get
+- deploymentmanager.compositeTypes.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- deploymentmanager.manifests.list
+- deploymentmanager.operations.get
+- deploymentmanager.operations.list
+- deploymentmanager.resources.get
+- deploymentmanager.resources.list
+- deploymentmanager.typeProviders.get
+- deploymentmanager.typeProviders.list
+- deploymentmanager.types.get
+- deploymentmanager.types.list
+- logging.logEntries.list
+- logging.privateLogEntries.list
+- resourcemanager.projects.get
+- storage.buckets.create
+- storage.buckets.delete
+- storage.buckets.get
+- storage.buckets.list
+- cloudkms.cryptoKeyVersions.useToEncrypt
+- cloudkms.cryptoKeys.get
+- cloudkms.cryptoKeys.list
+- cloudkms.keyRings.list
+- storage.buckets.update
+- iam.serviceAccounts.getIamPolicy
+- iam.serviceAccounts.list
+- storage.objects.get
+- storage.objects.list
+----
+. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["Google Cloud 서비스 계정을 만들고 방금 만든 사용자 지정 역할을 적용합니다"^].
+. 다른 프로젝트에 Cloud Volumes ONTAP를 배포하려는 경우 https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console["Cloud Manager 역할을 가진 서비스 계정을 해당 프로젝트에 추가하여 액세스 권한을 부여합니다"^]. 각 프로젝트에 대해 이 단계를 반복해야 합니다.
 
-+
-.. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["GCP에서 역할을 생성합니다"^] 여기에는 에 정의된 권한이 포함됩니다 https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml["Google Cloud에 대한 Cloud Manager 정책"^]. gcloud 명령줄을 사용해야 합니다.
-+
-이 YAML 파일에 포함된 사용 권한은 1단계의 사용 권한과 다릅니다.
 
-.. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["Google Cloud 서비스 계정을 만들고 방금 만든 사용자 지정 역할을 적용합니다"^].
-.. 다른 프로젝트에 Cloud Volumes ONTAP를 배포하려는 경우 https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console["Cloud Manager 역할을 가진 서비스 계정을 해당 프로젝트에 추가하여 액세스 권한을 부여합니다"^]. 각 프로젝트에 대해 이 단계를 반복해야 합니다.
+Connector VM에 대한 서비스 계정이 설정되어 있습니다.
 
 
 
-
-이제 Google Cloud 사용자에게 Connector를 생성하는 데 필요한 권한이 있으며 Connector VM에 대한 서비스 계정이 설정됩니다.
-
-
-
-=== 공유 VPC 권한
+== 공유 VPC 권한
 
 공유 VPC를 사용하여 리소스를 서비스 프로젝트에 구축하는 경우 다음과 같은 권한이 필요합니다. 이 표는 참조용이며 IAM 구성이 완료되면 사용 권한 테이블이 환경에 반영되어야 합니다.
 
@@ -63,7 +226,7 @@ https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-
 
 
 | Connector를 배포하는 데 사용되는 Google 계정입니다 | 맞춤형 | 서비스 프로젝트  a| 
-* https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml["YAML 파일에 있는 권한"^]
+* link:task-creating-connectors-gcp.html#set-up-permissions-to-deploy-the-connector["위의 이 섹션에 있는 사용 권한"]
 
  a| 
 * compute.networkUser
@@ -72,7 +235,7 @@ https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-
 
 
 | 커넥터 서비스 계정 | 맞춤형 | 서비스 프로젝트  a| 
-* https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml["YAML 파일에 있는 권한"^]
+* link:task-creating-connectors-gcp.html#set-up-permissions-for-the-connector["위의 이 섹션에 있는 사용 권한"]
 
  a| 
 * compute.networkUser
@@ -137,7 +300,7 @@ Connector와 Cloud Volumes ONTAP를 구축하려면 여러 API가 필요합니�
 Cloud Manager 사용자 인터페이스에서 직접 또는 gcloud를 사용하여 Google Cloud에서 Connector를 생성합니다.
 
 .무엇을 &#8217;필요로 할거야
-* 를 클릭합니다 https://mysupport.netapp.com/site/info/cloud-manager-policies["필수 권한"^] Google Cloud 계정의 경우, 이 페이지의 첫 번째 섹션에 설명되어 있습니다.
+* 이 페이지의 첫 번째 섹션에 설명된 대로 Google Cloud 계정에 필요한 사용 권한.
 * Google Cloud 프로젝트.
 * 이 페이지의 첫 번째 섹션에 설명된 대로 Cloud Volumes ONTAP를 만들고 관리하는 데 필요한 권한이 있는 서비스 계정입니다.
 * Google Cloud 지역에서 VPC 및 서브넷을 선택할 수 있습니다.

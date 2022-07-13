@@ -102,6 +102,8 @@ sidebar:
       url: "/task-adding-nss-accounts.html"
   - title: 참조하십시오
     entries:
+    - title: 권한 요약
+      url: "/reference-permissions.html"
     - title: Connector에 대한 AWS 권한
       url: "/reference-permissions-aws.html"
     - title: Connector에 대한 Azure 권한
