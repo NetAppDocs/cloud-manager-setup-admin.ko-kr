@@ -2113,7 +2113,6 @@
   <block id="5c61dbbb22810fcf5149eb1192885607" category="cell">계정 사용자 및 다른 사용자에게 알림을 이메일로 보낼 수 있는 기능을 제공합니다</block>
   <block id="e92861fef775acb8c5a64f8d282a8b80" category="cell">이메일 기능이 없습니다</block>
   <block id="d6706ddca18dfba027152ceaeffb550e" category="section-title">알림 센터를 사용하여 활동 모니터링</block>
-  <block id="18aff76a65beb281247b3066c1a37525" category="paragraph">알림은 Cloud Manager에서 시작한 작업의 진행률을 추적하므로 작업의 성공 여부를 확인할 수 있습니다. 이 뷰를 사용하면 현재 로그인 세션 중에 시작한 많은 Cloud Manager 작업의 상태를 볼 수 있습니다.</block>
   <block id="5cf9ecbcae765efe1cb17d1c802e39cb" category="paragraph">알림 벨(<block ref="df7c8a71ca3da4359e40e121f18f87b9" category="inline-image-macro-rx" type="image"></block>)를 선택합니다. 벨의 작은 거품의 색상은 활성 상태인 최상위 심각도 알림을 나타냅니다. 따라서 빨간색 기포가 나타나면 확인해야 할 중요한 알림이 있다는 의미입니다.</block>
   <block id="6c836fac6db418cb1aa7dbc3dbd8ff62" category="inline-xref">이메일 알림 설정 설정</block>
   <block id="411759a1626269084faceb1751fdaca6" category="paragraph">또한 Cloud Manager를 구성하여 시스템에 로그인하지 않은 경우에도 중요한 시스템 작업을 확인할 수 있도록 이메일로 알림을 보낼 수 있습니다. 이메일은 NetApp 클라우드 계정의 일부인 Cloud Central 사용자 또는 특정 유형의 시스템 활동을 알아야 하는 다른 수신자에게 보낼 수 있습니다. 을 참조하십시오 <block ref="2fb0285882e9333d924eb054161cd903" category="inline-xref-macro-rx"></block> 아래에 있습니다.</block>
@@ -2150,7 +2149,6 @@
   <block id="acd827f1422fd31386324c56e2be6d81" category="inline-image-macro">경고와 알림에 대한 새 전자 메일 수신자를 추가하는 방법을 보여 주는 스크린샷</block>
   <block id="5e56842d0cfbf695522e945a01570eba" category="paragraph"><block ref="5e56842d0cfbf695522e945a01570eba" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b434da4c5ce39b5e4a95ec5159a66676" category="list-text">이름, 이메일 주소를 입력하고 수신인이 수신할 알림 유형을 선택한 다음 * 새 수신자 추가 * 를 클릭합니다.</block>
-  <block id="34cb1ceabae36f23fad53ac3e3680af5" category="list-text">왼쪽 탐색 메뉴에서 * Timeline * 을 선택합니다.</block>
   <block id="19d38e2a40bebb64998474cbec167167" category="list-text">기존 커넥터에 AWS 자격 증명을 추가합니다</block>
   <block id="2d85cb7a34de23c6b7db0459f207a310" category="paragraph">기존 커넥터에 새로운 AWS 자격 증명을 추가하면 동일한 커넥터를 사용하여 다른 AWS 계정에 Cloud Volumes ONTAP를 구축할 수 있습니다. <block ref="c25c39db29c727f1578fc8385e3c589b" category="inline-xref-macro-rx"></block>.</block>
   <block id="b43214d44180a6ca97389c1482285fbf" category="list-text">Connector를 생성하기 위해 Cloud Manager에 AWS 자격 증명을 추가합니다</block>
@@ -2328,4 +2326,7 @@
   <block id="1da5b30af8a0c5d1ce771dde6d9be98e" category="paragraph"><block ref="1da5b30af8a0c5d1ce771dde6d9be98e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0ce7c9606b5f3d67c288c6ffe90a846e" category="paragraph"><block ref="0ce7c9606b5f3d67c288c6ffe90a846e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="991b7c6e5c5e3b71cf64a28ea679cff0" category="paragraph"><block ref="8b6b603d70c42ac6b5c1db56412efc72" category="inline-link-rx"></block>.</block>
+  <block id="87d47630996394fbe848adac841d4925" category="paragraph">알림은 Cloud Manager에서 시작한 작업의 진행률을 추적하므로 작업의 성공 여부를 확인할 수 있습니다. 이 뷰를 사용하면 현재 로그인 세션 중에 시작한 많은 Cloud Manager 작업의 상태를 볼 수 있습니다. 현재 모든 서비스에서 알림 센터에 정보를 보고하는 것은 아닙니다.</block>
+  <block id="e8bcd4ad549fa51ff8495440daac2515" category="paragraph">* 참고: * Connector가 인터넷에 연결되지 않은 사이트에 설치된 경우 이메일 알림 전송은 지원되지 않습니다.</block>
+  <block id="5d85fadabc5fc8c195c36c4e3f0560e1" category="list-text">Cloud Manager 메뉴 표시줄에서 * 설정 &gt; 타임라인 * 을 클릭합니다.</block>
 </blocks>
