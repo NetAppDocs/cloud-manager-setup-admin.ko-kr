@@ -699,6 +699,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -877,7 +879,9 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 참조하십시오</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-setup-admin/reference-permissions-aws.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-setup-admin/reference-permissions.html">
+        권한 요약
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-setup-admin/reference-permissions-aws.html">
         Connector에 대한 AWS 권한
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-setup-admin/reference-permissions-azure.html">
         Connector에 대한 Azure 권한
@@ -961,7 +965,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-03 15:56:56 +0000">07/03/2022</time>
+    <time datetime="2022-07-13 19:45:28 +0000">07/13/2022</time>
     
   
 
@@ -1080,7 +1084,7 @@ Cloud Manager에서 Connector를 구축한 경우 Cloud Manager는 Connector를 
 <p>다른 AWS 계정 * 을 선택하고 Connector 인스턴스가 있는 계정의 ID를 입력합니다.</p>
 </li>
 <li>
-<p>Cloud Manager IAM 정책을 사용하여 정책을 생성합니다. 이 정책은 에서 사용할 수 있습니다 <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">"Cloud Manager 정책 페이지"</a>.</p>
+<p>의 내용을 복사하여 붙여 넣어 정책을 만듭니다 <a href="reference-permissions-aws.html">"Connector에 대한 IAM 정책"</a>.</p>
 </li>
 </ul>
 </div>
@@ -1103,10 +1107,7 @@ Cloud Manager에서 Connector를 구축한 경우 Cloud Manager는 Connector를 
 <div class="title">단계</div>
 <ol class="arabic">
 <li>
-<p>에서 Cloud Manager IAM 정책을 다운로드합니다 <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">"Cloud Manager 정책 페이지"</a>.</p>
-</li>
-<li>
-<p>IAM 콘솔에서 Cloud Manager IAM 정책의 텍스트를 복사하여 붙여넣어 고유한 정책을 생성합니다.</p>
+<p>IAM 콘솔에서 의 내용을 복사하여 붙여 넣어 정책을 생성합니다 <a href="reference-permissions-aws.html">"Connector에 대한 IAM 정책"</a>.</p>
 <div class="paragraph">
 <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html" target="_blank" rel="noopener">"AWS 설명서: IAM 정책 생성"</a></p>
 </div>
@@ -1216,8 +1217,15 @@ Cloud Manager에서 Connector를 구축한 경우 Cloud Manager는 Connector를 
 </li>
 <li>
 <p>Connector를 만드는 데 필요한 권한을 포함하는 정책을 만듭니다.</p>
-<div class="paragraph">
-<p>에서 Connector 배포 정책을 봅니다 <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">"Cloud Manager 정책 페이지"</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/requirements/task-setting-up-permissions-fsx.html" target="_blank" rel="noopener">"ONTAP용 FSx에 필요한 권한을 봅니다"</a></p>
+</li>
+<li>
+<p><a href="task-creating-connectors-aws.html#create-an-iam-policy">"Connector 배포 정책을 봅니다"</a></p>
+</li>
+</ul>
 </div>
 </li>
 </ul>

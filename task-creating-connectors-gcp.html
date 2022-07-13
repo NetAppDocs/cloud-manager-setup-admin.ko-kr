@@ -699,6 +699,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -877,7 +879,9 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 참조하십시오</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-setup-admin/reference-permissions-aws.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-setup-admin/reference-permissions.html">
+        권한 요약
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-setup-admin/reference-permissions-aws.html">
         Connector에 대한 AWS 권한
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-setup-admin/reference-permissions-azure.html">
         Connector에 대한 Azure 권한
@@ -961,7 +965,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-09 14:24:52 +0000">05/09/2022</time>
+    <time datetime="2022-07-13 19:45:28 +0000">07/13/2022</time>
     
   
 
@@ -994,31 +998,202 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="사용-권한-설정">사용 권한 설정</h2>
+<h2 id="connector-배포-권한을-설정합니다">Connector 배포 권한을 설정합니다</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Connector를 배포하기 전에 Google Cloud 계정에 올바른 권한이 있는지, 그리고 Connector VM에 대해 서비스 계정이 설정되어 있는지 확인해야 합니다.</p>
+<p>Connector를 배포하기 전에 Google Cloud 계정에 올바른 권한이 있는지 확인해야 합니다.</p>
 </div>
 <div class="olist arabic">
 <div class="title">단계</div>
 <ol class="arabic">
 <li>
-<p>Connector를 배포하는 Google Cloud 사용자에게 에 대한 권한이 있는지 확인합니다 <a href="https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml" target="_blank" rel="noopener">"Google Cloud용 커넥터 배포 정책"</a>.</p>
-<div class="paragraph">
-<p><a href="https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud" target="_blank" rel="noopener">"YAML 파일을 사용하여 맞춤형 역할을 생성할 수 있습니다"</a> 그런 다음 사용자에게 연결합니다. gcloud 명령줄을 사용하여 역할을 생성해야 합니다.</p>
+<p><a href="https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud" target="_blank" rel="noopener">"사용자 지정 역할을 만듭니다"</a> 여기에는 다음 권한이 포함됩니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">title: Connector deployment policy
+description: Permissions for the user who deploys the Connector from Cloud Manager
+stage: GA
+includedPermissions:
+- compute.disks.create
+- compute.disks.get
+- compute.disks.list
+- compute.disks.setLabels
+- compute.disks.use
+- compute.firewalls.create
+- compute.firewalls.delete
+- compute.firewalls.get
+- compute.firewalls.list
+- compute.globalOperations.get
+- compute.images.get
+- compute.images.getFromFamily
+- compute.images.list
+- compute.images.useReadOnly
+- compute.instances.attachDisk
+- compute.instances.create
+- compute.instances.get
+- compute.instances.list
+- compute.instances.setDeletionProtection
+- compute.instances.setLabels
+- compute.instances.setMachineType
+- compute.instances.setMetadata
+- compute.instances.setTags
+- compute.instances.start
+- compute.instances.updateDisplayDevice
+- compute.machineTypes.get
+- compute.networks.get
+- compute.networks.list
+- compute.networks.updatePolicy
+- compute.projects.get
+- compute.regions.get
+- compute.regions.list
+- compute.subnetworks.get
+- compute.subnetworks.list
+- compute.zoneOperations.get
+- compute.zones.get
+- compute.zones.list
+- deploymentmanager.compositeTypes.get
+- deploymentmanager.compositeTypes.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- deploymentmanager.manifests.list
+- deploymentmanager.operations.get
+- deploymentmanager.operations.list
+- deploymentmanager.resources.get
+- deploymentmanager.resources.list
+- deploymentmanager.typeProviders.get
+- deploymentmanager.typeProviders.list
+- deploymentmanager.types.get
+- deploymentmanager.types.list
+- resourcemanager.projects.get
+- compute.instances.setServiceAccount
+- iam.serviceAccounts.list</code></pre>
+</div>
 </div>
 </li>
 <li>
-<p>Cloud Manager에서 프로젝트에서 Cloud Volumes ONTAP 시스템을 만들고 관리하는 데 필요한 권한이 있는 서비스 계정을 설정합니다.</p>
-<div class="paragraph">
-<p>이 서비스 계정을 만들 때 Connector VM에 연결합니다.</p>
+<p>Cloud Manager에서 Connector를 배포할 사용자에 사용자 지정 역할을 연결합니다.</p>
+</li>
+</ol>
 </div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p><a href="https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud" target="_blank" rel="noopener">"GCP에서 역할을 생성합니다"</a> 여기에는 에 정의된 권한이 포함됩니다 <a href="https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml" target="_blank" rel="noopener">"Google Cloud에 대한 Cloud Manager 정책"</a>. gcloud 명령줄을 사용해야 합니다.</p>
 <div class="paragraph">
-<p>이 YAML 파일에 포함된 사용 권한은 1단계의 사용 권한과 다릅니다.</p>
+<p>이제 Google Cloud 사용자에게 Connector를 만드는 데 필요한 권한이 있습니다.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="connector에-대한-서비스-계정을-설정합니다">Connector에 대한 서비스 계정을 설정합니다</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Connector에 Google Cloud의 리소스를 관리하는 데 필요한 권한을 제공하려면 서비스 계정이 필요합니다. 이 서비스 계정을 만들 때 Connector VM에 연결합니다.</p>
+</div>
+<div class="paragraph">
+<p>서비스 계정에 대한 사용 권한이 이전 섹션에서 설정한 사용 권한과 다릅니다.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p><a href="https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud" target="_blank" rel="noopener">"사용자 지정 역할을 만듭니다"</a> 여기에는 다음 권한이 포함됩니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">title: NetApp Cloud Manager
+description: Permissions for the service account associated with the Connector instance.
+stage: GA
+includedPermissions:
+- iam.serviceAccounts.actAs
+- compute.regionBackendServices.create
+- compute.regionBackendServices.get
+- compute.regionBackendServices.list
+- compute.networks.updatePolicy
+- compute.backendServices.create
+- compute.addresses.list
+- compute.disks.create
+- compute.disks.createSnapshot
+- compute.disks.delete
+- compute.disks.get
+- compute.disks.list
+- compute.disks.setLabels
+- compute.disks.use
+- compute.firewalls.create
+- compute.firewalls.delete
+- compute.firewalls.get
+- compute.firewalls.list
+- compute.globalOperations.get
+- compute.images.get
+- compute.images.getFromFamily
+- compute.images.list
+- compute.images.useReadOnly
+- compute.instances.addAccessConfig
+- compute.instances.attachDisk
+- compute.instances.create
+- compute.instances.delete
+- compute.instances.detachDisk
+- compute.instances.get
+- compute.instances.getSerialPortOutput
+- compute.instances.list
+- compute.instances.setDeletionProtection
+- compute.instances.setLabels
+- compute.instances.setMachineType
+- compute.instances.setMetadata
+- compute.instances.setTags
+- compute.instances.start
+- compute.instances.stop
+- compute.instances.updateDisplayDevice
+- compute.machineTypes.get
+- compute.networks.get
+- compute.networks.list
+- compute.projects.get
+- compute.regions.get
+- compute.regions.list
+- compute.snapshots.create
+- compute.snapshots.delete
+- compute.snapshots.get
+- compute.snapshots.list
+- compute.snapshots.setLabels
+- compute.subnetworks.get
+- compute.subnetworks.list
+- compute.subnetworks.use
+- compute.subnetworks.useExternalIp
+- compute.zoneOperations.get
+- compute.zones.get
+- compute.zones.list
+- compute.instances.setServiceAccount
+- deploymentmanager.compositeTypes.get
+- deploymentmanager.compositeTypes.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- deploymentmanager.manifests.list
+- deploymentmanager.operations.get
+- deploymentmanager.operations.list
+- deploymentmanager.resources.get
+- deploymentmanager.resources.list
+- deploymentmanager.typeProviders.get
+- deploymentmanager.typeProviders.list
+- deploymentmanager.types.get
+- deploymentmanager.types.list
+- logging.logEntries.list
+- logging.privateLogEntries.list
+- resourcemanager.projects.get
+- storage.buckets.create
+- storage.buckets.delete
+- storage.buckets.get
+- storage.buckets.list
+- cloudkms.cryptoKeyVersions.useToEncrypt
+- cloudkms.cryptoKeys.get
+- cloudkms.cryptoKeys.list
+- cloudkms.keyRings.list
+- storage.buckets.update
+- iam.serviceAccounts.getIamPolicy
+- iam.serviceAccounts.list
+- storage.objects.get
+- storage.objects.list</code></pre>
+</div>
 </div>
 </li>
 <li>
@@ -1029,14 +1204,14 @@
 </li>
 </ol>
 </div>
-</li>
-</ol>
-</div>
 <div class="paragraph">
-<p>이제 Google Cloud 사용자에게 Connector를 생성하는 데 필요한 권한이 있으며 Connector VM에 대한 서비스 계정이 설정됩니다.</p>
+<p>Connector VM에 대한 서비스 계정이 설정되어 있습니다.</p>
 </div>
-<div class="sect2">
-<h3 id="공유-vpc-권한">공유 VPC 권한</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="공유-vpc-권한">공유 VPC 권한</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>공유 VPC를 사용하여 리소스를 서비스 프로젝트에 구축하는 경우 다음과 같은 권한이 필요합니다. 이 표는 참조용이며 IAM 구성이 완료되면 사용 권한 테이블이 환경에 반영되어야 합니다.</p>
 </div>
@@ -1067,7 +1242,7 @@
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml" target="_blank" rel="noopener">"YAML 파일에 있는 권한"</a></p>
+<p><a href="task-creating-connectors-gcp.html#set-up-permissions-to-deploy-the-connector">"위의 이 섹션에 있는 사용 권한"</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -1087,7 +1262,7 @@
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml" target="_blank" rel="noopener">"YAML 파일에 있는 권한"</a></p>
+<p><a href="task-creating-connectors-gcp.html#set-up-permissions-for-the-connector">"위의 이 섹션에 있는 사용 권한"</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -1180,7 +1355,6 @@
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
 <h2 id="google-cloud-api-활성화">Google Cloud API 활성화</h2>
 <div class="sectionbody">
@@ -1226,7 +1400,7 @@
 <div class="title">무엇을 &#8217;필요로 할거야</div>
 <ul>
 <li>
-<p>를 클릭합니다 <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">"필수 권한"</a> Google Cloud 계정의 경우, 이 페이지의 첫 번째 섹션에 설명되어 있습니다.</p>
+<p>이 페이지의 첫 번째 섹션에 설명된 대로 Google Cloud 계정에 필요한 사용 권한.</p>
 </li>
 <li>
 <p>Google Cloud 프로젝트.</p>

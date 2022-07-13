@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head class="at-element-marker">
-  <title>Google Cloud의 Connector에 대한 필수 권한 | NetApp Documentation</title>
+  <title>Connector에 대한 Google Cloud 권한 | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Google Cloud의 Connector에 대한 필수 권한 | NetApp Documentation" />
+  <meta property="og:title" content="Connector에 대한 Google Cloud 권한 | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/ko-kr/cloud-manager-setup-admin/reference-permissions-gcp.html" />
 	<meta property="og:description" content="Cloud Manager를 사용하려면 클라우드 공급자에서 작업을 수행할 수 있는 권한이 필요합니다. 이러한 사용 권한은 NetApp에서 제공하는 정책에 포함됩니다. Cloud Manager가 이러한 사용 권한을 통해 수행하는 작업을 이해하기를 원할 수 있습니다." />
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/issues/new?body=Page%3A%20[Google Cloud의 Connector에 대한 필수 권한](https://docs.netapp.com/ko-kr/cloud-manager-setup-admin/reference-permissions-gcp.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-setup-admin/images/discuss-sm.svg" alt="" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/blob/main/reference-permissions-gcp.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-setup-admin/images/edit-sm.svg" alt="" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-setup-admin/images/article-sm.svg" alt="" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/issues/new?body=Page%3A%20[Connector에 대한 Google Cloud 권한](https://docs.netapp.com/ko-kr/cloud-manager-setup-admin/reference-permissions-gcp.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-setup-admin/images/discuss-sm.svg" alt="" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/blob/main/reference-permissions-gcp.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-setup-admin/images/edit-sm.svg" alt="" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-setup-admin/images/article-sm.svg" alt="" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -695,6 +695,8 @@
 
 
 
+
+
     <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
   
 
@@ -877,7 +879,9 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 참조하십시오</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-setup-admin/reference-permissions-aws.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-setup-admin/reference-permissions.html">
+        권한 요약
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-setup-admin/reference-permissions-aws.html">
         Connector에 대한 AWS 권한
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-setup-admin/reference-permissions-azure.html">
         Connector에 대한 Azure 권한
@@ -954,26 +958,142 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Google Cloud의 Connector에 대한 필수 권한</h1>
+  <h1 class="n-doc__component-detail-heading">Connector에 대한 Google Cloud 권한</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-06-07 20:54:08 +0000">06/07/2022</time>
+    <time datetime="2022-07-13 19:45:28 +0000">07/13/2022</time>
     
   
 
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
-<p>Cloud Manager를 사용하려면 클라우드 공급자에서 작업을 수행할 수 있는 권한이 필요합니다. 이러한 권한은 에 포함되어 있습니다 <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">"NetApp에서 제공하는 정책"</a>. Cloud Manager가 이러한 사용 권한을 통해 수행하는 작업을 이해하기를 원할 수 있습니다.</p>
+<p>Cloud Manager를 사용하려면 Google Cloud에서 작업을 수행할 수 있는 권한이 필요합니다. 이러한 사용 권한은 NetApp에서 제공하는 사용자 지정 역할에 포함됩니다. Cloud Manager가 이러한 사용 권한을 통해 수행하는 작업을 이해하기를 원할 수 있습니다.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="서비스-계정-권한">서비스 계정 권한</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>아래 표시된 사용자 지정 역할은 Connector가 Google Cloud 네트워크 내의 리소스 및 프로세스를 관리하는 데 필요한 권한을 제공합니다.</p>
 </div>
 <div class="paragraph">
-<p>GCP용 Cloud Manager 정책에는 Cloud Manager가 Cloud Volumes ONTAP를 구현 및 관리하는 데 필요한 권한이 포함되어 있습니다.</p>
+<p>Connector VM에 연결되는 서비스 계정에 이 사용자 지정 역할을 적용해야 합니다. <a href="task-creating-connectors-gcp.html">"단계별 지침을 봅니다"</a>.</p>
 </div>
+<div class="paragraph">
+<p>또한 후속 릴리스에 새 권한이 추가되므로 역할이 최신 상태인지 확인해야 합니다.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">title: NetApp Cloud Manager
+description: Permissions for the service account associated with the Connector instance.
+stage: GA
+includedPermissions:
+- iam.serviceAccounts.actAs
+- compute.regionBackendServices.create
+- compute.regionBackendServices.get
+- compute.regionBackendServices.list
+- compute.networks.updatePolicy
+- compute.backendServices.create
+- compute.addresses.list
+- compute.disks.create
+- compute.disks.createSnapshot
+- compute.disks.delete
+- compute.disks.get
+- compute.disks.list
+- compute.disks.setLabels
+- compute.disks.use
+- compute.firewalls.create
+- compute.firewalls.delete
+- compute.firewalls.get
+- compute.firewalls.list
+- compute.globalOperations.get
+- compute.images.get
+- compute.images.getFromFamily
+- compute.images.list
+- compute.images.useReadOnly
+- compute.instances.addAccessConfig
+- compute.instances.attachDisk
+- compute.instances.create
+- compute.instances.delete
+- compute.instances.detachDisk
+- compute.instances.get
+- compute.instances.getSerialPortOutput
+- compute.instances.list
+- compute.instances.setDeletionProtection
+- compute.instances.setLabels
+- compute.instances.setMachineType
+- compute.instances.setMetadata
+- compute.instances.setTags
+- compute.instances.start
+- compute.instances.stop
+- compute.instances.updateDisplayDevice
+- compute.machineTypes.get
+- compute.networks.get
+- compute.networks.list
+- compute.projects.get
+- compute.regions.get
+- compute.regions.list
+- compute.snapshots.create
+- compute.snapshots.delete
+- compute.snapshots.get
+- compute.snapshots.list
+- compute.snapshots.setLabels
+- compute.subnetworks.get
+- compute.subnetworks.list
+- compute.subnetworks.use
+- compute.subnetworks.useExternalIp
+- compute.zoneOperations.get
+- compute.zones.get
+- compute.zones.list
+- compute.instances.setServiceAccount
+- deploymentmanager.compositeTypes.get
+- deploymentmanager.compositeTypes.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- deploymentmanager.manifests.list
+- deploymentmanager.operations.get
+- deploymentmanager.operations.list
+- deploymentmanager.resources.get
+- deploymentmanager.resources.list
+- deploymentmanager.typeProviders.get
+- deploymentmanager.typeProviders.list
+- deploymentmanager.types.get
+- deploymentmanager.types.list
+- logging.logEntries.list
+- logging.privateLogEntries.list
+- resourcemanager.projects.get
+- storage.buckets.create
+- storage.buckets.delete
+- storage.buckets.get
+- storage.buckets.list
+- cloudkms.cryptoKeyVersions.useToEncrypt
+- cloudkms.cryptoKeys.get
+- cloudkms.cryptoKeys.list
+- cloudkms.keyRings.list
+- storage.buckets.update
+- iam.serviceAccounts.getIamPolicy
+- iam.serviceAccounts.list
+- storage.objects.get
+- storage.objects.list</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="google-cloud-사용-권한-사용-방법">Google Cloud 사용 권한 사용 방법</h2>
+<div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -1104,6 +1224,8 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
 
     </article>
     <!-- Page Container -->
