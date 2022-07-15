@@ -54,7 +54,7 @@ Azure 또는 Google Cloud에 Connector를 설치한 후 Cloud Manager는 이제 
 Azure Blob 작업 환경의 예는 다음과 같습니다.
 
 +
-image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-azure-blob.png["상위 수준의 개요와 스토리지 계정에 대한 자세한 정보를 볼 수 있는 Azure Blob 작업 환경을 보여 주는 스크린샷"]
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-azure-blob-details.png["상위 수준의 개요와 스토리지 계정에 대한 자세한 정보를 볼 수 있는 Azure Blob 작업 환경을 보여 주는 스크린샷"]
 
 * NetApp은 용량, 암호화 세부 정보 등과 같은 S3 버킷에 대한 자세한 정보를 제공하여 Amazon S3 작업 환경의 리소스 페이지를 재설계했습니다.
 * Connector는 이제 다음 Google Cloud 영역에서 지원됩니다.

@@ -2241,7 +2241,6 @@
   <block id="457a1b6178515d282232753f808e8cf5" category="list-text">EKS: DescribeCluster</block>
   <block id="53ac904630fdbb4d62f208e001934c7c" category="list-text">IAM:GetInstanceProfile 을 참조하십시오</block>
   <block id="1da5b30af8a0c5d1ce771dde6d9be98e" category="paragraph"><block ref="1da5b30af8a0c5d1ce771dde6d9be98e" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="0ce7c9606b5f3d67c288c6ffe90a846e" category="paragraph"><block ref="0ce7c9606b5f3d67c288c6ffe90a846e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="991b7c6e5c5e3b71cf64a28ea679cff0" category="paragraph"><block ref="8b6b603d70c42ac6b5c1db56412efc72" category="inline-link-rx"></block>.</block>
   <block id="87d47630996394fbe848adac841d4925" category="paragraph">알림은 Cloud Manager에서 시작한 작업의 진행률을 추적하므로 작업의 성공 여부를 확인할 수 있습니다. 이 뷰를 사용하면 현재 로그인 세션 중에 시작한 많은 Cloud Manager 작업의 상태를 볼 수 있습니다. 현재 모든 서비스에서 알림 센터에 정보를 보고하는 것은 아닙니다.</block>
   <block id="e8bcd4ad549fa51ff8495440daac2515" category="paragraph">* 참고: * Connector가 인터넷에 연결되지 않은 사이트에 설치된 경우 이메일 알림 전송은 지원되지 않습니다.</block>
@@ -2430,4 +2429,5 @@
   <block id="449d304f6ee19f4cd91497b67641d687" category="paragraph"><block ref="2381483aa809d20dc8ed09c651a1b090" category="inline-link-macro-rx"></block>.</block>
   <block id="49056d93dd3cd3fc9129ebadcf6877e0" category="inline-link-macro">Cloud Manager에 대한 사용 권한 요약을 봅니다</block>
   <block id="289c267aad7151f388f9cb33c2dd25ca" category="paragraph">또한 각 정책에 대한 링크를 제공하는 페이지도 만들었습니다. <block ref="95fc2556330780df6dd239853ed18808" category="inline-link-macro-rx"></block>.</block>
+  <block id="75c4b088a92b16dc79074e212617e6c6" category="paragraph"><block ref="75c4b088a92b16dc79074e212617e6c6" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
