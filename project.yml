@@ -80,6 +80,14 @@ sidebar:
         url: "/task-configuring-proxy.html"
       - title: 기본 구성
         url: "/reference-connector-default-config.html"
+    - title: 검색된 클라우드 스토리지
+      entries:
+      - title: Amazon S3 버킷을 확인합니다
+        url: "/task-viewing-amazon-s3.html"
+      - title: Azure Blob 계정을 봅니다
+        url: "/task-viewing-azure-blob.html"
+      - title: Google Cloud Storage 버킷을 확인하십시오
+        url: "/task-viewing-gcp-storage.html"
     - title: AWS 자격 증명
       entries:
       - title: 개요

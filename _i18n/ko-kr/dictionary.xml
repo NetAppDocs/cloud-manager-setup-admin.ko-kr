@@ -1093,23 +1093,15 @@
   <block id="f3e5ee27dee8d530004192ac1d6e4a06" category="paragraph">프록시 서버를 구성한 경우 프록시를 통하지 않고 API 호출을 Cloud Manager로 직접 전송할 수 있습니다. 이 옵션은 AWS, Azure 또는 Google Cloud에서 실행되는 커넥터에서 지원됩니다.</block>
   <block id="a10c3460c01965af15b02ac3cd407880" category="list-text">일반 * 에서 * 직접 API 트래픽 지원 * 을 클릭합니다.</block>
   <block id="46a12b9bf87a6fc814d2fc24ac4a41f4" category="list-text">확인란을 클릭하여 옵션을 활성화한 다음 * 저장 * 을 클릭합니다.</block>
-  <block id="4a5457d95cfeedc6a25a0d77c5a33696" category="summary">AWS에 Connector를 설치한 후 Cloud Manager는 AWS 계정에 상주하는 Amazon S3 버킷에 대한 정보를 자동으로 검색할 수 있습니다.</block>
   <block id="f7099ec977551c0bfc4264472c0bf927" category="doc">Amazon S3 버킷을 봅니다</block>
-  <block id="1681864df7fd2896ef0585a93a2f2f5e" category="paragraph">지역, 액세스 레벨, 스토리지 클래스 및 버킷이 백업 또는 데이터 계층화에 Cloud Volumes ONTAP과 함께 사용되는지 여부를 비롯한 S3 버킷에 대한 자세한 정보를 확인할 수 있습니다. 그리고 Cloud Data Sense를 사용하여 S3 버킷을 스캔할 수 있습니다.</block>
   <block id="9c626900b015a97ee8e428d66dd7d5d1" category="inline-link-macro">커넥터를 설치합니다</block>
   <block id="0d6fec8d76a7754ac76ae4d48310ed99" category="list-text"><block ref="d950cee94b130c47fc349a9ce27609ba" category="inline-link-macro-rx"></block> AWS 계정에서 Amazon S3 버킷을 확인할 수 있습니다.</block>
   <block id="52b8ffdf03daa97daa3970bb3a4247ff" category="paragraph">잠시 후 Amazon S3 작업 환경이 자동으로 표시됩니다.</block>
   <block id="620734ddcf438083fa8f2f7a7550fbbf" category="inline-image-macro">Amazon S3 작업 환경의 스크린샷</block>
   <block id="7458becc274c80c36e850edbc1f6337e" category="paragraph"><block ref="7458becc274c80c36e850edbc1f6337e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f0e4d0f6a6a8bae74ed62ce4759c8e3a" category="list-text">작업 환경을 클릭하고 오른쪽 창에서 작업을 선택합니다.</block>
-  <block id="6dc3b343e995023f6dad880bf75eec35" category="inline-image-macro">Amazon S3 작업 환경을 선택한 후 작업 창을 보여 주는 스크린샷 이 창에는 S3에 대한 정보, 즉 버킷 및 영역 수가 표시됩니다. 이 창에는 규정 준수 및 뷰 버킷의 두 가지 작업도 있습니다.</block>
-  <block id="a04bfcc8d64fecfeb9a3f74cae6300ca" category="paragraph"><block ref="a04bfcc8d64fecfeb9a3f74cae6300ca" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="9631c638ce043ad75ae530bdade1c4ef" category="list-text">규정 준수 활성화 * 를 클릭하여 S3 버킷에서 개인 및 중요 데이터를 검색합니다.</block>
   <block id="c1c42f8ba1dae80cacf28e68dae0ee46" category="inline-link">Amazon S3에 대한 Cloud Data Sense 시작하기</block>
   <block id="dea958812841439df90399efabd7d9ca" category="paragraph">자세한 내용은 을 참조하십시오<block ref="8bc61ddf61abb52b2869fa75574cd87f" category="inline-link-rx"></block>.</block>
-  <block id="bdd9314b00f12caa4d6c99216d658744" category="list-text">AWS 계정에서 S3 버킷에 대한 세부 정보를 보려면 * 버킷 보기 * 를 클릭합니다.</block>
-  <block id="d910bed716eb11ebd935ddc64285c374" category="inline-image-macro">Amazon S3 작업 환경의 세부 정보를 보여 주는 스크린샷: 총 버킷 수 및 총 지역 수, 활성 서비스가 있는 버킷 수 및 각 S3 버킷에 대한 세부 정보를 보여주는 테이블.</block>
-  <block id="1292b069d5e08ae0cd0a89167d61d257" category="paragraph"><block ref="1292b069d5e08ae0cd0a89167d61d257" category="inline-image-macro-rx" type="image"></block></block>
   <block id="3cda0aef0362b3ed4d0f6440b667964d" category="summary">이 체크리스트를 사용하여 Connector가 아웃바운드 인터넷 액세스를 지원하는 일반적인 구축 환경에서 Cloud Manager를 설치하고 실행하는 데 필요한 사항을 파악하십시오.</block>
   <block id="5b13c2584f8e7be6ddae81fa76b103bc" category="doc">시작 체크리스트</block>
   <block id="1e094e6477be231098329b0096c7221f" category="list-text">NetApp Cloud Central 로그인</block>
@@ -2386,4 +2378,49 @@
   <block id="a4f605cd0aab29ee5fb50f28627cef5d" category="sidebar">권한 요약</block>
   <block id="abc9b009fdeb5b04ca7bcd60cdae2434" category="section-title">AWS 사용 권한</block>
   <block id="c6705240238244043d7e0d39f6ce1db1" category="section-title">AppTemplate 태그</block>
+  <block id="8d0d51d4047979af669daac866df81ec" category="inline-link-macro">이 작업 환경에서 수행할 수 있는 작업에 대해 자세히 알아보십시오</block>
+  <block id="3a87e6ba2e9a6adf84612ff7e5ce977c" category="paragraph">Connector를 만든 Azure 계정에 Azure Blob 저장소가 있는 경우 Canvas에 Azure Blob 작업 환경이 자동으로 표시됩니다. <block ref="1554e33833508aa8ae7d5d6aebee0d7e" category="inline-link-macro-rx"></block>.</block>
+  <block id="5d1144c70f9657fe3fbc8d4918974ddb" category="paragraph">Connector를 생성한 동일한 AWS 계정에 Amazon S3 버킷이 있는 경우 Amazon S3 작업 환경이 Canvas에 자동으로 표시됩니다. <block ref="24e8a034d6d6fc16941efffc954c2b3b" category="inline-link-macro-rx"></block>.</block>
+  <block id="22d92cadc433b5c23595d09edefafba6" category="summary">AWS에 Connector를 설치한 후 Cloud Manager는 Connector가 설치된 AWS 계정에 상주하는 Amazon S3 버킷에 대한 정보를 자동으로 검색할 수 있습니다. Amazon S3 작업 환경이 Canvas에 추가되어 이 정보를 볼 수 있습니다.</block>
+  <block id="bf9799ea7692475c7cf9755a148ec201" category="paragraph">지역, 액세스 정책, 계정, 총 용량 및 사용된 용량 등을 비롯한 S3 버킷에 대한 세부 정보를 볼 수 있습니다. 이러한 버킷은 Cloud Backup, Cloud Tiering 또는 Cloud Sync 작업의 대상으로 사용할 수 있습니다. 또한, Cloud Data Sense를 사용하여 이러한 버킷을 스캔할 수 있습니다.</block>
+  <block id="3664079914496ab0ee90209b4ace936f" category="inline-image-macro">Amazon S3 작업 환경을 선택한 후 작업 창을 보여 주는 스크린샷 이 창에는 S3에 대한 정보, 즉 버킷 수 및 사용 가능한 서비스가 표시됩니다.</block>
+  <block id="b9b2b40a667ab16249d63fc7e435d7f8" category="paragraph"><block ref="b9b2b40a667ab16249d63fc7e435d7f8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a4fefa0676fbe2ed6dbd32159183f6d1" category="list-text">클라우드 데이터 센스에서 개인 및 중요 데이터를 위해 S3 버킷을 스캔하려면 * 활성화 * 를 클릭합니다.</block>
+  <block id="51ae836da5531e750c5dcf0f62f2dd18" category="list-text">AWS 계정에서 S3 버킷에 대한 세부 정보를 보려면 * 작업 환경 입력 * 을 클릭합니다.</block>
+  <block id="9e2485669a43b6702c2aedabfee812a6" category="inline-image-macro">Amazon S3 작업 환경의 세부 정보, 즉 총 버킷 수 및 총 지역 수, 그리고 각 S3 버킷에 대한 세부 정보를 보여 주는 표를 보여 주는 스크린샷</block>
+  <block id="d6e5e99b5ad8371c45f8879b9381a020" category="paragraph"><block ref="d6e5e99b5ad8371c45f8879b9381a020" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f4605fd480796df9352f08f92e13f676" category="summary">Azure에 Connector를 설치한 후 Cloud Manager는 Connector가 설치된 Azure 구독에 있는 Azure 저장소 계정에 대한 정보를 자동으로 검색할 수 있습니다. Azure Blob 작업 환경이 Canvas에 추가되어 이 정보를 볼 수 있습니다.</block>
+  <block id="60c5f52d2a1d91eb3d9cc28c497c50d5" category="doc">Azure Blob 계정 보기</block>
+  <block id="8038b7f4543340933f0702ca9be2c9c5" category="paragraph">위치, 리소스 그룹, 총 용량 및 사용된 용량 등 Azure 저장소 계정에 대한 세부 정보를 볼 수 있습니다. 이러한 계정은 Cloud Backup, Cloud Tiering 또는 Cloud Sync 작업의 대상으로 사용할 수 있습니다.</block>
+  <block id="d62a82d07f9a8474b6e149206712157a" category="list-text"><block ref="8a881211fef5d9da1cb01ccc356312a3" category="inline-link-macro-rx"></block> Azure 저장소 계정을 보려는 Azure 계정에서</block>
+  <block id="4fa9fc9591ffa247eeef55070b3327a0" category="paragraph">Azure Blob 작업 환경이 곧 자동으로 표시됩니다.</block>
+  <block id="2ed919302195764ff313fc8d75b59525" category="inline-image-macro">Azure Blob 작업 환경의 스크린샷</block>
+  <block id="33b5e081bfc2a4ff553d44178d68dda0" category="paragraph"><block ref="33b5e081bfc2a4ff553d44178d68dda0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ddf1211c4efc09073771de2cfb4c8add" category="inline-image-macro">Azure Blob 작업 환경을 선택한 후의 작업 창을 보여 주는 스크린샷 이 창에는 전체 스토리지 계정 수와 동기화 서비스 사용 작업이 표시됩니다.</block>
+  <block id="ff6037c85b586250d2e3426572b132dc" category="paragraph"><block ref="ff6037c85b586250d2e3426572b132dc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c6c6c014623477715f07d2a4088e7ee8" category="list-text">Azure Blob 저장소와 데이터를 동기화하려면 * 데이터 동기화 * 를 클릭합니다.</block>
+  <block id="2eb089b7bd4ffecd4fb1075d13738904" category="inline-link">Cloud Sync 서비스에 대한 개요입니다</block>
+  <block id="7f4de8563758c51b51d61369c0182739" category="paragraph">자세한 내용은 을 참조하십시오<block ref="9a75baacec67d9c9539ea0017722641e" category="inline-link-rx"></block>.</block>
+  <block id="1b42730f30d8c35e95778616c948b114" category="list-text">Azure Blob의 Azure 저장소 계정에 대한 세부 정보를 보려면 * 작업 환경 입력 * 을 클릭합니다.</block>
+  <block id="60c144c7df7b8788c579926f83c506f9" category="inline-image-macro">Azure Blob 작업 환경의 세부 정보(총 스토리지 계정 수, 총 위치 수, 리소스 그룹, 총 용량 및 사용된 용량 등)를 보여 주는 스크린샷</block>
+  <block id="b8fb2daac759c86243cf205eec39b222" category="paragraph"><block ref="b8fb2daac759c86243cf205eec39b222" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b200f359ce48cc34f1991dac06f22a6c" category="summary">Google Cloud에 Connector를 설치한 후 Cloud Manager는 Connector가 설치된 Google 계정에 있는 Google Cloud 버킷에 대한 정보를 자동으로 검색할 수 있습니다. Google Cloud Storage 작업 환경이 Canvas에 추가되어 이 정보를 볼 수 있습니다.</block>
+  <block id="fc45939bb3edc691f0de1907290992f5" category="doc">Google Cloud Storage 버킷 보기</block>
+  <block id="45901b51867d890e996fbb616cbb554c" category="paragraph">Google Cloud에 Connector를 설치한 후 Cloud Manager는 Connector가 설치된 Google 계정에 있는 Google Cloud Storage 버킷에 대한 정보를 자동으로 검색할 수 있습니다. Google Cloud Storage 작업 환경이 Canvas에 추가되어 이 정보를 볼 수 있습니다.</block>
+  <block id="d7d3898c944de3ebf19acbb6fcf8c7c4" category="paragraph">위치, 액세스 상태, 스토리지 클래스, 총 용량 및 사용된 용량 등 Google Cloud Storage 버킷에 대한 자세한 정보를 볼 수 있습니다. 이러한 버킷은 Cloud Backup, Cloud Tiering 또는 Cloud Sync 작업의 대상으로 사용할 수 있습니다.</block>
+  <block id="932c64a83e92b37d6857838614026033" category="list-text"><block ref="e1397902eee37121b8d7d2d75abb5593" category="inline-link-macro-rx"></block> Google Cloud Storage 버킷을 보려는 Google 계정입니다.</block>
+  <block id="18fe44f15840f7116c5288c8e5b736da" category="paragraph">곧 Google Cloud Storage 작업 환경이 자동으로 표시됩니다.</block>
+  <block id="21b1bc909131728ad1b5d3d05c538f6b" category="inline-image-macro">Google Cloud Storage 작업 환경의 스크린샷</block>
+  <block id="94bd1056e53b5ba66af1269a83d9d853" category="paragraph"><block ref="94bd1056e53b5ba66af1269a83d9d853" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dda5d91ac092d5a2808c7b76b6686167" category="inline-image-macro">Google Cloud Storage 작업 환경을 선택한 후 작업 창을 보여 주는 스크린샷 이 창에는 총 버킷 수 및 동기화 서비스 사용을 위한 작업이 표시됩니다.</block>
+  <block id="15d37262e72beba7163abfd70b5bfa25" category="paragraph"><block ref="15d37262e72beba7163abfd70b5bfa25" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1bdd9d91c53e302b7d28e2f05fe9cc24" category="list-text">Google Cloud Storage 버킷과 데이터를 동기화하려면 * 데이터 동기화 * 를 클릭합니다.</block>
+  <block id="6a74a0042c1976d39e3ccd69613d340c" category="list-text">Google 계정의 버킷에 대한 세부 정보를 보려면 * 작업 환경 입력 * 을 클릭합니다.</block>
+  <block id="b008bc9f769ee3b6c8813b19052b43a6" category="inline-image-macro">Google Cloud Storage 작업 환경의 세부 정보, 즉 총 버킷 수, 용량 및 위치, 각 버킷에 대한 세부 정보가 표시된 표를 보여주는 스크린샷</block>
+  <block id="14738180b3115b94f504ce48bf25a31a" category="paragraph"><block ref="14738180b3115b94f504ce48bf25a31a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a7901982205b7bb3f9e615cc8b6e29af" category="paragraph">Connector를 생성한 동일한 Google Cloud 계정에 Google Cloud Storage 버킷을 사용하는 경우 Google Cloud Storage 작업 환경이 Canvas에 자동으로 표시됩니다. <block ref="3be67402f92aecc3ed5f8761be46eca8" category="inline-link-macro-rx"></block>.</block>
+  <block id="fbfa85280a8f29e21ca92f023121f1b2" category="sidebar">검색된 클라우드 스토리지</block>
+  <block id="e11597621f115e17031710501eefedbc" category="sidebar">Amazon S3 버킷을 확인합니다</block>
+  <block id="bce447551b8153911559a7a705721ffe" category="sidebar">Azure Blob 계정을 봅니다</block>
+  <block id="82f74539a8232efa9fe9d44fbb820377" category="sidebar">Google Cloud Storage 버킷을 확인하십시오</block>
 </blocks>

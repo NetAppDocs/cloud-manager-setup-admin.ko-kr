@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: task-viewing-gcp-storage.html 
+keywords: google cloud storage buckets, google cloud storage, google cloud storage working environment 
+summary: Google Cloud에 Connector를 설치한 후 Cloud Manager는 Connector가 설치된 Google 계정에 있는 Google Cloud 버킷에 대한 정보를 자동으로 검색할 수 있습니다. Google Cloud Storage 작업 환경이 Canvas에 추가되어 이 정보를 볼 수 있습니다. 
+---
+= Google Cloud Storage 버킷 보기
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Google Cloud에 Connector를 설치한 후 Cloud Manager는 Connector가 설치된 Google 계정에 있는 Google Cloud Storage 버킷에 대한 정보를 자동으로 검색할 수 있습니다. Google Cloud Storage 작업 환경이 Canvas에 추가되어 이 정보를 볼 수 있습니다.
+
+위치, 액세스 상태, 스토리지 클래스, 총 용량 및 사용된 용량 등 Google Cloud Storage 버킷에 대한 자세한 정보를 볼 수 있습니다. 이러한 버킷은 Cloud Backup, Cloud Tiering 또는 Cloud Sync 작업의 대상으로 사용할 수 있습니다.
+
+.단계
+. link:task-creating-connectors-gcp.html["커넥터를 설치합니다"] Google Cloud Storage 버킷을 보려는 Google 계정입니다.
++
+곧 Google Cloud Storage 작업 환경이 자동으로 표시됩니다.
+
++
+image:screenshot-gcp-cloud-storage-we.png["Google Cloud Storage 작업 환경의 스크린샷"]
+
+. 작업 환경을 클릭하고 오른쪽 창에서 작업을 선택합니다.
++
+image:screenshot-gcp-cloud-storage-actions.png["Google Cloud Storage 작업 환경을 선택한 후 작업 창을 보여 주는 스크린샷 이 창에는 총 버킷 수 및 동기화 서비스 사용을 위한 작업이 표시됩니다."]
+
+. Google Cloud Storage 버킷과 데이터를 동기화하려면 * 데이터 동기화 * 를 클릭합니다.
++
+자세한 내용은 을 참조하십시오 https://docs.netapp.com/us-en/cloud-manager-sync/concept-cloud-sync.html["Cloud Sync 서비스에 대한 개요입니다"^].
+
+. Google 계정의 버킷에 대한 세부 정보를 보려면 * 작업 환경 입력 * 을 클릭합니다.
++
+image:screenshot-gcp-cloud-storage-details.png["Google Cloud Storage 작업 환경의 세부 정보, 즉 총 버킷 수, 용량 및 위치, 각 버킷에 대한 세부 정보가 표시된 표를 보여주는 스크린샷"]
+
+
