@@ -2423,4 +2423,11 @@
   <block id="e11597621f115e17031710501eefedbc" category="sidebar">Amazon S3 버킷을 확인합니다</block>
   <block id="bce447551b8153911559a7a705721ffe" category="sidebar">Azure Blob 계정을 봅니다</block>
   <block id="82f74539a8232efa9fe9d44fbb820377" category="sidebar">Google Cloud Storage 버킷을 확인하십시오</block>
+  <block id="a334cff76a53c8f9b93a01e24c56c9e5" category="section-title">2022년 7월 15일</block>
+  <block id="fd07056b3157389b873051e9d2dd6d40" category="section-title">정책 변경</block>
+  <block id="4c2e66937d2d8ba8680502b29c20f843" category="paragraph">문서 내에 Cloud Manager 정책을 직접 추가하여 문서를 업데이트했습니다. 즉, 이제 커넥터 및 Cloud Volumes ONTAP에 필요한 사용 권한을 설정하는 방법을 설명하는 단계와 함께 볼 수 있습니다. 이러한 정책은 이전에 NetApp Support 사이트의 페이지에서 액세스할 수 있었습니다.</block>
+  <block id="28f37fc0eb4fe20ff92020d4d8d46b8d" category="inline-link-macro">다음은 Connector를 생성하는 데 사용되는 AWS IAM 역할 권한을 보여 주는 예입니다</block>
+  <block id="449d304f6ee19f4cd91497b67641d687" category="paragraph"><block ref="2381483aa809d20dc8ed09c651a1b090" category="inline-link-macro-rx"></block>.</block>
+  <block id="49056d93dd3cd3fc9129ebadcf6877e0" category="inline-link-macro">Cloud Manager에 대한 사용 권한 요약을 봅니다</block>
+  <block id="289c267aad7151f388f9cb33c2dd25ca" category="paragraph">또한 각 정책에 대한 링크를 제공하는 페이지도 만들었습니다. <block ref="95fc2556330780df6dd239853ed18808" category="inline-link-macro-rx"></block>.</block>
 </blocks>
