@@ -122,6 +122,8 @@ includedPermissions:
 - iam.serviceAccounts.list
 - storage.objects.get
 - storage.objects.list
+- monitoring.timeSeries.list
+- storage.buckets.getIamPolicy
 ----
 
 
@@ -217,4 +219,7 @@ includedPermissions:
 
 
 | -compute.instanceGroups.get -compute.addresses.get | 를 사용하여 HA 쌍에서 스토리지 VM을 생성하고 관리합니다. 
+
+
+| -monitoring.timeseries.list-storage.버킷.getIamPolicy | Google Cloud Storage 버킷에 대한 정보를 검색할 수 있습니다. 
 |===
