@@ -26,9 +26,9 @@ Cloud Manager의 관리 기능, 즉 NetApp 계정, 커넥터, 클라우드 공�
 
 문서 내에 Cloud Manager 정책을 직접 추가하여 문서를 업데이트했습니다. 즉, 이제 커넥터 및 Cloud Volumes ONTAP에 필요한 사용 권한을 설정하는 방법을 설명하는 단계와 함께 볼 수 있습니다. 이러한 정책은 이전에 NetApp Support 사이트의 페이지에서 액세스할 수 있었습니다.
 
-link:task-creating-connectors-aws.html#create-an-iam-policy["다음은 Connector를 생성하는 데 사용되는 AWS IAM 역할 권한을 보여 주는 예입니다"].
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html#create-an-iam-policy["다음은 Connector를 생성하는 데 사용되는 AWS IAM 역할 권한을 보여 주는 예입니다"].
 
-또한 각 정책에 대한 링크를 제공하는 페이지도 만들었습니다. link:reference-permissions.html["Cloud Manager에 대한 사용 권한 요약을 봅니다"].
+또한 각 정책에 대한 링크를 제공하는 페이지도 만들었습니다. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions.html["Cloud Manager에 대한 사용 권한 요약을 봅니다"].
 
 
 
